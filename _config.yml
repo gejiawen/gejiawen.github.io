@@ -76,6 +76,6 @@ sitemap:
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type: github
+  type: git
   repository: https://github.com/gejiawen/gejiawen.github.io.git
   branch: master
