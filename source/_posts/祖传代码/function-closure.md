@@ -1,7 +1,7 @@
 title: 'function closure'
 date: 2014-07-18 16:35:07
 categories: [祖传代码]
-tags: [javascript]
+tags: [javascript, 实践]
 ---
 
 闭包在js中是一个非常常见的语法糖。下面将会介绍如何实现一个函数闭包。

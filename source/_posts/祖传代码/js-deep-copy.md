@@ -1,7 +1,7 @@
 title: 'javascript deep copy'
 date: 2014-07-18 16:22:14
 categories: [祖传代码]
-tags: [javascript]
+tags: [javascript, 实践]
 ---
 
 因为js中的对象可以**无限嵌套**，所以一般来说，给js的对象做**深度拷贝**不是一个好的主意。但是有时候，我们偏偏又有这种需求，下面简要介绍下如何在js中做深度拷贝。

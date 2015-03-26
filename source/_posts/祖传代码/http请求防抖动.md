@@ -1,7 +1,7 @@
 title: http请求防抖动
 date: 2014-10-30 10:15:03
 categories: [祖传代码]
-tags: [javascript]
+tags: [javascript, 实践]
 ---
 
 

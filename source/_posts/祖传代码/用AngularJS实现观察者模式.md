@@ -1,7 +1,7 @@
 title: 用AngularJS实现观察者模式
 date: 2014-07-18 16:55:03
 categories: [祖传代码]
-tags: [javascript]
+tags: [javascript, ng, 实践]
 ---
 
 观察者模式一种应用非常广泛的设计模式。在AngularJS构建的webapp中也有很多的应用场景。众所周知，AngularJS不同的Controller之间的通信、数据共享有多重途径，比如：官方提供的`$broadcast`，`$emit`服务，使用全局对象等。当然，我们也可以使用**观察者模式**来达到不同控制器之间的通信。
