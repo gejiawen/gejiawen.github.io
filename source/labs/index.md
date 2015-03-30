@@ -30,8 +30,8 @@ date: 2014-12-01
 
 # 分享记录
 
-- [这些年前端的那些事儿](http://gejiawen.github.io/labs/slides/things-for-fe-in-these-years)
-- [我的开发流模型](http://gejiawen.github.io/labs/slides/my-dev-workflows)
+- [这些年前端的那些事儿](http://gejiawen.github.io/slides/things-for-fe-in-these-years)
+- [我的开发流模型](http://gejiawen.github.io/slides/my-dev-workflows)
 
 # 友情链接
 
