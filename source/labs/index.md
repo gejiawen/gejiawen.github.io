@@ -18,6 +18,7 @@ date: 2014-12-01
 - [鳥哥的Linux私房菜](http://vbird.dic.ksu.edu.tw/)
 - [ECMAScript6 入门](http://es6.ruanyifeng.com/)
 - [JavaScript 标准参考教程（alpha）](http://javascript.ruanyifeng.com/)
+- [ECMAScript 6入门](http://es6.ruanyifeng.com/)
 - [Annotated ECMAScript 5.1](http://es5.github.io/)
 - [JavaScript Garden](http://bonsaiden.github.io/JavaScript-Garden/zh/)
 - [淘宝前后端分离实践](http://2014.jsconf.cn/slides/herman-taobaoweb/index.html) by 赫门
@@ -41,4 +42,3 @@ date: 2014-12-01
 - [博客歪歪](http://www.bokeyy.com/)
 - [CrazyRookie](http://crazyrookie.com/)
 - [JUTRO](http://jutro.cn/)
-
