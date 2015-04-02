@@ -7,7 +7,7 @@ date: 2014-10-21
 ```javascript
 var gejiawen = {
     "Chinese Name": "葛加文",
-    "English Name": "Pajjket",
+    "English Name": "erik",
     "Sex": "male",
     "Age": "1980s",
     "Work at": "Baidu",
