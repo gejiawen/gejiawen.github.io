@@ -31,7 +31,7 @@ date: 2014-12-01
 
 # 2014/11
 
-- [只是为了好玩——Linux之父林纳斯自传](http://www.amazon.cn/dp/B00MB51SAI/ref=pd_rhf_dp_s_cp_3_W8VW?_encoding=UTF8&refRID=1RYMH7VHBKXHSCWPN4DZ)（最新已读）
+- [只是为了好玩——Linux之父林纳斯自传](http://www.amazon.cn/dp/B00MB51SAI/ref=pd_rhf_dp_s_cp_3_W8VW?_encoding=UTF8&refRID=1RYMH7VHBKXHSCWPN4DZ)
     - 阅读方式：**快速翻阅**
     - 进度：本月读完
     - 定位：以一种轻松幽默的风格阐述了Linus的生平，包括其成长、Linux的诞生、和一些关于对开源及生命等问题的观点，可以瞻仰一下大牛的成长史。
@@ -41,7 +41,7 @@ date: 2014-12-01
 
 # 2014/10
 
-- [Javascript语言精髓与编程实践](http://www.amazon.cn/JavaScript%E8%AF%AD%E8%A8%80%E7%B2%BE%E9%AB%93%E4%B8%8E%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5-%E5%91%A8%E7%88%B1%E6%B0%91/dp/B007IVAG8K/ref=sr_1_fkmr0_1?ie=UTF8&qid=1415092153&sr=8-1-fkmr0&keywords=Javascript%E8%AF%AD%E8%A8%80%E7%B2%BE%E9%AB%93%E4%B8%8E%E7%BC%96%E7%A8%8B%E5%AE%9E%E9%99%85)（尚在阅读）
+- [Javascript语言精髓与编程实践](http://www.amazon.cn/JavaScript%E8%AF%AD%E8%A8%80%E7%B2%BE%E9%AB%93%E4%B8%8E%E7%BC%96%E7%A8%8B%E5%AE%9E%E8%B7%B5-%E5%91%A8%E7%88%B1%E6%B0%91/dp/B007IVAG8K/ref=sr_1_fkmr0_1?ie=UTF8&qid=1415092153&sr=8-1-fkmr0&keywords=Javascript%E8%AF%AD%E8%A8%80%E7%B2%BE%E9%AB%93%E4%B8%8E%E7%BC%96%E7%A8%8B%E5%AE%9E%E9%99%85)
     - 阅读方式：**细读**
     - 进度：正在阅读
     - 定位：一本全面、深度解析javascript这门语言本质的书籍。
