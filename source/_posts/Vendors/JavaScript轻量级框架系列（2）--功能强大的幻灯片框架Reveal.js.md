@@ -9,7 +9,7 @@ tags: [JavaScript轻量级框架系列, html, javascript]
 **reveal.js**是一款开源的、功能强大的JavaScript幻灯片框架，通过简单的HTML就能够创建非常漂亮的幻灯片。其在github上有18000+个star，可见这个JavaScript框架的活跃程度和质量。
 
 - [github地址](https://github.com/hakimel/reveal.js)
-- [live demo](http://lab.hakim.se/reveal-js/)或者[template demo](http://gejiawen.github.io/labs/res/a-slides-template)（前者部分资源可能需要翻墙）
+- [live demo](http://lab.hakim.se/reveal-js/)或者[template demo](http://gejiawen.github.io/slides/a-slides-template)（前者部分资源可能需要翻墙）
 
 
 # 基本结构
