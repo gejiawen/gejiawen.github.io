@@ -1,4 +1,4 @@
-title: "JS中容易混淆的方法备忘"
+title: "JS中易混淆方法备忘录"
 date: 2015-04-02 17:52:46
 categories: [Javascript]
 tags: [javascript]
