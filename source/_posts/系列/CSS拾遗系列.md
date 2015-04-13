@@ -57,7 +57,7 @@ tags: [目录]
 
 [（1）CSS3新特性概述](http://gejiawen.github.io/2015/04/13/CSS/CSS3%E6%96%B0%E7%89%B9%E6%80%A7%E6%A6%82%E8%BF%B0/)
 [（2）初识CSS3选择器](http://gejiawen.github.io/2015/04/09/CSS/%E5%88%9D%E8%AF%86CSS3%E9%80%89%E6%8B%A9%E5%99%A8/)
-（3）CSS3多列布局
+[（3）CSS3多列布局](http://gejiawen.github.io/2015/04/14/CSS/CSS3%E5%A4%9A%E5%88%97%E5%B8%83%E5%B1%80/)
 （4）CSS3弹性盒模型
 （5）CSS3背景
 （6）CSS3渐变
