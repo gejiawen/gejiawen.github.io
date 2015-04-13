@@ -44,6 +44,7 @@ tags: [目录]
 [（2）CSS如何使元素水平垂直定位](http://gejiawen.github.io/2014/12/21/CSS/CSS%E5%A6%82%E4%BD%95%E4%BD%BF%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%AE%9A%E4%BD%8D/)
 [（3）CSS常用布局之宽高自适应](http://gejiawen.github.io/2015/03/12/CSS/CSS%E5%B8%B8%E7%94%A8%E5%B8%83%E5%B1%80%E4%B9%8B%E5%AE%BD%E9%AB%98%E8%87%AA%E9%80%82%E5%BA%94/)
 [（4）CSS常用布局之各种元素的水平垂直居中](http://gejiawen.github.io/2015/03/13/CSS/CSS%E5%B8%B8%E7%94%A8%E5%B8%83%E5%B1%80%E4%B9%8B%E5%90%84%E7%A7%8D%E5%85%83%E7%B4%A0%E7%9A%84%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/)
+[（5）使用::selection自定义选中文本的颜色](http://gejiawen.github.io/2015/04/14/CSS/%E4%BD%BF%E7%94%A8-selection%E8%87%AA%E5%AE%9A%E4%B9%89%E9%80%89%E4%B8%AD%E6%96%87%E6%9C%AC%E7%9A%84%E9%A2%9C%E8%89%B2/)
 
 
 ## 研究
