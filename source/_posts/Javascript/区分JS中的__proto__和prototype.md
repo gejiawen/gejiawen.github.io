@@ -56,7 +56,7 @@ function Animal() {
 }
 
 var cat = new Animal();
-Animal.protottype.jumps = true;
+Animal.prototype.jumps = true;
 
 console.log(cat.eats); // true;
 console.log(cat.jumps); // true
