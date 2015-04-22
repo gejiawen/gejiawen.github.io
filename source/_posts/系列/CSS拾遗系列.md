@@ -60,7 +60,7 @@ tags: [目录]
 [（2）初识CSS3选择器](http://gejiawen.github.io/2015/04/09/CSS/%E5%88%9D%E8%AF%86CSS3%E9%80%89%E6%8B%A9%E5%99%A8/)
 [（3）CSS3多列布局](http://gejiawen.github.io/2015/04/14/CSS/CSS3%E5%A4%9A%E5%88%97%E5%B8%83%E5%B1%80/)
 （4）CSS3弹性盒模型
-（5）CSS3背景
+[（5）CSS3背景](http://gejiawen.github.io/2015/04/21/CSS/CSS3%E8%83%8C%E6%99%AF/)
 （6）CSS3渐变
 （7）CSS3阴影及反射
 （8）CSS3圆角
