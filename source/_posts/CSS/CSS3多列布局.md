@@ -2,7 +2,10 @@ title: "CSS3多列布局"
 date: 2015-04-14 00:15:38
 categories: [CSS]
 tags: [CSS拾遗系列, css3]
+
 ---
+
+**注意**：由于CSS3中的部分内容尚未完全定稿，所以本文的部分可能会随时更新。
 
 CSS3中新出现的多列布局([multi-column](http://www.w3.org/TR/css3-multicol/))是传统HTML网页中块状布局模式的有力扩充。这种新语法能够让WEB开发人员轻松的让文本呈现多列显示。本文将会详细阐述`column`属性的相关用法。
 

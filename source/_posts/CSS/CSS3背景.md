@@ -1,10 +1,11 @@
 title: "CSS3背景"
 date: 2015-04-21 19:55:27
-categories:
-tags:
+categories: [CSS]
+tags: [CSS拾遗系列, css3]
+
 ---
 
-
+**注意**：由于CSS3中的部分内容尚未完全定稿，所以本文的部分可能会随时更新。
 
 [Background](http://www.w3.org/TR/css3-background/)是CSS Level1就开始支持的属性，用于设置元素背景相关内容。`Background`是一个复合属性，它包含如下几个子属性，
 

@@ -2,7 +2,10 @@ title: "CSS3新特性概述"
 date: 2015-04-13 17:03:49
 categories: [CSS]
 tags: [CSS拾遗系列, css3]
+
 ---
+
+**注意**：由于CSS3中的部分内容尚未完全定稿，所以本文的部分可能会随时更新。
 
 # 缘起
 
@@ -214,7 +217,7 @@ CSS3中提供了渐变（gradient）的支持，所谓的渐变就是两种或�
 
 ![](4.png)
 
-关于CSS3渐变的更多内容，请参阅博主的这篇文章[CSS3渐变]()。
+关于CSS3渐变的更多内容，请参阅博主的这篇文章[CSS3渐变](http://gejiawen.github.io/2015/04/23/CSS/CSS3%E6%B8%90%E5%8F%98/)。
 
 ## 阴影和反射效果
 
@@ -327,3 +330,5 @@ web开发中要在页面上实现动画有许多种途径。CSS3为我们提供�
 
 
 End! All rights reserved `@gejiawen`.
+
+

@@ -1,8 +1,11 @@
 title: "CSS3圆角"
 date: 2015-04-23 11:52:48
-categories:
-tags:
+categories: [CSS]
+tags: [CSS拾遗系列, css3]
+
 ---
+
+**注意**：由于CSS3中的部分内容尚未完全定稿，所以本文的部分可能会随时更新。
 
 CSS Level3中正式开始支持圆角属性，官方给出的文档在[这里](http://www.w3.org/TR/css3-background/#the-border-radius)。本篇文章将会介绍CSS3中`border-radius`的相关知识和用法。
 
@@ -55,10 +58,10 @@ border-radius: <length>{1-4} | % / <length>{1-4} | %;
 ```css
 #border-radius {
     width: 200px;
-	height: 200px;
-	background-color: #0a0;
-	border: 1px solid;
-	border-radius: 10% 20% 50%;
+    height: 200px;
+    background-color: #0a0;
+    border: 1px solid;
+    border-radius: 10% 20% 50%;
 }
 ```
 
