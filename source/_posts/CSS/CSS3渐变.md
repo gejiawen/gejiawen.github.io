@@ -473,6 +473,8 @@ background-image: -webkit-radial-gradient(center, circle 50px 100px, pink, green
 
 # 参考列表
 
+- [MDN:linear-gradient()](https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient)
+- [MDN:radial-gradient()](https://developer.mozilla.org/en-US/docs/Web/CSS/radial-gradient)
 - [css3-gradients](http://www.w3cschool.cc/css3/css3-gradients.html)
 - [css3-linear-gradient](http://www.w3cplus.com/css3/new-css3-linear-gradient.html)
 - [css3-radial-gradient](http://www.w3cplus.com/css3/new-css3-radial-gradient.html)
