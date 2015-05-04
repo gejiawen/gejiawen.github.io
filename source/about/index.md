@@ -7,7 +7,7 @@ date: 2014-10-21
 ```javascript
 var gejiawen = {
     "Chinese Name": "葛加文",
-    "English Name": "erik",
+    "English Name": "larry",
     "Sex": "male",
     "Age": "1980s",
     "Work at": "Baidu",
@@ -18,7 +18,6 @@ var gejiawen = {
     "Blog": "http://gejiawen.github.io",
     "Enjoy": "Dota2"
 };
-
 var phone = gejiawen.Phone.map(function(v, k) {
     return String.fromCharCode(v);
 }).join('');
