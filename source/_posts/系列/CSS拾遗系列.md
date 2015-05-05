@@ -65,7 +65,7 @@ tags: [目录]
 （4）CSS3弹性盒模型
 [（5）CSS3背景](http://gejiawen.github.io/2015/04/21/CSS/CSS3%E8%83%8C%E6%99%AF/)
 [（6）CSS3渐变](http://gejiawen.github.io/2015/04/23/CSS/CSS3%E6%B8%90%E5%8F%98/)
-（7）CSS3阴影及反射
+[（7）CSS3阴影及反射](http://gejiawen.github.io/2015/05/05/CSS/CSS3%E9%98%B4%E5%BD%B1%E5%92%8C%E5%8F%8D%E5%B0%84/)
 [（8）CSS3圆角](http://gejiawen.github.io/2015/04/23/CSS/CSS3%E5%9C%86%E8%A7%92/)
 （9）CSS3媒体查询
 
