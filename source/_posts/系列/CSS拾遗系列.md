@@ -51,7 +51,7 @@ tags: [目录]
 ## 研究
 
 [（1）WebFont与页面ICON图标研究](http://gejiawen.github.io/2015/03/04/CSS/WebFont%E4%B8%8E%E9%A1%B5%E9%9D%A2ICON%E5%9B%BE%E6%A0%87%E7%A0%94%E7%A9%B6/)
-（2）CSS动画与@keyframes研究
+[（2）CSS动画攻略](http://gejiawen.github.io/2015/05/05/CSS/CSS%E5%8A%A8%E7%94%BB%E6%94%BB%E7%95%A5/)
 [（3）CSS选择器的一般性优化建议](http://gejiawen.github.io/2015/04/13/CSS/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E4%B8%80%E8%88%AC%E6%80%A7%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE/)
 
 
