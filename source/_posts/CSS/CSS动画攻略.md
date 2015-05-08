@@ -42,9 +42,9 @@ transform: none | <transform-function> [ <transform-function>]*
 3. 我们可以同时对一个元素进行多重变换操作，即可以赋值多个`<transform-function>`
 4. 当进行多重变换操作时，不同的变换操作之间使用**空格**分割而不是采用一贯的`,`，切记。
 
-## `translate-origin`属性
+## `transform-origin`属性
 
-在介绍各种变换操作之前，我觉得很有必要先介绍一下`tranform-origin`属性。此属性不属于`transform`的操作类型，它和`transform`属于同一个level的css属性，它的作用是**用于设置变换操作的原点**。
+在介绍各种变换操作之前，我觉得很有必要先介绍一下`transform-origin`属性。此属性不属于`transform`的操作类型，它和`transform`属于同一个level的css属性，它的作用是**用于设置变换操作的原点**。
 
 其语法如下，
 
@@ -68,7 +68,7 @@ transform-origin: [<percentage> | <length> | left | center | right] [<percentage
 ```css
 .demo {
     transform-origin: 100% 0;
-    transform: translate(50px, 50px);
+    transform: rotate(45deg);
 }
 ```
 
@@ -583,3 +583,5 @@ animation-fill-mode：none | forwards | backwards | both
 - [CSS3 Animation](http://www.w3cplus.com/content/css3-animation)
 
 End! All rights reserved `@gejiawen`.
+
+
