@@ -67,7 +67,7 @@ tags: [目录]
 [（6）CSS3渐变](http://gejiawen.github.io/2015/04/23/CSS/CSS3%E6%B8%90%E5%8F%98/)
 [（7）CSS3阴影及反射](http://gejiawen.github.io/2015/05/05/CSS/CSS3%E9%98%B4%E5%BD%B1%E5%92%8C%E5%8F%8D%E5%B0%84/)
 [（8）CSS3圆角](http://gejiawen.github.io/2015/04/23/CSS/CSS3%E5%9C%86%E8%A7%92/)
-（9）CSS3媒体查询
+[（9）CSS3媒体查询与自适应网页设计](http://gejiawen.github.io/2015/05/18/CSS/CSS3%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2%E4%B8%8E%E8%87%AA%E9%80%82%E5%BA%94%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1/)
 
 
 # 总结
