@@ -2,6 +2,7 @@ title: 深入理解JavaScript系列
 date: 2014-11-13 11:33:39
 categories: [系列]
 tags: [目录]
+
 ---
 
 本系列是一个读文笔记，博客原文在[这里](http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html)。
@@ -78,3 +79,5 @@ tags: [目录]
 TODO
 
 End. All rights reserved `@gejiawen`.
+
+
