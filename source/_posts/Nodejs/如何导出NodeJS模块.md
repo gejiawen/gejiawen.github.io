@@ -2,6 +2,7 @@ title: 如何导出NodeJS模块
 date: 2014-10-16 15:55:39
 categories: [Nodejs]
 tags: [nodejs, 翻译, nodejs-基础入门]
+
 ---
 
 英文原文： [Export This: Interface Design Patterns for Node.js Modules](http://bites.goodeggs.com/posts/export-this/)
@@ -429,3 +430,5 @@ Node模块系统对于封装功能以及创建清晰的接口提供了一种非�
 
 
 End. All rights reserved `@gejiawen`.
+
+

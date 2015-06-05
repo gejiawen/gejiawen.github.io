@@ -2,6 +2,7 @@ title: NodeJS最佳实践
 date: 2014-09-19 16:17:10
 categories: [Nodejs]
 tags: [nodejs, 翻译, nodejs-基础入门]
+
 ---
 
 - 英文原文 [Node.js Best Practices](http://blog.risingstack.com/node-js-best-practices/?utm_source=nodeweekly&utm_medium=email)
@@ -221,3 +222,5 @@ npm init
 balabalabalabala...
 
 End. All rights reserved `@gejiawen`.
+
+
