@@ -1,7 +1,7 @@
 title: 'AngularJS:ngClass用法小解'
 date: 2014-07-14 16:00:03
 categories: [AngularJS]
-tags: [ng]
+tags: [ng, 转载]
 ---
 
 `ngClass`是 **AngularJS** 预设的一个指令，用于动态自定义dom元素的css类。这里是官网给出的使用指南[AngularJS:ngClass](http://docs.angularjs.org/api/ng.directive:ngClass)
@@ -59,6 +59,11 @@ function ctrl($scope) {
 
 **说明**
 当`isSelect`为真值时增加`slected`样式，若`isCar`为真值，则再增加`car`样式。
+
+
+# 参考列表
+
+- [细说Angular ng-class](http://www.cnblogs.com/whitewolf/archive/2013/05/22/3092184.html)
 
 
 End! All rights reserved `@gejiawen`.
