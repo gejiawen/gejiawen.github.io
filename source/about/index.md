@@ -22,14 +22,17 @@ var phone = gejiawen.Phone.map(function(v, k) {
     return String.fromCharCode(v);
 }).join('');
 ```
-## Resume
-
-*(here goes my resume)*
+# Resume
 
 [我的简历](resume.pdf)
 
-# About site
+# Site log
 
-- 2015/3/25
-    - 替换[Hexadillax2](https://github.com/gejiawen/hexadillax2)主题
+### 2015/7/27
+
+添加备份站点[gejiawen.gitcafe.io](http://gejiawen.gitcafe.io)。
+
+### 2015/3/25
+
+替换[Hexadillax2](https://github.com/gejiawen/hexadillax2)主题。
 
