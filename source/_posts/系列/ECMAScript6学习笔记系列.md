@@ -21,15 +21,15 @@ TBC
 
 # 目录
 
-[（1）ECMAScript6简介]()
-[（2）ES6中的新语法糖]()
-[（3）ES6中对各种对象的扩展]()
-[（4）ES6中新增的数据结构]()
-[（5）ES6中的Promise]()
-[（6）ES6中的Iterator和Generator]()
-[（7）ES6中的异步操作四维]()
-[（8）ES6中的模块和类]()
-[（9）ES6学习资料汇总]()
+[（1）ECMAScript6简介](http://gejiawen.github.io/2015/07/28/Javascript/ECMAScript6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B3%BB%E5%88%97/ECMAScript6%E6%96%B0%E7%89%B9%E6%80%A7%E7%AE%80%E4%BB%8B/)
+（2）ES6中的新语法糖
+（3）ES6中对各种对象的扩展
+（4）ES6中新增的数据结构
+（5）ES6中的Promise
+（6）ES6中的Iterator和Generator
+（7）ES6中的异步操作思维
+（8）ES6中的模块和类
+（9）ES6学习资料汇总
 
 
 # 总结
@@ -39,3 +39,5 @@ TBC
 
 
 End! All rights reserved `@gejiawen`.
+
+
