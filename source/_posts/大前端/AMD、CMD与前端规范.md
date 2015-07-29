@@ -1,7 +1,7 @@
 title: AMD/CMD与前端规范
 date: 2014-07-18 17:10:07
 categories: [大前端]
-tags: [Javascript规范, javascript]
+tags: [fe, javascript, 前端模块化]
 ---
 
 # AMD与CMD

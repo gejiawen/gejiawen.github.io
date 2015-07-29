@@ -1,7 +1,7 @@
 title: "CSS选择器的一般性优化建议"
 date: 2015-04-13 21:56:00
 categories: [CSS]
-tags: [CSS拾遗系列, CSS研究]
+tags: [CSS拾遗系列, css研究]
 
 ---
 

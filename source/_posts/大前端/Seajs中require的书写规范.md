@@ -1,7 +1,7 @@
 title: Sea.js中require的书写规范
 date: 2014-08-12 15:32:23
 categories: [大前端]
-tags: [Javascript规范, 转载]
+tags: [fe, 转载]
 ---
 
 # 使用Sea.js书写模块代码时，需要遵循一些简单规则。

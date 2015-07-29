@@ -1,7 +1,7 @@
 title: 从CommonJS到Sea.js
 date: 2014-08-12 15:10:55
 categories: [大前端]
-tags: [Javascript规范, 转载]
+tags: [fe, 转载]
 ---
 
 # CoomonJS是什么

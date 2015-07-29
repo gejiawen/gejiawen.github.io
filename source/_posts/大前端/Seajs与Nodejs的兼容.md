@@ -1,7 +1,7 @@
 title: Seajs与Nodejs的兼容
 date: 2014-08-12 14:30:47
 categories: [大前端]
-tags: [nodejs, Javascript规范, 转载]
+tags: [nodejs, fe, 转载]
 ---
 
 [Sea.js](https://github.com/seajs/seajs)的模块遵循[CMD](https://github.com/seajs/seajs/issues/242)规范，与Node.js的模块规范非常相近，两者的模块可以很容易相互迁移。

@@ -1,7 +1,7 @@
 title: NodeJS最佳实践
 date: 2014-09-19 16:17:10
 categories: [Nodejs]
-tags: [nodejs, 翻译, nodejs-基础入门]
+tags: [nodejs, 翻译, 漫游NodeJS系列]
 
 ---
 

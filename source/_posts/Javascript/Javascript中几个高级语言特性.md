@@ -329,7 +329,7 @@ foo.func1(); //mamamiya
 
 func = user.func.bind(foo);
 func(); //baz
-
+    
 func2 = func;
 func2(); //baz
 ```

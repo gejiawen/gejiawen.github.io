@@ -1,7 +1,7 @@
 title: 认识CSS权重
 date: 2015-03-16 18:07:51
 categories: [CSS]
-tags: [CSS拾遗系列, CSS科普]
+tags: [CSS拾遗系列, css, css科普]
 ---
 
 [CSS权重](http://www.w3.org/TR/CSS2/cascade.html#specificity)是在使用CSS进行布局时经常会遇到的一个问题，我们针对某一些元素应用一些样式，然后由于一些需求，使用更特殊的样式来覆盖以前的规则。所以，简单来说CSS权重就是确定元素上的样式应用规则的。

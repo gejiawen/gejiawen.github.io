@@ -1,7 +1,7 @@
 title: CSS常用布局之宽高自适应
 date: 2015-03-12 21:52:27
 categories: [CSS]
-tags: [CSS拾遗系列, CSS技巧]
+tags: [CSS拾遗系列, css技巧]
 ---
 
 本篇文章将会介绍CSS布局中可能经常会遇到宽度或者高度自适应问题。

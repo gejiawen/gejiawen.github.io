@@ -1,7 +1,7 @@
 title: "CSS动画攻略"
 date: 2015-05-05 17:18:30
 categories: [CSS]
-tags: [CSS拾遗系列, CSS研究]
+tags: [CSS拾遗系列, css研究]
 
 ---
 

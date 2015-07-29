@@ -1,7 +1,7 @@
 title: 使用ES6的Generator代替回调函数
 date: 2014-10-16 12:14:46
 categories: [Javascript]
-tags: [javascript, 翻译, es6]
+tags: [翻译, es6]
 ---
 
 英文原文： [Replacing callbacks with ES6 Generators](http://modernweb.com/2014/02/10/replacing-callbacks-with-es6-generators/)

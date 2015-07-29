@@ -1,7 +1,7 @@
 title: CSS控制本文换行：word-wrap与word-break
 date: 2015-03-09 12:43:52
 categories: [CSS]
-tags: [CSS拾遗系列, CSS科普]
+tags: [CSS拾遗系列, css科普]
 ---
 
 在页面上对文本进行修饰的时候，特别是针对西文文本，往往会涉及到单词过长需要换行的问题（这里暂不讨论[CJK](http://baike.baidu.com/link?url=9xJ8r-baLr_w8ahUivDOKViqJ3HnjpRlkc1eyqrJ6CYlShT-QPkq2paR6op_f9nj48QrSdiCm66oXKPDHm6NO_)系的文本）。本篇文章将会讨论两个用于控制文本换行的CSS属性`word-wrap`和`word-break`。

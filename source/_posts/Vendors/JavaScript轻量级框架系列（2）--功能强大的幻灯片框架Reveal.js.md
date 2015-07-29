@@ -1,7 +1,7 @@
 title: JavaScript轻量级框架系列（2）--功能强大的幻灯片框架Reveal.js
 date: 2014-11-30 15:13:55
 categories: [Vendors]
-tags: [JavaScript轻量级框架系列, html, javascript]
+tags: [JavaScript轻量级框架系列, javascript]
 ---
 
 本文是[JavaScript轻量级框架系列](http://gejiawen.github.io/2014/11/26/%E7%B3%BB%E5%88%97/JavaScript%E8%BD%BB%E9%87%8F%E7%BA%A7%E6%A1%86%E6%9E%B6%E7%B3%BB%E5%88%97/)的第**二**篇文章。

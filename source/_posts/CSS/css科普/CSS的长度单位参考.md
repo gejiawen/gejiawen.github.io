@@ -1,7 +1,7 @@
 title: CSS的长度单位参考
 date: 2015-03-03 11:38:36
 categories: [CSS]
-tags: [CSS拾遗系列, CSS科普]
+tags: [CSS拾遗系列, css科普]
 ---
 
 CSS中有相当一部分属性的值是根据长度来定义的，而长度单位在CSS中并不是统一的，本文将详细介绍CSS（及CSS3新增的）几种长度单位，并给出常用场景。

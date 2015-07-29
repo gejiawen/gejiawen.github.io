@@ -1,7 +1,7 @@
 title: jsdoc简明指南
 date: 2015-03-23 16:39:39
 categories: [Javascript]
-tags: [jsdoc, javascript]
+tags: [jsdoc]
 ---
 
 # 为何要使用jsdoc

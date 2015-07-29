@@ -1,7 +1,7 @@
 title: 浅谈CSS中的伪元素和伪类
 date: 2014-11-20 15:32:33
 categories: [CSS]
-tags: [CSS拾遗系列, CSS科普]
+tags: [CSS拾遗系列, css科普]
 ---
 
 在CSS中，模式匹配（pattern match）规则决定文档树上的元素使用究竟哪个样式规则。这个模式就叫做选择器（selector）。

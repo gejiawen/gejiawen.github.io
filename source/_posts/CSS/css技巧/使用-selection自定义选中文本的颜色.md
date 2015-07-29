@@ -1,7 +1,7 @@
 title: "使用::selection自定义选中文本的颜色"
 date: 2015-04-14 01:42:31
 categories: [CSS]
-tags: [CSS拾遗系列, CSS技巧]
+tags: [CSS拾遗系列, css, css技巧]
 ---
 
 # ::selection

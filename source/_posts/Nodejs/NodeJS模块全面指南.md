@@ -1,7 +1,7 @@
 title: NodeJS模块全面指南
 date: 2015-03-17 18:16:24
 categories: [Nodejs]
-tags: [nodejs, nodejs-基础入门]
+tags: [nodejs, 漫游NodeJS系列]
 
 ---
 

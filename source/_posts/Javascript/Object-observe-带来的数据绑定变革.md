@@ -1,7 +1,7 @@
 title: Object.observe()带来的数据绑定变革
 date: 2014-10-30 15:48:29
-categories: [大前端]
-tags: [es6, javascript, 翻译, html5, 转载]
+categories: [Javascript]
+tags: [es6, javascript, 翻译, 转载]
 ---
 
 - 英文原文： [Data-binding Revolutions with Object.observe()](http://www.html5rocks.com/en/tutorials/es7/observe/) （需翻墙）
