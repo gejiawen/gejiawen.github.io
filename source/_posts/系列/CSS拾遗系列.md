@@ -31,43 +31,43 @@ tags: [目录]
 
 ## 科普
 
-[（1）CSS盒模型科普](http://gejiawen.github.io/2014/11/18/CSS/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%A7%91%E6%99%AE/)
-[（2）浅谈CSS中的伪元素和伪类](http://gejiawen.github.io/2014/11/20/CSS/CSS%E4%B8%AD%E7%9A%84%E4%BC%AA%E5%85%83%E7%B4%A0%E5%92%8C%E4%BC%AA%E7%B1%BB/)
-[（3）CSS的长度单位参考](http://gejiawen.github.io/2015/03/03/CSS/CSS%E7%9A%84%E9%95%BF%E5%BA%A6%E5%8D%95%E4%BD%8D%E5%8F%82%E8%80%83/)
-[（4）CSS布局模型](http://gejiawen.github.io/2015/03/04/CSS/CSS%E5%B8%83%E5%B1%80%E6%A8%A1%E5%9E%8B/)
-[（5）CSS控制本文换行：word-wrap与word-break](http://gejiawen.github.io/2015/03/09/CSS/CSS%E6%8E%A7%E5%88%B6%E6%9C%AC%E6%96%87%E6%8D%A2%E8%A1%8C%EF%BC%9Aword-wrap%E4%B8%8Eword-break/)
-[（6）认识CSS权重](http://gejiawen.github.io//2015/03/16/CSS/%E8%AE%A4%E8%AF%86CSS%E6%9D%83%E9%87%8D/)
+[（1）CSS盒模型科普](http://gejiawen.github.io/2014/11/18/CSS/css科普/CSS盒模型科普/)
+[（2）浅谈CSS中的伪元素和伪类](http://gejiawen.github.io/2014/11/20/CSS/css科普/CSS中的伪元素和伪类/)
+[（3）CSS的长度单位参考](http://gejiawen.github.io/2015/03/03/CSS/css科普/CSS的长度单位参考/)
+[（4）CSS布局模型](http://gejiawen.github.io/2015/03/04/CSS/css科普/CSS布局模型/)
+[（5）CSS控制本文换行：word-wrap与word-break](http://gejiawen.github.io/2015/03/09/CSS/css科普/CSS控制本文换行：word-wrap与word-break/)
+[（6）认识CSS权重](http://gejiawen.github.io/2015/03/16/CSS/css科普/认识CSS权重/)
 
 
 ## 技巧
 
-[（1）CSS如何让页脚固定在页面底部](http://gejiawen.github.io/2014/12/16/CSS/CSS%E5%A6%82%E4%BD%95%E8%AE%A9%E9%A1%B5%E8%84%9A%E5%9B%BA%E5%AE%9A%E5%9C%A8%E9%A1%B5%E9%9D%A2%E5%BA%95%E9%83%A8/)
-[（2）CSS如何使元素水平垂直定位](http://gejiawen.github.io/2014/12/21/CSS/CSS%E5%A6%82%E4%BD%95%E4%BD%BF%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%AE%9A%E4%BD%8D/)
-[（3）CSS常用布局之宽高自适应](http://gejiawen.github.io/2015/03/12/CSS/CSS%E5%B8%B8%E7%94%A8%E5%B8%83%E5%B1%80%E4%B9%8B%E5%AE%BD%E9%AB%98%E8%87%AA%E9%80%82%E5%BA%94/)
-[（4）CSS常用布局之各种元素的水平垂直居中](http://gejiawen.github.io/2015/03/13/CSS/CSS%E5%B8%B8%E7%94%A8%E5%B8%83%E5%B1%80%E4%B9%8B%E5%90%84%E7%A7%8D%E5%85%83%E7%B4%A0%E7%9A%84%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/)
-[（5）使用::selection自定义选中文本的颜色](http://gejiawen.github.io/2015/04/14/CSS/%E4%BD%BF%E7%94%A8-selection%E8%87%AA%E5%AE%9A%E4%B9%89%E9%80%89%E4%B8%AD%E6%96%87%E6%9C%AC%E7%9A%84%E9%A2%9C%E8%89%B2/)
+[（1）CSS如何让页脚固定在页面底部](http://gejiawen.github.io/2014/12/16/CSS/css技巧/CSS如何让页脚固定在页面底部/)
+[（2）CSS如何使元素水平垂直定位](http://gejiawen.github.io/2014/12/21/CSS/css技巧/CSS如何使元素水平垂直定位/)
+[（3）CSS常用布局之宽高自适应](http://gejiawen.github.io/2015/03/12/CSS/css技巧/CSS常用布局之宽高自适应/)
+[（4）CSS常用布局之各种元素的水平垂直居中](http://gejiawen.github.io/2015/03/13/CSS/css技巧/CSS常用布局之各种元素的水平垂直居中/)
+[（5）使用::selection自定义选中文本的颜色](http://gejiawen.github.io/2015/04/14/CSS/css技巧/使用-selection自定义选中文本的颜色/)
 
 
 ## 研究
 
-[（1）WebFont与页面ICON图标研究](http://gejiawen.github.io/2015/03/04/CSS/WebFont%E4%B8%8E%E9%A1%B5%E9%9D%A2ICON%E5%9B%BE%E6%A0%87%E7%A0%94%E7%A9%B6/)
-[（2）CSS动画攻略](http://gejiawen.github.io/2015/05/05/CSS/CSS%E5%8A%A8%E7%94%BB%E6%94%BB%E7%95%A5/)
-[（3）CSS选择器的一般性优化建议](http://gejiawen.github.io/2015/04/13/CSS/CSS%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E4%B8%80%E8%88%AC%E6%80%A7%E4%BC%98%E5%8C%96%E5%BB%BA%E8%AE%AE/)
+[（1）WebFont与页面ICON图标研究](http://gejiawen.github.io/2015/03/04/CSS/css研究/WebFont与页面ICON图标研究/)
+[（2）CSS动画攻略](http://gejiawen.github.io/2015/05/05/CSS/css研究/CSS动画攻略/)
+[（3）CSS选择器的一般性优化建议](http://gejiawen.github.io/2015/04/13/CSS/css研究/CSS选择器的一般性优化建议/)
 
 
 ## CSS3
 
 **⚠️注意**：由于CSS3中的部分内容尚未完全定稿，所以CSS3部分的系列文章可能会随时更新。
 
-[（1）CSS3新特性概述](http://gejiawen.github.io/2015/04/13/CSS/CSS3%E6%96%B0%E7%89%B9%E6%80%A7%E6%A6%82%E8%BF%B0/)
-[（2）初识CSS3选择器](http://gejiawen.github.io/2015/04/09/CSS/%E5%88%9D%E8%AF%86CSS3%E9%80%89%E6%8B%A9%E5%99%A8/)
-[（3）CSS3多列布局](http://gejiawen.github.io/2015/04/14/CSS/CSS3%E5%A4%9A%E5%88%97%E5%B8%83%E5%B1%80/)
-[（4）CSS3 Flexbox属性与弹性盒模型](http://gejiawen.github.io/2015/05/20/CSS/CSS3-Flexbox%E5%B1%9E%E6%80%A7%E4%B8%8E%E5%BC%B9%E6%80%A7%E7%9B%92%E6%A8%A1%E5%9E%8B/)
-[（5）CSS3背景](http://gejiawen.github.io/2015/04/21/CSS/CSS3%E8%83%8C%E6%99%AF/)
-[（6）CSS3渐变](http://gejiawen.github.io/2015/04/23/CSS/CSS3%E6%B8%90%E5%8F%98/)
-[（7）CSS3阴影及反射](http://gejiawen.github.io/2015/05/05/CSS/CSS3%E9%98%B4%E5%BD%B1%E5%92%8C%E5%8F%8D%E5%B0%84/)
-[（8）CSS3圆角](http://gejiawen.github.io/2015/04/23/CSS/CSS3%E5%9C%86%E8%A7%92/)
-[（9）CSS3媒体查询与自适应网页设计](http://gejiawen.github.io/2015/05/18/CSS/CSS3%E5%AA%92%E4%BD%93%E6%9F%A5%E8%AF%A2%E4%B8%8E%E8%87%AA%E9%80%82%E5%BA%94%E7%BD%91%E9%A1%B5%E8%AE%BE%E8%AE%A1/)
+[（1）CSS3新特性概述](http://gejiawen.github.io/2015/04/13/CSS/css3/CSS3新特性概述/)
+[（2）初识CSS3选择器](http://gejiawen.github.io/2015/04/09/CSS/css3/初识CSS3选择器/)
+[（3）CSS3多列布局](http://gejiawen.github.io/2015/04/14/CSS/css3/CSS3多列布局/)
+[（4）CSS3 Flexbox属性与弹性盒模型](http://gejiawen.github.io/2015/05/20/CSS/css3/CSS3-Flexbox属性与弹性盒模型/)
+[（5）CSS3背景](http://gejiawen.github.io/2015/04/21/CSS/css3/CSS3背景/)
+[（6）CSS3渐变](http://gejiawen.github.io/2015/04/23/CSS/css3/CSS3渐变/)
+[（7）CSS3阴影及反射](http://gejiawen.github.io/2015/05/05/CSS/css3/CSS3阴影和反射/)
+[（8）CSS3圆角](http://gejiawen.github.io/2015/04/23/CSS/css3/CSS3圆角/)
+[（9）CSS3媒体查询与自适应网页设计](http://gejiawen.github.io/2015/05/18/CSS/css3/CSS3媒体查询与自适应网页设计/)
 
 
 # 总结

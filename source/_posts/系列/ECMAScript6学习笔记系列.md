@@ -21,7 +21,7 @@ TBC
 
 # 目录
 
-[（1）ECMAScript6简介](http://gejiawen.github.io/2015/07/28/Javascript/ECMAScript6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B3%BB%E5%88%97/ECMAScript6%E6%96%B0%E7%89%B9%E6%80%A7%E7%AE%80%E4%BB%8B/)
+[（1）ECMAScript6简介](http://gejiawen.github.io/2015/07/28/Javascript/ECMAScript6学习笔记系列/ECMAScript6新特性简介/)
 （2）ES6中的新语法糖
 （3）ES6中对各种对象的扩展
 （4）ES6中新增的数据结构

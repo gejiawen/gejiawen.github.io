@@ -7,7 +7,7 @@ tags: [目录]
 
 # 为什么会有这个系列
 
-[漫游NodeJS系列](http://gejiawen.github.io/2015/03/17/%E7%B3%BB%E5%88%97/%E6%BC%AB%E6%B8%B8NodeJS%E7%B3%BB%E5%88%97/)文章，将会记录作者一路学习[NodeJS](http://nodejs.org/)（[iojs](https://iojs.org/en/index.html)）的点点滴滴。
+[漫游NodeJS系列](http://gejiawen.github.io/2015/03/17/系列/漫游NodeJS系列/)文章，将会记录作者一路学习[NodeJS](http://nodejs.org/)（[iojs](https://iojs.org/en/index.html)）的点点滴滴。
 
 时至今日，NodeJS已经不再像是两年前那么新的技术要素了，相对来说成熟了不少，不管是各种框架类库的生态系统还是被各界的认可情况。就本人目前的经验来说，NodeJS现阶段在好几个领域仍然有探索和发展的潜力。
 
@@ -29,9 +29,9 @@ tags: [目录]
 
 ## 基础入门
 
-[（1）NodeJS模块全面指南](http://gejiawen.github.io/2015/03/17/Nodejs/NodeJS%E6%A8%A1%E5%9D%97%E5%85%A8%E9%9D%A2%E6%8C%87%E5%8D%97/)
-[（2）如何导出NodeJS模块](http://gejiawen.github.io/2014/10/16/Nodejs/%E5%A6%82%E4%BD%95%E5%AF%BC%E5%87%BANodeJS%E6%A8%A1%E5%9D%97/)
-[（3）NodeJS最佳实践](http://gejiawen.github.io/2014/09/19/Nodejs/NodeJS%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/)
+[（1）NodeJS模块全面指南](http://gejiawen.github.io/2015/03/17/Nodejs/基础入门/NodeJS模块全面指南/)
+[（2）如何导出NodeJS模块](http://gejiawen.github.io/2014/10/16/Nodejs/基础入门/如何导出NodeJS模块/)
+[（3）NodeJS最佳实践](http://gejiawen.github.io/2014/09/19/Nodejs/基础入门/NodeJS最佳实践/)
 
 ## 进阶研究
 
@@ -39,7 +39,7 @@ TODO
 
 ## 工具探索
 
-[（1）gulp vs. grunt](http://gejiawen.github.io/2015/01/09/Nodejs/gulp-vs-grunt/)
+[（1）gulp vs. grunt](http://gejiawen.github.io/2015/01/09/Nodejs/工具探索/gulp-vs-grunt/)
 （2）Commander.js使用说明及案例
 （3）SuperAgent简介及文档概略
 

@@ -26,13 +26,13 @@ tags: [目录]
 
 # 目录
 
-[（1）编写高质量JavaScript代码的基本要点](http://gejiawen.github.io/2014/11/13/Javascript/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JavaScript%E7%B3%BB%E5%88%97%EF%BC%881%EF%BC%89-%E7%BC%96%E5%86%99%E9%AB%98%E8%B4%A8%E9%87%8FJavaScript%E4%BB%A3%E7%A0%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A6%81%E7%82%B9/)
-[（2）揭秘命名函数表达式](http://gejiawen.github.io/2014/11/25/Javascript/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JavaScript%E7%B3%BB%E5%88%97%EF%BC%882%EF%BC%89-%E6%8F%AD%E7%A7%98%E5%91%BD%E5%90%8D%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F/)
-[（3）全面解析Module模式](http://gejiawen.github.io/2014/12/01/Javascript/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JavaScript%E7%B3%BB%E5%88%97%EF%BC%883%EF%BC%89-%E5%85%A8%E9%9D%A2%E8%A7%A3%E6%9E%90Module%E6%A8%A1%E5%BC%8F/)
-[（4）立即调用的函数表达式](http://gejiawen.github.io/2014/12/15/Javascript/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JavaScript%E7%B3%BB%E5%88%97%EF%BC%884%EF%BC%89-%E7%AB%8B%E5%8D%B3%E8%B0%83%E7%94%A8%E7%9A%84%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F/)
-[（5）强大的原型和原型链](http://gejiawen.github.io/2014/12/29/Javascript/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JavaScript%E7%B3%BB%E5%88%97%EF%BC%885%EF%BC%89-%E5%BC%BA%E5%A4%A7%E7%9A%84%E5%8E%9F%E5%9E%8B%E5%92%8C%E5%8E%9F%E5%9E%8B%E9%93%BE/)
-[（6）JavaScript中的S.O.L.I.D原则](http://gejiawen.github.io/2014/12/30/Javascript/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JavaScript%E7%B3%BB%E5%88%97%EF%BC%886%EF%BC%89-JavaScript%E4%B8%AD%E7%9A%84S.O.L.I.D%E5%8E%9F%E5%88%99/)
-[（7）根本没有“JSON对象”这回事！](http://gejiawen.github.io/2014/12/30/Javascript/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JavaScript%E7%B3%BB%E5%88%97%EF%BC%887%EF%BC%89-%E6%A0%B9%E6%9C%AC%E5%B0%B1%E6%B2%A1%E6%9C%89%E2%80%9CJSON%E5%AF%B9%E8%B1%A1%E2%80%9D%E8%BF%99%E5%9B%9E%E4%BA%8B/)
+[（1）编写高质量JavaScript代码的基本要点](http://gejiawen.github.io/2014/11/13/Javascript/深入理解Javascript系列/深入理解JavaScript系列（1）-编写高质量JavaScript代码的基本要点/)
+[（2）揭秘命名函数表达式](http://gejiawen.github.io/2014/11/25/Javascript/深入理解Javascript系列/深入理解JavaScript系列（2）-揭秘命名函数表达式/)
+[（3）全面解析Module模式](http://gejiawen.github.io/2014/12/01/Javascript/深入理解Javascript系列/深入理解JavaScript系列（3）-全面解析Module模式/)
+[（4）立即调用的函数表达式](http://gejiawen.github.io/2014/12/15/Javascript/深入理解Javascript系列/深入理解JavaScript系列（4）-立即调用的函数表达式/)
+[（5）强大的原型和原型链](http://gejiawen.github.io/2014/12/29/Javascript/深入理解Javascript系列/深入理解JavaScript系列（5）-强大的原型和原型链/)
+[（6）JavaScript中的S.O.L.I.D原则](http://gejiawen.github.io/2014/12/30/Javascript/深入理解Javascript系列/深入理解JavaScript系列（6）-JavaScript中的S.O.L.I.D原则/)
+[（7）根本没有“JSON对象”这回事！](http://gejiawen.github.io/2014/12/30/Javascript/深入理解Javascript系列/深入理解JavaScript系列（7）-根本就没有“JSON对象”这回事/)
 （8）JavaScript核心（晋级高手必读篇）
 （9）执行上下文（Execution Contexts）
 （10）变量对象（Variable Object）

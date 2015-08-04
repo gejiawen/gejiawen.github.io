@@ -17,7 +17,7 @@ tags: [目录]
 
 我做了这么久的前端，接触的各式各样的框架自然不在少数，真正使用过的框架虽然说没有见过的多，但是也不少。既然有这个先提条件，不管是接触时间较长的框架，还是只是惊鸿一瞥的框架，亦或者是我觉得很有意思好玩的框架，我觉得我都有必要写一个系列文章来记录这些框架的众生百态，不管是介绍层面的，还是教程层面的，都是自我沉淀的一种方式吧。
 
-是的，这仿佛是之前所有我所使用过的JavaScript框架所赋予我的使命，这应该是一件很有意义的事情吧。就这样，这个[JavaScript轻量级框架系列](http://localhost:4000/2014/11/26/%E7%B3%BB%E5%88%97/JavaScript%E8%BD%BB%E9%87%8F%E7%BA%A7%E6%A1%86%E6%9E%B6%E7%B3%BB%E5%88%97/)诞生了。
+是的，这仿佛是之前所有我所使用过的JavaScript框架所赋予我的使命，这应该是一件很有意义的事情吧。就这样，这个[JavaScript轻量级框架系列](http://gejiawen.github.io/2014/11/26/系列/JavaScript轻量级框架系列/)诞生了。
 
 说明一下，本系列所沉淀的JavaScript框架都是属于**轻量级**框架，尽量遵循**一篇文章只介绍一个框架**这一基本原则。
 
@@ -29,8 +29,8 @@ tags: [目录]
 
 # 目录
 
-[（1）超炫3D效果的幻灯片框架 -- **Impress.js**](http://gejiawen.github.io/2014/09/23/vendors/JavaScript%E8%BD%BB%E9%87%8F%E7%BA%A7%E6%A1%86%E6%9E%B6%E7%B3%BB%E5%88%97%EF%BC%881%EF%BC%89--%E8%B6%85%E7%82%AB3D%E6%95%88%E6%9E%9C%E7%9A%84%E5%B9%BB%E7%81%AF%E7%89%87%E6%A1%86%E6%9E%B6Impress.js/)
-[（2）功能强大的幻灯片框架 -- **Reveal.js**](http://gejiawen.github.io/2014/11/30/vendors/JavaScript%E8%BD%BB%E9%87%8F%E7%BA%A7%E6%A1%86%E6%9E%B6%E7%B3%BB%E5%88%97%EF%BC%882%EF%BC%89--%E5%8A%9F%E8%83%BD%E5%BC%BA%E5%A4%A7%E7%9A%84%E5%B9%BB%E7%81%AF%E7%89%87%E6%A1%86%E6%9E%B6Reveal.js/)
+[（1）超炫3D效果的幻灯片框架 -- **Impress.js**](http://gejiawen.github.io/2014/09/23/Javascript/JavaScript轻量级框架系列/JavaScript轻量级框架系列（1）--超炫3D效果的幻灯片框架Impress.js/)
+[（2）功能强大的幻灯片框架 -- **Reveal.js**](http://gejiawen.github.io/2014/11/30/Javascript/JavaScript轻量级框架系列/JavaScript轻量级框架系列（2）--功能强大的幻灯片框架Reveal.js/)
 （3）常用JavaScript工具库之一 -- **Underscore.js**
 （4）常用JavaScript工具库之二 -- **Lo-Dash**
 （5）JavaScript日期处理框架 -- **Moment.js**
