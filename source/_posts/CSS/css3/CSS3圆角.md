@@ -44,7 +44,7 @@ border-radius: <length>{1-4} | % / <length>{1-4} | %;
 
 其效果如下，
 
-![](img-01.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3圆角-001.png)
 
 上述的代码中，我只给`border-radius`属性设置了一个值。其实`border-radius`跟`border`属性时很相似的，它是一个复合属性，可分为*左上*、*右上*、*左下*、*右下*共四个可赋值项。前面说过，`border-radius`可以赋值1～4个值，
 
@@ -67,11 +67,11 @@ border-radius: <length>{1-4} | % / <length>{1-4} | %;
 
 其效果如下，
 
-![](img-02.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3圆角-002.png)
 
 其实`border-radius`属性意为**边框半径**，它分为**水平半径**和**垂直半径**，如下图
 
-![](img-03.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3圆角-003.png)
 
 
 我们在设置`border-radius`时其实还可以使用形如下面示例的赋值方式，
@@ -88,7 +88,7 @@ border-radius: <length>{1-4} | % / <length>{1-4} | %;
 
 其效果如下，
 
-![](img-04.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3圆角-004.png)
 
 我们可以给水平或者垂直半径分别进行赋值。所以，我们可以给不同方向设置圆角，同时还可以分别设置其水平或者垂直半径来达到不同曲率的圆角。
 
@@ -129,3 +129,5 @@ border-radius: <length>{1-4} | % / <length>{1-4} | %;
 - [CSS3圆角详解](http://www.ruanyifeng.com/blog/2010/12/detailed_explanation_of_css3_rounded_corners.html)
 
 End! All rights reserved `@gejiawen`.
+
+

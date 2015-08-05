@@ -17,7 +17,7 @@ tags: [CSS拾遗系列, css研究]
 
 如下图所示，
 
-![](img-1-1.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/WebFont与页面ICON图标研究-001.png)
 
 [天猫商城](http://tmall.com)中左侧的导航栏中，每一个购物频道都有一个小小的图标，这些小图标就是页面icon的一种表现方式。
 
@@ -27,7 +27,7 @@ tags: [CSS拾遗系列, css研究]
 
 我们再来看看[百度](http://baidu.com)域下的资源文件，其中有一个[图片文件](https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/global/img/icons_3bfb8e45.png)，如下图，
 
-![](img-1-2.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/WebFont与页面ICON图标研究-002.png)
 
 从图中可以看出来，这个图片中有很多的小图标，这些小图标按照一定的顺序排列在一起。
 
@@ -82,15 +82,15 @@ web font技术需要通过CSS的**`@font-face`**语句引入在线字体。所�
 
 值得注意的有两点，一个是`font-family`属性，一个是`src`属性。前者是自定义webfont的名字，后者是引用字体的路径。其中`src`中`<format>`字段是用来标识字体格式帮助浏览器识别。常见字体格式及format如下图，
 
-![](img-2-2-00.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/WebFont与页面ICON图标研究-003.png)
 
 format说明，
 
-![](img-2-2-01.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/WebFont与页面ICON图标研究-004.png)
 
 而浏览器对各字体格式的支持如下，
 
-![](img-2-2-02.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/WebFont与页面ICON图标研究-005.png)
 
 说了这么多的理论，下面让我们来一段具体的CSS代码，了解下这个@font-face到底是如何定义的。
 
@@ -135,7 +135,7 @@ div.title {
 
 有一个好用的[html5应用](https://icomoon.io/app)。通过此应用你可以选择IcoMoon提供的免费或者购买收费图标，然后生成字体。如下图所示，
 
-![](img-3-1-00.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/WebFont与页面ICON图标研究-006.png)
 
 下载得到生成好的字体后，它会帮我们生成好css代码，如下，
 
@@ -264,7 +264,7 @@ ok，事已至此，我们已经得到了需要的字体、css代码。现在我
 
 三者的对比如下图，
 
-![](img-3-1-3.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/WebFont与页面ICON图标研究-007.png)
 
 总得来说，前者是操作图片，后两者操作icon小图标就跟操作字体是一样的。比如，我想缩放图标，直接修改`font-size`即可；我想修改颜色，直接修改`color`即可。除了这些简单的变化，还可以灵活的添加描边、阴影等。
 
@@ -303,3 +303,5 @@ FA包含了常规web开发所需要用到的几乎所有图标，并且免费授
 - [用字体在网页中画ICON图标](http://t.imooc.com/learn/243)
 
 End. All rights reserved `@gejiawen`.
+
+

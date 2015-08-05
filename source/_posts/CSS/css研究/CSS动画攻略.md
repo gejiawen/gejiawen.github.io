@@ -59,7 +59,7 @@ transform-origin: [<percentage> | <length> | left | center | right] [<percentage
 
 此参数的浏览器兼容性如下，
 
-![](img-01.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS动画攻略-002.png)
 
 部分支持的浏览器需要我们在实际使用时添加各个浏览器的私有前缀。
 
@@ -74,7 +74,7 @@ transform-origin: [<percentage> | <length> | left | center | right] [<percentage
 
 效果如下，
 
-![](img-00.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS动画攻略-001.png)
 
 图中左侧的效果应用了`transform-origin: 100% 0;`导致其旋转变换原点转移到了右上角。可于右侧未设置变换原点的效果图进行对比体会其变化。
 
@@ -90,7 +90,7 @@ transform-origin: [<percentage> | <length> | left | center | right] [<percentage
 
 上面的代码表示将`.demo`元素以其变换原点（元素中心点）为基准，各向右（X轴）和向下（Y轴）移动50px。其效果如下图，
 
-![](img-02.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS动画攻略-003.png)
 
 **注意**：从上图的效果中，我们可以看出`translate`其实是通过将元素的中心点移动到新的位置来使得整个元素达到位移目的的。
 
@@ -113,7 +113,7 @@ transform-origin: [<percentage> | <length> | left | center | right] [<percentage
 
 上面代码表示将`.demo`元素以其变换原点（元素中心点）为基准，顺时针旋转45度。效果如下，
 
-![](img-03.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS动画攻略-004.png)
 
 - `rotate(45deg)`，接收一个参数，此参数表示旋转的度数。
 - `rotate`的参数可以传入一个正值，亦可以传入一个负值（比如`-45deg`）。正值表示旋转方向为**顺时针**，负值表示旋转方向为**逆时针**。
@@ -130,7 +130,7 @@ transform-origin: [<percentage> | <length> | left | center | right] [<percentage
 
 上面的代码表示将`.demo`元素以其变换原点（元素中心点）为基准，沿着X轴和Y轴**放大**1.5倍。效果如下，
 
-![](img-04.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS动画攻略-005.png)
 
 `scale`操作与`translate`很相似，`scale(1.5)`是其最基本的用法，除此之外它还有如下几种变形，
 
@@ -150,7 +150,7 @@ transform-origin: [<percentage> | <length> | left | center | right] [<percentage
 
 上面的代码表示将`.demo`元素以其变换原点（元素中心点）为基准，沿着X轴顺时针倾斜30度，沿着Y轴顺时针倾斜30度。效果如下，
 
-![](img-05.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS动画攻略-006.png)
 
 **注意**：`skew`在二维变换中是唯一一个可以使元素发生**形变**的操作。
 
@@ -506,7 +506,7 @@ animation-direction：normal | alternate | reverse | alternate-reverse
 
 其效果如下，
 
-![](img-06.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS动画攻略-007.png)
 
 *本demo来自[CSS动画简介](http://www.ruanyifeng.com/blog/2014/02/css_transition_and_animation.html)。*
 

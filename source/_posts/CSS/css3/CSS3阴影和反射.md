@@ -29,7 +29,7 @@ text-shadow: 1px 2px 2px #5678AF
 
 其效果如下图，
 
-![](img-01.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3阴影和反射-001.png)
 
 参数说明如下，
 
@@ -55,7 +55,7 @@ box-shadow: 2px 2px 5px 1px rgba(0,0,0,.6);
 
 其效果如下图，
 
-![](img-02.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3阴影和反射-002.png)
 
 参数说明如下，
 
@@ -79,7 +79,7 @@ box-shadow: 2px 2px 5px 1px rgba(0,0,0,.6);
 
 其效果如下，
 
-![](img-03.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3阴影和反射-003.png)
 
 左侧的div1未设置阴影外延值，右侧的div2设置了一个负的外延值，且数值与阴影模糊半径一致。
 
@@ -99,7 +99,7 @@ box-shadow: 2px 2px 5px 1px rgba(0,0,0,.6);
 
 其效果如下，
 
-![](img-04.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3阴影和反射-004.png)
 
 从效果图中可以看出，我们可以利用多重阴影搭配不同的阴影颜色做出各种玄幻的效果。唯一限制你的就是你的想象力。😂
 
@@ -109,20 +109,20 @@ box-shadow: 2px 2px 5px 1px rgba(0,0,0,.6);
 
 文本阴影`text-shadow`的兼容性如下图，
 
-![](img-05.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3阴影和反射-005.png)
 
 需要注意的是，文本阴影IE系浏览器到IE10才支持，之前版本的IE浏览器中要实现阴影效果需要使用IE的相关私有实现（即IE滤镜的用法，不过这里不准备对其进行描述，想要了解更多关于IE滤镜的内容请自行查阅相关资料）。
 
 容器阴影`box-shadow`的兼容性如下图，
 
-![](img-06.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3阴影和反射-006.png)
 
 
 # CSS3反射
 
 CSS3中对反射（或者说倒影）提供了支持。那么，什么是反射（或者说倒影）？让我们先来看张效果图。
 
-![](img-07.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3阴影和反射-007.png)
 
 CSS3中提供此效果的属性叫做`box-reflect`，其语法如下，
 
@@ -150,7 +150,7 @@ box-reflect：none | <direction> <offset>? <mask-box-image>?
 
 其浏览器兼容性如下图，
 
-![image](img-08.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3阴影和反射-008.png)
 
 CSS3反射可以很简单的解决之前必须使用图片才能解决的倒影问题，不过由于一些浏览器的支持问题，使得这个属性貌似使用的不是很广泛。
 
@@ -160,3 +160,5 @@ CSS3反射可以很简单的解决之前必须使用图片才能解决的倒影�
 
 
 End! All rights reserved `@gejiawen`.
+
+

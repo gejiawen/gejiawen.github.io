@@ -63,7 +63,7 @@ CSS的现有标准中，伪元素包括：
 
 现在我们需要使用纯CSS做一个下图中的镂空箭头符号，
 
-![](img-01.jpg)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS中的伪元素和伪类-001.jpg)
 
 对应的html代码如下，
 
@@ -147,7 +147,7 @@ div.arrow-left:after {
 
 这里我们当然可以通过一些美化的手段，使得我们的箭头看起来更加好看一点，比如像下面这样，
 
-![](img-02.jpg)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS中的伪元素和伪类-002.jpg)
 
 
 # 参考列表
@@ -158,3 +158,5 @@ div.arrow-left:after {
 
 
 End. All rights reserved `@gejiawen`.
+
+

@@ -27,7 +27,7 @@ CSS3中新出现的多列布局([multi-column](http://www.w3.org/TR/css3-multico
 
 其兼容性如下图，
 
-![](0.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3多列布局-001.png)
 
 不出所料，IE9及其以下的浏览器是不支持的。而且`column`目前并不完全支持W3C的标准语法，需要针对不同的浏览器内核添加不同的前缀。（下面的示例中将默认使用`-webkit-`前缀）
 
@@ -52,7 +52,7 @@ CSS3中新出现的多列布局([multi-column](http://www.w3.org/TR/css3-multico
 
 打开这个[demo](http://runjs.cn/detail/8ghuaw7o)，看一下效果。其效果如下图，
 
-![](1.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3多列布局-002.png)
 
 此时，我们如果注释掉css代码中的`column-count`或者`column-width`属性，得到的结果是不一样的。各位看客可在给出的demo链接中自行实验。
 
@@ -60,7 +60,7 @@ CSS3中新出现的多列布局([multi-column](http://www.w3.org/TR/css3-multico
 
 我们再来看看`column-span`属性。此属性目前只能有两个可取值：`none`或者`all`，标识某一元素要么不进行跨列要么就跨了所有的列。具体的效果可以参见这个[demo](http://runjs.cn/detail/ggiy1z6r)，其效果如下，
 
-![](2.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3多列布局-003.png)
 
 各位看官可自行将`column-span`属性变更成`none`或者`all`观察其效果变化。
 
@@ -96,3 +96,5 @@ div {
 
 
 End! All rights reserved `@gejiawen`.
+
+

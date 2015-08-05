@@ -19,7 +19,7 @@ CSS3支持的渐变可分为线性渐变（linear-gradient）、径向渐变（r
 
 下图是摘自[www.w3cschool.cc](http://www.w3cschool.cc/)的浏览器兼容性图表，可供参考。
 
-![](img-00.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3渐变-001.png)
 
 # 线性渐变
 
@@ -100,7 +100,7 @@ div {
 
 其效果如下图所示，
 
-![](img-01.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3渐变-002.png)
 
 ### 更多用法
 
@@ -145,7 +145,7 @@ div {
 
 其效果如下，
 
-![](img-02.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3渐变-003.png)
 
 从效果图中可以看出，
 
@@ -187,13 +187,13 @@ div {
 
 其效果如下，
 
-![](img-03.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3渐变-004.png)
 
 所以，当我们给**渐变方向**设置为一角度值时，其实是改变了渐变方向。
 
 **⚠️注意**：此处在chrome（webkit内核）的浏览器上有一个坑。当我们设置渐变方向为一角度值**且此角度值为`0deg`或者`360deg`**时，如果线性渐变表达式不带上webkit的私有前缀`-webkit`的话，会得到不同的效果。如下图，
 
-![](img-04.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3渐变-005.png)
 
 此时得到的两种效果其渐变方向却是不一样的。
 
@@ -226,7 +226,7 @@ div {
 
 其效果如下，
 
-![](img-05.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3渐变-006.png)
 
 
 # 重复线性渐变
@@ -243,7 +243,7 @@ div {
 
 其效果如下，
 
-![](img-12.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3渐变-013.png)
 
 
 
@@ -286,7 +286,7 @@ background-image: radial-gradient(center, shape size, start-color, ..., last-col
 
 `size`定义了渐变大小。其实此参数的本质是设置径向渐变的**主渐变半径**和**次渐变半径**。如下图，
 
-![](img-06.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3渐变-007.png)
 
 其中水平方向是**主渐变半径**，垂直方向是**次渐变半径**。当主次半径一致时既是圆形，不一致时既为椭圆。
 
@@ -299,7 +299,7 @@ background-image: radial-gradient(center, shape size, start-color, ..., last-col
 
 当然，我们可以对`size`不作任何自定义设置，此时的默认值为`farthest-corner`。各个关键词的效果如下图，
 
-![](img-07.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3渐变-008.png)
 
 **⚠️注意1**：如果我们将**渐变起点**、**渐变形状**及**渐变大小**这几个参数都省略，既都采用默认值，此时径向渐变的最终形状将根据容器的宽高来自动计算确定。
 
@@ -354,7 +354,7 @@ background-image: -webkit-radial-gradient(center, circle 50px 100px, pink, green
 
 其效果如下图，
 
-![](img-08.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3渐变-009.png)
 
 这是径向渐变最基本的使用方法，CSS代码中我们仅设置了**渐变色标起点**和**渐变色标终点**，其他的参数都采用默认值。从图中可以看出，
 
@@ -388,7 +388,7 @@ background-image: -webkit-radial-gradient(center, circle 50px 100px, pink, green
 
 效果如下，
 
-![](img-09.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3渐变-010.png)
 
 从效果图中，我们可以看出，
 
@@ -416,7 +416,7 @@ background-image: -webkit-radial-gradient(center, circle 50px 100px, pink, green
 
 其效果如下，
 
-![](img-10.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3渐变-011.png)
 
 从上面的效果图中，我们可以看出，
 
@@ -441,7 +441,7 @@ background-image: -webkit-radial-gradient(center, circle 50px 100px, pink, green
 
 其效果如下，
 
-![](img-11.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3渐变-012.png)
 
 左边的效果未自定义任何色标偏移，右侧自定义了色标的偏移量。从图中我们可以看出，
 
@@ -469,7 +469,7 @@ background-image: -webkit-radial-gradient(center, circle 50px 100px, pink, green
 
 其效果如下，
 
-![](img-13.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3渐变-014.png)
 
 # 参考列表
 

@@ -60,7 +60,7 @@ CSS3新增了许多可使用的选择器使得前端开发人员在选择页面�
 
 效果如下图，
 
-![](1.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3新特性概述-001.png)
 
 在实际的使用中，我们往往仅需要设置`column-count`或者`column-width`其中的一个属性就好，浏览器会自动根据可展示的空间对相应的元素进行分列或者设置每一列的宽度（从某种角度说，这也是一种自适应）。
 
@@ -82,7 +82,7 @@ CSS3新增了许多可使用的选择器使得前端开发人员在选择页面�
 
 其效果如下，
 
-![](2.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3新特性概述-002.png)
 
 关于CSS3多列布局更加详细的内容，请参阅博主的这篇文章[CSS3多列布局](http://gejiawen.github.io/2015/04/14/CSS/CSS3%E5%A4%9A%E5%88%97%E5%B8%83%E5%B1%80/)。
 
@@ -134,7 +134,7 @@ CSS3引入了可以算是一种新的盒模型：**弹性盒模型**，该模型
 
 其展示如下，
 
-![](3.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3新特性概述-003.png)
 
 
 关于弹性盒模型的更多内容，请参阅博主的这篇文章[CSS3弹性盒模型]()。
@@ -170,7 +170,7 @@ CSS3为圆角（`border-radius`）提供了更加一般的支持，
 
 效果如下，
 
-![](7.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3新特性概述-007.png)
 
 关于CSS3圆角的更多内容，请参阅博主的这篇文章[CSS3圆角](http://gejiawen.github.io/2015/04/23/CSS/CSS3%E5%9C%86%E8%A7%92/)。
 
@@ -215,7 +215,7 @@ CSS3中提供了渐变（gradient）的支持，所谓的渐变就是两种或�
 
 其效果如下下图，
 
-![](4.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3新特性概述-004.png)
 
 关于CSS3渐变的更多内容，请参阅博主的这篇文章[CSS3渐变](http://gejiawen.github.io/2015/04/23/CSS/CSS3%E6%B8%90%E5%8F%98/)。
 
@@ -247,11 +247,11 @@ CSS3中提供了渐变（gradient）的支持，所谓的渐变就是两种或�
 
 效果如下，
 
-![](5.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3新特性概述-005.png)
 
 再来谈谈反射效果，所谓的反射其实看起来就跟水中的倒影一样，如下图的效果，
 
-![](6.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3新特性概述-006.png)
 
 其实它的设置很简单，
 

@@ -101,7 +101,7 @@ table {
 
 效果如下图，
 
-![](img-1-2-2-1-01.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS常用布局之各种元素的水平垂直居中-001.png)
 
 很显然这种方法有一些不足之处，**需要添加一些无意义的标签，从而造成html代码的冗余**。
 
@@ -191,7 +191,7 @@ table {
 
 效果如下，
 
-![](img-2-1-01.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS常用布局之各种元素的水平垂直居中-002.png)
 
 ## 父元素高度确定的多行文本、图片、块级元素
 
@@ -236,7 +236,7 @@ table {
 
 效果如下，
 
-![](img-2-2-1-01.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS常用布局之各种元素的水平垂直居中-003.png)
 
 注意一点，`td`标签默认情况下就默认设置了`vertical-align: middle`，所以我们不需要显式地设置了。
 
@@ -277,7 +277,7 @@ table {
 
 效果如下，
 
-![](img-2-2-2-01.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS常用布局之各种元素的水平垂直居中-004.png)
 
 这里，我们设置元素的`display: table-cell`属性，让其展示属性呈现单元格的特性，这样就不必再包装冗余的`table`标签代码了。这里的原理其实和第一种方法是一致的。
 
@@ -298,3 +298,5 @@ CSS中有一个奇怪的现象，不管元素之前的`display`属性是什么�
 
 
 End. All rights reserved `@gejiawen`.
+
+

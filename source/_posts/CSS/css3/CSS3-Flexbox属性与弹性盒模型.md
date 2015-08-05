@@ -25,7 +25,7 @@ CSS3新增的[Flexible Box Layout](http://www.w3.org/TR/css-flexbox/)（弹性�
 
 弹性盒布局是一种新的布局方式。它涉及到一些新的概念，这里我们对其加以解释。如下图所示，
 
-![](img-1.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-001.png)
 
 它包含如下几个概念，
 
@@ -59,11 +59,11 @@ CSS3新增的[Flexible Box Layout](http://www.w3.org/TR/css-flexbox/)（弹性�
 
 旧语法中，所有的flex属性都以`box`打头，flex设置为`display: box`。如下图，
 
-![](img-2.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-002.png)
 
 新语法中，所有的flex属性都以`flex`打头，flex设置为`display: flex`。如下图，
 
-![](img-3.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-003.png)
 
 关于这两种更多的差异请参阅官方文档或者[CSS参考手册](http://css.doyoe.com/)。
 
@@ -193,7 +193,7 @@ CSS3新增的[Flexible Box Layout](http://www.w3.org/TR/css-flexbox/)（弹性�
 
 言归正传，上面的css代码，将导致最后一个`li`元素反而在第一个展示。效果如下，
 
-![](img-4.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-004.png)
 
 **注意**，此时虽然最后一个子元素被置顶展示，但是并没有改变其html文档结构。
 
@@ -247,7 +247,7 @@ flex条目尺寸的弹性由3个css属性来确定，分别是`flex-basis`、`fl
 
 同时，flex容器的宽度是800px，每个条目的宽度为200px，所以容器还将剩余200px。由于条目都设置了`flex-grow`属性，那么此三个条目将按比例分配容器的剩余空间。第一个条目将得到200 * 1/6 = 33px左右，第二个条目将得到200 * 2/6 = 66px，第三个条目将得到200 * 3/6 = 99px左右。效果如下图，
 
-![](img-6.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-005.png)
 
 详情可参考这个[demo](http://runjs.cn/detail/ysrnndee)。
 
@@ -269,7 +269,7 @@ flex条目尺寸的弹性由3个css属性来确定，分别是`flex-basis`、`fl
 
 如果我们希望flex容器能够刚刚好将三个flex条目放下，我们需要缩小的尺寸为600-500 = 100px。接下来三个条目将根据`flex-shrink`属性按比例的分摊需要缩小的尺寸，即分别为100 * 1/6 = 16.6px，100 * 2/6 = 33.3px，100 * 3/6 = 50px。所以三个flex条目最终的尺寸为200 - 16.6 = 183.4px，200 - 33.3 = 166.7px，200 - 50 = 150px。效果如下，
 
-![](img-5.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-006.png)
 
 详情可参考这个[demo](http://runjs.cn/detail/orbwqkkp)。
 
@@ -305,7 +305,7 @@ flex条目尺寸的弹性由3个css属性来确定，分别是`flex-basis`、`fl
 
 这里容器中有4个flex条目，每个条目的宽度为300px，但是容器的尺寸只有999px，明显是不足以放下所有的flex条目的。此时前三个条目将堆放在第一行，第4个条目将单独的被堆放在第二行。此时第一行将会多出99px的空余空间，这99px的空余空间将会平均应用到第一行的三个条目上；第二行因为只有一个条目，此时这个条目将会直接占用剩余的699px。整个效果如下图，
 
-![](img-7.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-007.png)
 
 详情可参考这个[demo](http://runjs.cn/detail/zabhpmlq)。
 
@@ -362,7 +362,7 @@ li {
 
 其效果如下，
 
-![](img-8.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-008.png)
 
 示例中的`#login`元素通过简单的`margin-left`设置，将其置于最右侧展示。详情可参考这个[demo](http://runjs.cn/detail/i5k0lsn0)。
 
@@ -384,7 +384,7 @@ li {
 
 各属性值的效果如下图，
 
-![](img-9.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-009.png)
 
 ### 基于交叉轴对齐
  
@@ -402,7 +402,7 @@ li {
  
  各属性值的效果如下图，
  
- ![](img-10.png)
+ ![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-010.png)
  
  `align-self`的属性基本与`align-items`一致（用法和含义基本都一样）。不过`align-self`除了`align-items`属性可选值之外，还可以设置为`auto`。当设置为`auto`时，其值是父节点的属性`align-items`的值,如果该节点没有父节点，则为`stretch`。
  
@@ -436,7 +436,7 @@ li {
 
 很明显，上述代码生成的flex容器一行肯定堆放不下所有flex条目的。又因为设置了`flex-wrap: wrap`，所以其在主轴方向上会发生换行。如下图，
 
-![](img-11.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-011.png)
 
 如图所示，此flex布局将分为两行，每一行就是所谓的**Flex Lines**。
 
@@ -455,7 +455,7 @@ li {
 
 各属性值的效果如下，
 
-![](img-12.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-012.png)
 
 # 浏览器兼容性
 

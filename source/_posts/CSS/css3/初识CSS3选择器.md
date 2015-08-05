@@ -13,7 +13,7 @@ tags: [CSS拾遗系列, css3]
 
 首先我们来看一张图，
 
-![](img-01.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/初识CSS3选择器-001.png)
 
 图中展示目前CSS Level1~Level3支持的所有的选择器。这张图是从W3C上抄下来的，绝对权威。
 
@@ -24,13 +24,13 @@ tags: [CSS拾遗系列, css3]
 
 新增的**属性选择器**如下图所示，
 
-![](img-1-01.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/初识CSS3选择器-002.png)
 
 这几个其实比较容易理解，使用起来应该没有什么障碍，这里就不多解释了。
 
 其浏览器兼容性如下图，
 
-![](img-1-02.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/初识CSS3选择器-003.png)
 
 结论：除了IE6，基本上可以放心的使用了。
 
@@ -38,7 +38,7 @@ tags: [CSS拾遗系列, css3]
 
 新增的**结构伪类选择器**如下图所示，
 
-![](img-2-01.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/初识CSS3选择器-004.png)
 
 说实话，新增的这几个结构伪类选择器很容易弄混淆，特别是`*-child(n)`跟`*-of-type(n)`。
 
@@ -53,54 +53,54 @@ tags: [CSS拾遗系列, css3]
 
 其浏览器兼容性如下图，
 
-![](img-2-02.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/初识CSS3选择器-005.png)
 
 # UI元素状态伪类选择器
 
 新增的**UI元素状态伪类选择器**如下图所示，
 
-![](img-3-01.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/初识CSS3选择器-006.png)
 
 其浏览器兼容性如下图，
 
-![](img-3-02.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/初识CSS3选择器-007.png)
 
 # 目标伪类选择器
 
 新增的**目标伪类选择器**如下图所示，
 
-![](img-4-01.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/初识CSS3选择器-008.png)
 
 这个新增的选择器有点不太好理解，它是啥意思呢？例如页面上有个`id=test`的div，然后在URI中有#test的话，就会给id为test的div加上定义的样式。
 
 其浏览器兼容性如下，
 
-![](img-4-02.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/初识CSS3选择器-009.png)
 
 # 否定伪类选择器
 
 新增的**否定伪类选择器**如下图所示，
 
-![](img-5-01.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/初识CSS3选择器-010.png)
 
 个人觉得这个选择器可能会使用的比较频繁，它的作用是在匹配的一些列元素剔除选择符为`s`的元素。相当于做了个筛选。
 
 其浏览器兼容性如下，
 
-![](img-5-02.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/初识CSS3选择器-011.png)
 
 
 # 通用兄弟元素选择器
 
 新增的**通用兄弟元素选择器**如下图所示，
 
-![](img-6-01.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/初识CSS3选择器-012.png)
 
 这个选择器也应该蛮有用的，稍微注意一下与`E + F`这种通用兄弟选择器的区别就好了。
 
 其浏览器兼容性如下，
 
-![](img-6-02.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/初识CSS3选择器-013.png)
 
 
 
@@ -111,3 +111,5 @@ tags: [CSS拾遗系列, css3]
 
 
 End! All rights reserved `@gejiawen`.
+
+

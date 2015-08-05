@@ -26,7 +26,7 @@ CommonJS规范说，一个单独的文件其实就是一个模块。在NodeJS中
 
 上面我们已经知道了模块的概念，那么包其实就是**包含多个模块目录**。同时，还要附加一个重要的`package.json`文件。那么这个`package.json`文件是个什么情况呢？如下图，
 
-![](img-1-2-01.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/NodeJS模块全面指南-001.png)
 
 这个json文件可以配置的很简略，也可以配置的很复杂。关于各个字段的具体含义可以参阅[官方文档](https://docs.npmjs.com/)或者[汉化文档](http://mujiang.info/translation/npmjs/files/package.json.html)。
 
@@ -53,7 +53,7 @@ $ npm init
 
 在命令行中键入`npm init`后，CLI将会出现一些互动的提示来引导你完成`package.json`的生成。如下图，
 
-![](img-2-1-01.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/NodeJS模块全面指南-002.png)
 
 当然CLI只会询问你一些`package.json`文件必须的字段，而且它会智能的给出一些默认值（括号中的内容），最后它会向你确认是否可行。
 
@@ -125,7 +125,7 @@ npm会向你索要[npmjs.com](https://www.npmjs.com/)用户名，密码以及Ema
 
 通过`npm install -g xxx`命令安装的部分第三方包后，就可以直接在命令行上运行相关命令了。比如下图，
 
-![](img-3-01.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/NodeJS模块全面指南-003.png)
 
 这种效果是如何做的呢？
 
@@ -163,7 +163,7 @@ npm会向你索要[npmjs.com](https://www.npmjs.com/)用户名，密码以及Ema
 
 我们通过命令行使用部分第三方包时，有时候包会提供各种命令和参数，如下图，
 
-![](img-3-2-01.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/NodeJS模块全面指南-004.png)
 
 从图中可以看出，这个[harp](http://harpjs.com/)提供四个命令以及两个参数，并且简略的展示了Usage。
 

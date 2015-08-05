@@ -257,7 +257,7 @@ var c = new Circle();
 
 `Circle.prototype`现在是一个`Shape`的实例。这意味着`c`有一个直接的变量`radius`（由Circle构造器函数提供）。然而，在`c`的原型中，有一个`x`和`y`。现在注意，有趣的东西要来了：在`c`的原型的原型中，有一个`getPosition`函数的定义。看起来其实是这样的：
 
-![](mockup.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/浅谈Javascript中的原型继承-001.png)
 
 因此，如果你试图获取`c.x`，那么它将在`c`的原型中被找到。
 
@@ -488,3 +488,5 @@ var sp = new Sphere();
 
 
 End. All rights reserved `@gejiawen`.
+
+

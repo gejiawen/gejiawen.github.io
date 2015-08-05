@@ -6,7 +6,7 @@ tags: [翻译, es6]
 
 英文原文： [Replacing callbacks with ES6 Generators](http://modernweb.com/2014/02/10/replacing-callbacks-with-es6-generators/)
 
-![](generators_turnomatic_header.jpg)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/使用ES6的Generator代替回调函数-001.jpg)
 
 目前，已经有很多文章讨论过了如何使用[ES6 generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Iterators_and_Generators#Generators.3A_a_better_way_to_build_Iterators)来取代JavaScript中经常遇到的**回调金字塔**。但是，其中提到的绝大多数方法都需要依赖于某个库，而对于其中的原理却提及甚少。
 
@@ -272,3 +272,5 @@ run(function* myDelayedMessages(resume) {
 虽然generator究竟是不是一个处理*回调地狱*的好方法还在讨论之中，但是它确实是一个加强你对ES6中generator和迭代器理解的练习。如果你在寻找一些不需要用到ES6的处理嵌套回调函数的方法，可以考虑`promises`。
 
 End. All rights reserved `@gejiawen`.
+
+

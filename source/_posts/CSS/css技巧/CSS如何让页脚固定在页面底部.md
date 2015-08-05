@@ -8,7 +8,7 @@ tags: [CSS拾遗系列, css技巧]
 
 场景的示意如下图，
 
-![](img-01.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS如何让页脚固定在页面底部-001.png)
 
 那么如何将页脚始终固定在页面底部呢？
 
@@ -195,3 +195,5 @@ body{
 - [如何将页脚固定在页面底部](http://www.w3cplus.com/css/css-sticky-foot-at-bottom-of-the-page)
 
 End. All rights reserved `@gejiawen`.
+
+

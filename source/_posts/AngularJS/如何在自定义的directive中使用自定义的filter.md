@@ -112,7 +112,7 @@ directives.directive('sites', ['$filter', function ($filter) {
 
 从代码可以看出，这个`site`的作用是：**接受一个数组数据，然后渲染成一个下拉列表样式的可选项**，类似下图，
 
-![](img-01.png)
+![](http://7xkwt1.com1.z0.glb.clouddn.com/如何在自定义的directive中使用自定义的filter-001.png)
 
 注意，刚开始这里出现了问题，报错信息是`site.url | pureURl undefined is not a function`。
 
@@ -158,3 +158,5 @@ var gxt = angular.module('gxt', ['directives']);
 
 
 End! All rights reserved `@gejiawen`.
+
+
