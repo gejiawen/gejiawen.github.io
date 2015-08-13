@@ -24,7 +24,7 @@ var phone = gejiawen.Phone.map(function(v, k) {
 ```
 # Resume
 
-[我的简历](http://resume.qmail.com/806717031/-mONIQ4J_3s)
+[**pdf文件**](/assets/resume/resume.pdf)  [**md文件**](/assets/resume/resume.md.source)
 
 # Site log
 
