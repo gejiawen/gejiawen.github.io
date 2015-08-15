@@ -40,8 +40,7 @@ TODO
 ## 工具探索
 
 [（1）gulp vs. grunt](http://gejiawen.github.io/2015/01/09/Nodejs/工具探索/gulp-vs-grunt/)
-（2）Commander.js使用说明及案例
-（3）SuperAgent简介及文档概略
+[（2）通读SuperAgent文档](http://gejiawen.github.io/2015/08/14/Nodejs/工具探索/通读SuperAgent文档/)
 
 
 ## Web开发
