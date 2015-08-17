@@ -41,6 +41,7 @@ TODO
 
 [（1）gulp vs. grunt](http://gejiawen.github.io/2015/01/09/Nodejs/工具探索/gulp-vs-grunt/)
 [（2）通读SuperAgent文档](http://gejiawen.github.io/2015/08/14/Nodejs/工具探索/通读SuperAgent文档/)
+[（3）通读Cheerio文档](http://gejiawen.github.io/2015/08/17/Nodejs/工具探索/通读Cheerio文档/)
 
 
 ## Web开发
