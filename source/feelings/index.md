@@ -1,3 +1,4 @@
+layout: feelings
 title: 心情
 ---
 

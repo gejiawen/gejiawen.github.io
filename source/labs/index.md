@@ -1,3 +1,4 @@
+layout: labs
 title: 实验室
 date: 2014-12-01
 ---
@@ -44,3 +45,5 @@ date: 2014-12-01
 - [CrazyRookie](http://crazyrookie.com/)
 - [少骥网app](http://tangzhengwen.com/)
 - [JUTRO](http://jutro.cn/)
+
+
