@@ -76,7 +76,7 @@ chrome插件一般有两种用户界面，一种是**浏览器按钮**，一种�
 
 ![](Chrome插件开发简要指南-003.png)
 
-*Page Actions*与*Browser Actions*的区别就是*Page Actions*并不是在每个页面上都是有用的，它必须在特定的页面中插件功能才能使用。
+*Page Actions* 与 *Browser Actions* 的区别就是 *Page Actions* 并不是在每个页面上都是有用的，它必须在特定的页面中插件功能才能使用。
 
 这两种用户面界面分别对应`manifest.json`中的`browser_action`和`page_action`字段。
 
@@ -132,20 +132,16 @@ chrome插件的相关知识，远远不止上面介绍的几点，比如邮件�
     <input type="text" id="new-item-title"/>
 </div>
 <div id="item-list">
-    
+
 </div>
 ```
 
 
 
 
-
-
-
+TBC
 
 
 
 
 End! All rights reserved `@gejiawen`.
-
-
