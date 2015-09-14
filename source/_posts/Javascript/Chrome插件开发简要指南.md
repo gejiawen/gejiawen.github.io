@@ -32,7 +32,7 @@ Chrome是个非常牛逼的浏览器，速度快，界面清爽，对开发人�
 
 这个插件安装好的用户界面如下图，
 
-![](res/Chrome插件开发简要指南/002.png)
+![](/res/Chrome插件开发简要指南/002.png)
 
 图中的每一个链接都是一个功能项，点击后将会打开一个chrome-extension下的页面，url类似这样，
 
@@ -100,48 +100,164 @@ chrome插件的相关知识，远远不止上面介绍的几点，比如邮件�
 ```json
 {
     "name": "todo-plugin",
-    "version": "1.0.0",
+    "version": "0.9.0",
     "manifest_version": 2,
     "description": "chrome plugin demo",
     "browser_action": {
         "default_icon": "icon.png",
         "default_title": "Todo List",
         "default_popup": "popup.html"
-    },
-    "content_scripts": [
-        {
-            "matches": [
-                "http://*/*"
-            ],
-            "js": [
-                "main.js"
-            ],
-            "run_at": "document_end"
-        }
-    ]
+    }
 }
 ```
 
 在清单文件中，我们定义了插件的名称、版本、描述，插件的浏览器按钮行为以及插件所需要注入的脚本文件。按钮行为中还包括了默认的按钮图标、按钮标题（鼠标悬停时显示）以及默认的弹出框`popup.html`。
 
+**注意**：新版的chrome插件开发需要在清单文件中制定`mainfest_version`为2。
+
 这里的弹出框其实就是我们这个插件与用户交互的主要界面，它其实就是一个html页面。不过这个`popup.html`文件并不需要`<html></html>`、`<body></body>`、`<head></head>`这样的标签。`popup.html`文件内容如下，
 
 ```html
+<style>
+    body {
+        width: 150px;
+    }
+    #add-new-item {
+        cursor: pointer;
+        color: #CCC;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+
+    .item {
+        cursor: pointer;
+        margin: 5px 0;
+    }
+
+    .item input {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+    }
+
+    input {
+        width: 120px;
+    }
+</style>
+
+
 <div id="add-new-item">添加新项</div>
 <div id="add-new-item-input" class="hide">
-    <input type="text" id="new-item-title"/>
+    <input type="text" id="new-item-title" placeholder="添加新任务"/>
 </div>
-<div id="item-list">
+<div id="item-list"></div>
 
-</div>
+
+<script type="text/javascript" src="main.js"></script>
 ```
 
+这个html文件其实很简单（chrome插件的html页面往往都非常简单，都是一些列表的展示，轻量的输入控件等等），而且为了简便，我把弹出窗的样式直接写在html中了。
 
+最后一行我们使用外链的方式加载了popup页面的交互逻辑。`main.js`内容也很简单，如下，
 
+```javascript
+(function () {
+    var $ = function (id) {
+        return document.getElementById(id);
+    };
 
-TBC
+    var Tasks = {
+        show: function (obj) {
+            obj.className = '';
+            return this;
+        },
+        hide: function (obj) {
+            obj.className = 'hide';
+            return this;
+        },
+        $addNewItem: $('add-new-item'),
+        $addNewItemInput: $('add-new-item-input'),
+        $itemList: $('item-list'),
+        $newItemTitle: $('new-item-title'),
 
+        init: function () {
+            //打开添加文本框
+            Tasks.$addNewItem.addEventListener('click', function () {
+                Tasks.show(Tasks.$addNewItemInput).hide(Tasks.$addNewItem);
+                Tasks.$newItemTitle.focus();
+            }, true);
+            //回车添加任务
+            Tasks.$newItemTitle.addEventListener('keyup', function (ev) {
+                var ev = ev || window.event;
+                if (ev.keyCode == 13) {
+                    //TODO:写入本地数据
+                    var task = Tasks.$newItemTitle.value;
+                    Tasks.AppendHtml(task);
+                    Tasks.$newItemTitle.value = '';
+                    Tasks.hide(Tasks.$addNewItemInput).show(Tasks.$addNewItem);
+                }
+                ev.preventDefault();
+            }, true);
+            //取消添加
+            Tasks.$newItemTitle.addEventListener('blur', function () {
+                Tasks.$newItemTitle.value = '';
+                Tasks.hide(Tasks.$addNewItemInput).show(Tasks.$addNewItem);
+            }, true);
+            //TODO 初始化数据，加载本地数据，生成html
+        },
+        //增加
+        Add: function () {
+            //TODO 
+        },
+        //修改
+        Edit: function () {
+            //TODO
+        },
+        //删除
+        Del: function () {
+            //TODO
+        },
+        AppendHtml: function (title) {
+            var oDiv = document.createElement('div');
+            oDiv.className = 'item item-todo';
+            var oInput = document.createElement('input');
+            oInput.type = 'checkbox';
+            var oTitle = document.createElement('span');
+            oTitle.innerHTML = title;
+            oDiv.appendChild(oInput);
+            oDiv.appendChild(oTitle);
+            Tasks.$itemList.appendChild(oDiv);
+            
+            oDiv.addEventListener('click', function () {
+                //TODO
+            }, true);
+        },
+        RemoveHtml: function () {
+            //TODO
+        }
+    }
+    Tasks.init();
+})();
+```
 
+在这段js中，我们声明了一个`Tasks`对象，这个对象包括了一系列的功能方法，当然有部分未实现，不过核心功能都实现了。在`Tasks.init`方法中，我们给一个操作实体（一个div元素）注册了点击事件，当触发点击事件时，我们将会展示一个输入框让用户输入任务描述，通过回车键来添加用户刚输入的任务。好了，这就是`todo-plugin`插件的基本功能。下面是本插件的效果预览，
+
+![](/res/Chrome插件开发简要指南/004.png)
+
+# 小结
+
+好了，至此我们总算完成一个简陋的chrome插件的开发了。功能虽然简陋，但是基本上所有的chrome插件开发都是遵循这条路。本文示例的代码中有许多的`TODO`，其实我们可以将这个todo插件做的更加复杂，比如可以采用localstorage来存储数据，甚至可以使用网络来存储数据。至于更多的内容，本文就不再作过多的阐述了，因为本文毕竟是**简要指南**嘛😎😂
+
+# 参考链接
+
+- [chrome插件中文开发文档(非官方)](http://chrome.liuyixi.com/overview.html)
+- [手把手教你开发Chrome扩展](http://www.cnblogs.com/walkingp/archive/2011/03/31/2001628.html)
 
 
 End! All rights reserved `@gejiawen`.
