@@ -1,3 +1,4 @@
+postid: "css-box-model-guide"
 title: CSS盒模型科普
 date: 2014-11-18 19:07:18
 categories: [CSS]
@@ -217,6 +218,5 @@ inherit | 规定应从父元素继承 box-sizing 属性的值 | --
 - [Box model](http://www.w3.org/TR/CSS2/box.html)
 - [CSS3 Box-sizing](http://www.w3cplus.com/content/css3-box-sizing)
 
-End. All rights reserved `@gejiawen`.
 
 

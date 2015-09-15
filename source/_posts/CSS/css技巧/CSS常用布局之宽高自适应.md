@@ -1,3 +1,4 @@
+postid: "css-layout-width-height-responsive"
 title: CSS常用布局之宽高自适应
 date: 2015-03-12 21:52:27
 categories: [CSS]
@@ -177,7 +178,6 @@ html {
 - [CSS布局奇淫技巧之-高度自适应](http://www.cnblogs.com/2050/archive/2012/07/30/2615260.html)
 
 
-End. All rights reserved `@gejiawen`.
 
 
 

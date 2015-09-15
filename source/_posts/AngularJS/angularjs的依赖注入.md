@@ -1,3 +1,4 @@
+postid: "dependence-injector-in-angularjs"
 title: angularjs的依赖注入
 date: 2014-07-17 17:37:14
 categories: [AngularJS]
@@ -93,5 +94,3 @@ angular.module('app', [])
     }
 ]);
 ```
-
-全文完。

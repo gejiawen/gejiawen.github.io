@@ -1,3 +1,4 @@
+postid: "deep-into-javascript-module-model"
 title: 深入理解JavaScript系列（3）-全面解析Module模式
 date: 2014-12-01 15:54:58
 categories: [Javascript]
@@ -258,4 +259,3 @@ blogModule.subModule = (function () {
 
 不过现在业界出现了CMD、AMD等规范后，JavaScript代码的模块化管理更趋向于代码级别而不再是设计级别。所以本文中所描述的模块化模式，我猜测日后将会越来越淡化，越来越轻量化，比如用在配置中，工具方法的管理上等等。
 
-End. All rights reserved `@gejiawen`.

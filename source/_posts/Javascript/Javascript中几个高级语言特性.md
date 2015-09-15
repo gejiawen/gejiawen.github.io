@@ -1,3 +1,4 @@
+postid: "some-javascript-advanced-feature"
 title: Javascript中几个高级语言特性
 date: 2014-09-19 17:12:58
 categories: [Javascript]
@@ -556,4 +557,3 @@ obj1.ref = obj2;
 
 对于这种情况，简单的递归已经无法解决，必须设计一套图论算法，分析对象之间的依赖关系，建立一个拓扑结构图，然后分别依次复制每个顶点，并重新构建它们之间的依赖关系。这已经超出了这里的讨论范围，而且在实际的工程操作中 几乎不会遇到这种需求，所以我们就不继续讨论了。
 
-End. All rights reserved `@gejiawen`.

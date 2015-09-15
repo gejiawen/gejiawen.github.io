@@ -1,3 +1,4 @@
+postid: "javascript-override-formal-args"
 title: Javascript函数内部覆盖形参对象
 date: 2014-06-19 17:37:25
 categories: [Javascript]
@@ -38,4 +39,3 @@ Wangcai
 > 当在函数内部重写引用对象`arg`时，这个变量引用的就是一个局部对象了。而这个局部对象会在函数执行完毕后立即销毁。
 
 
-全文完。

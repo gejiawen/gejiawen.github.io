@@ -1,3 +1,4 @@
+postid: "confused-methods-in-javascript"
 title: "JS中易混淆方法备忘录"
 date: 2015-04-02 17:52:46
 categories: [Javascript]
@@ -155,5 +156,3 @@ str.substring(indexA[, indexB])
 
 TBC......
 
-
-End! All rights reserved `@gejiawen`.

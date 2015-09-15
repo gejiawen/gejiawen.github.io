@@ -1,3 +1,4 @@
+postid: "javascript-light-framework-series"
 title: JavaScript轻量级框架系列
 date: 2014-11-26 11:04:36
 categories: [系列]
@@ -29,8 +30,8 @@ tags: [目录]
 
 # 目录
 
-[（1）超炫3D效果的幻灯片框架 -- **Impress.js**](http://gejiawen.github.io/2014/09/23/Javascript/JavaScript轻量级框架系列/JavaScript轻量级框架系列（1）--超炫3D效果的幻灯片框架Impress.js/)
-[（2）功能强大的幻灯片框架 -- **Reveal.js**](http://gejiawen.github.io/2014/11/30/Javascript/JavaScript轻量级框架系列/JavaScript轻量级框架系列（2）--功能强大的幻灯片框架Reveal.js/)
+[（1）超炫3D效果的幻灯片框架 -- **Impress.js**](http://gejiawen.github.io/2014-09-23/javascript-light-framework-impressjs/)
+[（2）功能强大的幻灯片框架 -- **Reveal.js**](http://gejiawen.github.io/2014-11-30/javascript-light-framework-revealjs/)
 （3）常用JavaScript工具库之一 -- **Underscore.js**
 （4）常用JavaScript工具库之二 -- **Lo-Dash**
 （5）JavaScript日期处理框架 -- **Moment.js**
@@ -41,6 +42,5 @@ tags: [目录]
 TODO
 
 
-End. All rights reserved `@gejiawen`.
 
 

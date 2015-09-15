@@ -1,3 +1,4 @@
+postid: "css3-flexbox-guide"
 title: "CSS3 Flexbox属性与弹性盒模型"
 date: 2015-05-20 18:12:00
 categories: [CSS]
@@ -485,6 +486,5 @@ li {
 - [A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
 
-End! All rights reserved `@gejiawen`.
 
 

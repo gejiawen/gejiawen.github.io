@@ -1,3 +1,4 @@
+postid: "nodejs-best-practices"
 title: NodeJS最佳实践
 date: 2014-09-19 16:17:10
 categories: [Nodejs]
@@ -221,6 +222,5 @@ npm init
 
 balabalabalabala...
 
-End. All rights reserved `@gejiawen`.
 
 

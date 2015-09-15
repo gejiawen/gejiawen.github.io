@@ -1,3 +1,4 @@
+postid: "read-cheerio-doc"
 title: "通读Cheerio文档"
 date: 2015-08-17 17:18:48
 categories: [Nodejs]
@@ -436,7 +437,6 @@ $.root().append('<ul id="vegetables"></ul>').html();
 $.contains('#fruits', '.pear'); // => true
 ```
 
-End! All rights reserved `@gejiawen`.
 
 
 

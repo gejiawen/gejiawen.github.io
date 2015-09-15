@@ -1,3 +1,4 @@
+postid: "deep-into-javascript-points-about-good-javascript-code"
 title: 深入理解JavaScript系列（1）-编写高质量JavaScript代码的基本要点
 date: 2014-11-13 12:22:22
 categories: [Javascript]
@@ -275,4 +276,3 @@ console.log(c);
 - 把[《JavaScript语言精粹》](http://item.jd.com/11090963.html)读厚
 - 再加上一些实践的经验
 
-End. All rights reserved `@gejiawen`.

@@ -1,3 +1,4 @@
+postid: "read-just-for-fun"
 title: 读文笔记：只是为了好玩——Linux之父林纳斯自传
 date: 2014-11-25 11:28:15
 categories: [读文笔记]
@@ -118,6 +119,5 @@ Linus有一句名言：**Talk is cheap, show me the code.**我觉得他一直在
 - [读书笔记：Just For Fun - The Story of an Accidental Revolutionary](http://youngsterxyf.github.io/2013/11/07/read-just_for_fun/)
 - [《Linus Torvalds自传》摘录](http://www.ruanyifeng.com/blog/2012/09/linus_torvalds.html)
 
-End. All rights reserved `@gejiawen`.
 
 

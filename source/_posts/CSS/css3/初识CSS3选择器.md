@@ -1,3 +1,4 @@
+postid: "first-to-css3-selectors"
 title: "初识CSS3选择器"
 date: 2015-04-09 01:26:15
 categories: [CSS]
@@ -103,13 +104,5 @@ tags: [CSS拾遗系列, css3]
 ![](http://7xkwt1.com1.z0.glb.clouddn.com/初识CSS3选择器-013.png)
 
 
-
-
-
-
-
-
-
-End! All rights reserved `@gejiawen`.
 
 

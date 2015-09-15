@@ -1,3 +1,4 @@
+postid: "from-commonjs-to-seajs"
 title: 从CommonJS到Sea.js
 date: 2014-08-12 15:10:55
 categories: [大前端]
@@ -149,4 +150,3 @@ define(function(require, exports, module) {
 
 通过上面的方案，我们就实现了CommonJS与Sea.js两个生态圈的融合，可以彼此互通，让我们书写的JavaScript模块可移植，可在不同平台上运行。
 
-End. All rights reserved `@gejiawen`.

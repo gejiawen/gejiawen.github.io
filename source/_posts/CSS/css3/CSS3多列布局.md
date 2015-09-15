@@ -1,3 +1,4 @@
+postid: "css3-multi-column-guide"
 title: "CSS3多列布局"
 date: 2015-04-14 00:15:38
 categories: [CSS]
@@ -94,7 +95,5 @@ div {
 
 - [http://www.w3.org/TR/css3-multicol/](http://www.w3.org/TR/css3-multicol/)
 
-
-End! All rights reserved `@gejiawen`.
 
 

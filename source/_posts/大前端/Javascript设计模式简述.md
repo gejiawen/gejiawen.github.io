@@ -1,3 +1,4 @@
+postid: "javascript-design-pattern"
 title: Javascript设计模式简述
 date: 2014-09-23 11:42:43
 categories: [大前端]
@@ -803,4 +804,3 @@ Calculator.calc({type: 'divide', op1: 8, op2: 4});
 - 就算不使用JavaScript设计模式一样可以写出**复杂的可使用**的代码，可是如果你想真正了解JavaScript面向对象能力，学习提高代码的模块化程度﹑可维护性﹑可靠性和效率，那么合理的运用JavaScript设计模式将会是一个优秀**前端开发工程师**必备的能力。
 
 
-End. All rights reserved `@gejiawen`.

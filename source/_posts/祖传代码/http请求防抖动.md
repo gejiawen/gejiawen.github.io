@@ -1,3 +1,4 @@
+postid: "prevent-http-jitter"
 title: http请求防抖动
 date: 2014-10-30 10:15:03
 categories: [祖传代码]
@@ -48,4 +49,3 @@ $scope.getResult = function() {
 
 从代码中可以看出，每次触发键盘的按键弹起事件（即完成一次键盘输入）时，我们就会触发`getResult`回调。而在回调的内容中，我们采用`$timeout`服务来达到延时发出http请求的目的。**如果在延时的过程中（延时尚未结束），再次触发了`getResult`回调，那么`if`语句的判断将会取消上次的延时，即取消了之前的http请求。这样就达到了防御由于连续输入而造成的抖动问题。**
 
-End. All rights reserved `@gejiawen`.

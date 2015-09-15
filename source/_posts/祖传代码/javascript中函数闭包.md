@@ -1,4 +1,5 @@
-title: 'function closure'
+postid: "what-is-function-closure"
+title: 'javascript中函数闭包'
 date: 2014-07-18 16:35:07
 categories: [祖传代码]
 tags: [javascript, 实践]
@@ -62,4 +63,3 @@ Gee
 Pajjket Gee
 ```
 
-End. All rights reserved `@gejiawen`.

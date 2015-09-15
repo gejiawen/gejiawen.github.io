@@ -1,3 +1,4 @@
+postid: "action-about-angularjs-directives"
 title: AngularJS指令间的交互
 date: 2014-11-05 10:24:34
 categories: [AngularJS]
@@ -104,5 +105,3 @@ myModule.directive("light", function() {
 总结：指令间的交互依赖指令的`controller`创建一些供外部调用的接口，而调用这些接口的指令需要`require`接口的指令名称。
 
 
-
-End! All rights reserved `@gejiawen`.

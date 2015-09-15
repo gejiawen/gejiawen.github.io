@@ -1,3 +1,4 @@
+postid: "es6-series"
 title: "ECMAScript6学习笔记系列"
 date: 2015-07-27 21:08:30
 categories: [系列]
@@ -21,7 +22,7 @@ TBC
 
 # 目录
 
-[（1）ECMAScript6简介](http://gejiawen.github.io/2015/07/28/Javascript/ECMAScript6学习笔记系列/ECMAScript6新特性简介/)
+[（1）ECMAScript6简介](http://gejiawen.github.io/2015-07-28/es6-new-feature/)
 （2）ES6中的新语法糖
 （3）ES6中对各种对象的扩展
 （4）ES6中新增的数据结构
@@ -38,6 +39,5 @@ TBC
 
 
 
-End! All rights reserved `@gejiawen`.
 
 

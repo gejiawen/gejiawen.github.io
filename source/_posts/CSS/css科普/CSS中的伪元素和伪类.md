@@ -1,3 +1,4 @@
+postid: "pseudo-element-and-pseudo-class"
 title: 浅谈CSS中的伪元素和伪类
 date: 2014-11-20 15:32:33
 categories: [CSS]
@@ -157,6 +158,5 @@ div.arrow-left:after {
 - [CSS 伪类与伪元素](http://blog.csdn.net/sadfishsc/article/details/7047595)
 
 
-End. All rights reserved `@gejiawen`.
 
 

@@ -1,3 +1,4 @@
+postid: "css-layout-model"
 title: CSS布局模型
 date: 2015-03-04 17:10:48
 categories: [CSS]
@@ -113,4 +114,3 @@ div{
 
 即，`box2`相对于`box1`是绝对定位的。当改变`box1`的位置时，`box1`内部的子元素是不会发生变化的，因为他们都是相对`box1`绝对定位的。
 
-End. All rights reserved `@gejiawen`.

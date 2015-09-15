@@ -1,3 +1,4 @@
+postid: "css3-shadow-and-reflect"
 title: "CSS3阴影和反射"
 date: 2015-05-05 10:28:45
 categories: [CSS]
@@ -159,6 +160,5 @@ CSS3反射可以很简单的解决之前必须使用图片才能解决的倒影�
 *文章中所有的浏览器兼容性图片资源均来自[http://www.w3chtml.com](http://www.w3chtml.com/)。*
 
 
-End! All rights reserved `@gejiawen`.
 
 

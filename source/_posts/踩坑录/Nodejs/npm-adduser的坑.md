@@ -1,3 +1,4 @@
+postid: "npm-adduser-refuse"
 title: "npm adduser的坑"
 date: 2015-08-05 20:10:32
 categories: [踩坑录]
@@ -57,7 +58,5 @@ registry=http://registry.npm.taobao.org
 嗯。
 
 
-
-End! All rights reserved `@gejiawen`.
 
 

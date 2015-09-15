@@ -1,3 +1,4 @@
+postid: "deep-into-new-object"
 title: Javascript中New xxx()的本质
 date: 2014-09-19 17:07:47
 categories: [Javascript]
@@ -20,4 +21,3 @@ var a = new A();
 所以，`var a1 = new A()`与`var a2 = A()`这两句有着本质的区别！
 
 
-End. All rights reserved `@gejiawen`.

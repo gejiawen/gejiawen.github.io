@@ -1,3 +1,4 @@
+postid: "usage-for-word-wrap-and-word-break"
 title: CSS控制本文换行：word-wrap与word-break
 date: 2015-03-09 12:43:52
 categories: [CSS]
@@ -84,6 +85,5 @@ tags: [CSS拾遗系列, css科普]
 - [w3school:word-break](http://www.w3school.com.cn/cssref/pr_word-break.asp)
 - [你真的了解word-wrap和word-break的区别吗？](http://www.cnblogs.com/2050/archive/2012/08/10/2632256.html)
 
-End. All rights reserved `@gejiawen`.
 
 

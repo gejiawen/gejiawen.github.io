@@ -1,3 +1,4 @@
+postid: "different-between-url-and-uri"
 title: 读文笔记：认识URI和URL
 date: 2015-09-14 15:27:02
 categories: [读文笔记]
@@ -30,7 +31,5 @@ tags: [http]
 所以，下次万一有面试官问你`www.baidu.com`是url还是uri？你知道怎么回答了吗？😎
 
 
-
-End! All rights reserved `@gejiawen`.
 
 

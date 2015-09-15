@@ -1,3 +1,4 @@
+postid: "methods-for-cross-region"
 title: Javascript中几种实用的跨域方法
 date: 2014-09-19 18:10:37
 categories: [Javascript]
@@ -264,4 +265,3 @@ b页面将会成功的收到消息。
 
 以上四种方法，可以根据项目的实际情况来进行选择应用，个人认为window.name的方法既不复杂，也能兼容到几乎所有浏览器，这真是极好的一种跨域方法。
 
-End. All rights reserved `@gejiawen`.

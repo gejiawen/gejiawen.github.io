@@ -1,3 +1,4 @@
+postid: "css3-radius-guide"
 title: "CSS3圆角"
 date: 2015-04-23 11:52:48
 categories: [CSS]
@@ -128,6 +129,5 @@ border-radius: <length>{1-4} | % / <length>{1-4} | %;
 - [http://www.w3.org/TR/css3-background](http://www.w3.org/TR/css3-background/#the-border-radius)
 - [CSS3圆角详解](http://www.ruanyifeng.com/blog/2010/12/detailed_explanation_of_css3_rounded_corners.html)
 
-End! All rights reserved `@gejiawen`.
 
 

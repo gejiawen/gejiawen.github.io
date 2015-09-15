@@ -1,3 +1,4 @@
+postid: "how-to-manage-javascript-code-in-big-project"
 title: 如何组织大型JavaScript应用中的代码
 date: 2014-09-22 21:17:27
 categories: [Javascript]
@@ -130,4 +131,3 @@ userModule.controller('registrationController', ['$scope', 'userModel', Registra
 - 在根范围（$rootScope）添加实体，这样子范围也可以使用，适合多个控制器都依赖同一个对象（比如*PermissionsModel*）的情况。
 - 在解耦两个不明确互相引用的组件时，请使用事件。Angular中Scope对象的`$emit`、`$broadcast`以及`$on`方法使得这种方式变得现实。控制器能够触发一个事件来执行某些动作，然后再动作结束后收到相应地通知。
 
-End. All rights reserved `@gejiawen`.

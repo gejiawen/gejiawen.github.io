@@ -1,3 +1,4 @@
+postid: "css-animation-guide"
 title: "CSS动画攻略"
 date: 2015-05-05 17:18:30
 categories: [CSS]
@@ -582,6 +583,5 @@ animation-fill-mode：none | forwards | backwards | both
 - [CSS3 Transition](http://www.w3cplus.com/content/css3-transition)
 - [CSS3 Animation](http://www.w3cplus.com/content/css3-animation)
 
-End! All rights reserved `@gejiawen`.
 
 

@@ -1,3 +1,4 @@
+postid: "css-weight-guide"
 title: 认识CSS权重
 date: 2015-03-16 18:07:51
 categories: [CSS]
@@ -129,6 +130,5 @@ W3C官方给出的权重方案中规定，
 - [你应该知道的一些事情——CSS权重](http://www.w3cplus.com/css/css-specificity-things-you-should-know.html)
 - [重新认识CSS的权重](http://www.cssforest.org/blog/index.php?id=185)
 
-End. All rights reserved `@gejiawen`.
 
 

@@ -1,3 +1,4 @@
+postid: "usage-for-selection-pseudo-class"
 title: "使用::selection自定义选中文本的颜色"
 date: 2015-04-14 01:42:31
 categories: [CSS]

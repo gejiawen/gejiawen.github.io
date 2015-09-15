@@ -1,3 +1,4 @@
+postid: "read-superagent-doc"
 title: "通读SuperAgent文档"
 date: 2015-08-14 16:51:17
 categories: [Nodejs]
@@ -584,7 +585,6 @@ if (err && err.status === 404) {
 
 
 
-End! All rights reserved `@gejiawen`.
 
 
 

@@ -1,3 +1,4 @@
+postid: "light-guide-to-date-format"
 title: 浅析Date对象及常用时间格式
 date: 2015-03-11 18:29:24
 categories: [Javascript]
@@ -106,4 +107,3 @@ yyyy-mm-ddThh:mm:ss.000Z
 
 - [wikipedia](http://zh.wikipedia.org/wiki/)
 
-End. All rights reserved `@gejiawen`.

@@ -1,3 +1,4 @@
+postid: "how-to-fix-footer-to-bottom"
 title: CSS如何让页脚固定在页面底部
 date: 2014-12-16 20:35:36
 categories: [CSS]
@@ -194,6 +195,5 @@ body{
 - [Make the Footer Stick to the Bottom of a Page](http://ryanfait.com/resources/footer-stick-to-bottom-of-page/)
 - [如何将页脚固定在页面底部](http://www.w3cplus.com/css/css-sticky-foot-at-bottom-of-the-page)
 
-End. All rights reserved `@gejiawen`.
 
 

@@ -1,3 +1,4 @@
+postid: "javascript-light-framework-impressjs"
 title: JavaScript轻量级框架系列（1）--超炫3D效果的幻灯片框架Impress.js
 date: 2014-09-23 10:30:21
 categories: [Vendors]
@@ -133,4 +134,3 @@ tags: [JavaScript轻量级框架系列, javascript]
 - 不要把3D和旋转用得太花哨、太绚，看的人会晕，恰当就好。
 
 
-End. All rights reserved `@gejiawen`.

@@ -29,6 +29,11 @@ var phone = gejiawen.Phone.map(function(v, k) {
 
 ## Change log
 
+#### 2015/9/15
+
+1.使用disqus代替多说。
+2.使用`publish-date/post-id`的格式重新定义文章链接。
+
 #### 2015/8/19
 
 添加基于`atom.xml`的本地搜索功能。

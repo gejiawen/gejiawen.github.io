@@ -1,3 +1,4 @@
+postid: "css-layout-horizontal-and-vertical-for-elements"
 title: CSS常用布局之各种元素的水平垂直居中
 date: 2015-03-13 11:22:49
 categories: [CSS]
@@ -297,6 +298,5 @@ CSS中有一个奇怪的现象，不管元素之前的`display`属性是什么�
 以上猜测若有不妥，请指正。
 
 
-End. All rights reserved `@gejiawen`.
 
 

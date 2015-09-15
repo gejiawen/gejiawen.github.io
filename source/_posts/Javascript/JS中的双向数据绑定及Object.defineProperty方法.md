@@ -1,3 +1,4 @@
+postid: "2-way-data-binding-and-define-property"
 title: "JS中的双向数据绑定及Object.defineProperty方法"
 date: 2015-04-02 10:35:01
 categories: [Javascript]
@@ -165,9 +166,3 @@ TypeError: Invalid property.  A property cannot both have accessors and be writa
 
 因为这里的`name`属性同时声明了`value`特性和`set`及`get`特性，这两者提供了两种对`name`属性的读写控制。这里如果不声明`value`特性，而是声明`writable`特性，结果也是一样的，同样会报错。
 
-
-
-
-
-
-End! All rights reserved `@gejiawen`.

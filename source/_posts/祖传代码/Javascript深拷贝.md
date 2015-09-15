@@ -1,4 +1,5 @@
-title: 'javascript deep copy'
+postid: "javascript-deep-copy"
+title: 'Javascript深拷贝'
 date: 2014-07-18 16:22:14
 categories: [祖传代码]
 tags: [javascript, 实践]
@@ -52,4 +53,3 @@ var a = {
 这些情况时，就得不到期望的结果了。
 
 
-End. All rights reserved `@gejiawen`.

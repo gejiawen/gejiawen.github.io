@@ -1,3 +1,4 @@
+postid: "css-length-unit-guide"
 title: CSS的长度单位参考
 date: 2015-03-03 11:38:36
 categories: [CSS]
@@ -147,7 +148,5 @@ CSS3中新增的长度单位有如下，
 - [CSS的长度单位](http://www.w3cplus.com/css/the-lengths-of-css.html)
 - [理解css中的长度单位](http://www.qianduan.net/understand-the-unit-of-length-in-the-css.html)
 - [CSS长度单位参考](http://blog.sina.com.cn/s/blog_4b7463e00100b33g.html)
-
-End. All rights reserved `@gejiawen`.
 
 

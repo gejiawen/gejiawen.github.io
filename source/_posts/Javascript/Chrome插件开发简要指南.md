@@ -1,3 +1,4 @@
+postid: "chrome-plugin-dev-guide"
 title: "Chrome插件开发简要指南"
 date: 2015-08-18 14:48:49
 categories: [Javascript]
@@ -213,7 +214,7 @@ chrome插件的相关知识，远远不止上面介绍的几点，比如邮件�
         },
         //增加
         Add: function () {
-            //TODO 
+            //TODO
         },
         //修改
         Edit: function () {
@@ -233,7 +234,7 @@ chrome插件的相关知识，远远不止上面介绍的几点，比如邮件�
             oDiv.appendChild(oInput);
             oDiv.appendChild(oTitle);
             Tasks.$itemList.appendChild(oDiv);
-            
+
             oDiv.addEventListener('click', function () {
                 //TODO
             }, true);
@@ -258,8 +259,3 @@ chrome插件的相关知识，远远不止上面介绍的几点，比如邮件�
 
 - [chrome插件中文开发文档(非官方)](http://chrome.liuyixi.com/overview.html)
 - [手把手教你开发Chrome扩展](http://www.cnblogs.com/walkingp/archive/2011/03/31/2001628.html)
-
-
-End! All rights reserved `@gejiawen`.
-
-

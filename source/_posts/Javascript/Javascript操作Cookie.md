@@ -1,3 +1,4 @@
+postid: "how-to-use-cookie-in-javascript"
 title: Javascript操作Cookie
 date: 2014-07-18 17:43:40
 categories: [Javascript]
@@ -209,4 +210,3 @@ return unescape(document.cookie.substring(c_start,c_end));
 
 这样就不用担心因为在cookie值中出现了特殊符号而导致cookie信息出错了。
 
-End. All rights reserved `@gejiawen`.

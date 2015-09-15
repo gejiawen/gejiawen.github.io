@@ -1,3 +1,4 @@
+postid: "usage-for-angularjs-ng-cloak"
 title: 使用Angularjs的ng-cloak指令避免页面乱码
 date: 2014-12-28 16:10:58
 categories: [AngularJS]
@@ -95,4 +96,3 @@ var ngCloakDirective = ngDirective({
 最后提一点，如果`{{express}}`中的表达式仅仅是展示一些文本内容，我们可以使用`ng-bind`这个指令来实现。
 
 
-End! All rights reserved `@gejiawen`.

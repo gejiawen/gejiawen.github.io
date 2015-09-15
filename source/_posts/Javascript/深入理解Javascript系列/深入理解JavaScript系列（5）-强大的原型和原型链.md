@@ -1,3 +1,4 @@
+postid: "deep-into-javascript-prototype-and-prototype-chain"
 title: 深入理解JavaScript系列（5）-强大的原型和原型链
 date: 2014-12-29 20:53:27
 categories: [Javascript]
@@ -22,4 +23,3 @@ tags: [深入理解JavaScript系列]
 
 啊，本篇读文笔记好水！！
 
-End. All rights reserved `@gejiawen`.

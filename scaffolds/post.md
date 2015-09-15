@@ -1,9 +1,8 @@
+postid: ''
 title: {{ title }}
 date: {{ date }}
-categories:
-tags:
+categories: []
+tags: []
 
 ---
 
-
-End! All rights reserved `@gejiawen`.

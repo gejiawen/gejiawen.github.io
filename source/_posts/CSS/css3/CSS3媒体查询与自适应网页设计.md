@@ -1,3 +1,4 @@
+postid: "css3-media-query-and-responsive-design"
 title: "CSS3媒体查询与自适应网页设计"
 date: 2015-05-18 16:24:46
 categories: [CSS]
@@ -197,7 +198,3 @@ Responsive Web Design，国人将其翻译成响应式Web设计，个人觉得�
 - [什么是响应式Web设计？怎样进行？](http://beforweb.com/node/6)
 - [CSS3 Media Queries 实现响应式设计](http://www.cnblogs.com/lhb25/archive/2012/12/04/css3-media-queries.html)
 
-
-
-
-End! All rights reserved `@gejiawen`.

@@ -1,3 +1,4 @@
+postid: "javascript-light-framework-revealjs"
 title: JavaScript轻量级框架系列（2）--功能强大的幻灯片框架Reveal.js
 date: 2014-11-30 15:13:55
 categories: [Vendors]
@@ -457,4 +458,3 @@ Reveal.js的确是一款功能强大的幻灯片框架，深受web开发者的�
 
 你还在执着office的ppt么？来试试reveal.js吧。
 
-End. All rights reserved `@gejiawen`.

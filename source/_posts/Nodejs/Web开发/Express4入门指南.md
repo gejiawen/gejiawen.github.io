@@ -1,3 +1,4 @@
+postid: "first-to-express4-guide"
 title: "Express4入门指南"
 date: 2015-08-13 14:52:29
 categories: [Nodejs]
@@ -412,7 +413,5 @@ app.get('/article', function(req, res) {
 
 
 
-
-End! All rights reserved `@gejiawen`.
 
 

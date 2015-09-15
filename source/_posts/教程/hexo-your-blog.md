@@ -1,3 +1,4 @@
+postid: "hexo-your-blog"
 title: hexo-your-blog
 date: 2014-06-19 10:46:57
 updated: 2014-06-19 13:59:57
@@ -13,6 +14,8 @@ tags: [hexo, nodejs]
 
 这是一篇介绍关于如何使用[hexo](https://github.com/tommy351/hexo)搭建个人blog的教程。[参考链接](http://ibruce.info/2013/11/22/hexo-your-blog/)在此，文章版权归原作者所有。本blog参考了其中大部分内容。
 
+
+> 更新：现在hexo已经升级到3.x.x版本，使用了core + plugin的设计思路，且代码使用promise风格重写了。所以本文的部分内容将不再使用hexo 3.x.x。
 
 # 正文开始
 
@@ -149,6 +152,4 @@ theme: your_favourite_theme_name
 * `theme.duoshuo_shortname`: 你在主题配置中设置的多说用户名。
 * `<%= path %>`: 将当前文章的path作为多说的thread-key，这个变量要求唯一，所以这里我用了path。
 
-
-End. All rights reserved `@gejiawen`.
 

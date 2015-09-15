@@ -1,3 +1,4 @@
+postid: "prototype-inherit-in-javascript"
 title: 浅谈Javascript中的原型继承
 date: 2014-10-16 12:55:27
 categories: [Javascript]

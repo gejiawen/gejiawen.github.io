@@ -1,3 +1,4 @@
+postid: "nodejs-series"
 title: 漫游NodeJS系列
 date: 2015-03-17 17:16:40
 categories: [系列]
@@ -29,9 +30,9 @@ tags: [目录]
 
 ## 基础入门
 
-[（1）NodeJS模块全面指南](http://gejiawen.github.io/2015/03/17/Nodejs/基础入门/NodeJS模块全面指南/)
-[（2）如何导出NodeJS模块](http://gejiawen.github.io/2014/10/16/Nodejs/基础入门/如何导出NodeJS模块/)
-[（3）NodeJS最佳实践](http://gejiawen.github.io/2014/09/19/Nodejs/基础入门/NodeJS最佳实践/)
+[（1）NodeJS模块全面指南](http://gejiawen.github.io/2015-03-17/nodejs-module-guide/)
+[（2）如何导出NodeJS模块](http://gejiawen.github.io/2014-10-16/how-to-export-nodejs-module/)
+[（3）NodeJS最佳实践](http://gejiawen.github.io/2014-09-19/nodejs-best-practices/)
 
 ## 进阶研究
 
@@ -39,19 +40,18 @@ TODO
 
 ## 工具探索
 
-[（1）gulp vs. grunt](http://gejiawen.github.io/2015/01/09/Nodejs/工具探索/gulp-vs-grunt/)
-[（2）通读SuperAgent文档](http://gejiawen.github.io/2015/08/14/Nodejs/工具探索/通读SuperAgent文档/)
-[（3）通读Cheerio文档](http://gejiawen.github.io/2015/08/17/Nodejs/工具探索/通读Cheerio文档/)
+[（1）gulp vs. grunt](http://gejiawen.github.io/2015-01-09/gulp-vs-grunt/)
+[（2）通读SuperAgent文档](http://gejiawen.github.io/2015-08-14/read-superagent-doc/)
+[（3）通读Cheerio文档](http://gejiawen.github.io/2015-08-17/read-cheerio-doc/)
 
 
 ## Web开发
 
-[（1）Express4入门指南](http://gejiawen.github.io/2015/08/13/Nodejs/Web开发/Express4入门指南/)
+[（1）Express4入门指南](http://gejiawen.github.io/2015-08-13/first-to-express4-guide/)
 
 # 总结
 
 TODO
 
-End. All rights reserved `@gejiawen`.
 
 

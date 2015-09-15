@@ -1,3 +1,4 @@
+postid: "deep-into-javascript-exec-function-expression"
 title: 深入理解JavaScript系列（4）-立即调用的函数表达式
 date: 2014-12-15 20:46:20
 categories: [Javascript]
@@ -313,4 +314,3 @@ for (var i = 0; i < 10; i++) {
 
 我还是想强调那句话，只要对JavaScript中的这两个要点了若指掌，编码时能够做到信手拈来，那么假以时日必定能够成为JavaScript高手。
 
-End. All rights reserved `@gejiawen`.

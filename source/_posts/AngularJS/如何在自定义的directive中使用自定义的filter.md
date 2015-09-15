@@ -1,3 +1,4 @@
+postid: "how-to-use-custom-filter-in-custom-directive"
 title: 如何在自定义的directive中使用自定义的filter
 date: 2014-10-24 15:49:40
 categories: [AngularJS]
@@ -155,8 +156,5 @@ var gxt = angular.module('gxt', ['directives']);
 ```
 
 即此可以省略`filters`的注入。因为在`directives`中已经注入了`filters`。
-
-
-End! All rights reserved `@gejiawen`.
 
 

@@ -1,3 +1,4 @@
+postid: "use-generator-to-replace-callback"
 title: 使用ES6的Generator代替回调函数
 date: 2014-10-16 12:14:46
 categories: [Javascript]
@@ -271,6 +272,5 @@ run(function* myDelayedMessages(resume) {
 
 虽然generator究竟是不是一个处理*回调地狱*的好方法还在讨论之中，但是它确实是一个加强你对ES6中generator和迭代器理解的练习。如果你在寻找一些不需要用到ES6的处理嵌套回调函数的方法，可以考虑`promises`。
 
-End. All rights reserved `@gejiawen`.
 
 

@@ -1,3 +1,4 @@
+postid: "how-to-export-nodejs-module"
 title: 如何导出NodeJS模块
 date: 2014-10-16 15:55:39
 categories: [Nodejs]
@@ -429,6 +430,5 @@ Mongoose.prototype.model = modelWithUnderScoreCollectionName;
 Node模块系统对于封装功能以及创建清晰的接口提供了一种非常简单的机制。希望上面提到的几种设计模式对于你有所帮助。
 
 
-End. All rights reserved `@gejiawen`.
 
 

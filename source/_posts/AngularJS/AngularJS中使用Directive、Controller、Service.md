@@ -1,3 +1,4 @@
+postid: "different-from-angularjs-directive-controller-service"
 title: AngularJS中使用Directive、Controller、Service
 date: 2014-07-14 16:52:33
 categories: [AngularJS]
@@ -153,4 +154,5 @@ Angular的模块依赖哲学无疑让它成为了一款非同凡响的框架。�
 
 [英文原文](http://kirkbushell.me/when-to-use-directives-controllers-or-services-in-angular/)
 
-End! All rights reserved `@gejiawen`.
+
+

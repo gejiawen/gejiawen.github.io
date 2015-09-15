@@ -1,3 +1,4 @@
+postid: "desp-for-angularjs-filters"
 title: 'AngularJS Filters'
 date: 2014-07-14 17:53:30
 categories: [AngularJS]
@@ -37,5 +38,3 @@ app.filter('map', function(){
 当有多个参数时，html中使用`:`来分割，形如：
 `data|map2:province:city`
 
-
-End! All rights reserved `@gejiawen`.

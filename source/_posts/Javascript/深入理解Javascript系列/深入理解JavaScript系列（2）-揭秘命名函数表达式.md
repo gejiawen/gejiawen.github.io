@@ -1,3 +1,4 @@
+postid: "deep-into-javascript-function-expression"
 title: 深入理解JavaScript系列（2）-揭秘命名函数表达式
 date: 2014-11-25 22:59:34
 categories: [Javascript]
@@ -192,4 +193,3 @@ f(); // "function"
 
 这篇读文笔记由于舍弃了一部分JScript的内容，显得比较单薄，不过没关系，这篇笔记的主要目的就是为了阐述清楚函数声明和函数表达式的爱恨情仇。我想我应该把这两者的方方面面都应该说清楚了吧。而且函数在JavaScript中是第一等公民，其内容远不止函数声明和函数表达式这一点内容，比如各种高阶函数，匿名函数，多层闭包等等。要想成为一名合格的JavaScript程序员，那么JavaScript函数一定要信手拈来，这应该是JavaScript中比较考验功力的一个内容了吧。
 
-End. All rights reserved `@gejiawen`.

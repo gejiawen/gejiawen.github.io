@@ -1,3 +1,4 @@
+postid: ''
 title: {{ title }}
 tags:
 ---

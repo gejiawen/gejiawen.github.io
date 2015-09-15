@@ -1,3 +1,4 @@
+postid: "reusable-angularjs-directive"
 title: 创建可复用angularjs组件
 date: 2014-07-17 17:04:29
 categories: [AngularJS]
@@ -182,4 +183,4 @@ scope: {
 
 这里有一个[demo](http://jsfiddle.net/revolunet/s4gm6/)
 
-End! All rights reserved `@gejiawen`.
+

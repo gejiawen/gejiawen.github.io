@@ -1,3 +1,4 @@
+postid: "ecmascript-inherit"
 title: ECMAScript继承实现
 date: 2014-09-29 15:42:06
 categories: [Javascript]
@@ -312,4 +313,3 @@ objB.sayName();	//输出 "John"
 参考[ES6的继承实现](https://github.com/gejiawen/mytest/blob/master/class-inherit/class-inherit.js)。其核心就是**`B.prototype.__proto__ = A.prototype;`**，可以直接将父类的`prototype`赋值给子类`prototype`对象的`__proto__`属性达到对象继承的目的。
 
 
-End. All rights reserved `@gejiawen`.

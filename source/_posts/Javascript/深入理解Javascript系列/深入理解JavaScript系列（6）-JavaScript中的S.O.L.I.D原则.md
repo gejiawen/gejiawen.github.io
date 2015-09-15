@@ -1,3 +1,4 @@
+postid: "deep-into-javascript-solid-rules"
 title: 深入理解JavaScript系列（6）-JavaScript中的S.O.L.I.D原则
 date: 2014-12-30 18:38:03
 categories: [Javascript]
@@ -39,4 +40,3 @@ tags: [深入理解JavaScript系列]
 
 不过JavaScript也是有设计模式这种东西的，后面我会带来相应的文章。
 
-End. All rights reserved `@gejiawen`.

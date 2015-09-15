@@ -1,3 +1,4 @@
+postid: "css3-gradient-guide"
 title: "CSS3渐变"
 date: 2015-04-23 20:22:10
 categories: [CSS]
@@ -480,6 +481,5 @@ background-image: -webkit-radial-gradient(center, circle 50px 100px, pink, green
 - [css3-radial-gradient](http://www.w3cplus.com/css3/new-css3-radial-gradient.html)
 - [深入理解CSS3 gradient斜向线性渐变](http://www.zhangxinxu.com/wordpress/2013/09/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3css3-gradient%E6%96%9C%E5%90%91%E7%BA%BF%E6%80%A7%E6%B8%90%E5%8F%98/)
 
-End! All rights reserved `@gejiawen`.
 
 

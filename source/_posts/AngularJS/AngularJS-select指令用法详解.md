@@ -1,3 +1,4 @@
+postid: "usage-for-angularjs-ng-select"
 title: 'AngularJS:select指令用法详解'
 date: 2014-07-14 14:49:28
 categories: [AngularJS]
@@ -112,8 +113,4 @@ function selectCtrl($scope) {
 
 **说明**
 1. 这种用法也是`select`指令中较为复杂的一种。从效果中可以看出，**usage** 中`select`的作用就是重新绑定`ng-model`的值。在这里，`ng-model`等于`m.id`，当`ng-model`发生改变的时候，得到的实际值是`m.id`的值。
-
-
-End! All rights reserved `@gejiawen`.
-
 

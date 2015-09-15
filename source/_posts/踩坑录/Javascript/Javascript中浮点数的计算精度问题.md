@@ -1,3 +1,4 @@
+postid: "javascript-float-count-precision"
 title: "Javascript中浮点数的计算精度问题"
 date: 2015-08-11 18:01:15
 categories: [踩坑录]
@@ -83,9 +84,5 @@ var ret = parseFloat(ret);
 注意`toFixed()`返回的是一个`String`，所以我们还需要进行`parseFloat`操作。
 
 所以，以后有前端的面试官问你 0.1 + 0.2 = ? 时，小心他在给你挖坑哦😎
-
-
-
-End! All rights reserved `@gejiawen`.
 
 

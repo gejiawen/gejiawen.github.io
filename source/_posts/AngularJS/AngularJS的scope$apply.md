@@ -1,3 +1,4 @@
+postid: "usage-for-angularjs-scope-apply"
 title: AngularJS的scope.$apply
 date: 2014-07-14 18:12:57
 categories: [AngularJS]
@@ -119,4 +120,4 @@ if ((watchers = current.$$watchers)) {
 
 遍历watchers，比较监视的属性是否变化。
 
-End! All rights reserved `@gejiawen`.
+

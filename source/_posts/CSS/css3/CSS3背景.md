@@ -1,3 +1,4 @@
+postid: "css3-background-guide"
 title: "CSS3背景"
 date: 2015-04-21 19:55:27
 categories: [CSS]
@@ -164,4 +165,3 @@ background-origin: origin1,origin2,...,originN;
 
 
 
-End! All rights reserved `@gejiawen`.

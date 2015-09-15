@@ -1,3 +1,4 @@
+postid: "gulp-vs-grunt"
 title: gulp vs. grunt
 date: 2015-01-09 13:17:58
 categories: [Nodejs]
@@ -206,6 +207,5 @@ gulp.task('task-name', function () {
 - [“流式”前端构建工具——gulp.js 简介](http://segmentfault.com/blog/nightire/1190000000435599)
 
 
-End. All rights reserved `@gejiawen`.
 
 

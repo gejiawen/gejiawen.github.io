@@ -1,3 +1,4 @@
+postid: "about-seajs-and-nodejs"
 title: Seajs与Nodejs的兼容
 date: 2014-08-12 14:30:47
 categories: [大前端]
@@ -95,4 +96,3 @@ Node.js与Sea.js在模块接口上的主要差异如下：
 4. Sea.js里，`require(id)`中的`id`必须是字符串直接量。Node.js里没有这个限制。
 
 
-End. All rights reserved `@gejiawen`.

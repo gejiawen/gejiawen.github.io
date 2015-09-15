@@ -1,3 +1,4 @@
+postid: "different-from-proto-and-prototype"
 title: 区分JS中的__proto__和prototype
 date: 2015-03-18 16:29:26
 categories: [Javascript]
@@ -230,6 +231,5 @@ console.log(Animal.prototype.__proto__ === Object.prototype); // true
 - [MDN:Object.create](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create)
 
 
-End. All rights reserved `@gejiawen`.
 
 

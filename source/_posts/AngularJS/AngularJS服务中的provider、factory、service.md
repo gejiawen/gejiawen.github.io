@@ -1,3 +1,4 @@
+postid: "different-from-angularjs-provider-factory-service"
 title: AngularJS服务中的provider、factory、service
 date: 2014-07-14 16:17:18
 categories: [AngularJS]
@@ -112,5 +113,3 @@ app.controller('TestCtrl', function($scope, PP) {
     </script>
 </html>
 ```
-
-End! All rights reserved `@gejiawen`.

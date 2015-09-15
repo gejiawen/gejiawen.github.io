@@ -1,3 +1,4 @@
+postid: "how-to-pass-args-in-directive-callback"
 title: "如何在自定义directive的callback中传递参数"
 date: 2014-10-24 16:48:16
 categories: [AngularJS]
@@ -139,5 +140,3 @@ scope.selectSite = function(site) {
 > 一般来说，我们希望通过一个表达式，将数据从isolate scope传到parent scope中。这可以通过传送一个本地变量键值的映射到表达式的wrapper函数中来完成。例如，如果表达式是`increment(amount)`，那么我们可以通过`localFn({amount:22})`的方式调用localFn以指定amount的值。
 
 
-
-End! All rights reserved `@gejiawen`.

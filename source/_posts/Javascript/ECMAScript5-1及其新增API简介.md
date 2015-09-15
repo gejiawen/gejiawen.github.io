@@ -1,3 +1,4 @@
+postid: "es5-new-api"
 title: "ECMAScript5.1及其新增API简介"
 date: 2015-07-27 16:03:09
 categories: [Javascript]
@@ -196,4 +197,3 @@ Javascript中重新绑定`this`变量的语法糖还有`call`和`apply`。不过
 - [https://developer.mozilla.org/zh-CN/docs/Web/JavaScript](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
 - [翻译：ECMAScript 5.1简介](http://www.zhangxinxu.com/wordpress/2012/01/introducing-ecmascript-5-1/)
 
-End! All rights reserved `@gejiawen`.

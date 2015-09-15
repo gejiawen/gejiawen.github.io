@@ -1,3 +1,4 @@
+postid: "es6-new-feature"
 title: "ECMAScript6新特性简介"
 date: 2015-07-28 18:26:10
 categories: [Javascript]
@@ -478,6 +479,5 @@ c["key"] === undefined // 无法访问该属性，因为是私有的
 - [ECMAScript 6入门](http://es6.ruanyifeng.com/)
 - [ES6新特性概览](http://www.cnblogs.com/Wayou/p/es6_new_features.html)
 
-End! All rights reserved `@gejiawen`.
 
 

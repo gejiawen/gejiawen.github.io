@@ -1,3 +1,4 @@
+postid: "light-guide-for-jsdoc"
 title: jsdoc简明指南
 date: 2015-03-23 16:39:39
 categories: [Javascript]
@@ -198,5 +199,3 @@ grunt.initConfig({
 最后贴一个上周写的[小玩儿意](https://github.com/gejiawen/bullhead/blob/master/index.js)，很简单的一个js文件，主要是观摩一下使用jsdoc给js代码添加注释的那种美感。
 
 
-
-End. All rights reserved `@gejiawen`.

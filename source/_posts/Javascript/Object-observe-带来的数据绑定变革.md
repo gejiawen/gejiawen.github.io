@@ -1,3 +1,4 @@
+postid: "intro-for-observe-and-data-binding"
 title: Object.observe()带来的数据绑定变革
 date: 2014-10-30 15:48:29
 categories: [Javascript]
@@ -688,6 +689,5 @@ observer.open(function(splices) {
 
 
 
-End. All rights reserved `@gejiawen`.
 
 

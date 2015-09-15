@@ -1,3 +1,4 @@
+postid: "usage-for-angularjs-ng-class"
 title: 'AngularJS:ngClass用法小解'
 date: 2014-07-14 16:00:03
 categories: [AngularJS]
@@ -66,4 +67,3 @@ function ctrl($scope) {
 - [细说Angular ng-class](http://www.cnblogs.com/whitewolf/archive/2013/05/22/3092184.html)
 
 
-End! All rights reserved `@gejiawen`.

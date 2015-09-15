@@ -1,3 +1,4 @@
+postid: "suggestion-for-css-selectors"
 title: "CSS选择器的一般性优化建议"
 date: 2015-04-13 21:56:00
 categories: [CSS]
@@ -73,4 +74,3 @@ div#divBox p span.red {
 - [css原理及其优化](http://www.cnblogs.com/web-ed2/archive/2011/08/03/2126748.html)
 
 
-End! All rights reserved `@gejiawen`.

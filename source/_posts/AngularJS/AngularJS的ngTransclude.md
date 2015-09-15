@@ -1,3 +1,4 @@
+postid: "usage-for-angularjs-ng-transclude"
 title: AngularJS的ngTransclude
 date: 2014-07-17 15:51:45
 categories: [AngularJS]
@@ -226,6 +227,3 @@ scope3 a {$id: "005", this: a, $$listeners: Object, $parent: a, $$childTail: nul
 点开`scope2`和`scope3`，就能看到`$paren`t的Id为003，这就印证了我们的观点。
 
 
-
-
-End! All rights reserved `@gejiawen`.

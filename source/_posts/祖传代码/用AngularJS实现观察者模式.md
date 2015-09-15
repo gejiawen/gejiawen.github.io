@@ -1,3 +1,4 @@
+postid: "observe-pattern-by-angularjs"
 title: 用AngularJS实现观察者模式
 date: 2014-07-18 16:55:03
 categories: [祖传代码]
@@ -55,4 +56,3 @@ services.factory('ob', function() {
 
 上面就是观察者模式的核心实现。在实际项目中，可能会根据需求作一些微调。
 
-End. All rights reserved `@gejiawen`.

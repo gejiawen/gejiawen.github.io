@@ -1,3 +1,4 @@
+postid: "require-in-seajs"
 title: Sea.js中require的书写规范
 date: 2014-08-12 15:32:23
 categories: [大前端]
@@ -82,4 +83,3 @@ if (todayIsWeekend) {
 
 但请牢记，从静态分析的角度来看，这个模块同时依赖`play`和`work`两个模块，加载器会把这两个模块文件都下载下来。 这种情况下，推荐使用 require.async 来进行条件加载。
 
-End. All rights reserved `@gejiawen`.

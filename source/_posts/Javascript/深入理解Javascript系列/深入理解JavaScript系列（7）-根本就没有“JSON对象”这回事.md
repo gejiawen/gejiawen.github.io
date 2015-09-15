@@ -1,3 +1,4 @@
+postid: "deep-into-javascript-about-json-object"
 title: 深入理解JavaScript系列（7）-根本就没有“JSON对象”这回事！
 date: 2014-12-30 19:25:03
 categories: [Javascript]
@@ -87,4 +88,3 @@ var puck2 = {
 
 这里只想强调一条，**JSON是一种对数据结构的简洁描述**，然后还要知道现代浏览器中已经有`JSON.parse`和`JSON.stringify`这两个方法就可以了。
 
-End. All rights reserved `@gejiawen`.
