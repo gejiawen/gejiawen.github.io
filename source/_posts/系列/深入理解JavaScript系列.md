@@ -27,13 +27,13 @@ tags: [目录]
 
 # 目录
 
-[（1）编写高质量JavaScript代码的基本要点](http://gejiawen.github.io/2014-11-13/deep-into-javascript-points-about-good-javascript-code/)
-[（2）揭秘命名函数表达式](http://gejiawen.github.io/2014-11-25/deep-into-javascript-function-expression/)
-[（3）全面解析Module模式](http://gejiawen.github.io/2014-12-01/deep-into-javascript-module-model/)
-[（4）立即调用的函数表达式](http://gejiawen.github.io/2014-12-15/deep-into-javascript-exec-function-expression/)
-[（5）强大的原型和原型链](http://gejiawen.github.io/2014-12-29/deep-into-javascript-prototype-and-prototype-chain/)
-[（6）JavaScript中的S.O.L.I.D原则](http://gejiawen.github.io/2014-12-30/deep-into-javascript-solid-rules/)
-[（7）根本没有“JSON对象”这回事！](http://gejiawen.github.io/2014-12-30/deep-into-javascript-about-json-object/)
+[（1）编写高质量JavaScript代码的基本要点](http://gejiawen.github.io/2014/11/13/deep-into-javascript-points-about-good-javascript-code/)
+[（2）揭秘命名函数表达式](http://gejiawen.github.io/2014/11/25/deep-into-javascript-function-expression/)
+[（3）全面解析Module模式](http://gejiawen.github.io/2014/12/01/deep-into-javascript-module-model/)
+[（4）立即调用的函数表达式](http://gejiawen.github.io/2014/12/15/deep-into-javascript-exec-function-expression/)
+[（5）强大的原型和原型链](http://gejiawen.github.io/2014/12/29/deep-into-javascript-prototype-and-prototype-chain/)
+[（6）JavaScript中的S.O.L.I.D原则](http://gejiawen.github.io/2014/12/30/deep-into-javascript-solid-rules/)
+[（7）根本没有“JSON对象”这回事！](http://gejiawen.github.io/2014/12/30/deep-into-javascript-about-json-object/)
 （8）JavaScript核心（晋级高手必读篇）
 （9）执行上下文（Execution Contexts）
 （10）变量对象（Variable Object）
