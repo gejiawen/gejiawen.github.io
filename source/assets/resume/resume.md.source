@@ -10,9 +10,9 @@
 # 个人资料
 
 - 基本信息：葛加文/男/1980s
-- 教育经历：计算机科学与技术专业/本科/2007-2011年
+- 教育经历：计算机科学与技术专业/合肥学院/本科/2007-2011/
 - 工作年限：4年
-- 职业方向：Web前端工程师/全栈工程师
+- 职业方向：Web前端工程师/Web全栈工程师
 
 
 # 工作经历
@@ -66,22 +66,20 @@
 
 下面是一些能够熟练使用或者涉足过的东西，
 
-- 语言级别：html、html5、css、css3、javascript、php
-- Web开发：nodejs、php、express、angularjs、backbonejs
-- 前端框架：bootstrap、angularjs
-- 前端工具：gulp、grunt、sass、styl
+- 语言级别：html、html5、css、css3、javascript、nodejs、php
+- Web开发：nodejs、php、express、angularjs、FIS
+- 前端框架：bootstrap、foundation、angularjs、backbone、jquery、echart、
+- 前端工具：gulp、grunt、styl、sass
 - 版本管理：git、svn、gitlab
 - 单元测试：should、chai、mocha
 
 # 自我评价
 
-喜欢学习新东西、对一切觉得好玩的东西都抱有五分钟的激情。喜欢折腾一些看起来有用但是其实并没有用的小玩意。
+喜欢学习新东西，对一切觉得好玩的东西都很有学习热情。
 
-一直想学设计方面的东西，但是却一直没有付诸实践。
+一直想学设计方面的东西。
 
-喜欢写作，虽然文笔不行。
-
-做事喜欢更加规范。
+喜欢写作，做事喜欢更加规范。
 
 
 # 工作之余
@@ -97,6 +95,4 @@ github重度用户，个人项目列表见[my repositories](https://github.com/g
 ### 文章写作
 
 除了程序员这项工作，另一份工作是一名半职业写手，喜欢以写文章的方法来记录自己的学习经历。详见[博客归档](http://gejiawen.github.io/categories/)。
-
-
 
