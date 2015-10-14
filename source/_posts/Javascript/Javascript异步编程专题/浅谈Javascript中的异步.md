@@ -11,7 +11,7 @@ date: 2015-10-12 15:12:51
 暂时将这个专题命名为**Javascript异步编程专题**吧，目前包含以下几篇文章，
 
 - [浅谈Javascript中的异步](http://gejiawen.github.io/2015/10/12/think-about-async-in-javascript/)
-- Javascript中常见的异步编程模型
+- [Javascript中常见的异步编程模型](http://gejiawen.github.io/2015/10/12/some-javascript-async-pattern/)
 - ES6中的异步编程模型
 
 
@@ -97,7 +97,7 @@ foo(foo2);
 
 ![](/res/浅谈Javascript中的异步/002.png)
 
-从图中我们可以看出执行`foo(foo2)`使用了50ms，其中在1010ms时开始执行`setTimeout`语句。由于我们使用`setTimeout`设置了一个延时，所以在执行`foo(foo2)`时并没有真正的执行`foo2()`，而是将其时机推迟了。直到3010ms左右时采取真正的执行`foo2()`的代码。
+从图中我们可以看出执行`foo(foo2)`使用了50ms，其中在1010ms时开始执行`setTimeout`语句。由于我们使用`setTimeout`设置了一个延时，所以在执行`foo(foo2)`时并没有真正的执行`foo2()`，而是将其时机推迟了。直到3010ms左右时才去真正的执行`foo2()`的代码。
 
 （**注**，为了方便叙述，上述时间都是假设的，不必纠结。下同。）
 
@@ -109,7 +109,7 @@ foo(foo2);
 
 往往在Javascript运行环境中，除了Javascript线程之外，还有会有一个专门维护任务队列的线程。说到这里，有人会问，不是说好的Javascript是单线程吗？怎么这里会有两个线程？
 
-好问题！注意这里我并没有说Javascript语言，而是**Javascript运行环境**（Javascript Runtime）。常见的运行有各种浏览器（浏览器中的Javascript解释引擎），Nodejs环境等等。
+好问题！注意这里我并没有说Javascript语言，而是**Javascript运行环境**（Javascript Runtime）。常见的运行环境有各种浏览器（浏览器中的Javascript解释引擎），Nodejs环境等等。
 
 这里我们就以浏览器环境作为示例来进行相关说明。首先试想一下我们现在有这样的一个场景。我们在一段js代码中发出了一个ajax请求，同时给click和press注册了事件监听。那么当我们执行这段代码后，其效果图如下，
 
@@ -121,7 +121,7 @@ foo(foo2);
 
 除此之外，可能用户还在页面进行了鼠标点击操作和按下键盘输入。这两个动作都将会产生一个事件，将产生的事件压入任务队列。
 
-## EventLoop
+## EventLoop的解释
 
 上图中还有一个叫做**Event Loop**的东西，这个东西是什么东西呢？
 
@@ -129,7 +129,7 @@ foo(foo2);
 
 简单来说，EventLoop也是一个程序，它会不停的轮询任务队列中的事件。如果Javascript线程空了，则取出任务队列的第一个事件，然后找到此事件的处理函数并执行处理函数。当前一个事件执行完了（此时Javascript又会空下来），那么继续取出任务队列中的下一个事件。如此往复。
 
-回到我们上面的例子中，当从任务队伍队列中取出第一个事件时（Ajax返回事件），Javascript线程将会去执行函数`foo1`。
+回到我们上面的例子中，当从任务队伍队列中取出第一个事件时（Ajax返回事件），Javascript线程将会去执行函数`foo1`。其实从图中可以看出，先前绑定的三个回调函数最终都是在Javascript线程上执行的，只不过由于任务队列的存在，导致了他们的执行时机是不一样的。
 
 
 # Javascript中的定时器
@@ -234,7 +234,7 @@ setInterval(function(){
 
 结果就是等到第二行语句运行完成以后，立刻连续输出三个2，然后开始每隔1000毫秒，输出一个2。也就是说，`setIntervel`具有累积效应，如果某个操作特别耗时，超过了`setInterval`的时间间隔，排在后面的操作会被累积起来，然后在很短的时间内连续触发，这可能或造成性能问题（比如集中发出Ajax请求）。
 
-## setTimeout(fn, 0)
+## setTimeout(fn, 0)的理解
 
 记得以前有被人问过这句代码的含义😂😂😂。
 
@@ -246,11 +246,15 @@ setInterval(function(){
 
 ## 定时器的区别
 
-其实`setTimeout`和`setInterval`这两个定时器是有区别的。当时，他们的功能上有所区别。不过我想说的区别并不是指它们功能上的区别。
+其实`setTimeout`和`setInterval`这两个定时器是有区别的。当然我想说的区别并不是指它们功能上的区别。
 
 **Timer**定时器在触发时，会将其回调任务压入任务队列进行排队。而**Interval**定时器在触发时，它不管当前Javascript线程的状态，它会无差别的往任务队列中压任务。如果某一个任务执行时占用了较多的Javascript线程时间，可能会导致**Interval**定时器连续压入多个回调。导致本来应该存在时间间隔的**Interval**定时器回调连续执行。
 
-此外，当**Interval**定时器回调正在被当前Javascript线程运行时，此次**Interval**定时器触发将会被抛弃。因为此次触发的**Interval**定时器回调不会被入队。
+此外，当**Interval**定时器回调正在被当前Javascript线程运行时，此次**Interval**定时器触发将会被抛弃。因为此次触发的**Interval**定时器回调不会被入队。《Javascript高级程序设计》一书中也提到了这一点，
+
+> 当使用`setInterval()`时，仅当没有该定时器的任何其他代码实例时，才将定时器代码添加到队列中。
+
+如果你对**Interval**定时器的时间间隔要求比较严格的话，可以尝试使用循环加`setTimeout`的方式来模拟`setInterval`的功能。
 
 
 
