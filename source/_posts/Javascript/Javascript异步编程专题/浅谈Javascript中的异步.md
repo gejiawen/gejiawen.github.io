@@ -12,8 +12,9 @@ date: 2015-10-12 15:12:51
 
 - [浅谈Javascript中的异步](http://gejiawen.github.io/2015/10/12/think-about-async-in-javascript/)
 - [Javascript中常见的异步编程模型](http://gejiawen.github.io/2015/10/12/some-javascript-async-pattern/)
-- ES6中的异步编程模型
+- Generator函数处理异步调用
 
+------
 
 本篇文章是本专题的第一篇文章。
 

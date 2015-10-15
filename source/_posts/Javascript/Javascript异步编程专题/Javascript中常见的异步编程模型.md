@@ -11,8 +11,9 @@ Javascript异步编程专题，目前包含以下几篇文章，
 
 - [浅谈Javascript中的异步](http://gejiawen.github.io/2015/10/12/think-about-async-in-javascript/)
 - [Javascript中常见的异步编程模型](http://gejiawen.github.io/2015/10/12/some-javascript-async-pattern/)
-- ES6中的异步编程模型
+- Generator函数处理异步调用
 
+------
 
 本篇文章是本专题的第二篇文章。
 
@@ -24,12 +25,7 @@ Javascript异步编程专题，目前包含以下几篇文章，
 
 在前端的代码编写中，异步的场景随处可见。比如鼠标点击、键盘回车、网络请求等这些与浏览器紧密联系的操作，比如一些延迟交互特效等等。
 
-在这些场景中，你必须要使用所谓的“异步模式”，否则将会严重程序的可行性和用户体验。我们列举这些场景中常用的几种异步编程模型，
-
-- 回调函数
-- 事件监听
-- 观察者模式（消息订阅/发布）
-- promise模式
+在这些场景中，你必须要使用所谓的“异步模式”，否则将会严重程序的可行性和用户体验。我们列举这些场景中常用的几种异步编程模型，包括回调函数、事件监听、观察者模式（消息订阅/发布）、promise模式。除此之外还会稍微介绍一番ES6（ES7）中新增的方案。
 
 下面我们将针对每一种编程模型加以说明。
 
@@ -57,6 +53,8 @@ loading(show);
 ```
 
 代码中的`loading(show)`就是将函数`show()`作为函数`loading()`的参数。在`loading()`完成3秒的loading之后，再去执行回调函数（示例使用了`setTimeout`来模拟）。通过这种方法，`show()`就变成了异步调用，它的执行时机被推迟到`loading()`即将完成之前。
+
+## 回调函数的缺陷
 
 回调函数往往就是调用用户提供的函数，该函数往往是以参数的形式提供的。回调函数并不一定是异步执行的。回调函数的特点就是使用简单、容易理解。缺点就是逻辑间存在一定耦合。最恶心的地方在于会造成所谓的[callback hell](http://callbackhell.com/)。比如下面这样的一个例子，
 
@@ -113,6 +111,8 @@ setTimeout(function () {
 ```
 
 上面的示例代码中，如果我们像demo1那样将`try...catch`加在异步逻辑的外面，即使异步调用发生了异常我们也是捕获不到的，因为`try...catch`不能捕获未来的异常。无奈，我们只能像demo2那样将`try...catch`语句块放在具体的异步逻辑内。这样一旦异步调用多起来，那么就会多出来很多`try...catch`。这样肯定是不好的。
+
+除了上面这些问题之外，我觉得回调函数真正的核心问题在于，嵌套的回到函数往往会破坏整个程序的调用堆栈，并且像`return`，`throw`等这个用于代码流程控制的关键字都不能正常使用（因为前一个回调函数往往会影响到它后面所有的回调函数）。
 
 # 事件监听
 
@@ -198,7 +198,9 @@ setTimeout(function () {
 
 # Promise模式
 
-Promise严格来说不是一种新技术，它只是一种语法糖，用于管理异步回调。Promise源自[Promises/A规范](http://wiki.commonjs.org/wiki/Promises/A)。使用promise来管理回调，可以将回调逻辑扁平化，可以避免之前提到的回调地狱。JQuery有一套Promise的实现，示例代码如下，
+Promise严格来说不是一种新技术，它只是一种语法糖，一种机制，一种代码结构和流程，用于管理异步回调。
+
+jQuery中的Promise实现源自[Promises/A规范](http://wiki.commonjs.org/wiki/Promises/A)。使用promise来管理回调，可以将回调逻辑扁平化，可以避免之前提到的回调地狱。示例代码如下，
 
 ```javascript
 function fn1() {
@@ -216,8 +218,6 @@ function fn2() {
 
 fn1().then(fn2);
 ```
-
-这里稍微解释一下。Promise的本质其实是一个有限状态机，它共有三种状态：pending（执行中）、fulfilled（成功）、rejected（失败）。其中pending为初始装填，fulfilled和rejected是终止状态。状态只能从初始状态到终止状态转换，即pending->fulfilled或者pending->rejected。在状态转换的过程中会触发各种事件。
 
 针对之前提到的回调地狱和异常难以捕获的问题，使用promise都可以轻松的解决。
 
@@ -237,6 +237,159 @@ function A() {
 }
 ```
 
+# ES6中的方案
+
+ES6与今年6月份左右已经正式发布了。其中新增了不少内容。其中有两项内容可能用来解决异步回调的内容。
+
+## ES6中的Promise
+
+最新发布的ECMAScript2015中已经涵盖了promise的相关内容，不过ES6中的Promise规范其实是[Promise/A+规范](http://blog.sae.sina.com.cn/archives/4353)，可以说它是Promise/A规范的增强版。
+
+现代浏览器Chrome，Firefox等已经对Promise提供了原生支持。详细的文档可以参阅[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)。
+
+简单来说，ES6中promise的内容具体如下，
+
+- promise有三种状态：pending（等待）、fulfilled（成功）、rejected（失败）。其中pending为初始状态。
+- promise的状态转换只能是：pending->fulfilled或者pending->rejected。转换方向不能颠倒，且fulfilled和rejected状态不能相互转换。每一种状态转换都会触发相关调用。
+- pending->fulfilled时，promise会带有一个value（成功状态的值）；pending->rejected时，promise会带有一个reason（失败状态的原因）
+- promise拥有`then`方法。`then`方便必须返回一个promise。`then`可以多次链式调用，且回调的顺序跟`then`的声明顺序一致。
+- `then`方法接受两个参数，分别是“pending->fulfilled”的调用和“pending->rejected”的调用。
+- `then`还可以接受一个promise实例，也可以接受一个thenable（类then对象或者方法）实例。
+
+
+总得来说promise的内容比较简单，涉及到三种状态和两种状态转换。其实promise的核心就是`then`方法的实现。
+
+下面是来自MDN上Promise的代码示例（稍作改动），
+
+```javascript
+var p1 = new Promise(function (resolve, reject) {
+    console.log('p1 start');
+    setTimeout(function() {
+        resolve('p1 resolved');
+    }, 2000);
+});
+
+p1.then(function (value) {
+    console.log(value);
+}, function(reason) {
+    console.log(reason);
+});
+```
+
+上述代码的执行结果是，先打印"p1 start"然后经过2秒左右再次打印"p1 resolved"。
+
+当然我们还可以添加多个回调。我们可以通过在前一个`then`方法中调用`return`将promise往后传递。比如，
+
+```
+p1.then(function(v) {
+    console.log('1: ', v);
+    return v + ' 2';
+}).then(function(v) {
+    console.log('2: ', v);
+});
+```
+
+不过在使用Promise的时候，有一些需要注意的地方，这篇文章[We have a problem with promises](http://pouchdb.com/2015/05/18/we-have-a-problem-with-promises.html)（[翻译文](http://fex.baidu.com/blog/2015/07/we-have-a-problem-with-promises/)）中总结得很好，有兴趣的可自行参阅。
+
+不管是ES6中的promise还是jQuery中的promise/deferred，的确可以避免异步代码的嵌套问题，使整体代码结构变得清晰，不用再受callback hell折磨。但是也仅仅止步于此，因为它并没有触碰js异步回调真正核心的内容。
+
+现在业界有许多关于PromiseA+规范的实现，不过博主个人觉得[bluebird](https://github.com/petkaantonov/bluebird)是个不错的库，可以值得一用，如果你有选择困难症，不妨试一试😎😎😎
+
+## ES6中Generator
+
+ES6中引入的Generator可以理解为一种协程的实现机制，它允许函数在运行过程中将Javascript执行权交给其他函数（代码），并在需要的时候返回继续执行。
+
+我们可以使用Generator配合ES6中Promise，进一步将异步调用扁平化（转化成同步风格）。
+
+下面我们来看一个例子,
+
+```javascript
+function* gen() {
+    var ret = yield new Promise(function(resolve, reject) {
+        console.log('async task start');
+        setTimeout(function() {
+            resolve('async task end');
+        }, 2000);
+    });
+    
+    console.log(ret);
+}
+```
+
+上述Node.js代码中，我们定义了一个Generator函数，且创建了一个promise，promise内使用`setTimeout`模拟了一个异步任务。
+
+接下来我们来执行这个Generator函数，因为`yield`返回的是一个promise，所以我们需要使用`then`方法，
+
+```javascript
+var g = gen();
+var result = g.next();
+
+result.value.then(function(str){
+    console.log(str);
+    // 对resolve的数据重新包装，然后传递给下一个promise
+    return {
+        msg: str
+    };
+}).then(function(data){
+    g.next(data);
+});
+```
+
+最终的结果如下，
+
+```
+async task start
+// 经过2秒左右
+async task end
+{msg: 'async task end'}
+```
+
+其实关于Generator还有很多的内容可以说，这里由于篇幅的关系就不展开了。业界已经有了基于Generator处理异步调用的功能库，比如[co](https://github.com/tj/co)、[task.js](http://taskjs.org/)。
+
+## ES7中的async和await
+
+在单线程的Javascript上做异步任务（甚至并发任务）的确是一个让人头疼的问题，总会越到各种各样的问题。从最早的函数回调，到Promise，再到Generator，涌现的各种解决方案，虽然都有所改进，但是仍然让人觉得并没有彻底的解决这个问题。
+
+举个例子来说，我现在就是想读取一个文件，这么简单的一件事，何必要考虑那么多呢？又是回调，又是promise的，烦不烦呐。我就想像下面这么简单的写代码，难道不行么？
+
+```javascript
+function task() {
+    var file1Content = readFile('file1path');
+    var file2Content = readFile(fileContent);
+    console.log(file2Content);
+}
+```
+
+想要做的事情很简单，读取第一个文件，它的内容是要读取的第二个文件的文件名。
+
+值得庆幸的是，ES7中的`async`和`await`可以帮你做到这件事。不过要稍微改动一下，
+
+```javascript
+async function task() {
+    var file1Content = await readFile('file1path');
+    var file2Content = await readFile(fileContent);
+    console.log(file2Content);
+}
+```
+
+看，改动的地方很简单，只要在`task`前面加上关键词`async`，在函数内的异步任务前添加`await`声明即可。如果忽略这些额外的关键字，简直就是完完全全的同步写法嘛。
+
+其实，这种方式就是前端提到的Generator和Promise方案的封装。ECMAScript组织也认为这是目前解决Javascript异步回调的最佳方案，所以可能会在ES7中将其纳入到规范中来。需要注意的是，这项特性是ES7的提案，依赖Generator，所以慎用！
+
+## fibjs
+
+除了上述的几种方案之外，其实还有另外一种方案。就是使用协程的方案来解决单线程上的异步调用问题。
+
+之前我们也提到过，Generator的`yield`可以暂停函数执行，将执行权临时转交给其他任务，待其他任务完毕之后，再交还回执行权。这其实就是协程的基本模型。
+
+业界有一款基于V8引擎的服务端开发框架[fibjs](http://fibjs.org)，它的实现机制跟Node.js是不一样的。fibjs采用[fiber](https://en.wikipedia.org/wiki/Fiber)解决v8引擎的多路复用，并通过大量c++组件，将重负荷运算委托给后台线程，释放v8线程，争取更大的并发时间。
+
+一句话，fibjs从底层，使用的纤程模型解决了异步调用的问题。关于fibjs，有兴趣的话可以查阅相关资料。不过我个人对它是持谨慎态度的。原因是如下两点，
+
+- 生态原因。
+- 使用了js，但是又摒弃了js的异步。
+
+不过还是可以作为兴趣去研究一下的。
 
 
 
