@@ -112,7 +112,7 @@ setTimeout(function () {
 
 上面的示例代码中，如果我们像demo1那样将`try...catch`加在异步逻辑的外面，即使异步调用发生了异常我们也是捕获不到的，因为`try...catch`不能捕获未来的异常。无奈，我们只能像demo2那样将`try...catch`语句块放在具体的异步逻辑内。这样一旦异步调用多起来，那么就会多出来很多`try...catch`。这样肯定是不好的。
 
-除了上面这些问题之外，我觉得回调函数真正的核心问题在于，嵌套的回到函数往往会破坏整个程序的调用堆栈，并且像`return`，`throw`等这个用于代码流程控制的关键字都不能正常使用（因为前一个回调函数往往会影响到它后面所有的回调函数）。
+除了上面这些问题之外，我觉得回调函数真正的核心问题在于，嵌套的回到函数往往会破坏整个程序的调用堆栈，并且像`return`，`throw`等这些用于代码流程控制的关键词都不能正常使用（因为前一个回调函数往往会影响到它后面所有的回调函数）。
 
 # 事件监听
 
@@ -239,7 +239,7 @@ function A() {
 
 # ES6中的方案
 
-ES6与今年6月份左右已经正式发布了。其中新增了不少内容。其中有两项内容可能用来解决异步回调的内容。
+ES6于今年6月份左右已经正式发布了。其中新增了不少内容。其中有两项内容可能用来解决异步回调的内容。
 
 ## ES6中的Promise
 
@@ -252,7 +252,7 @@ ES6与今年6月份左右已经正式发布了。其中新增了不少内容。�
 - promise有三种状态：pending（等待）、fulfilled（成功）、rejected（失败）。其中pending为初始状态。
 - promise的状态转换只能是：pending->fulfilled或者pending->rejected。转换方向不能颠倒，且fulfilled和rejected状态不能相互转换。每一种状态转换都会触发相关调用。
 - pending->fulfilled时，promise会带有一个value（成功状态的值）；pending->rejected时，promise会带有一个reason（失败状态的原因）
-- promise拥有`then`方法。`then`方便必须返回一个promise。`then`可以多次链式调用，且回调的顺序跟`then`的声明顺序一致。
+- promise拥有`then`方法。`then`方法必须返回一个promise。`then`可以多次链式调用，且回调的顺序跟`then`的声明顺序一致。
 - `then`方法接受两个参数，分别是“pending->fulfilled”的调用和“pending->rejected”的调用。
 - `then`还可以接受一个promise实例，也可以接受一个thenable（类then对象或者方法）实例。
 
@@ -280,7 +280,7 @@ p1.then(function (value) {
 
 当然我们还可以添加多个回调。我们可以通过在前一个`then`方法中调用`return`将promise往后传递。比如，
 
-```
+```javascript
 p1.then(function(v) {
     console.log('1: ', v);
     return v + ' 2';
@@ -337,7 +337,7 @@ result.value.then(function(str){
 
 最终的结果如下，
 
-```
+```bash
 async task start
 // 经过2秒左右
 async task end
@@ -374,7 +374,7 @@ async function task() {
 
 看，改动的地方很简单，只要在`task`前面加上关键词`async`，在函数内的异步任务前添加`await`声明即可。如果忽略这些额外的关键字，简直就是完完全全的同步写法嘛。
 
-其实，这种方式就是前端提到的Generator和Promise方案的封装。ECMAScript组织也认为这是目前解决Javascript异步回调的最佳方案，所以可能会在ES7中将其纳入到规范中来。需要注意的是，这项特性是ES7的提案，依赖Generator，所以慎用！
+其实，这种方式就是前端提到的Generator和Promise方案的封装。ECMAScript组织也认为这是目前解决Javascript异步回调的最佳方案，所以可能会在ES7中将其纳入到规范中来。需要注意的是，这项特性是ES7的提案，依赖Generator，所以慎用（目前来说基本用不了）！
 
 ## fibjs
 
