@@ -34,6 +34,7 @@ date: 2014-12-01
 
 - [这些年前端的那些事儿](http://gejiawen.github.io/slides/things-for-fe-in-these-years)
 - [我的开发流模型](http://gejiawen.github.io/slides/my-dev-workflows)
+- [Javascript Async Ninja](http://gejiawen.github.io/slides/javascript-async-ninja)
 
 # 友情链接
 

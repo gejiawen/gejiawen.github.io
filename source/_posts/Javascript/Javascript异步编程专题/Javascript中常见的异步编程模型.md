@@ -243,7 +243,7 @@ ES6于今年6月份左右已经正式发布了。其中新增了不少内容。�
 
 ## ES6中的Promise
 
-最新发布的ECMAScript2015中已经涵盖了promise的相关内容，不过ES6中的Promise规范其实是[Promise/A+规范](http://blog.sae.sina.com.cn/archives/4353)，可以说它是Promise/A规范的增强版。
+最新发布的ECMAScript2015中已经涵盖了promise的相关内容，不过ES6中的Promise规范其实是[Promise/A+规范](https://promisesaplus.com/)，可以说它是Promise/A规范的增强版。
 
 现代浏览器Chrome，Firefox等已经对Promise提供了原生支持。详细的文档可以参阅[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)。
 
