@@ -1,12 +1,12 @@
 postid: 'gitbook-fast-started'
-title: gitbook快速指南
+title: Gitbook快速指南
 categories: [教程]
 tags: [gitbook]
 date: 2015-10-28 23:11:12
 
 ---
 
-[Gitbook](https://github.com/GitbookIO/gitbook)是一款利于git及markdown快速构建在线书籍的工具。期官网是[www.gitbook.com](http://www.gitbook.com)。其实Gitbook是一个提供书籍在线发布的平台。
+[Gitbook](https://github.com/GitbookIO/gitbook)是一款利于git及markdown快速构建在线书籍的工具。官网是[www.gitbook.com](http://www.gitbook.com)。其实Gitbook自身也是一个提供书籍在线发布的平台。不过由于一些网络的因素，gitbook平台在国内的访问速度和稳定性堪忧。
 
 本文将简要的叙述如何使用Gitbook，基于github来快速构建一个在线书籍。我的博客上就有一个gitbook应用的[示例](http://gejiawen.github.io/coding-book/)，可以先看看效果。
 
@@ -39,18 +39,18 @@ gitbook versions
 除此之外，我们还有通过`gitbook versions:available`来查看当前gitbook的所有版本，还可以通过`gitbook versions:update`升级到最新版本的gitbook。
 
 
-# 构建书籍
+# 构建
 
 因为我们要基于github来构建在线书籍，所以首先我们得创建一个github repo。创建好repo之后，我们再`git clone`到本地。
 
-```shell
+```bash
 git clone YOUR_REPO_URL
 cd YOUR_REPO_FOLDER
 ```
 
 然后通过`gitbook init`来初始化一个书籍。
 
-```shell
+```bash
 ➜  test-gitbook  gitbook init
 info: init book at /Users/gejiawen/code/test-gitbook
 info: detect structure from SUMMARY (if it exists)
@@ -99,13 +99,13 @@ Done, without error
 
 其中`gitbook`字段表示的是构建书籍时所采用gitbook程序版本。这里官方推荐使用`"2.x.x"`，这种模糊的版本号可以适配gitbook 2的所有子版本，这无疑是一种更优的做法。
 
-而`structure`表示自定义关键页面的源地址。比如，可能你是那种一个项目必带`README.md`文件的强迫症患者，但是gitbook应用中默认采用README.me文件作为书籍的扉页。你可能会觉得这不太合理，此时我们就可以使用`structure`来自定义readme的地址啦。
+而`structure`表示自定义关键页面的源地址。比如，可能你是那种一个项目必带`README.md`文件的强迫症患者，但是gitbook应用中默认采用`README.md`文件作为书籍的扉页。你可能会觉得这不太合理，此时我们就可以使用`structure`来自定义readme的地址啦。
 
 对`book.json`欲了解更多内容，请移步官方的[帮助文档](http://help.gitbook.com/format/configuration.html)。
 
 到此为止，一个在线书籍基本上已经ready了。接下来我们在本地预览一下效果，
 
-```shell
+```bash
 gitbook serve
 ```
 
@@ -115,7 +115,7 @@ gitbook serve
 
 在完成书籍的写作之后，我们可以通过`gitbook build`来构建书籍源文件，嗯，其实都是一些html文件啦。
 
-```shell
+```bash
 ➜  test-gitbook  gitbook build
 info: loading book configuration....OK
 info: load plugin gitbook-plugin-highlight ....OK
@@ -144,7 +144,7 @@ Done, without error
 
 在markdown源代码中，我将所有的md文件都放在了`_source`文件夹中，在构建的时候使用如下命令，
 
-```shell
+```bash
 gitbook build _source _book
 ```
 
