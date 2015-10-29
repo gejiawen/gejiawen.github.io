@@ -3,13 +3,13 @@ title: 实验室
 date: 2014-12-01
 ---
 
-# 个人项目
+# 一剑阁
 
-- [vip](), a versioning interface platform.
-- [spec](), a spec for fe code style, it's personal.
-- [workflow](), a fe development workflow explore.
-- [feem](), a frontend exception monitor.
-- [ids](), a integrated development solutions for fe.
+- vip, a versioning interface platform.
+- spec, a spec for fe code style, it's personal.
+- [workflow](http://gejiawen.github.io/fe-workflows/), a fe development workflow explore.
+- feem, a frontend exception monitor.
+- ids, a integrated development solutions for fe.
 - [saury](https://github.com/gejiawen/saury), a light message tip tool. see me on [npmjs.com](https://www.npmjs.org/package/saury).
 - [bullhead](https://github.com/gejiawen/bullhead), a package to add thousand-bit separator for a number value. see me on [npmjs.com](https://www.npmjs.com/package/bullhead).
 
