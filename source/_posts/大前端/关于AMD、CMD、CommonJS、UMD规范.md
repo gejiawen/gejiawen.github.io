@@ -1,10 +1,14 @@
 postid: 'what-is-amd-cmd-commonjs-umd'
-title: 关于AMD，CMD，CommonJS及UMD规范
+title: 关于AMD,CMD,CommonJS及UMD规范
 categories: [大前端]
 tags: [翻译, 前端规范]
 date: 2015-11-03 14:01:28
 
 ---
+
+[点我](http://davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd/)看原文。
+
+译文开始。
 
 Javascript的组件生态在最近几年的发展很给力，我们的可选性更加广泛了。这本是一件好事，但是当多个第三方Javascript在一起混合使用的时候，我们可能会遇到一个很尴尬的问题，那就是不是所有的组件都能在一起很愉快的玩耍的。
 
@@ -136,7 +140,7 @@ module.exports = {
 
 因为AMD，CommonJS规范是两种不一致的规范，虽然他们应用的场景也不太一致，但是人们仍然是期望有一种统一的规范来支持这两种规范。于是，UMD（Universal Module Definition，称之为**通用模块规范**）规范诞生了。
 
-客观来说，这个UMD规范看起来的确没有比AMD和CommonJS规范简约。但是它支持AMD和CommonJS规范，同时还支持古老的全局模块模式。
+客观来说，这个UMD规范看起来的确没有AMD和CommonJS规范简约。但是它支持AMD和CommonJS规范，同时还支持古老的全局模块模式。
 
 我们来看个示例，
 
@@ -161,7 +165,7 @@ module.exports = {
 }));
 ```
 
-> 个人觉得UMD规范更像一个语法糖。应用UMD规范的js文件更像一个立即执行函数。函数有两个参数，第一个参数是当前运行时环境，第二个参数是模块的定义体。在执行UMD规范时，会优先判断是当前环境是否支持AMD环境，然后再检验是否支持CommonJS环境，否则认为当前环境为浏览器环境（`window`）。
+> 个人觉得UMD规范更像一个语法糖。应用UMD规范的js文件其实就是一个立即执行函数。函数有两个参数，第一个参数是当前运行时环境，第二个参数是模块的定义体。在执行UMD规范时，会优先判断是当前环境是否支持AMD环境，然后再检验是否支持CommonJS环境，否则认为当前环境为浏览器环境（`window`）。当然具体的判断顺序其实是可以调换的。
 
 下面是一个更加复杂的示例，
 
@@ -192,7 +196,6 @@ module.exports = {
 ```
 
 **Tips**: 如果你写了一个小工具库，你想让它及支持AMD规范，又想让他支持CommonJS规范，那么采用UMD规范对你的代码进行包装吧，就想[这样]()。
-
 
 
 
