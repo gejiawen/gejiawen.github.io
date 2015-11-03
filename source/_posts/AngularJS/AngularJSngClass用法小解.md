@@ -48,7 +48,7 @@ function ctrl($scope) {
 
 
 ```html
-<div ng-class {'selected': isSelected, 'car': isCar}"></div>
+<div ng-class="{'selected': isSelected, 'car': isCar}"></div>
 ```
 
 ```javascript
