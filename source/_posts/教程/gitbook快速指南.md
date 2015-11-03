@@ -6,7 +6,7 @@ date: 2015-10-28 23:11:12
 
 ---
 
-[Gitbook](https://github.com/GitbookIO/gitbook)是一款利于git及markdown快速构建在线书籍的工具。官网是[www.gitbook.com](http://www.gitbook.com)。其实Gitbook自身也是一个提供书籍在线发布的平台。不过由于一些网络的因素，gitbook平台在国内的访问速度和稳定性堪忧。
+[Gitbook](https://github.com/GitbookIO/gitbook)是一款利用git及markdown快速构建在线书籍的工具。官网是[www.gitbook.com](http://www.gitbook.com)。其实Gitbook自身也是一个提供书籍在线发布的平台。不过由于一些网络的因素，gitbook平台在国内的访问速度和稳定性堪忧。
 
 本文将简要的叙述如何使用Gitbook，基于github来快速构建一个在线书籍。我的博客上就有一个gitbook应用的[示例](http://gejiawen.github.io/coding-book/)，可以先看看效果。
 
