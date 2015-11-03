@@ -195,7 +195,7 @@ module.exports = {
 }));
 ```
 
-**Tips**: 如果你写了一个小工具库，你想让它及支持AMD规范，又想让他支持CommonJS规范，那么采用UMD规范对你的代码进行包装吧，就想[这样]()。
+**Tips**: 如果你写了一个小工具库，你想让它及支持AMD规范，又想让他支持CommonJS规范，那么采用UMD规范对你的代码进行包装吧，就像[这样](https://github.com/gejiawen/bullhead/blob/master/index.js)。
 
 
 
