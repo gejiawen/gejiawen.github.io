@@ -2,7 +2,7 @@ postid: "from-commonjs-to-seajs"
 title: 从CommonJS到Sea.js
 date: 2014-08-12 15:10:55
 categories: [大前端]
-tags: [fe, 转载]
+tags: [转载, 前端规范]
 ---
 
 # CoomonJS是什么
