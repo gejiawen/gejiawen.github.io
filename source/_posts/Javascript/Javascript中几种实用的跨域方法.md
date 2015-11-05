@@ -3,9 +3,10 @@ title: Javascript中几种实用的跨域方法
 date: 2014-09-19 18:10:37
 categories: [Javascript]
 tags: [javascript]
+
 ---
 
-*这里说的js跨域是指通过js在不同的域之间进行数据传输或通信，比如用ajax向一个不同的域请求数据，或者通过js获取页面中不同域的框架中(iframe)的数据。只要协议、域名、端口有任何一个不同，都被当作是不同的域。*
+这里说的js跨域是指通过js在不同的域之间进行数据传输或通信，比如用ajax向一个不同的域请求数据，或者通过js获取页面中不同域的框架中(iframe)的数据。只要协议、域名、端口有任何一个不同，都被当作是不同的域。
 
 下表给出了相对**http://store.company.com/dir/page.html**同源检测的结果，
 
@@ -66,26 +67,28 @@ $.getJSON('http://example.com/data.php?callback=?', function() {
 ```
 
 原理是一样的，只不过我们不需要手动的插入script标签以及定义回掉函数。jquery会自动生成一个全局函数来替换callback=?中的问号，之后获取到数据后又会自动销毁，实际上就是起一个临时代理函数的作用。
-$.getJSON方法会自动判断是否跨域，不跨域的话，就调用普通的ajax方法；跨域的话，则会以异步加载js文件的形式来调用jsonp的回调函数。
+$.getJSON方法会自动判断是否跨域，不跨域的话，就调用普通的ajax方法。跨域的话，则会以异步加载js文件的形式来调用jsonp的回调函数。
 
 
 # 通过修改`document.domain`来跨子域
 
 浏览器都有一个同源策略，它有如下几个限制，
 
-- 限制之一就是第一种方法中我们说的不能通过ajax的方法去请求不同源中的文档
-- 它的第二个限制是浏览器中不同域的框架之间是不能进行js的交互操作的。
+- 第一种方法中我们说的不能通过ajax的方法去请求不同源中的文档
+- 浏览器中不同域的框架之间是不能进行js的交互操作的。
 
-有一点需要说明，不同的框架之间（父子或同辈），是能够获取到彼此的window对象的，但蛋疼的是你却不能使用获取到的window对象的属性和方法(html5中的postMessage方法是一个例外，还有些浏览器比如ie6也可以使用top、parent等少数几个属性)，总之，你可以当做是只能获取到一个几乎无用的window对象。
+有一点需要说明，不同的框架（iframe）之间（父子或同辈），是能够获取到彼此的window对象的，但蛋疼的是你却不能使用获取到的window对象的属性和方法(html5中的postMessage方法是一个例外，还有些浏览器比如ie6也可以使用top、parent等少数几个属性)，总之，你可以当做是只能获取到一个几乎无用的window对象。
 
-比如，有一个页面，它的地址是http://www.example.com/a.html，在这个页面里面有一个iframe，它的src是`http://example.com/b.html`, 很显然，这个页面与它里面的iframe框架是不同域的，所以我们是无法通过在页面中书写js代码来获取iframe中的东西的，
+比如，有一个页面，它的地址是http://www.example.com/a.html，在这个页面里面有一个iframe，它的src是http://example.com/b.html, 很显然，这个页面与它里面的iframe框架是不同域的，所以我们是无法通过在页面中书写js代码来获取iframe中的东西的，
 
 ```html
 <script>
 function onLoad() {
     var iframe = document.getElementById('iframe');
-    var win = iframe.contentWindow; // 这里是能够获取iframe中的window对象的，但是这个window对象的属性和方法几乎都是不可用的
-    var doc = wind.document; // 这里获取不到iframe的document对象
+    // 这里是能够获取iframe中的window对象的，
+    // 但是这个window对象的属性和方法几乎都是不可用的。
+    var win = iframe.contentWindow; 
+    var doc = win.document; // 这里获取不到iframe的document对象
     var name = win.name； // 这里同样是获取不到windowd对象的name属性的
 
     // ...
@@ -96,13 +99,13 @@ function onLoad() {
 
 这个时候，`document.domain`就可以派上用场了。
 
-我们只要把`http://www.example.com/a.html`和`http://example.com/b.html`这两个页面的`document.domain`都设成相同的域名就可以了。
+我们只要把http://www.example.com/a.html和http://example.com/b.html这两个页面的`document.domain`都设成相同的域名就可以了。
 
 但要注意的是，`document.domain`的设置是有限制的，我们只能把`document.domain`设置成自身或更高一级的父域，且主域必须相同。
 
-例如：`a.b.example.com`中某个文档的`document.domain`可以设成`a.b.example.com`、`b.example.com`、`example.com`中的任意一个，但是不可以设成`c.a.b.example.com`，因为这是当前域的子域，也不可以设成`baidu.com`，因为主域已经不相同了。
+例如：`a.b.example.com`中某个文档的`document.domain`可以设成`a.b.example.com`、`b.example.com`、`example.com`这三个中的任意一个，但是不可以设成`c.a.b.example.com`，因为这是当前域的子域，也不可以设成`baidu.com`，因为主域已经不相同了。
 
-在页面`http://www.example.com/a.html`中设置`document.domain`，
+在页面http://www.example.com/a.html中设置`document.domain`，
 
 ```html
 <iframe src="http://example.com/b.html" id="iframe" onLoad="test()"></iframe>
@@ -115,26 +118,28 @@ function test() {
 </script>
 ```
 
-在页面`http://example.com/b.html`中也设置`document.domain`，而且这也是必须的，虽然这个文档的`domain`就是`example.com`,但是还是必须显式的设置`document.domain`的值，
+在页面http://example.com/b.html中也设置`document.domain`，而且这是必须的，虽然这个文档的`domain`就是`example.com`,但是还是必须显式的设置`document.domain`的值，
 
 ```html
 <script>
-document.domain = 'example.com'; // 在iframe载入的这个页面也设置document.domain，使之与主页面的document.domain一致
+// 在iframe载入的这个页面也设置document.domain，使之与主页面的document.domain一致
+document.domain = 'example.com';
 </script>
 ```
 
 这样我们就可以通过js访问到iframe中的各种属性和对象了。
 
-不过如果你想在`http://www.example.com/a.html`页面中通过ajax直接请求`http://example.com/b.html`页面，即使你设置了相同的document.domain也还是不行的，所以修改document.domain的方法只适用于不同子域的框架间的交互。
+不过如果你想在http://www.example.com/a.html页面中通过ajax直接请求http://example.com/b.html页面，即使你设置了相同的document.domain也还是不行的，所以修改document.domain的方法只适用于不同子域的框架间的交互。
 
 如果你想通过ajax的方法去与不同子域的页面交互，除了使用jsonp的方法外，还可以用一个隐藏的iframe来做一个代理。
+
 原理就是让这个iframe载入一个与你想要通过ajax获取数据的目标页面处在相同的域的页面，所以这个iframe中的页面是可以正常使用ajax去获取你要的数据的，然后就是通过我们刚刚讲得修改document.domain的方法，让我们能通过js完全控制这个iframe，这样我们就可以让iframe去发送ajax请求，然后收到的数据我们也可以获得了。
 
 # 使用`window.name`来进行跨域
 
 window对象有个name属性，该属性有个特征：即在一个窗口(window)的生命周期内，窗口载入的所有的页面都是共享一个`window.name`的，每个页面对`window.name`都有读写的权限，`window.name`是持久存在一个窗口载入过的所有页面中的，并不会因新页面的载入而进行重置。
 
-比如：有一个页面`a.html`,它里面有这样的代码，
+比如：有一个页面a.html,它里面有这样的代码，
 
 ```html
 <script>
@@ -153,22 +158,22 @@ setTimeout(function() {
 </script>
 ```
 
-当`a.html`载入3秒之后，跳转到了`b.html`页面，将会弹出`我是页面a设置的值`。
+当a.html载入3秒之后，跳转到了b.html页面，将会弹出“我是页面a设置的值”。
 
-我们看到在`b.html`页面上成功获取到了它的上一个页面`a.html`给`window.name`设置的值。
+我们看到在b.html页面上成功获取到了它的上一个页面a.html给`window.name`设置的值。
 
-如果在之后所有载入的页面都没对`window.name`进行修改的话，那么所有这些页面获取到的`window.name`的值都是`a.html`页面设置的那个值。当然，如果有需要，其中的任何一个页面都可以对`window.name`的值进行修改。
+如果在之后所有载入的页面都没对`window.name`进行修改的话，那么所有这些页面获取到的`window.name`的值都是a.html页面设置的那个值。当然，如果有需要，其中的任何一个页面都可以对`window.name`的值进行修改。
 
 注意，`window.name`的值只能是字符串的形式，这个字符串的大小最大能允许2M左右甚至更大的一个容量，具体取决于不同的浏览器，但一般是够用了。
 
-上面的例子中，我们用到的页面`a.html`和`b.html`是处于同一个域的，但是即使`a.html`与`b.html`处于不同的域中，上述结论同样是适用的，这也正是利用`window.name`进行跨域的原理。
+上面的例子中，我们用到的页面a.html和b.html是处于同一个域的，但是即使a.html与b.html处于不同的域中，上述结论同样是适用的，这也正是利用`window.name`进行跨域的原理。
 
 
 下面就来看一看具体是怎么样通过`window.name`来跨域获取数据的。还是举例说明。
 
-比如有一个`www.example.com/a.html`页面,需要通过`a.html`页面里的js来获取另一个位于不同域上的页面`www.cnblogs.com/data.html`里的数据。
+比如有一个www.example.com/a.html页面,需要通过a.html页面里的js来获取另一个位于不同域上的页面www.cnblogs.com/data.html里的数据。
 
-`data.html`页面里的代码很简单，就是给当前的`window.name`设置一个`a.html`页面想要得到的数据值。`data.html`里的代码如下，
+data.html页面里的代码很简单，就是给当前的window.name设置一个a.html页面想要得到的数据值。data.html里的代码如下，
 
 ```html
 <script>
@@ -176,15 +181,15 @@ setTimeout(function() {
 </script>
 ```
 
-那么在`a.html`页面中，我们怎么把`data.html`页面载入进来呢？
+那么在a.html页面中，我们怎么把data.html页面载入进来呢？
 
-显然我们不能直接在`a.html`页面中通过改变`window.location`来载入`data.html`页面，因为我们想要即使`a.html`页面不跳转也能得到`data.html`里的数据。
+显然我们不能直接在a.html页面中通过改变`window.location`来载入data.html页面，因为我们想要即使a.html页面不跳转也能得到data.html里的数据。
 
-答案就是在`a.html`页面中使用一个隐藏的iframe来充当一个中间人角色，由iframe去获取`data.html`的数据，然后`a.html`再去得到iframe获取到的数据
+答案就是在a.html页面中使用一个隐藏的iframe来充当一个**中间人角色**，由iframe去获取data.html的数据，然后a.html再去得到iframe获取到的数据
 
-充当中间人的iframe想要获取到`data.html`的通过`window.name`设置的数据，只需要把这个iframe的src设为`www.cnblogs.com/data.html`就行了。然后`a.html`想要得到iframe所获取到的数据，也就是想要得到iframe的`window.name`的值，还必须把这个iframe的src设成跟`a.html`页面同一个域才行，不然根据前面讲的同源策略，`a.html`是不能访问到iframe里的`window.name`属性的。这就是整个跨域过程。
+充当中间人的iframe想要获取到data.html的通过`window.name`设置的数据，只需要把这个iframe的src设为www.cnblogs.com/data.html就行了。然后a.html想要得到iframe所获取到的数据，也就是想要得到iframe的`window.name`的值，还必须把这个iframe的src设成跟a.html页面同一个域才行，不然根据前面讲的同源策略，a.html是不能访问到iframe里的`window.name`属性的。这就是整个跨域过程。
 
-看下`a.html`页面的代码，
+看下a.html页面的代码，
 
 ```html
 <!doctype html>
@@ -196,8 +201,10 @@ setTimeout(function() {
     <script>
         function getData() { // iframe载入data.html页面后会执行此函数
             var iframe = document.getElementById('proxy');
-            iframe.onload = function()　{ // 这时候a.html与iframe已经是处于同一源了，可以相互访问
-                var data = iframe.contentWindow.name; // 获取iframe里的window.name，也就是data.html页面给它设置的数据
+            // 这时候a.html与iframe已经是处于同一源了，可以相互访问
+            iframe.onload = function()　{
+                // 获取iframe里的window.name，也就是data.html页面给它设置的数据
+                var data = iframe.contentWindow.name;
                 alert(data);
             };
             iframe.src = 'b.html'; // 这里的b.html为一个随便的页面，只要与a.html同源就行了，目的是让a.html能够访问到iframe中的东西，设置成about:blank也是可以的
@@ -221,7 +228,7 @@ setTimeout(function() {
 
 目前IE8+、FireFox、Chrome、Opera等浏览器都已经支持`window.postMessage`方法。
 
-调用`postMessage`方法的`window`对象是指要接收消息的那一个`window`对象，
+调用`postMessage`方法的`window`对象是指**要接收消息**的那一个`window`对象，
 
 - 该方法的第一个参数`message`为要发送的消息，类型只能为字符串
 - 第二个参数`targetOrigin`用来限定接收消息的那个`window`对象所在的域，如果不想限定域，可以使用通配符`*`。
@@ -238,7 +245,8 @@ setTimeout(function() {
     function onLoad() {
         var iframe = document.getElementById('iframe');
         var win = iframe.window;
-        win.postMessage('我是来自页面a的消息', '*'); // 向不同域的http://www.test.com/b.html页面发送消息
+        // 向不同域的"http://www.test.com/b.html"页面发送消息
+        win.postMessage('我是来自页面a的消息', '*');
     }
 </script>
 <iframe id="iframe" src="http://www.test.com/b.html" onload="onLoad()"></iframe>
