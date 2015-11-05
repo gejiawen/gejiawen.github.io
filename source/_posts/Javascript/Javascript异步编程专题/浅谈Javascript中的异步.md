@@ -72,7 +72,7 @@ Javascript这门语言出身“低贱”，但是随着近年来社区的活跃�
 
 对于异步IO，比如ajax请求（当然，ajax分为同步ajax和异步ajax，这里我们仅用异步ajax来作示例）。当js代码发出一个ajax请求时，浏览器仍然会接着往下执行js代码。我们将处理ajax返回的逻辑绑定在ajax回调函数上，当ajax请求完毕成功返回时会触发回调函数，然后接着执行我们绑定的处理逻辑。如下图，
 
-![](/res/浅谈Javascript中的异步/001.png)
+![](/res/think-about-async-in-javascript/001.png)
 
 这种场景下的异步其实涉及到了两个线程，一个是javascript线程，一个是浏览器为了发出ajax请求而开辟的线程（它属于浏览器进程的子线程）。
 
@@ -96,7 +96,7 @@ foo(foo2);
 
 这段代码的执行过程如下图，
 
-![](/res/浅谈Javascript中的异步/002.png)
+![](/res/think-about-async-in-javascript/002.png)
 
 从图中我们可以看出执行`foo(foo2)`使用了50ms，其中在1010ms时开始执行`setTimeout`语句。由于我们使用`setTimeout`设置了一个延时，所以在执行`foo(foo2)`时并没有真正的执行`foo2()`，而是将其时机推迟了。直到3010ms左右时才去真正的执行`foo2()`的代码。
 
@@ -114,7 +114,7 @@ foo(foo2);
 
 这里我们就以浏览器环境作为示例来进行相关说明。首先试想一下我们现在有这样的一个场景。我们在一段js代码中发出了一个ajax请求，同时给click和press注册了事件监听。那么当我们执行这段代码后，其效果图如下，
 
-![](/res/浅谈Javascript中的异步/003.png)
+![](/res/think-about-async-in-javascript/003.png)
 
 因为Javascript是单线程的，就意味着Javascript同一时间只能处理一个任务。如果一旦任务产生的速度过快，那么后续的任务就得排队。每一个任务往往与一个事件相对应。
 
@@ -144,7 +144,7 @@ JQuery的作者John Resig有一篇[文章](http://ejohn.org/blog/how-javascript-
 
 首先我们来看一张场景图，
 
-![](/res/浅谈Javascript中的异步/004.png)
+![](/res/think-about-async-in-javascript/004.png)
 
 乍一看这张图一坨方块加一坨英文，看不出头绪。其实Javascript定时器的秘密就隐藏在其中，让我们一步一步来解析。
 
@@ -165,7 +165,7 @@ JQuery的作者John Resig有一篇[文章](http://ejohn.org/blog/how-javascript-
 
 直到Javascript执行完第一块js代码，我们的任务队列中已经有两个待执行的任务了。如下，
 
-![](/res/浅谈Javascript中的异步/005.png)
+![](/res/think-about-async-in-javascript/005.png)
 
 现在Javascript线程已经处于空闲状态了，此时任务队列已经有2个任务在等待执行了，按照入队顺序，我们先处理click事件。队列后面的任务继续排队等待。
 
@@ -174,7 +174,7 @@ JQuery的作者John Resig有一篇[文章](http://ejohn.org/blog/how-javascript-
 
 此时，任务队列的情况如下，
 
-![](/res/浅谈Javascript中的异步/006.png)
+![](/res/think-about-async-in-javascript/006.png)
 
 可以看到，之前的click事件已经出队了，但是又新增了一个**Interval**定时器回调。
 
@@ -184,7 +184,7 @@ JQuery的作者John Resig有一篇[文章](http://ejohn.org/blog/how-javascript-
 
 此时，任务队列如下，
 
-![](/res/浅谈Javascript中的异步/007.png)
+![](/res/think-about-async-in-javascript/007.png)
 
 现在任务队列里面已经有两个一样的**Interval**定时器任务在等待执行了。
 
