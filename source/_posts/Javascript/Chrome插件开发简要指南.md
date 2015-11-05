@@ -20,7 +20,7 @@ Chrome是个非常牛逼的浏览器，速度快，界面清爽，对开发人�
 
 下图是[FEHelper](http://www.baidufe.com/fehelper)的插件包解压后的文件，
 
-![](/res/Chrome插件开发简要指南/001.png)
+![](/res/chrome-plugin-dev-guide/001.png)
 
 其中，
 
@@ -33,7 +33,7 @@ Chrome是个非常牛逼的浏览器，速度快，界面清爽，对开发人�
 
 这个插件安装好的用户界面如下图，
 
-![](/res/Chrome插件开发简要指南/002.png)
+![](/res/chrome-plugin-dev-guide/002.png)
 
 图中的每一个链接都是一个功能项，点击后将会打开一个chrome-extension下的页面，url类似这样，
 
@@ -75,7 +75,7 @@ chrome-extension://pkgccpejnmalmdinmhkkfafefagiiiad/template/fehelper_endecode.h
 
 chrome插件一般有两种用户界面，一种是**浏览器按钮**，一种是**页面地址栏按钮**。前者称之为**Browser Actions**，后者被称之为**Page Actions**。如下图，
 
-![](/res/Chrome插件开发简要指南/003.png)
+![](/res/chrome-plugin-dev-guide/003.png)
 
 *Page Actions* 与 *Browser Actions* 的区别就是 *Page Actions* 并不是在每个页面上都是有用的，它必须在特定的页面中插件功能才能使用。
 
@@ -249,7 +249,7 @@ chrome插件的相关知识，远远不止上面介绍的几点，比如邮件�
 
 在这段js中，我们声明了一个`Tasks`对象，这个对象包括了一系列的功能方法，当然有部分未实现，不过核心功能都实现了。在`Tasks.init`方法中，我们给一个操作实体（一个div元素）注册了点击事件，当触发点击事件时，我们将会展示一个输入框让用户输入任务描述，通过回车键来添加用户刚输入的任务。好了，这就是`todo-plugin`插件的基本功能。下面是本插件的效果预览，
 
-![](/res/Chrome插件开发简要指南/004.png)
+![](/res/chrome-plugin-dev-guide/004.png)
 
 # 小结
 
@@ -259,3 +259,5 @@ chrome插件的相关知识，远远不止上面介绍的几点，比如邮件�
 
 - [chrome插件中文开发文档(非官方)](http://chrome.liuyixi.com/overview.html)
 - [手把手教你开发Chrome扩展](http://www.cnblogs.com/walkingp/archive/2011/03/31/2001628.html)
+
+

@@ -32,7 +32,7 @@ gitbook versions
 
 结果如下，
 
-![](/res/gitbook快速指南/001.png)
+![](/res/gitbook-fast-started/001.png)
 
 我的机器上目前安装了两个版本的gitbook，当前正在使用的是`2.5.1`版本。
 
