@@ -1,6 +1,7 @@
 layout: about
 title: 关于
 date: 2014-10-21
+
 ---
 
 ## About me
@@ -23,9 +24,10 @@ var phone = gejiawen.Phone.map(function(v, k) {
     return String.fromCharCode(v);
 }).join('');
 ```
-## Resume
 
-[**pdf文件**](/assets/resume/resume.pdf)  [**md文件**](/assets/resume/resume.md.source)
+
+#### [**CAREER RESUME**](/assets/resume/index.html)
+
 
 ## Change log
 
