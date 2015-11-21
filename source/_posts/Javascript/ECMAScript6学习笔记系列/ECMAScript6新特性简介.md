@@ -315,10 +315,10 @@ var promise = new Promise(function(resolve, reject) {
 
 //绑定处理程序
 promise.then(function(result) {
-	//promise成功的话会执行这里
+    //promise成功的话会执行这里
     console.log(result); // "Stuff worked!"
 }, function(err) {
-	//promise失败会执行这里
+    //promise失败会执行这里
     console.log(err); // Error: "It broke"
 });
 ```
