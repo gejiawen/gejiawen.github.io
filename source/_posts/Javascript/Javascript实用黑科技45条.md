@@ -561,14 +561,14 @@ function cancelKeepAlive() {
 
 比如，
 
-错误的用法，
+在有些时候，相比下面这种用法
 
 ```javascript
 var min = Math.min(a,b); 
 A.push(v);
 ```
 
-正确的用法，
+可能在性能方面会比不上下面的做法
 
 ```javascript
 var min = a < b ? a : b; 
@@ -577,7 +577,7 @@ A[A.length] = v;
 
 # 编码时注意保持代码的优雅格式，上生产环境前做一些压缩工作。
 
-# Javascript是一门很吊的语言，这里还有很多资源，
+# Javascript是一门很吊的语言，这里还有很多资源
 
 - Code Academy JavaScript tracks: [http://www.codecademy.com/tracks/javascript](http://www.codecademy.com/tracks/javascript)
 - Eloquent JavaScript by Marjin Haverbeke: [http://eloquentjavascript.net/](http://eloquentjavascript.net/)
