@@ -47,7 +47,7 @@ var sorted = arr.sort();
 
 其实很简单，我们可以给`sort()`方法传递一个函数回调即可。例如，
 
-```
+```javascript
 arr.sort(function (a, b) {
     return b - a;
 });
@@ -70,7 +70,7 @@ sorted:  [371, 172, 74, 48, 47, 32, 29, 24, 13, 3, 2, 1]
 
 # 联想
 
-我们知道函数在Javascript占有非常重要的地位，可以说函数式Javascript中的第一等公民。这同时也未Javascript的函数式编程提供了基础。
+我们知道函数在Javascript占有非常重要的地位，可以说函数式Javascript中的第一等公民。这同时也为Javascript的函数式编程提供了基础。
 
 Javascript中的函数式编程主要体现在哪里呢？为何本是一门玩票性质的脚本语言现在却有如此大的魅力呢？
 
@@ -100,7 +100,7 @@ console.log(arr);
 
 然后，你传入这个包含比较策略的对象，可能会是一个接口的实例。大概的代码应该如下，
 
-```javascript
+```java
 // 声明接口
 public interface CompareStrategy<T> {
     int compare(T t, T t1);
