@@ -79,5 +79,6 @@ baidusitemap:
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/gejiawen/gejiawen.github.io.git
-  branch: master
+  repo:
+    github: https://github.com/gejiawen/gejiawen.github.io.git,master
+    gitcafe: https://gitcafe.com/gejiawen/gejiawen.git,gitcafe-pages
