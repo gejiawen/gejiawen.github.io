@@ -43,6 +43,10 @@ TODO
 [（1）gulp vs. grunt](http://gejiawen.github.io/2015/01/09/gulp-vs-grunt/)
 [（2）通读SuperAgent文档](http://gejiawen.github.io/2015/08/14/read-superagent-doc/)
 [（3）通读Cheerio文档](http://gejiawen.github.io/2015/08/17/read-cheerio-doc/)
+[（4）gulp备忘录（一）：API指南](http://gejiawen.github.io/2015/12/05/gulp-reminder-1-api/)
+[（5）gulp备忘录（二）：常用插件](http://gejiawen.github.io/2015/12/05/gulp-reminder-2-plguins)
+[（6）gulp备忘录（三）：使用技巧](http://gejiawen.github.io/2015/12/05/gulp-reminder-3-recipes)
+[（7）gulp备忘录（四）：编写插件](http://gejiawen.github.io/2015/12/05/gulp-reminder-4-write-plugin)
 
 
 ## Web开发

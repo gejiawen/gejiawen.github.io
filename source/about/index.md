@@ -15,14 +15,11 @@ var gejiawen = {
     "Work at": "Baidu",
     "Career": "Web Front End Engineer",
     "Email": ["806717031@qq.com", "mamamiya.gee@gmail.com"],
-    "Phone": [49, 53, 57, 53, 53, 51, 50, 55, 52, 56, 52],
+    "Phone": ["18321814241", "15955327484"],
     "Github": "https://github.com/gejiawen",
     "Blog": "http://gejiawen.github.io",
     "Enjoy": "Dota2"
 };
-var phone = gejiawen.Phone.map(function(v, k) {
-    return String.fromCharCode(v);
-}).join('');
 ```
 
 
