@@ -8,15 +8,17 @@ date: 2014-12-01
 
 - vip, a versioning interface platform.
 - spec, a spec for fe code style, it's personal.
-- [fe-workflows](http://gejiawen.github.io/fe-workflows/), a fe development workflow explore.
 - feem, a frontend exception monitor.
 - ids, a integrated development solutions for fe.
-- [saury](https://github.com/gejiawen/saury), a light message tip tool. see me on [npmjs.com](https://www.npmjs.org/package/saury).
-- [bullhead](https://github.com/gejiawen/bullhead), a package to add thousand-bit separator for a number value. see me on [npmjs.com](https://www.npmjs.com/package/bullhead).
+- [saury](https://github.com/gejiawen/saury)
+- [bullhead](https://github.com/gejiawen/bullhead)
+
 
 ## 书书录
 
 - [编码与生活](http://gejiawen.github.io/coding-book)
+- [fe-workflows](http://gejiawen.github.io/fe-workflows/)
+
 
 ## 云海苑
 
