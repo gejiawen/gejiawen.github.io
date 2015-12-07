@@ -26,7 +26,7 @@ var gejiawen = {
 #### [**CAREER RESUME**](/assets/resume/resume.pdf)
 
 
-## Friend Links
+## Friendly links
 
 - [黑 * 白](http://youngsterxyf.github.io/)
 - [众成技术聚乐部](http://happytechgroup.github.io/)
@@ -38,24 +38,12 @@ var gejiawen = {
 
 ## Change log
 
-#### 2015/9/17
+| Date | Points |
+| :--- | :---   |
+| 2015/9/17 | ~~由于网络的原因还是放弃了disqus。😂😂~~ |
+| 2015/9/15 | 使用disqus代替多说；使用`publish-date/post-id`的格式重新定义文章链接。 |
+| 2015/8/19 | 添加基于`atom.xml`的本地搜索功能。 |
+| 2015/7/27 | 添加备份站点[gejiawen.gitcafe.io](http://gejiawen.gitcafe.io)。 |
+| 2015/3/25 | 替换[Hexadillax2](https://github.com/gejiawen/hexadillax2)主题。 |
 
-~~1.由于网络的原因，还是放弃了disqus。😂😂~~
-
-#### 2015/9/15
-
-1.使用disqus代替多说。
-2.使用`publish-date/post-id`的格式重新定义文章链接。
-
-#### 2015/8/19
-
-添加基于`atom.xml`的本地搜索功能。
-
-#### 2015/7/27
-
-添加备份站点[gejiawen.gitcafe.io](http://gejiawen.gitcafe.io)。
-
-#### 2015/3/25
-
-替换[Hexadillax2](https://github.com/gejiawen/hexadillax2)主题。
 
