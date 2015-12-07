@@ -67,8 +67,8 @@
 下面是一些能够熟练使用或者涉足过的东西，
 
 - 语言级别：html、html5、css、css3、javascript、nodejs、php
-- Web开发：nodejs、php、express、angularjs、FIS
-- 前端框架：bootstrap、foundation、angularjs、backbone、jquery、echart、
+- Web开发：nodejs、php、express、angularjs
+- 前端框架：bootstrap、foundation、angularjs、backbone、jquery、echart、FIS
 - 前端工具：gulp、grunt、styl、sass
 - 版本管理：git、svn、gitlab
 - 单元测试：should、chai、mocha
@@ -90,11 +90,18 @@ github重度用户，个人项目列表见[my repositories](https://github.com/g
 
 ### 分享与演讲
 
-参加朋友组织的[众成技术聚乐部](http://happytechgroup.github.io/)，参见[分享记录](http://gejiawen.gitcafe.io/labs/#分享记录)。
+参加朋友组织的[众成技术聚乐部](http://happytechgroup.github.io/)，有过一些分享记录，
+
+- [这些年前端的那些事儿](http://gejiawen.github.io/slides/things-for-fe-in-these-years)
+- [我的开发流模型](http://gejiawen.github.io/slides/my-dev-workflows)
+- [Javascript Async Ninja](http://gejiawen.github.io/slides/javascript-async-ninja)
+
 
 ### 文章写作
 
 除了程序员这项工作，另一份工作是一名半职业写手，喜欢以写文章的方法来记录自己的学习经历。详见[博客归档](http://gejiawen.github.io/categories/)。
+
+更多的内容可浏览我的[博客](http://gejiawen.github.io/)。
 
 
 ------

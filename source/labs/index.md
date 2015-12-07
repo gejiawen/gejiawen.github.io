@@ -24,14 +24,5 @@ date: 2014-12-01
 - [我的开发流模型](http://gejiawen.github.io/slides/my-dev-workflows)
 - [Javascript Async Ninja](http://gejiawen.github.io/slides/javascript-async-ninja)
 
-## 友情链接
-
-- [黑 * 白](http://youngsterxyf.github.io/)
-- [众成技术聚乐部](http://happytechgroup.github.io/)
-- [偷着乐读书会](http://happyreading.github.io/)
-- [博客歪歪](http://www.bokeyy.com/)
-- [CrazyRookie](http://crazyrookie.com/)
-- [少骥网app](http://tangzhengwen.com/)
-- [JUTRO](http://jutro.cn/)
 
 

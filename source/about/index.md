@@ -23,8 +23,18 @@ var gejiawen = {
 ```
 
 
-#### [**CAREER RESUME**](/assets/resume/index.html)
+#### [**CAREER RESUME**](/assets/resume/resume.pdf)
 
+
+## Friend Links
+
+- [黑 * 白](http://youngsterxyf.github.io/)
+- [众成技术聚乐部](http://happytechgroup.github.io/)
+- [偷着乐读书会](http://happyreading.github.io/)
+- [博客歪歪](http://www.bokeyy.com/)
+- [CrazyRookie](http://crazyrookie.com/)
+- [少骥网app](http://tangzhengwen.com/)
+- [JUTRO](http://jutro.cn/)
 
 ## Change log
 

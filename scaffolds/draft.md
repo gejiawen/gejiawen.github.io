@@ -1,4 +1,9 @@
 postid: ''
 title: {{ title }}
-tags:
+date: {{ date }}
+categories: []
+tags: []
+
 ---
+
+
