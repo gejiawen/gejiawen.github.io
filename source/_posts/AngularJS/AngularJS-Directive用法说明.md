@@ -175,8 +175,7 @@ function Controller($scope) {
 
 ## directive声明实例
 
-```javscript
-
+```javascript
 // 自定义directive
 var myDirective = angular.modeule('directives', []);
 
@@ -426,3 +425,5 @@ Hello 1111 22222 33333 !
 ```
 
 **由结果可以看出来，controller先运行，link后运行，link和compile不兼容。一般地，compile比link的优先级要高。**
+
+
