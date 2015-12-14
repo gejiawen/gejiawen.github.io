@@ -16,8 +16,11 @@ date: 2014-12-01
 
 ## 书书录
 
-- [编码与生活](http://gejiawen.github.io/coding-book)
-- [fe-workflows](http://gejiawen.github.io/fe-workflows/)
+- [Coding Book](http://gejiawen.github.io/coding-book)
+- [FE Workflows](http://gejiawen.github.io/fe-workflows/)
+- [Jade Syntax Documentation](http://gejiawen.github.io/jade-syntax-docs/)
+- Node Stream Handbook
+- Browserify Handbook
 
 
 ## 云海苑
