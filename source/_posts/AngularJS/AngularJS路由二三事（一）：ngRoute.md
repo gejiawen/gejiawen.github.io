@@ -1,7 +1,7 @@
 postid: 'routes-solution-on-angular-ng-route'
 title: AngularJS路由二三事（一）：ngRoute
 categories: [AngularJS]
-tags: [ng]
+tags: [ng, AngularJS路由二三事]
 date: 2015-12-15 10:41:43
 
 ---

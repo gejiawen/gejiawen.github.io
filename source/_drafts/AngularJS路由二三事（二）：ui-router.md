@@ -1,7 +1,7 @@
-postid: ''
+postid: 'routes-solution-on-angular-ui-router'
 title: AngularJS路由二三事（二）：ui-router
-categories: []
-tags: []
+categories: [AngularJS]
+tags: [ng, AngularJS路由二三事]
 date: 2015-12-15 10:43:21
 
 ---

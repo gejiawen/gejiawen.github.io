@@ -1,7 +1,7 @@
 postid: 'gulp-reminder-1-api'
 title: gulp备忘录（一）：API指南
 categories: [Nodejs]
-tags: [gulp, nodejs, 漫游NodeJS系列]
+tags: [gulp, gulp备忘录, nodejs, 漫游NodeJS系列]
 date: 2015-12-05 22:58:55
 
 ---

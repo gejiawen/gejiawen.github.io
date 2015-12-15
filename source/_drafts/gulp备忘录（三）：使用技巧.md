@@ -1,7 +1,7 @@
 postid: 'gulp-reminder-3-recipes'
 title: gulp备忘录（三）：使用技巧
 categories: [Nodejs]
-tags: [gulp, nodejs, 漫游NodeJS系列]
+tags: [gulp, gulp备忘录, nodejs, 漫游NodeJS系列]
 date: 2015-12-05 22:59:23
 
 ---
