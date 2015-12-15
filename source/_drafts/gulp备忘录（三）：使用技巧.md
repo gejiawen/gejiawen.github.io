@@ -6,3 +6,10 @@ date: 2015-12-05 22:59:23
 
 ---
 
+**gulp备忘录**专题文章，
+
+- [gulp备忘录（一）：API指南](http://gejiawen.github.io/2015/12/05/gulp-reminder-1-api/)
+- gulp备忘录（二）：常用插件
+- gulp备忘录（三）：使用技巧
+- gulp备忘录（四）：编写插件
+

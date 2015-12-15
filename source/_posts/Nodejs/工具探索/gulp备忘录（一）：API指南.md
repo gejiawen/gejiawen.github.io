@@ -6,6 +6,14 @@ date: 2015-12-05 22:58:55
 
 ---
 
+**gulp备忘录**专题文章，
+
+- [gulp备忘录（一）：API指南](http://gejiawen.github.io/2015/12/05/gulp-reminder-1-api/)
+- gulp备忘录（二）：常用插件
+- gulp备忘录（三）：使用技巧
+- gulp备忘录（四）：编写插件
+
+
 # 前言
 
 自从[gulp](http://gulpjs.com/)面世以后，我就抛弃了[Grunt](http://gruntjs.com/)加入了gulp的阵营。从易用性以及性能方面来说，无疑gulp更具优势。具体的可以看我之前的一篇文章[gulp vs. grunt](http://gejiawen.github.io/2015/01/09/gulp-vs-grunt/)。
