@@ -4,6 +4,15 @@ date: 2014-12-01
 
 ---
 
+# 2016/04
+
+- [你不知道的Javascript（上卷）](http://item.jd.com/11676671.html)
+    - 阅读方式：**细读**
+    - 进度：
+    - 定位：
+    - 难度：
+    - 总结：
+
 # 2015/11
 
 - [Javascript忍者秘籍](http://item.jd.com/11782877.html)
