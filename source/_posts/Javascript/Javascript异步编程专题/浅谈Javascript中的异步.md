@@ -10,8 +10,8 @@ date: 2015-10-12 15:12:51
 
 暂时将这个专题命名为**Javascript异步编程专题**吧，目前包含以下几篇文章，
 
-- [浅谈Javascript中的异步](http://gejiawen.github.io/2015/10/12/think-about-async-in-javascript/)
-- [Javascript中常见的异步编程模型](http://gejiawen.github.io/2015/10/12/some-javascript-async-pattern/)
+- [浅谈Javascript中的异步](http://blog.gejiawen.com/2015/10/12/think-about-async-in-javascript/)
+- [Javascript中常见的异步编程模型](http://blog.gejiawen.com/2015/10/12/some-javascript-async-pattern/)
 - Generator函数处理异步调用
 
 ------

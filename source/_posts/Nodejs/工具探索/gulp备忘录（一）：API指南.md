@@ -8,7 +8,7 @@ date: 2015-12-05 22:58:55
 
 **gulp备忘录**专题文章，
 
-- [gulp备忘录（一）：API指南](http://gejiawen.github.io/2015/12/05/gulp-reminder-1-api/)
+- [gulp备忘录（一）：API指南](http://blog.gejiawen.com/2015/12/05/gulp-reminder-1-api/)
 - gulp备忘录（二）：常用插件
 - gulp备忘录（三）：使用技巧
 - gulp备忘录（四）：编写插件
@@ -16,7 +16,7 @@ date: 2015-12-05 22:58:55
 
 # 前言
 
-自从[gulp](http://gulpjs.com/)面世以后，我就抛弃了[Grunt](http://gruntjs.com/)加入了gulp的阵营。从易用性以及性能方面来说，无疑gulp更具优势。具体的可以看我之前的一篇文章[gulp vs. grunt](http://gejiawen.github.io/2015/01/09/gulp-vs-grunt/)。
+自从[gulp](http://gulpjs.com/)面世以后，我就抛弃了[Grunt](http://gruntjs.com/)加入了gulp的阵营。从易用性以及性能方面来说，无疑gulp更具优势。具体的可以看我之前的一篇文章[gulp vs. grunt](http://blog.gejiawen.com/2015/01/09/gulp-vs-grunt/)。
 
 可以说，我很早就开始使用gulp了，那为何会有这几篇gulp的相关文章呢？是因为发现我在使用gulp的时候，仍然处于一个**仅仅会用**的层面上，当需要使用一些插件时，往往是在[npm](https://www.npmjs.com/)找到对应的插件，然后照着example抄一遍，对gulp的有些特性还不是很清楚。所以我觉得很有必要写一些东西来深度学习一下gulp。
 

@@ -54,7 +54,7 @@ myModule.directive("superman", function() {
 
 `superman`指令中的`scope`属性表示该指令的独立作用域，指令的独立作用域其实是跟指令的实例绑定的，即不同的指令实例，其独立作用域是不同的。这是复用指令的必要条件。
 
-`superman`指令中的`restrict`属性表示该指令的使用形式。有4个选项：**EAMC**。可以参考之前的[一篇文章](http://gejiawen.github.io/2014/07/16/AngularJS/AngularJS-Directive%E7%94%A8%E6%B3%95%E8%AF%B4%E6%98%8E/#return对象参数说明)，这里不多作解释。
+`superman`指令中的`restrict`属性表示该指令的使用形式。有4个选项：**EAMC**。可以参考之前的[一篇文章](http://blog.gejiawen.com/2014/11/05/action-about-angularjs-directives/#return对象参数说明)，这里不多作解释。
 
 `superman`指令中的`controller`属性是指令内部的控制器。其目的一般是为该指令暴露一些接口供外部使用。控制器函数的参数`$scope`就是指向该指令的独立作用域。
 

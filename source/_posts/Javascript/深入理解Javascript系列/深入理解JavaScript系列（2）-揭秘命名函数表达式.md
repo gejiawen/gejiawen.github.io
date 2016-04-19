@@ -5,7 +5,7 @@ categories: [Javascript]
 tags: [深入理解JavaScript系列]
 ---
 
-本文是[深入理解JavaScript系列](http://gejiawen.github.io/2014/11/13/%E7%B3%BB%E5%88%97/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JavaScript%E7%B3%BB%E5%88%97/)的第**二**篇读文笔记，博客原文在[这里](http://www.cnblogs.com/TomXu/archive/2011/12/29/2290308.html)。
+本文是[深入理解JavaScript系列](http://blog.gejiawen.com/2014/11/13/deep-into-javascript-series/)的第**二**篇读文笔记，博客原文在[这里](http://www.cnblogs.com/TomXu/archive/2011/12/29/2290308.html)。
 
 # 内容简要
 
@@ -104,7 +104,7 @@ SyntaxError: Unexpected token :
 
 函数表达式和函数声明存在着十分微妙的差别。
 
-**函数声明会在任何表达式被解析和求值之前先被解析和求值**，即使你的声明在代码的最后一行，它也会在同作用域内第一个表达式之前被解析或者求值。这其实跟[深入理解JavaScript系列（1）-编写高质量JavaScript代码的基本要点](http://gejiawen.github.io/2014/11/13/%E8%AF%BB%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AF%BB%E6%96%87%E7%AC%94%E8%AE%B0%EF%BC%9A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JavaScript%E7%B3%BB%E5%88%97%EF%BC%881%EF%BC%89-%E7%BC%96%E5%86%99%E9%AB%98%E8%B4%A8%E9%87%8FJavaScript%E4%BB%A3%E7%A0%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A6%81%E7%82%B9/)中提到的[预解析](http://gejiawen.github.io/2014/11/13/%E8%AF%BB%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AF%BB%E6%96%87%E7%AC%94%E8%AE%B0%EF%BC%9A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JavaScript%E7%B3%BB%E5%88%97%EF%BC%881%EF%BC%89-%E7%BC%96%E5%86%99%E9%AB%98%E8%B4%A8%E9%87%8FJavaScript%E4%BB%A3%E7%A0%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A6%81%E7%82%B9/#预解析)是很相似的。
+**函数声明会在任何表达式被解析和求值之前先被解析和求值**，即使你的声明在代码的最后一行，它也会在同作用域内第一个表达式之前被解析或者求值。这其实跟[深入理解JavaScript系列（1）-编写高质量JavaScript代码的基本要点](http://blog.gejiawen.com/2014/11/13/deep-into-javascript-points-about-good-javascript-code/#预解析)是很相似的。
 
 来看个简单的例子，
 

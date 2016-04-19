@@ -5,7 +5,7 @@ categories: [Javascript]
 tags: [深入理解JavaScript系列]
 ---
 
-本文是[深入理解JavaScript系列](http://gejiawen.github.io/2014/11/13/%E7%B3%BB%E5%88%97/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JavaScript%E7%B3%BB%E5%88%97/)的第**四**篇读文笔记，博客原文在[这里](http://www.cnblogs.com/TomXu/archive/2011/12/31/2289423.html)。
+本文是[深入理解JavaScript系列](http://blog.gejiawen.com/2014/11/13/deep-into-javascript-series/)的第**四**篇读文笔记，博客原文在[这里](http://www.cnblogs.com/TomXu/archive/2011/12/31/2289423.html)。
 
 # 内容简要
 
@@ -152,7 +152,7 @@ void function(){/* code */}();
 
 ### Module模式
 
-想想前篇文章说的[Module模式](http://gejiawen.github.io/2014/12/01/%E8%AF%BB%E6%96%87%E7%AC%94%E8%AE%B0/%E8%AF%BB%E6%96%87%E7%AC%94%E8%AE%B0%EF%BC%9A%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JavaScript%E7%B3%BB%E5%88%97%EF%BC%883%EF%BC%89-%E5%85%A8%E9%9D%A2%E8%A7%A3%E6%9E%90Module%E6%A8%A1%E5%BC%8F/)，我们常常使用Module模式配合自执行函数来封装一个工具。
+想想前篇文章说的[Module模式](http://blog.gejiawen.com/2014/12/01/deep-into-javascript-module-model/)，我们常常使用Module模式配合自执行函数来封装一个工具。
 
 下面是一个例子，
 

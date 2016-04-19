@@ -8,7 +8,7 @@ date: 2015-11-04 11:25:43
 
 # 前言
 
-在我博客之前有过这样一篇文章，[JS中易混淆方法备忘录](http://gejiawen.github.io/2015/04/02/confused-methods-in-javascript)。其中有介绍可以利用一种约定技巧将类数组对象转换成对象。如下
+在我博客之前有过这样一篇文章，[JS中易混淆方法备忘录](http://blog.gejiawen.com/2015/04/02/confused-methods-in-javascript)。其中有介绍可以利用一种约定技巧将类数组对象转换成对象。如下
 
 ```javascript
 function foo() {
@@ -31,7 +31,7 @@ function foo() {
 
 如果你不清楚上面内容的内幕，你可能禁不住要问个为什么！下面我们来研究一下其中的内幕。
 
-首先，在Javascript中有两个`slice`方法，分别是`Array.prototype.slice`和`String.prototype.slice`。如果你对`xxx.prototype.xxx`这种写法有疑问，我想你可能需要补充一下Javascript中原型相关的知识了（无节操小广告：[推荐文章1](http://gejiawen.github.io/2014/09/29/ecmascript-inherit/)，[推荐文章2](http://gejiawen.github.io/2014/10/16/prototype-inherit-in-javascript/)，[推荐文章3](http://gejiawen.github.io/2015/03/18/different-from-proto-and-prototype/)）。这里我们要说的就是前者。
+首先，在Javascript中有两个`slice`方法，分别是`Array.prototype.slice`和`String.prototype.slice`。如果你对`xxx.prototype.xxx`这种写法有疑问，我想你可能需要补充一下Javascript中原型相关的知识了（无节操小广告：[推荐文章1](http://blog.gejiawen.com/2014/09/29/ecmascript-inherit/)，[推荐文章2](http://blog.gejiawen.com/2014/10/16/prototype-inherit-in-javascript/)，[推荐文章3](http://blog.gejiawen.com/2015/03/18/different-from-proto-and-prototype/)）。这里我们要说的就是前者。
 
 我们先来看几个例子，
 

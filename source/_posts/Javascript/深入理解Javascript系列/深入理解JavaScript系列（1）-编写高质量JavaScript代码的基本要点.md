@@ -5,7 +5,7 @@ categories: [Javascript]
 tags: [深入理解JavaScript系列]
 ---
 
-本文是[深入理解JavaScript系列](http://gejiawen.github.io/2014/11/13/%E7%B3%BB%E5%88%97/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JavaScript%E7%B3%BB%E5%88%97/)的第**一**篇读文笔记，博客原文在[这里](http://www.cnblogs.com/TomXu/archive/2011/12/28/2286877.html)。
+本文是[深入理解JavaScript系列](http://blog.gejiawen.com/2014/11/13/deep-into-javascript-series/)的第**一**篇读文笔记，博客原文在[这里](http://www.cnblogs.com/TomXu/archive/2011/12/28/2286877.html)。
 
 # 内容简要
 

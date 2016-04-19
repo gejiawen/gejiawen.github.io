@@ -169,7 +169,7 @@ table {
 
 # 垂直居中
 
-元素的垂直居中不像水平居中那么复杂。这里我们只讨论简单的垂直居中问题，其他更加复杂的垂直居中问题可以参考以前的[这篇文章](http://gejiawen.github.io/2014/12/21/CSS/CSS%E5%A6%82%E4%BD%95%E4%BD%BF%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%AE%9A%E4%BD%8D/)。
+元素的垂直居中不像水平居中那么复杂。这里我们只讨论简单的垂直居中问题，其他更加复杂的垂直居中问题可以参考以前的[这篇文章](http://blog.gejiawen.com/2014/12/21/how-to-horizontal-and-vertical-positioning/)。
 
 ## 父元素高度确定的单行文本
 

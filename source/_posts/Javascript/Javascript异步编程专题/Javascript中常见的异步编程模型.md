@@ -9,8 +9,8 @@ date: 2015-10-12 15:26:30
 
 Javascript异步编程专题，目前包含以下几篇文章，
 
-- [浅谈Javascript中的异步](http://gejiawen.github.io/2015/10/12/think-about-async-in-javascript/)
-- [Javascript中常见的异步编程模型](http://gejiawen.github.io/2015/10/12/some-javascript-async-pattern/)
+- [浅谈Javascript中的异步](http://blog.gejiawen.com/2015/10/12/think-about-async-in-javascript/)
+- [Javascript中常见的异步编程模型](http://blog.gejiawen.com/2015/10/12/some-javascript-async-pattern/)
 - Generator函数处理异步调用
 
 ------
@@ -19,7 +19,7 @@ Javascript异步编程专题，目前包含以下几篇文章，
 
 正文开始。
 
-在Javascript异步编程专题的前一篇文章[浅谈Javascript中的异步](http://gejiawen.github.io/2015/10/12/think-about-async-in-javascript/)中，我简明的阐述了“Javascript中的异步原理”、“Javascript如何在单线程上实现异步调用”以及“Javascript中的定时器”等相关问题。
+在Javascript异步编程专题的前一篇文章[浅谈Javascript中的异步](http://blog.gejiawen.com/2015/10/12/think-about-async-in-javascript/)中，我简明的阐述了“Javascript中的异步原理”、“Javascript如何在单线程上实现异步调用”以及“Javascript中的定时器”等相关问题。
 
 本篇文章我将会谈一谈Javascript中常用的几种异步编程模型。
 
@@ -144,7 +144,7 @@ $('#div').trigger('data-loaded');
 
 之前在事件监听中提到了*自定义事件*，其实自定义事件是观察者模式的一种具体表现。观察者模式，又称为消息订阅/发布模式。它的含义是，我们先假设有一个“信号中心”，当某个任务执行完毕就向信号中心发出一个信号（事件），然后信号中心收到这个信号之后将会进行广播。如果有其他任务订阅了该信号，那么这些任务就会收到一个通知，然后执行任务相关的逻辑。
 
-下面是观察者模式的一个简单实现（可参阅[用AngularJS实现观察者模式](http://gejiawen.github.io/2014/07/18/observe-pattern-by-angularjs/)），
+下面是观察者模式的一个简单实现（可参阅[用AngularJS实现观察者模式](http://blog.gejiawen.com/2014/07/18/observe-pattern-by-angularjs/)），
 
 ```javascript
 var ob = {

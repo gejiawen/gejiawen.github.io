@@ -446,11 +446,11 @@ animation-duration：<time> [ , <time> ]*
 transition-timing-function：linear | ease | ease-in | ease-out | ease-in-out | step-start | step-end | steps(<integer>[, [ start | end ] ]?) | cubic-bezier
 ```
 
-具体的解释这里就不再赘述了，可参考[`transition-timing-function`](http://gejiawen.github.io/2015/05/05/CSS/CSS%E5%8A%A8%E7%94%BB%E6%94%BB%E7%95%A5/#transition-timing-function)。
+具体的解释这里就不再赘述了，可参考[`transition-timing-function`](http://blog.gejiawen.com/2015/05/05/css-animation-guide/#transition-timing-function)。
 
 ## `animation-delay`
 
-`animation-delay`用于设置动画开始的延时。此属性与`transition-delay`基本一致，请参考[`transition-delay`](http://gejiawen.github.io/2015/05/05/CSS/CSS%E5%8A%A8%E7%94%BB%E6%94%BB%E7%95%A5/#transition-delay)的相关说明。
+`animation-delay`用于设置动画开始的延时。此属性与`transition-delay`基本一致，请参考[`transition-delay`](http://blog.gejiawen.com/2015/05/05/css-animation-guide/#transition-delay)的相关说明。
 
 ## `animation-iteration-count`
 

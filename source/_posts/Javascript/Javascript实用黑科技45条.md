@@ -294,7 +294,7 @@ num = num.toFixed(4);  // num will be equal to 2.4432
 
 译者注
 
-> 关于这个问题，博主也有一篇相关的文章，[Javascript中浮点数的计算精度问题](http://gejiawen.github.io/2015/08/11/javascript-float-count-precision/)。
+> 关于这个问题，博主也有一篇相关的文章，[Javascript中浮点数的计算精度问题](http://blog.gejiawen.com/2015/08/11/javascript-float-count-precision/)。
 
 
 # 使用`for...in`来遍历对象的属性

@@ -29,7 +29,7 @@ tags: [javascript]
 
 ## 观察机制
 
-博主之前有一篇转载翻译的文章，[Object.observe()带来的数据绑定变革](http://gejiawen.github.io/2014/10/30/%E5%A4%A7%E5%89%8D%E7%AB%AF/Object-observe-%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E5%8F%98%E9%9D%A9/)，说的就是使用ECMAScript7中的[`Object.observe`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/observe)方法对对象（或者其属性）进行监控观察，一旦其发生变化时，将会执行相应的handler。
+博主之前有一篇转载翻译的文章，[Object.observe()带来的数据绑定变革](http://blog.gejiawen.com/2014/10/30/%E5%A4%A7%E5%89%8D%E7%AB%AF/Object-observe-%E5%B8%A6%E6%9D%A5%E7%9A%84%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E5%8F%98%E9%9D%A9/)，说的就是使用ECMAScript7中的[`Object.observe`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/observe)方法对对象（或者其属性）进行监控观察，一旦其发生变化时，将会执行相应的handler。
 
 这是目前监控属性数据变更最完美的一种方法，语言（浏览器）原生支持，没有什么比这个更好了。唯一的遗憾就是目前支持广度还不行，有待全面推广。
 

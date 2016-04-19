@@ -95,7 +95,7 @@ define(function (requie, exports, module) {
 });
 ```
 
-关于AMD和CMD的区别，可参考这篇文章，[AMD/CMD与前端规范](http://gejiawen.github.io/2014/07/18/small-talk-about-fe-spec/)。
+关于AMD和CMD的区别，可参考这篇文章，[AMD/CMD与前端规范](http://blog.gejiawen.com/2014/07/18/small-talk-about-fe-spec/)。
 
 # CommonJS规范
 

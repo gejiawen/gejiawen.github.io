@@ -36,7 +36,7 @@ CSS3新增了许多可使用的选择器使得前端开发人员在选择页面�
 - 否定选择器
 - 通用兄弟选择器
 
-具体的不打算在本文展开叙述，可参考博主之前的这篇文章[初识CSS3选择器](http://gejiawen.github.io/2015/04/09/CSS/%E5%88%9D%E8%AF%86CSS3%E9%80%89%E6%8B%A9%E5%99%A8/)。
+具体的不打算在本文展开叙述，可参考博主之前的这篇文章[初识CSS3选择器](http://blog.gejiawen.com/2015/04/09/first-to-css3-selectors/)。
 
 # 页面布局的加强
 
@@ -85,7 +85,7 @@ CSS3新增了许多可使用的选择器使得前端开发人员在选择页面�
 
 ![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3新特性概述-002.png)
 
-关于CSS3多列布局更加详细的内容，请参阅博主的这篇文章[CSS3多列布局](http://gejiawen.github.io/2015/04/14/CSS/CSS3%E5%A4%9A%E5%88%97%E5%B8%83%E5%B1%80/)。
+关于CSS3多列布局更加详细的内容，请参阅博主的这篇文章[CSS3多列布局](http://blog.gejiawen.com/2015/04/14/css3-multi-column-guide/)。
 
 ## 可变更的盒模型
 
@@ -93,7 +93,7 @@ CSS3新增了许多可使用的选择器使得前端开发人员在选择页面�
 
 CSS3规范提供了`box-sizing`属性并允许设置浏览器使用的盒模型。
 
-简单来说`box-sizing`属性提供了`content-box`和`border-box`两种赋值来确定元素究竟使用哪一种盒模型。其中现代浏览器默认的取值是`content-box`，既符合W3C标准的盒模型。关于`box-sizing`更多的内容，请参与博主之前的一篇文章[CSS盒模型科普#box-sizing属性](http://gejiawen.github.io/2014/11/18/CSS/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%A7%91%E6%99%AE/#box-sizing属性)。
+简单来说`box-sizing`属性提供了`content-box`和`border-box`两种赋值来确定元素究竟使用哪一种盒模型。其中现代浏览器默认的取值是`content-box`，既符合W3C标准的盒模型。关于`box-sizing`更多的内容，请参与博主之前的一篇文章[CSS盒模型科普#box-sizing属性](http://blog.gejiawen.com/2014/11/18/CSS/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%A7%91%E6%99%AE/#box-sizing属性)。
 
 ## 可伸缩的布局方式
 
@@ -173,7 +173,7 @@ CSS3为圆角（`border-radius`）提供了更加一般的支持，
 
 ![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3新特性概述-007.png)
 
-关于CSS3圆角的更多内容，请参阅博主的这篇文章[CSS3圆角](http://gejiawen.github.io/2015/04/23/CSS/CSS3%E5%9C%86%E8%A7%92/)。
+关于CSS3圆角的更多内容，请参阅博主的这篇文章[CSS3圆角](http://blog.gejiawen.com/2015/04/23/css3-radius-guide/)。
 
 ## 多背景图片支持
 
@@ -191,7 +191,7 @@ div {
 }
 ```
 
-这样就可以在同一个div元素中应用多个背景图片。具体的实践请参阅这篇文章[CSS3背景](http://gejiawen.github.io/2015/04/21/CSS/CSS3%E8%83%8C%E6%99%AF/)。
+这样就可以在同一个div元素中应用多个背景图片。具体的实践请参阅这篇文章[CSS3背景](http://blog.gejiawen.com/2015/04/21/css3-background-guide/)。
 
 ## 渐变效果支持
 
@@ -218,7 +218,7 @@ CSS3中提供了渐变（gradient）的支持，所谓的渐变就是两种或�
 
 ![](http://7xkwt1.com1.z0.glb.clouddn.com/CSS3新特性概述-004.png)
 
-关于CSS3渐变的更多内容，请参阅博主的这篇文章[CSS3渐变](http://gejiawen.github.io/2015/04/23/CSS/CSS3%E6%B8%90%E5%8F%98/)。
+关于CSS3渐变的更多内容，请参阅博主的这篇文章[CSS3渐变](http://blog.gejiawen.com/2015/04/23/css3-gradient-guide/)。
 
 ## 阴影和反射效果
 
@@ -293,7 +293,7 @@ CSS3提供`@font-face`特性为页面自定义字体的展示提供支持。通�
 }
 ```
 
-关于`@font-face`更多的内容请参阅博主之前的另一篇文章[WebFont与页面ICON图标研究](http://gejiawen.github.io/2015/03/04/CSS/WebFont%E4%B8%8E%E9%A1%B5%E9%9D%A2ICON%E5%9B%BE%E6%A0%87%E7%A0%94%E7%A9%B6/)。
+关于`@font-face`更多的内容请参阅博主之前的另一篇文章[WebFont与页面ICON图标研究](http://blog.gejiawen.com/2015/03/04/webfont-and-icon-guide/)。
 
 
 # 多终端的适配

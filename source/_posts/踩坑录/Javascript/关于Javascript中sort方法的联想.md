@@ -23,7 +23,7 @@ var sorted = arr.sort();
 
 注意，示例代码中，我们是`arr.sort()`而不是`Array.sort(arr)`去使用的。
 
-这里涉及到**对象上的方法**以及**对象原型链上的方法**这两种方法的差异，这里我就不多费唇舌解释了，若有兴趣可移步这篇文章[浅谈Javascript中的原型继承](http://gejiawen.github.io/2014/10/16/prototype-inherit-in-javascript/)。
+这里涉及到**对象上的方法**以及**对象原型链上的方法**这两种方法的差异，这里我就不多费唇舌解释了，若有兴趣可移步这篇文章[浅谈Javascript中的原型继承](http://blog.gejiawen.com/2014/10/16/prototype-inherit-in-javascript/)。
 
 言归正传，在上面的示例中，我们来输出`arr`和`sorted`这两个变量看一下他们的结果，如下图
 

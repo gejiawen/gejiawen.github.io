@@ -67,7 +67,7 @@ date: 2015-10-08 12:51:37
 
 因为jquery1.9.x之后的版本中，取消了`$browser`转而提供一个用于特性检测的变量`$.support`，而且jquery官方的言下之意是，这个变量是jquery内部使用的，开发者们最好不要使用，同时推荐开发者们使用[Modernizr](http://modernizr.com/)来进行特性探测。
 
->译者注：本博客之前也有一篇讨论浏览器特性探测的文章，若有兴趣，请移步[这里](http://gejiawen.github.io/2015/09/22/think-about-jquery-support/)。
+>译者注：本博客之前也有一篇讨论浏览器特性探测的文章，若有兴趣，请移步[这里](http://blog.gejiawen.com/2015/09/22/think-about-jquery-support/)。
 
 
 # jquery的变量

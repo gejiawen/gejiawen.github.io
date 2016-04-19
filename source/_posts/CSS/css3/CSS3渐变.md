@@ -10,7 +10,7 @@ tags: [CSS拾遗系列, css3]
 
 # 缘起
 
-在之前的一篇文章[CSS3背景](http://gejiawen.github.io/2015/04/21/CSS/CSS3%E8%83%8C%E6%99%AF/)中，我们有谈到`background-image`属性，此属性用于设置元素的背景图片，我们可以为之赋值一个图片url，还可以使用CSS3提供的渐变（gradient）技术来设置一张渐变的纯CSS背景。
+在之前的一篇文章[CSS3背景](http://blog.gejiawen.com/2015/04/21/css3-background-guide/)中，我们有谈到`background-image`属性，此属性用于设置元素的背景图片，我们可以为之赋值一个图片url，还可以使用CSS3提供的渐变（gradient）技术来设置一张渐变的纯CSS背景。
 
 CSS3支持的渐变可分为线性渐变（linear-gradient）、径向渐变（radial-gradient）、重复线性渐变（repeating-linear-gradient）和重复径向渐变（repeating-radial-gradient）。
 
@@ -425,7 +425,7 @@ background-image: -webkit-radial-gradient(center, circle 50px 100px, pink, green
 - **渐变形状**的可选值有`circle`和`ellipse`。
 - **渐变大小**可以设置为长度单位或者百分比。
 - 当**渐变大小**手动设置为长度单位或者百分比时，**必须指定**渐变起点，否则浏览器会将自定义值作为渐变起点来渲染。
-- **渐变大小**还可以使用默认的关键词（`closest-side`，`closest-corner`，`farthest-side`，`farthest-corner`）。此处效果图中未作示例，可参阅[渐变大小](http://gejiawen.github.io/2015/04/23/CSS/CSS3%E6%B8%90%E5%8F%98/#渐变大小)。
+- **渐变大小**还可以使用默认的关键词（`closest-side`，`closest-corner`，`farthest-side`，`farthest-corner`）。此处效果图中未作示例，可参阅[渐变大小](http://blog.gejiawen.com/2015/04/23/css3-gradient-guide/#渐变大小)。
 
 #### 示例3
 

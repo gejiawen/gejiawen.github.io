@@ -274,7 +274,7 @@ function user(name, uri) {
     }
 };
 
-var mamamiya = new user('mamamiya', 'http://gejiawen.github.io');
+var mamamiya = new user('mamamiya', 'http://blog.gejiawen.com');
 mamamiya.show();
 ```
 

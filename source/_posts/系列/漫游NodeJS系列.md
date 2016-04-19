@@ -8,7 +8,7 @@ tags: [目录]
 
 # 为什么会有这个系列
 
-[漫游NodeJS系列](http://gejiawen.github.io/2015/03/17/系列/漫游NodeJS系列/)文章，将会记录作者一路学习[NodeJS](http://nodejs.org/)（[iojs](https://iojs.org/en/index.html)）的点点滴滴。
+[漫游NodeJS系列](http://blog.gejiawen.com/2015/03/17/系列/漫游NodeJS系列/)文章，将会记录作者一路学习[NodeJS](http://nodejs.org/)（[iojs](https://iojs.org/en/index.html)）的点点滴滴。
 
 时至今日，NodeJS已经不再像是两年前那么新的技术要素了，相对来说成熟了不少，不管是各种框架类库的生态系统还是被各界的认可情况。就本人目前的经验来说，NodeJS现阶段在好几个领域仍然有探索和发展的潜力。
 
@@ -30,9 +30,9 @@ tags: [目录]
 
 ## 基础入门
 
-[（1）NodeJS模块全面指南](http://gejiawen.github.io/2015/03/17/nodejs-module-guide/)
-[（2）如何导出NodeJS模块](http://gejiawen.github.io/2014/10/16/how-to-export-nodejs-module/)
-[（3）NodeJS最佳实践](http://gejiawen.github.io/2014/09/19/nodejs-best-practices/)
+[（1）NodeJS模块全面指南](http://blog.gejiawen.com/2015/03/17/nodejs-module-guide/)
+[（2）如何导出NodeJS模块](http://blog.gejiawen.com/2014/10/16/how-to-export-nodejs-module/)
+[（3）NodeJS最佳实践](http://blog.gejiawen.com/2014/09/19/nodejs-best-practices/)
 
 ## 进阶研究
 
@@ -40,18 +40,18 @@ TODO
 
 ## 工具探索
 
-[（1）gulp vs. grunt](http://gejiawen.github.io/2015/01/09/gulp-vs-grunt/)
-[（2）通读SuperAgent文档](http://gejiawen.github.io/2015/08/14/read-superagent-doc/)
-[（3）通读Cheerio文档](http://gejiawen.github.io/2015/08/17/read-cheerio-doc/)
-[（4）gulp备忘录（一）：API指南](http://gejiawen.github.io/2015/12/05/gulp-reminder-1-api/)
-[（5）gulp备忘录（二）：常用插件](http://gejiawen.github.io/2015/12/05/gulp-reminder-2-plguins)
-[（6）gulp备忘录（三）：使用技巧](http://gejiawen.github.io/2015/12/05/gulp-reminder-3-recipes)
-[（7）gulp备忘录（四）：编写插件](http://gejiawen.github.io/2015/12/05/gulp-reminder-4-write-plugin)
+[（1）gulp vs. grunt](http://blog.gejiawen.com/2015/01/09/gulp-vs-grunt/)
+[（2）通读SuperAgent文档](http://blog.gejiawen.com/2015/08/14/read-superagent-doc/)
+[（3）通读Cheerio文档](http://blog.gejiawen.com/2015/08/17/read-cheerio-doc/)
+[（4）gulp备忘录（一）：API指南](http://blog.gejiawen.com/2015/12/05/gulp-reminder-1-api/)
+[（5）gulp备忘录（二）：常用插件](http://blog.gejiawen.com/2015/12/05/gulp-reminder-2-plguins)
+[（6）gulp备忘录（三）：使用技巧](http://blog.gejiawen.com/2015/12/05/gulp-reminder-3-recipes)
+[（7）gulp备忘录（四）：编写插件](http://blog.gejiawen.com/2015/12/05/gulp-reminder-4-write-plugin)
 
 
 ## Web开发
 
-[（1）Express4入门指南](http://gejiawen.github.io/2015/08/13/first-to-express4-guide/)
+[（1）Express4入门指南](http://blog.gejiawen.com/2015/08/13/first-to-express4-guide/)
 
 # 总结
 

@@ -17,7 +17,7 @@ tags: [nodejs, 漫游NodeJS系列]
 
 ## 什么是NodeJS模块？
 
-在说这个问题之前，我们有必要先提出一个概念，即**模块规范**。关于模块规范可以参与之前的这篇文章[从CommonJS到Sea.js](http://gejiawen.github.io/2014/08/12/%E5%A4%A7%E5%89%8D%E7%AB%AF/%E4%BB%8ECommonJS%E5%88%B0Seajs/)。
+在说这个问题之前，我们有必要先提出一个概念，即**模块规范**。关于模块规范可以参与之前的这篇文章[从CommonJS到Sea.js](http://blog.gejiawen.com/2014/08/12/from-commonjs-to-seajs/)。
 
 所以，现阶段Javascript领域大体上有三种比较流行的模块规范，一种是AMD规范，一种是CMD规范，还有一种就是CommonJS规范。NodeJS采用的规范就是CommonJS规范。这三种规范中，前两者专注于客户端，即浏览器端的规范标准，而后者而其实是服务器端的规范。
 
@@ -92,7 +92,7 @@ exports = module.exports = {};
 
 如果你直接赋值一个函数（`function`）或者一个对象（`{}`）给`exports`，这样的话就破坏了`exports`和`module.exports`的引用关系了，而模块将会返回空对象。所以当我们需要暴露一个函数或者一个对象时，应该直接赋值给`module.exports`而不是`exports`。
 
-本博客前面有一篇文章[如何导出NodeJS模块](http://gejiawen.github.io/2014/10/16/Nodejs/%E5%A6%82%E4%BD%95%E5%AF%BC%E5%87%BANodeJS%E6%A8%A1%E5%9D%97/)就是阐述NodeJS如何返回接口的。
+本博客前面有一篇文章[如何导出NodeJS模块](http://blog.gejiawen.com/2014/10/16/how-to-export-nodejs-module/)就是阐述NodeJS如何返回接口的。
 
 ## 发布包
 

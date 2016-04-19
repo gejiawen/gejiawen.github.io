@@ -22,7 +22,7 @@ TBC
 
 # 目录
 
-[（1）ECMAScript6简介](http://gejiawen.github.io/2015/07/28/es6-new-feature/)
+[（1）ECMAScript6简介](http://blog.gejiawen.com/2015/07/28/es6-new-feature/)
 （2）ES6中的新语法糖
 （3）ES6中对各种对象的扩展
 （4）ES6中新增的数据结构

@@ -5,7 +5,7 @@ categories: [Javascript]
 tags: [深入理解JavaScript系列]
 ---
 
-本文是[深入理解JavaScript系列](http://gejiawen.github.io/2014/11/13/%E7%B3%BB%E5%88%97/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JavaScript%E7%B3%BB%E5%88%97/)的第**六**篇读文笔记，博客原文如下，
+本文是[深入理解JavaScript系列](http://blog.gejiawen.com/2014/11/13/deep-into-javascript-series/)的第**六**篇读文笔记，博客原文如下，
 
 - [深入理解JavaScript系列（6）：S.O.L.I.D五大原则之单一职责SRP](http://www.cnblogs.com/TomXu/archive/2012/01/06/2305513.html)
 - [深入理解JavaScript系列（7）：S.O.L.I.D五大原则之开闭原则OCP](http://www.cnblogs.com/TomXu/archive/2012/01/09/2306329.html)

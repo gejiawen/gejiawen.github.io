@@ -5,11 +5,11 @@ categories: [AngularJS]
 tags: [ng, 实践]
 ---
 
-**directive**是angularjs中一个比较复杂的概念，是用户可自定义html标签的重要手段，本博客之前有[一篇文章](http://gejiawen.github.io/2014/07/16/AngularJS/AngularJS-Directive%E7%94%A8%E6%B3%95%E8%AF%B4%E6%98%8E/)对angularjs中directive的用法做了非常详细的说明。
+**directive**是angularjs中一个比较复杂的概念，是用户可自定义html标签的重要手段，本博客之前有[一篇文章](http://blog.gejiawen.com/2014/07/16/usage-for-angularjs-directive/)对angularjs中directive的用法做了非常详细的说明。
 
-这篇文章[有个部分](http://gejiawen.github.io/2014/07/16/AngularJS/AngularJS-Directive%E7%94%A8%E6%B3%95%E8%AF%B4%E6%98%8E/#关于scope)提到了directive中关于`scope`的定义说明。
+这篇文章[有个部分](http://blog.gejiawen.com/2014/07/16/usage-for-angularjs-directive/#关于scope)提到了directive中关于`scope`的定义说明。
 
-还是[上篇文章](http://gejiawen.github.io/2014/10/24/AngularJS/%E5%A6%82%E4%BD%95%E5%9C%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84directive%E4%B8%AD%E4%BD%BF%E7%94%A8%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84filter/)的那个例子，
+还是[上篇文章](http://blog.gejiawen.com/2014/10/24/how-to-use-custom-filter-in-custom-directive/)的那个例子，
 
 ```javascript
 directives.directive('sites', ['$filter', function ($filter) {

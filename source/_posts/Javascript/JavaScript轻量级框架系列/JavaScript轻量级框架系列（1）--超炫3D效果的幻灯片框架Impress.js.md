@@ -5,7 +5,7 @@ categories: [Vendors]
 tags: [JavaScript轻量级框架系列, javascript]
 ---
 
-本文是[JavaScript轻量级框架系列](http://gejiawen.github.io/2014/11/26/%E7%B3%BB%E5%88%97/JavaScript%E8%BD%BB%E9%87%8F%E7%BA%A7%E6%A1%86%E6%9E%B6%E7%B3%BB%E5%88%97/)的第**一**篇文章。
+本文是[JavaScript轻量级框架系列](http://blog.gejiawen.com/2014/11/26/%E7%B3%BB%E5%88%97/JavaScript%E8%BD%BB%E9%87%8F%E7%BA%A7%E6%A1%86%E6%9E%B6%E7%B3%BB%E5%88%97/)的第**一**篇文章。
 
 **Impress.js**是基于*webkit*内核浏览器（Chrome、Safari等）开发，而在其他基于非webkit引擎但支持*CSS3 3D*的浏览器也能正常运行。
 

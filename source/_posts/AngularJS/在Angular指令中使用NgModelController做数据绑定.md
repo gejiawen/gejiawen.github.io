@@ -92,7 +92,7 @@ function TimeDurationDirective() {
 
 指令的`link`方法我们暂时TODO了它。后面会逐步完善。
 
-我先来看看这个指令的定义，其中用到了`require`声明。我的博客中这篇文章[AngularJS Directive用法说明](http://gejiawen.github.io/2014/07/16/usage-for-angularjs-directive/)对`require`的用法作了详细的说明。简单来说，`require`的作用就是为这个directive声明一个依赖关系，表明此directive依赖另一个指令的`controller`属性。
+我先来看看这个指令的定义，其中用到了`require`声明。我的博客中这篇文章[AngularJS Directive用法说明](http://blog.gejiawen.com/2014/07/16/usage-for-angularjs-directive/)对`require`的用法作了详细的说明。简单来说，`require`的作用就是为这个directive声明一个依赖关系，表明此directive依赖另一个指令的`controller`属性。
 
 这里稍微说明一下require的衍生用法。我们可以在`require`前加上修辞量词，比如，
 

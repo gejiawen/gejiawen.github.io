@@ -115,7 +115,7 @@ background-clip ： border-box || padding-box || content-box
 
 各个取值的不同效果展示，可参阅这个[示例](http://www.w3school.com.cn/tiy/c.asp?f=css_background-clip)。
 
-这里所说的`border`、`padding`、`content`等区域其实是CSS盒模型的组成部分，更多内容可参阅[CSS盒模型科普](http://gejiawen.github.io/2014/11/18/CSS/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%A7%91%E6%99%AE/)。
+这里所说的`border`、`padding`、`content`等区域其实是CSS盒模型的组成部分，更多内容可参阅[CSS盒模型科普](http://blog.gejiawen.com/2014/11/18/css-box-model-guide/)。
 
 **兼容性**：IE9+、Firefox、Opera、Chrome以及Safari支持`background-clip`属性，所以在实际使用`background-clip`属性时针对不同浏览器需要带上其前缀。
 

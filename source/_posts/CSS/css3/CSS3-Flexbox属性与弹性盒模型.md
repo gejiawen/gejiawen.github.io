@@ -190,7 +190,7 @@ CSS3新增的[Flexible Box Layout](http://www.w3.org/TR/css-flexbox/)（弹性�
 }
 ```
 
-这段css代码中使用了css3新出的一个**结构伪类选择器**`:last-child`，其作用是匹配`.flex-item`元素且该元素是其父元素的最后一个子元素。关于css3选择器的更多内容欢迎阅读博主的这篇文章[初识CSS3选择器](http://gejiawen.github.io/2015/04/09/CSS/%E5%88%9D%E8%AF%86CSS3%E9%80%89%E6%8B%A9%E5%99%A8/)。
+这段css代码中使用了css3新出的一个**结构伪类选择器**`:last-child`，其作用是匹配`.flex-item`元素且该元素是其父元素的最后一个子元素。关于css3选择器的更多内容欢迎阅读博主的这篇文章[初识CSS3选择器](http://blog.gejiawen.com/2015/04/09/first-to-css3-selectors/)。
 
 言归正传，上面的css代码，将导致最后一个`li`元素反而在第一个展示。效果如下，
 

@@ -5,7 +5,7 @@ categories: [Javascript]
 tags: [深入理解JavaScript系列]
 ---
 
-本文是[深入理解JavaScript系列](http://gejiawen.github.io/2014/11/13/%E7%B3%BB%E5%88%97/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JavaScript%E7%B3%BB%E5%88%97/)的第**三**篇读文笔记，博客原文在[这里](http://www.cnblogs.com/TomXu/archive/2011/12/30/2288372.html)。
+本文是[深入理解JavaScript系列](http://blog.gejiawen.com/2014/11/13/deep-into-javascript-series/)的第**三**篇读文笔记，博客原文在[这里](http://www.cnblogs.com/TomXu/archive/2011/12/30/2288372.html)。
 
 # 内容简要
 
@@ -59,7 +59,7 @@ calculator.add(2, 2);
 
 这里使用了`new Calculator()`把函数`Calculator`当作一个构造函数调用。有的同学可能会问，这里不使用`new Calculator()`，直接调用`Calculator()`函数好像也是可以的啊，那`new Calculator()`和不使用`new`到底啥区别啊？
 
-首先我在[之前的文章](http://gejiawen.github.io/2014/09/19/Javascript/Javascript%E4%B8%ADNew-xxx%28%29%E7%9A%84%E6%9C%AC%E8%B4%A8/)中有阐述过`new xxx()`这个操作的本质，不太清楚的可以移步看看。
+首先我在[之前的文章](http://blog.gejiawen.com/2014/09/19/deep-into-new-object/)中有阐述过`new xxx()`这个操作的本质，不太清楚的可以移步看看。
 
 在大叔举的这个例子中，使用`new`与不使用`new`都是没有错的，下面的`calculator.add`方法都是可以调用的。
 

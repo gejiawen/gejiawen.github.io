@@ -32,43 +32,43 @@ tags: [目录]
 
 ## 科普
 
-[（1）CSS盒模型科普](http://gejiawen.github.io/2014/11/18/css-box-model-guide/)
-[（2）浅谈CSS中的伪元素和伪类](http://gejiawen.github.io/2014/11/20/pseudo-element-and-pseudo-class/)
-[（3）CSS的长度单位参考](http://gejiawen.github.io/2015/03/03/css-length-unit-guide/)
-[（4）CSS布局模型](http://gejiawen.github.io/2015/03/04/css-layout-model/)
-[（5）CSS控制本文换行：word-wrap与word-break](http://gejiawen.github.io/2015/03/09/usage-for-word-wrap-and-word-break/)
-[（6）认识CSS权重](http://gejiawen.github.io/2015/03/16/css-weight-guide/)
+[（1）CSS盒模型科普](http://blog.gejiawen.com/2014/11/18/css-box-model-guide/)
+[（2）浅谈CSS中的伪元素和伪类](http://blog.gejiawen.com/2014/11/20/pseudo-element-and-pseudo-class/)
+[（3）CSS的长度单位参考](http://blog.gejiawen.com/2015/03/03/css-length-unit-guide/)
+[（4）CSS布局模型](http://blog.gejiawen.com/2015/03/04/css-layout-model/)
+[（5）CSS控制本文换行：word-wrap与word-break](http://blog.gejiawen.com/2015/03/09/usage-for-word-wrap-and-word-break/)
+[（6）认识CSS权重](http://blog.gejiawen.com/2015/03/16/css-weight-guide/)
 
 
 ## 技巧
 
-[（1）CSS如何让页脚固定在页面底部](http://gejiawen.github.io/2014/12/16/how-to-fix-footer-to-bottom/)
-[（2）CSS如何使元素水平垂直定位](http://gejiawen.github.io/2014/12/21/how-to-horizontal-and-vertical-positioning/)
-[（3）CSS常用布局之宽高自适应](http://gejiawen.github.io/2015/03/12/css-layout-width-height-responsive/)
-[（4）CSS常用布局之各种元素的水平垂直居中](http://gejiawen.github.io/2015/03/13/css-layout-horizontal-and-vertical-for-elements/)
-[（5）使用::selection自定义选中文本的颜色](http://gejiawen.github.io/2015/04/14/usage-for-selection-pseudo-class/)
+[（1）CSS如何让页脚固定在页面底部](http://blog.gejiawen.com/2014/12/16/how-to-fix-footer-to-bottom/)
+[（2）CSS如何使元素水平垂直定位](http://blog.gejiawen.com/2014/12/21/how-to-horizontal-and-vertical-positioning/)
+[（3）CSS常用布局之宽高自适应](http://blog.gejiawen.com/2015/03/12/css-layout-width-height-responsive/)
+[（4）CSS常用布局之各种元素的水平垂直居中](http://blog.gejiawen.com/2015/03/13/css-layout-horizontal-and-vertical-for-elements/)
+[（5）使用::selection自定义选中文本的颜色](http://blog.gejiawen.com/2015/04/14/usage-for-selection-pseudo-class/)
 
 
 ## 研究
 
-[（1）WebFont与页面ICON图标研究](http://gejiawen.github.io/2015/03/04/webfont-and-icon-guide/)
-[（2）CSS动画攻略](http://gejiawen.github.io/2015/05/05/css-animation-guide/)
-[（3）CSS选择器的一般性优化建议](http://gejiawen.github.io/2015/04/13/suggestion-for-css-selectors/)
+[（1）WebFont与页面ICON图标研究](http://blog.gejiawen.com/2015/03/04/webfont-and-icon-guide/)
+[（2）CSS动画攻略](http://blog.gejiawen.com/2015/05/05/css-animation-guide/)
+[（3）CSS选择器的一般性优化建议](http://blog.gejiawen.com/2015/04/13/suggestion-for-css-selectors/)
 
 
 ## CSS3
 
 **⚠️注意**：由于CSS3中的部分内容尚未完全定稿，所以CSS3部分的系列文章可能会随时更新。
 
-[（1）CSS3新特性概述](http://gejiawen.github.io/2015/04/13/css3-new-feature/)
-[（2）初识CSS3选择器](http://gejiawen.github.io/2015/04/09/first-to-css3-selectors/)
-[（3）CSS3多列布局](http://gejiawen.github.io/2015/04/14/css3-multi-column-guide/)
-[（4）CSS3 Flexbox属性与弹性盒模型](http://gejiawen.github.io/2015/05/20/css3-flexbox-guide/)
-[（5）CSS3背景](http://gejiawen.github.io/2015/04/21/css3-background-guide/)
-[（6）CSS3渐变](http://gejiawen.github.io/2015/04/23/css3-gradient-guide/)
-[（7）CSS3阴影及反射](http://gejiawen.github.io/2015/05/05/css3-shadow-and-reflect/)
-[（8）CSS3圆角](http://gejiawen.github.io/2015/04/23/css3-radius-guide/)
-[（9）CSS3媒体查询与自适应网页设计](http://gejiawen.github.io/2015/05/18/css3-media-query-and-responsive-design/)
+[（1）CSS3新特性概述](http://blog.gejiawen.com/2015/04/13/css3-new-feature/)
+[（2）初识CSS3选择器](http://blog.gejiawen.com/2015/04/09/first-to-css3-selectors/)
+[（3）CSS3多列布局](http://blog.gejiawen.com/2015/04/14/css3-multi-column-guide/)
+[（4）CSS3 Flexbox属性与弹性盒模型](http://blog.gejiawen.com/2015/05/20/css3-flexbox-guide/)
+[（5）CSS3背景](http://blog.gejiawen.com/2015/04/21/css3-background-guide/)
+[（6）CSS3渐变](http://blog.gejiawen.com/2015/04/23/css3-gradient-guide/)
+[（7）CSS3阴影及反射](http://blog.gejiawen.com/2015/05/05/css3-shadow-and-reflect/)
+[（8）CSS3圆角](http://blog.gejiawen.com/2015/04/23/css3-radius-guide/)
+[（9）CSS3媒体查询与自适应网页设计](http://blog.gejiawen.com/2015/05/18/css3-media-query-and-responsive-design/)
 
 
 # 总结

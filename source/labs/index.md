@@ -16,18 +16,18 @@ date: 2014-12-01
 
 ## 书书
 
-- [Coding Book](http://gejiawen.github.io/coding-book)
-- [FE Workflows](http://gejiawen.github.io/fe-workflows/)
-- [Jade Syntax Documentation](http://gejiawen.github.io/jade-syntax-docs/)
+- [Coding Book](http://blog.gejiawen.com/coding-book)
+- [FE Workflows](http://blog.gejiawen.com/fe-workflows/)
+- [Jade Syntax Documentation](http://blog.gejiawen.com/jade-syntax-docs/)
 - Node Stream Handbook
 - Browserify Handbook
 
 
 ## 云海
 
-- [这些年前端的那些事儿](http://gejiawen.github.io/slides/things-for-fe-in-these-years)
-- [我的开发流模型](http://gejiawen.github.io/slides/my-dev-workflows)
-- [Javascript Async Ninja](http://gejiawen.github.io/slides/javascript-async-ninja)
+- [这些年前端的那些事儿](http://blog.gejiawen.com/slides/things-for-fe-in-these-years)
+- [我的开发流模型](http://blog.gejiawen.com/slides/my-dev-workflows)
+- [Javascript Async Ninja](http://blog.gejiawen.com/slides/javascript-async-ninja)
 
 
 ## 语录

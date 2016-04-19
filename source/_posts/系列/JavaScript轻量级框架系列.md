@@ -18,7 +18,7 @@ tags: [目录]
 
 我做了这么久的前端，接触的各式各样的框架自然不在少数，真正使用过的框架虽然说没有见过的多，但是也不少。既然有这个先提条件，不管是接触时间较长的框架，还是只是惊鸿一瞥的框架，亦或者是我觉得很有意思好玩的框架，我觉得我都有必要写一个系列文章来记录这些框架的众生百态，不管是介绍层面的，还是教程层面的，都是自我沉淀的一种方式吧。
 
-是的，这仿佛是之前所有我所使用过的JavaScript框架所赋予我的使命，这应该是一件很有意义的事情吧。就这样，这个[JavaScript轻量级框架系列](http://gejiawen.github.io/2014/11/26/系列/JavaScript轻量级框架系列/)诞生了。
+是的，这仿佛是之前所有我所使用过的JavaScript框架所赋予我的使命，这应该是一件很有意义的事情吧。就这样，这个[JavaScript轻量级框架系列](http://blog.gejiawen.com/2014/11/26/系列/JavaScript轻量级框架系列/)诞生了。
 
 说明一下，本系列所沉淀的JavaScript框架都是属于**轻量级**框架，尽量遵循**一篇文章只介绍一个框架**这一基本原则。
 
@@ -30,8 +30,8 @@ tags: [目录]
 
 # 目录
 
-[（1）超炫3D效果的幻灯片框架 -- **Impress.js**](http://gejiawen.github.io/2014/09/23/javascript-light-framework-impressjs/)
-[（2）功能强大的幻灯片框架 -- **Reveal.js**](http://gejiawen.github.io/2014/11/30/javascript-light-framework-revealjs/)
+[（1）超炫3D效果的幻灯片框架 -- **Impress.js**](http://blog.gejiawen.com/2014/09/23/javascript-light-framework-impressjs/)
+[（2）功能强大的幻灯片框架 -- **Reveal.js**](http://blog.gejiawen.com/2014/11/30/javascript-light-framework-revealjs/)
 （3）常用JavaScript工具库之一 -- **Underscore.js**
 （4）常用JavaScript工具库之二 -- **Lo-Dash**
 （5）JavaScript日期处理框架 -- **Moment.js**

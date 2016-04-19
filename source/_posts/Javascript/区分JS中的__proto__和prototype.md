@@ -5,7 +5,7 @@ categories: [Javascript]
 tags: [javascript]
 ---
 
-我们知道javascript是**基于原型（prototype）继承**的语言。关于javascript原型继承的更多内容请参阅之前的这篇文章[浅谈Javascript中的原型继承](http://gejiawen.github.io/2014/10/16/Javascript/%E6%B5%85%E8%B0%88Javascript%E4%B8%AD%E7%9A%84%E5%8E%9F%E5%9E%8B%E7%BB%A7%E6%89%BF/)，内容绝对不会让你失望。
+我们知道javascript是**基于原型（prototype）继承**的语言。关于javascript原型继承的更多内容请参阅之前的这篇文章[浅谈Javascript中的原型继承](http://blog.gejiawen.com/2014/10/16/prototype-inherit-in-javascript/)，内容绝对不会让你失望。
 
 不过本篇文章将会详细阐述javascript中用于原型继承的两个重要的东西`__proto__`和`prototype`，以及由它们延伸出的一点容易让人疑惑的方面。
 
