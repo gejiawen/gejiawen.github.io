@@ -81,4 +81,4 @@ deploy:
   type: git
   repo:
     github: https://github.com/gejiawen/gejiawen.github.io.git,master
-    gitcafe: https://gitcafe.com/gejiawen/gejiawen.git,gitcafe-pages
+#    gitcafe: https://gitcafe.com/gejiawen/gejiawen.git,gitcafe-pages
