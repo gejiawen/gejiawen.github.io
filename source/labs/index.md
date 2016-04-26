@@ -4,7 +4,7 @@ date: 2014-12-01
 
 ---
 
-## 剑亭
+## Packages
 
 - vip, a versioning interface platform.
 - spec, a spec for fe code style, it's personal.
@@ -14,7 +14,7 @@ date: 2014-12-01
 - [bullhead](https://github.com/gejiawen/bullhead)
 
 
-## 书书
+## Open Source Books
 
 - [Coding Book](http://blog.gejiawen.com/coding-book)
 - [FE Workflows](http://blog.gejiawen.com/fe-workflows/)
@@ -23,14 +23,18 @@ date: 2014-12-01
 - Browserify Handbook
 
 
-## 云海
+## Slides
 
 - [这些年前端的那些事儿](http://blog.gejiawen.com/slides/things-for-fe-in-these-years)
 - [我的开发流模型](http://blog.gejiawen.com/slides/my-dev-workflows)
 - [Javascript Async Ninja](http://blog.gejiawen.com/slides/javascript-async-ninja)
 
 
-## 语录
+## Services
+
+*TODO*
+
+## Records
 
 - **什么是Javascript的闭包？** 2016/4/5
 
