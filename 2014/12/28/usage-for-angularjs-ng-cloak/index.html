@@ -1,0 +1,264 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="在使用Anguarjs进行web开发或者进行SPA（single page application）开发时，往往会遇到下面这样的问题。
+刷新页面时，页面会出现一些乱码，这里的乱码具体是指`{{expression}}`或者`{{expression | filter}}`这种形式的表达式乱码，然后这">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>使用Angularjs的ng-cloak指令避免页面乱码 | 蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "2014/12/28/usage-for-angularjs-ng-cloak/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>使用Angularjs的ng-cloak指令避免页面乱码</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/ng/">ng</a>&nbsp;<a href="/tags/实践/">实践</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/ANGULARJS/">ANGULARJS</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2014-12-28T08:10:58.000Z"
+                       itemprop="datePublished">2014-12-28 16:10:58</time>
+            
+            更新: <time datetime="2017-01-15T17:16:24.000Z"
+                       itemprop="dateModified">2017-01-16 01:16:24</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+
+            <p>在使用Anguarjs进行web开发或者进行SPA（single page application）开发时，往往会遇到下面这样的问题。</p>
+<p>刷新页面时，页面会出现一些乱码，这里的乱码具体是指`{{expression}}`或者`{{expression | filter}}`这种形式的表达式乱码，然后这些乱码又快速的消失了，然后页面就正常了。这个问题的原因是，在一些现代浏览器，比如Chrome，Firefox等中尤为严重。当然还跟环境的网络速度有关。</p>
+<p>出现这个问题的根本原因是，JavaScript操作DOM都是在DOM加载完成（DOM Ready）之后的才进行的。换句话说，Angularjs只会在DOM Ready之后才回去解析html模版以及Angularjs的directive，在这之前html模版中的内容会被原封不动的展示在页面，这时候就会出现所谓的乱码问题。</p>
+<p>那么我们如何解决这个问题呢？</p>
+<p>Angularjs官方针对这个问题提供了原生的解决方案，就是我们今天要说的主角<code>ng-cloak</code>指令。</p>
+<p>我们先来看一下Angularjs的源码中对这个<code>ng-cloak</code>是如何实现的。</p>
+<p>Angularjs将<code>ng-cloak</code>实现为directive，其代码如下，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">!angular.$$csp()</span><br><span class="line">&amp;&amp; angular</span><br><span class="line">    .element(<span class="built_in">document</span>)</span><br><span class="line">    .find(<span class="string">'head'</span>)</span><br><span class="line">    .prepend(<span class="string">'&lt;style type="text/css"&gt;'</span> +</span><br><span class="line">        <span class="string">'@charset "UTF-8";'</span> +</span><br><span class="line">        <span class="string">'[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide&#123;display:none !important;&#125;'</span> +</span><br><span class="line">        <span class="string">'ng\\:form&#123;display:block;&#125;'</span> +</span><br><span class="line">        <span class="string">'.ng-animate-block-transitions&#123;transition:0s all!important;-webkit-transition:0s all!important;&#125;'</span> +</span><br><span class="line">        <span class="xml"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><span class="string">');</span></span><br></pre></td></tr></table></figure>
+<p>大家不要对这一坨代码感到畏惧，其实它做的事很简单，就是在html的中<code>head</code>标签中插入一段内联的css样式。其中部分的代码是这样的，</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-attr">[ng\\:cloak]</span>,</span><br><span class="line"><span class="selector-attr">[ng-cloak]</span>,</span><br><span class="line"><span class="selector-attr">[data-ng-cloak]</span>,</span><br><span class="line"><span class="selector-attr">[x-ng-cloak]</span>,</span><br><span class="line"><span class="selector-class">.ng-cloak</span>,</span><br><span class="line"><span class="selector-class">.x-ng-cloak</span>,</span><br><span class="line"><span class="selector-class">.ng-hide</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>:none <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>很显然，Angularjs对<code>ng-cloak</code>相关的元素设置了<code>display: none !important</code>这样一个属性，目的就是隐藏相关元素。这样在在DOM还没有Ready的时候，将相关元素隐藏起来，这样页面就不会出现乱码了。</p>
+<p>当DOM Ready的时候，Angularjs开始解析指令。我们来看一下<code>ng-cloak</code>这个指令都做了哪些事情，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ngCloakDirective = ngDirective(&#123;</span><br><span class="line">    compile: <span class="function"><span class="keyword">function</span>(<span class="params">element, attr</span>) </span>&#123;</span><br><span class="line">        attr.$set(<span class="string">'ngCloak'</span>, <span class="literal">undefined</span>);</span><br><span class="line">        element.removeClass(<span class="string">'ng-cloak'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>可见，当Angularjs开始解析<code>ng-cloak</code>指令的时候，又会把这个样式给去除掉。这样页面又显示了。</p>
+<p>通过以上分析，我们知道了使用<code>ng-cloak</code>指令来避免页面出现乱码的原理，其实通过先隐藏后显示来规避了DOM尚未Ready这段时间的真空期。</p>
+<p><strong>理论是美好的，但是现实往往会给我一个响亮的耳光。</strong></p>
+<p>在实际使用的过程中，我们要想使上面的过程完美表现，就必须要先在<code>head</code>标签中先引入Angularjs的源码，而不能在页面的最后引入Angularjs文件。</p>
+<p>因为后者会造成这样一种情况：在Angularjs文件还没引入时，意味着还没给<code>ng-cloak</code>相关元素做隐藏处理，页面就已经展示了，这是页面仍然会出现乱码。</p>
+<p>但是一般性的原则告诉我们，<strong>应该把css文件放在头部，把js文件放在尾部</strong>。那么我们如何解决这个矛盾呢？</p>
+<p>解决方案是，我们手动在<code>head</code>中将<code>ng-cloak</code>相关的元素设置为隐藏，即添加如下的代码，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span><br><span class="line">        <span class="selector-attr">[ng:cloak]</span>,</span><br><span class="line">        <span class="selector-attr">[ng-cloak]</span>,</span><br><span class="line">        <span class="selector-attr">[data-ng-cloak]</span>,</span><br><span class="line">        <span class="selector-attr">[x-ng-cloak]</span>,</span><br><span class="line">        <span class="selector-class">.ng-cloak</span>,</span><br><span class="line">        <span class="selector-class">.x-ng-cloak</span> &#123;</span><br><span class="line">            <span class="attribute">display</span>:none <span class="meta">!important</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>或者将这一段代码放在我们在<code>head</code>中加载的css文件中，这样就可以确保页面加载的时候，不管它有没有DOM Ready，<code>ng-cloak</code>相关元素肯定是隐藏的。</p>
+<p>如果你发现在<code>body</code>上加了<code>ng-cloak</code>，但是仍然不起作用，那么原因应该就是上面所描述的，这时候你就需要在<code>head</code>中添加隐藏代码或者在引入的css文件中添加相关代码了。</p>
+<p>最后提一点，如果<code></code>中的表达式仅仅是展示一些文本内容，我们可以使用<code>ng-bind</code>这个指令来实现。</p>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://gejiawen.github.io/about">@gejiawen</a>.</p>
+    <p class="link">本文链接：<a href="http://blog.gejiawen.com/2014/12/28/usage-for-angularjs-ng-cloak/">http://blog.gejiawen.com/2014/12/28/usage-for-angularjs-ng-cloak/</a></p>
+
+    <div class="share">
+    分享本页：
+    
+        <div class="bdsharebuttonbox"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_more" data-cmd="more"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    
+    
+</div>
+
+</div>
+
+
+            
+    <section class="comment">
+    <div class="ds-thread" data-thread-key="usage-for-angularjs-ng-cloak" data-title="使用Angularjs的ng-cloak指令避免页面乱码" data-url="http://blog.gejiawen.com/2014/12/28/usage-for-angularjs-ng-cloak/" data-author-key="gejiawen"></div>
+</section>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gejiawen-blog"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,317 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="注意：由于CSS3中的部分内容尚未完全定稿，所以本文的部分可能会随时更新。
+CSS3中新出现的多列布局(multi-column)是传统HTML网页中块状布局模式的有力扩充。这种新语法能够让WEB开发人员轻松的让文本呈现多列显示。本文将会详细阐述column属性的相关用法。
+语法及兼容性
+
+
+属性名">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS3多列布局 | 蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "2015/04/14/css3-multi-column-guide/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>CSS3多列布局</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/CSS拾遗系列/">CSS拾遗系列</a>&nbsp;<a href="/tags/css3/">css3</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2015-04-13T16:15:38.000Z"
+                       itemprop="datePublished">2015-04-14 00:15:38</time>
+            
+            更新: <time datetime="2016-04-26T01:58:59.000Z"
+                       itemprop="dateModified">2016-04-26 09:58:59</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+                <div id="toc" class="toc-article well">
+                    <strong class="toc-title">大纲</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#语法及兼容性"><span class="toc-number">1.</span> <span class="toc-text">语法及兼容性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#示例"><span class="toc-number">2.</span> <span class="toc-text">示例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#简化语法"><span class="toc-number">3.</span> <span class="toc-text">简化语法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考列表"><span class="toc-number">4.</span> <span class="toc-text">参考列表</span></a></li></ol>
+                </div>
+            
+
+            <p><strong>注意</strong>：由于CSS3中的部分内容尚未完全定稿，所以本文的部分可能会随时更新。</p>
+<p>CSS3中新出现的多列布局(<a href="http://www.w3.org/TR/css3-multicol/" target="_blank" rel="external">multi-column</a>)是传统HTML网页中块状布局模式的有力扩充。这种新语法能够让WEB开发人员轻松的让文本呈现多列显示。本文将会详细阐述<code>column</code>属性的相关用法。</p>
+<h1 id="语法及兼容性"><a href="#语法及兼容性" class="headerlink" title="语法及兼容性"></a>语法及兼容性</h1><table>
+<thead>
+<tr>
+<th style="text-align:left">属性名</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">可取值</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>column-count</code></td>
+<td style="text-align:left">列数目</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">-</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>column-width</code></td>
+<td style="text-align:left">每列宽度</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">不一定会使用，浏览器将会根据<code>column-count</code>及<code>column-width</code>作自适应计算</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>column-rule</code></td>
+<td style="text-align:left">列分割线的样式</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">不占用真实空间，设置的方式跟<code>border</code>一致，可拆分为<code>column-rule-width</code>、<code>column-rule-style</code>、<code>column-rule-color</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>column-gap</code></td>
+<td style="text-align:left">各列之间的间隙宽度</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left"><code>column-gap</code>将占用真实的空间大小</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>column-span</code></td>
+<td style="text-align:left">允许一个元素的宽度跨越多列</td>
+<td style="text-align:left"><code>none</code> 、<code>all</code></td>
+<td style="text-align:left">-</td>
+</tr>
+</tbody>
+</table>
+<p>除了上述的几个常用的属性之外，还有</p>
+<ul>
+<li><code>column-fill</code>属性，此属性用于标识分列的高度是否统一。不过博主在Chrome41上实验时貌似还不支持。</li>
+<li><code>break-before</code>、<code>break-after</code>、<code>break-inside</code>属性，这三个属性是用于标识分列之间的行为的。这三个属性目前来说并不常用。</li>
+</ul>
+<p>其兼容性如下图，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/CSS3多列布局-001.png" alt=""></p>
+<p>不出所料，IE9及其以下的浏览器是不支持的。而且<code>column</code>目前并不完全支持W3C的标准语法，需要针对不同的浏览器内核添加不同的前缀。（下面的示例中将默认使用<code>-webkit-</code>前缀）</p>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><p>让我们先来看个简单的示例，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span><br><span class="line">    <span class="selector-tag">div</span> &#123;</span><br><span class="line">        <span class="attribute">-webkit-column-count</span>: <span class="number">3</span>;</span><br><span class="line">        <span class="attribute">-webkit-column-width</span>: <span class="number">100px</span>;</span><br><span class="line">        <span class="attribute">-webkit-column-rule</span>: <span class="number">10px</span> solid red;</span><br><span class="line">        <span class="attribute">-webkit-column-gap</span>: <span class="number">20px</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    blablabla.....</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>打开这个<a href="http://runjs.cn/detail/8ghuaw7o" target="_blank" rel="external">demo</a>，看一下效果。其效果如下图，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/CSS3多列布局-002.png" alt=""></p>
+<p>此时，我们如果注释掉css代码中的<code>column-count</code>或者<code>column-width</code>属性，得到的结果是不一样的。各位看客可在给出的demo链接中自行实验。</p>
+<p><strong>结论</strong>：其实<code>column-width</code>并不是必须的，浏览器会自动根据<code>column-count</code>和<code>column-width</code>计算出自适应的布局。上面的代码中我们设置<code>column-width</code>为100px，<code>column-count</code>为3列，得到的结果虽然是分成了3列，但是每一列的宽度并不是100px。</p>
+<p>我们再来看看<code>column-span</code>属性。此属性目前只能有两个可取值：<code>none</code>或者<code>all</code>，标识某一元素要么不进行跨列要么就跨了所有的列。具体的效果可以参见这个<a href="http://runjs.cn/detail/ggiy1z6r" target="_blank" rel="external">demo</a>，其效果如下，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/CSS3多列布局-003.png" alt=""></p>
+<p>各位看官可自行将<code>column-span</code>属性变更成<code>none</code>或者<code>all</code>观察其效果变化。</p>
+<h1 id="简化语法"><a href="#简化语法" class="headerlink" title="简化语法"></a>简化语法</h1><p><code>column-count</code>及<code>column-width</code>属性可以合并起来使用，如下</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">-webkit-columns</span>: <span class="number">3</span> <span class="number">15em</span></span><br><span class="line">&#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    blablabla......</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其中<code>columns: 3 15em</code>与下面的写法是等效的，</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">-webkit-column-count</span>: <span class="number">3</span>;</span><br><span class="line">    <span class="attribute">-webkit-column-width</span>: <span class="number">15em</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="参考列表"><a href="#参考列表" class="headerlink" title="参考列表"></a>参考列表</h1><ul>
+<li><a href="http://www.w3.org/TR/css3-multicol/" target="_blank" rel="external">http://www.w3.org/TR/css3-multicol/</a></li>
+</ul>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://gejiawen.github.io/about">@gejiawen</a>.</p>
+    <p class="link">本文链接：<a href="http://blog.gejiawen.com/2015/04/14/css3-multi-column-guide/">http://blog.gejiawen.com/2015/04/14/css3-multi-column-guide/</a></p>
+
+    <div class="share">
+    分享本页：
+    
+        <div class="bdsharebuttonbox"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_more" data-cmd="more"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    
+    
+</div>
+
+</div>
+
+
+            
+    <section class="comment">
+    <div class="ds-thread" data-thread-key="css3-multi-column-guide" data-title="CSS3多列布局" data-url="http://blog.gejiawen.com/2015/04/14/css3-multi-column-guide/" data-author-key="gejiawen"></div>
+</section>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gejiawen-blog"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

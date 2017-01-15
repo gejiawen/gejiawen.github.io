@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="select指令是 AngularJS 预设的一组directive。这里是AngularJS官网给出的用法： AngularJS:select
+大概的意思是，select中的ngOption可以采用和ngRepeat指令类似的循环结构，其数据源可以是Array或者是Object。针对两种数据源又可">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AngularJS:select指令用法详解 | 蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "2014/07/14/usage-for-angularjs-ng-select/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>AngularJS:select指令用法详解</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/ng/">ng</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/ANGULARJS/">ANGULARJS</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2014-07-14T06:49:28.000Z"
+                       itemprop="datePublished">2014-07-14 14:49:28</time>
+            
+            更新: <time datetime="2017-01-15T17:16:24.000Z"
+                       itemprop="dateModified">2017-01-16 01:16:24</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+                <div id="toc" class="toc-article well">
+                    <strong class="toc-title">大纲</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#先上Controller"><span class="toc-number">1.</span> <span class="toc-text">先上Controller</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#示例"><span class="toc-number">2.</span> <span class="toc-text">示例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#示例一：基本下拉效果"><span class="toc-number">2.1.</span> <span class="toc-text">示例一：基本下拉效果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例二：自定义下拉显示名称"><span class="toc-number">2.2.</span> <span class="toc-text">示例二：自定义下拉显示名称</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例三：让选项分组"><span class="toc-number">2.3.</span> <span class="toc-text">示例三：让选项分组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例四：自定义ngModel的绑定"><span class="toc-number">2.4.</span> <span class="toc-text">示例四：自定义ngModel的绑定</span></a></li></ol></li></ol>
+                </div>
+            
+
+            <p><code>select</code>指令是 <strong>AngularJS</strong> 预设的一组<code>directive</code>。这里是AngularJS官网给出的用法： <a href="http://docs.angularjs.org/api/ng.directive:select" target="_blank" rel="external">AngularJS:select</a></p>
+<p>大概的意思是，<code>select</code>中的<code>ngOption</code>可以采用和<code>ngRepeat</code>指令类似的循环结构，其数据源可以是<code>Array</code>或者是<code>Object</code>。针对两种数据源又可以衍生出好几种用法。</p>
+<p>但是官网给出的例子太少了。</p>
+<p>下面是针对几个不太容易理解的用法示例。</p>
+<h1 id="先上Controller"><a href="#先上Controller" class="headerlink" title="先上Controller"></a>先上Controller</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">selectCtrl</span>(<span class="params">$scope</span>) </span>&#123;</span><br><span class="line">    $scope.selected = <span class="string">''</span>;</span><br><span class="line"></span><br><span class="line">    $scope.model = [&#123;</span><br><span class="line">        id: <span class="number">10001</span>,</span><br><span class="line">        mainCategory: <span class="string">'男'</span>,</span><br><span class="line">        productName: <span class="string">'水洗T恤'</span>,</span><br><span class="line">        productColor: <span class="string">'白'</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        id: <span class="number">10002</span>,</span><br><span class="line">        mainCategory: <span class="string">'女'</span>,</span><br><span class="line">        productName: <span class="string">'圆领短袖'</span>,</span><br><span class="line">        productColor: <span class="string">'黑'</span></span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        id: <span class="number">10003</span>,</span><br><span class="line">        mainCategory: <span class="string">'女'</span>,</span><br><span class="line">        productName: <span class="string">'短袖短袖'</span>,</span><br><span class="line">        productColor: <span class="string">'黄'</span></span><br><span class="line">    &#125;];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><h2 id="示例一：基本下拉效果"><a href="#示例一：基本下拉效果" class="headerlink" title="示例一：基本下拉效果"></a>示例一：基本下拉效果</h2><p><strong>usage:</strong><br><code>label for value in array</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">ng-model</span>=<span class="string">"selected"</span> <span class="attr">ng-options</span>=<span class="string">"m.productName for m in model"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>-- 请选择 --<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>效果</strong><br><img src="http://7xkwt1.com1.z0.glb.clouddn.com/AngularJS-select指令用法详解-001.png" alt="基本下拉效果"></p>
+<p><strong>说明</strong></p>
+<ol>
+<li><strong>usage</strong> 中的<code>value</code>也就是<code>ng-options</code>中的<code>m</code>，而<code>m</code>是数组<code>model</code>的一个元素，<em>它是一个变量</em></li>
+<li><strong>usage</strong> 中的<code>label</code>也就是<code>ng-options</code>中的<code>m.productName</code>，其实就是一个<a href="http://docs.angularjs.org/guide/expression" target="_blank" rel="external">AngularJS Expression</a></li>
+</ol>
+<h2 id="示例二：自定义下拉显示名称"><a href="#示例二：自定义下拉显示名称" class="headerlink" title="示例二：自定义下拉显示名称"></a>示例二：自定义下拉显示名称</h2><p><strong>usage</strong><br><code>label for value in array</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">ng-model</span>=<span class="string">"selected"</span> <span class="attr">ng-options</span>=<span class="string">"(m.productColor + ' - ' + m.productName) for m in model"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>-- 请选择 --<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>效果</strong><br><img src="http://7xkwt1.com1.z0.glb.clouddn.com/AngularJS-select指令用法详解-002.png" alt="自定义下拉显示名称"></p>
+<p><strong>说明</strong></p>
+<ol>
+<li>可以看到，<strong>usage</strong> 中的<code>label</code>可以根据需求拼接出不同的字符串</li>
+</ol>
+<h2 id="示例三：让选项分组"><a href="#示例三：让选项分组" class="headerlink" title="示例三：让选项分组"></a>示例三：让选项分组</h2><p><strong>usage</strong><br><code>label group by groupName for value in array</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">ng-model</span>=<span class="string">"selected"</span> <span class="attr">ng-options</span>=<span class="string">"(m.productColor + ' - ' + m.productName) group by m.mainCategory for m in model"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>-- 请选择 --<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>效果</strong><br><img src="http://7xkwt1.com1.z0.glb.clouddn.com/AngularJS-select指令用法详解-003.png" alt="让选项分组"></p>
+<p><strong>说明</strong></p>
+<ol>
+<li>这里使用了<code>group by</code>，通过<code>$scope.model</code>中的<code>mainCategory</code>字段进行分组</li>
+</ol>
+<h2 id="示例四：自定义ngModel的绑定"><a href="#示例四：自定义ngModel的绑定" class="headerlink" title="示例四：自定义ngModel的绑定"></a>示例四：自定义<code>ngModel</code>的绑定</h2><p><strong>usage</strong><br><code>select as label for value in array</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">ng-model</span>=<span class="string">"selected"</span> <span class="attr">ng-options</span>=<span class="string">"m.id as m.productName for m in model"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>-- 请选择 --<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p><strong>效果</strong><br><img src="http://7xkwt1.com1.z0.glb.clouddn.com/AngularJS-select指令用法详解-004.png" alt="自定义ngModel的绑定"></p>
+<p><strong>说明</strong></p>
+<ol>
+<li>这种用法也是<code>select</code>指令中较为复杂的一种。从效果中可以看出，<strong>usage</strong> 中<code>select</code>的作用就是重新绑定<code>ng-model</code>的值。在这里，<code>ng-model</code>等于<code>m.id</code>，当<code>ng-model</code>发生改变的时候，得到的实际值是<code>m.id</code>的值。</li>
+</ol>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://gejiawen.github.io/about">@gejiawen</a>.</p>
+    <p class="link">本文链接：<a href="http://blog.gejiawen.com/2014/07/14/usage-for-angularjs-ng-select/">http://blog.gejiawen.com/2014/07/14/usage-for-angularjs-ng-select/</a></p>
+
+    <div class="share">
+    分享本页：
+    
+        <div class="bdsharebuttonbox"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_more" data-cmd="more"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    
+    
+</div>
+
+</div>
+
+
+            
+    <section class="comment">
+    <div class="ds-thread" data-thread-key="usage-for-angularjs-ng-select" data-title="AngularJS:select指令用法详解" data-url="http://blog.gejiawen.com/2014/07/14/usage-for-angularjs-ng-select/" data-author-key="gejiawen"></div>
+</section>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gejiawen-blog"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

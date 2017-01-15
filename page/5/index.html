@@ -1,0 +1,516 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="蛋糕仙人的个人博客。生活，工作，技术，思考，沉淀，人生。">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "page/5/index.html";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2015/04/13/suggestion-for-css-selectors/" title="CSS选择器的一般性优化建议">CSS选择器的一般性优化建议</a></h1>
+
+        
+        <p class="summary">如何对选择器进行优化并不是一个那么新鲜的话题，但是个人觉得，css作为前端开发人员一项必备的专业技能，有必要深入了解下css在页面渲染的一些关键点，并以此为css的优化提供依据。我们这篇文章将讨论选择器优化的一般性建议。
+浏览器如何应用选择器在给出css选择器优化建议之前，我们有</p>
+        
+
+        <p class="say-title">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/CSS拾遗系列/">CSS拾遗系列</a>&nbsp;<a href="/tags/css研究/">css研究</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+</span>
+
+
+        </p>
+
+        <p class="say-title">
+            —— <img src="/images/avatar.jpg" class="img-circle index-post-avatar"/>
+            <a href="http://blog.gejiawen.com" target="_blank" title="gejiawen">gejiawen</a>
+            于2015-04-13 21:56:00创作
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2015/04/13/css3-new-feature/" title="CSS3新特性概述">CSS3新特性概述</a></h1>
+
+        
+        <p class="summary">注意：由于CSS3中的部分内容尚未完全定稿，所以本文的部分可能会随时更新。
+缘起W3C的官方文档于2011/9/29更新了Selectors Level 3。时至今日，已经过去了将近4年的时间，各家浏览器厂商对CSS3的支持程度也越来越高。按理说作为一名前端从业人员不应该等某项新</p>
+        
+
+        <p class="say-title">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/CSS拾遗系列/">CSS拾遗系列</a>&nbsp;<a href="/tags/css3/">css3</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+</span>
+
+
+        </p>
+
+        <p class="say-title">
+            —— <img src="/images/avatar.jpg" class="img-circle index-post-avatar"/>
+            <a href="http://blog.gejiawen.com" target="_blank" title="gejiawen">gejiawen</a>
+            于2015-04-13 17:03:49创作
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2015/04/09/first-to-css3-selectors/" title="初识CSS3选择器">初识CSS3选择器</a></h1>
+
+        
+        <p class="summary">注意：由于CSS3中的部分内容尚未完全定稿，所以本文的部分可能会随时更新。
+现在谈起CSS3的相关内容，其实CSS3已经不算是一个新东西了，毕竟出来有一段时间了。不过我却没有什么系统的经验，上次被人问到是否了解CSS3新增的选择器，各种尴尬，因为我压根就不知道哪些是CSS3新增的</p>
+        
+
+        <p class="say-title">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/CSS拾遗系列/">CSS拾遗系列</a>&nbsp;<a href="/tags/css3/">css3</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+</span>
+
+
+        </p>
+
+        <p class="say-title">
+            —— <img src="/images/avatar.jpg" class="img-circle index-post-avatar"/>
+            <a href="http://blog.gejiawen.com" target="_blank" title="gejiawen">gejiawen</a>
+            于2015-04-09 01:26:15创作
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2015/04/08/talk-about-fontend-templates/" title="浅谈前端模版">浅谈前端模版</a></h1>
+
+        
+        <p class="summary">随着近几年Web方面技术的爆发式发展，前端应用变得越来越复杂，基于后端的Node.js（io.js）也开始拥有了自己的一片天地，谁也没能想到Javascript这样一门在几年前被看作是玩具的客户端脚本语言现在被赋予了新的生命力。依稀记得大学那会学习web开发时，不止一次的被人告诫</p>
+        
+
+        <p class="say-title">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/js/">js</a>&nbsp;<a href="/tags/前端模版/">前端模版</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/大前端/">大前端</a>
+</span>
+
+
+        </p>
+
+        <p class="say-title">
+            —— <img src="/images/avatar.jpg" class="img-circle index-post-avatar"/>
+            <a href="http://blog.gejiawen.com" target="_blank" title="gejiawen">gejiawen</a>
+            于2015-04-08 22:59:05创作
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2015/04/02/confused-methods-in-javascript/" title="JS中易混淆方法备忘录">JS中易混淆方法备忘录</a></h1>
+
+        
+        <p class="summary">本篇文章将会持续更新，以便收录将来可能会出现让博主犯糊涂的方法们。。。。
+
+Array对象是Javascript内置的对象之一，随着JavaScript版本标准的推进，内置对象开始支持越来越多的内置方法，以前需要借助第三方工具库，比如underscore.js或者Lo-dash.</p>
+        
+
+        <p class="say-title">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/js/">js</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a>
+</span>
+
+
+        </p>
+
+        <p class="say-title">
+            —— <img src="/images/avatar.jpg" class="img-circle index-post-avatar"/>
+            <a href="http://blog.gejiawen.com" target="_blank" title="gejiawen">gejiawen</a>
+            于2015-04-02 17:52:46创作
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2015/04/02/2-way-data-binding-and-define-property/" title="JS中的双向数据绑定及Object.defineProperty方法">JS中的双向数据绑定及Object.defineProperty方法</a></h1>
+
+        
+        <p class="summary">缘起前几天在看一些流行的迷你mvvm框架（比如avalon.js、vue.js这种较轻的框架，而非Angularjs、Emberjs这种较重的框架）的实现。现代流行的mvvm框架一般都会将数据双向绑定（two-ways data binding）做掉，作为框架自身的一个卖点（Em</p>
+        
+
+        <p class="say-title">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/js/">js</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a>
+</span>
+
+
+        </p>
+
+        <p class="say-title">
+            —— <img src="/images/avatar.jpg" class="img-circle index-post-avatar"/>
+            <a href="http://blog.gejiawen.com" target="_blank" title="gejiawen">gejiawen</a>
+            于2015-04-02 10:35:01创作
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2015/03/23/light-guide-for-jsdoc/" title="jsdoc简明指南">jsdoc简明指南</a></h1>
+
+        
+        <p class="summary">为何要使用jsdocJSDoc是一个根据js文件中的注释信息自动生成相关文档的工具。生成的文档都是html文件，你可以将其放到web server上，其内建了各个API条目之间的跳转，非常方便。和JavaDoc和PhpDoc类似。
+详细的用法可以去jsdoc的官网查阅相关文档，官</p>
+        
+
+        <p class="say-title">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/jsdoc/">jsdoc</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a>
+</span>
+
+
+        </p>
+
+        <p class="say-title">
+            —— <img src="/images/avatar.jpg" class="img-circle index-post-avatar"/>
+            <a href="http://blog.gejiawen.com" target="_blank" title="gejiawen">gejiawen</a>
+            于2015-03-23 16:39:39创作
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2015/03/18/different-from-proto-and-prototype/" title="区分JS中的__proto__和prototype">区分JS中的__proto__和prototype</a></h1>
+
+        
+        <p class="summary">我们知道javascript是基于原型（prototype）继承的语言。关于javascript原型继承的更多内容请参阅之前的这篇文章浅谈Javascript中的原型继承，内容绝对不会让你失望。
+不过本篇文章将会详细阐述javascript中用于原型继承的两个重要的东西__pro</p>
+        
+
+        <p class="say-title">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/js/">js</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a>
+</span>
+
+
+        </p>
+
+        <p class="say-title">
+            —— <img src="/images/avatar.jpg" class="img-circle index-post-avatar"/>
+            <a href="http://blog.gejiawen.com" target="_blank" title="gejiawen">gejiawen</a>
+            于2015-03-18 16:29:26创作
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2015/03/17/nodejs-module-guide/" title="NodeJS模块全面指南">NodeJS模块全面指南</a></h1>
+
+        
+        <p class="summary">NodeJS模块所谓的NodeJS模块其实就是指NodeJS package，即nodejs包。
+在使用NodeJS进行开发的时候，往往需要用到各种各样的第三方包。当然，很多时候我们在实际开发的时候自己也会按照功能或者需求来封装一个本地的包。
+那么问题来了，NodeJS模块究竟是</p>
+        
+
+        <p class="say-title">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/nodejs/">nodejs</a>&nbsp;<a href="/tags/漫游NodeJS系列/">漫游NodeJS系列</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/NODEJS/">NODEJS</a>
+</span>
+
+
+        </p>
+
+        <p class="say-title">
+            —— <img src="/images/avatar.jpg" class="img-circle index-post-avatar"/>
+            <a href="http://blog.gejiawen.com" target="_blank" title="gejiawen">gejiawen</a>
+            于2015-03-17 18:16:24创作
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2015/03/17/nodejs-series/" title="漫游NodeJS系列">漫游NodeJS系列</a></h1>
+
+        
+        <p class="summary">为什么会有这个系列漫游NodeJS系列文章，将会记录作者一路学习NodeJS（iojs）的点点滴滴。
+时至今日，NodeJS已经不再像是两年前那么新的技术要素了，相对来说成熟了不少，不管是各种框架类库的生态系统还是被各界的认可情况。就本人目前的经验来说，NodeJS现阶段在好几个</p>
+        
+
+        <p class="say-title">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/目录/">目录</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/系列/">系列</a>
+</span>
+
+
+        </p>
+
+        <p class="say-title">
+            —— <img src="/images/avatar.jpg" class="img-circle index-post-avatar"/>
+            <a href="http://blog.gejiawen.com" target="_blank" title="gejiawen">gejiawen</a>
+            于2015-03-17 17:16:40创作
+        </p>
+    </div>
+</article>
+
+
+<div class="container pagination-div">
+    <div class="well">
+        <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+    </div>
+</div>
+
+
+<script>
+    $(function () {
+        $("article:first").addClass("first-post");
+    });
+</script>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

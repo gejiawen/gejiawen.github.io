@@ -1,0 +1,261 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="上次在服务器上搞了个RAP服务，主要是为了给前后端写接口以及mock数据提供一个统一的平台。说实话RAP还是挺好用的，不过在使用了一段时间后，我发现了几个使用不太舒服的地方，
+
+定制好的组织结构。其实很多时候这种团队-&amp;gt;产品线-&amp;gt;分组-&amp;gt;项目这种组织结构可能会对我写接口造成干扰。我">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>解决Mysql登录之后不显示数据库 | 蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "2016/06/14//";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>解决Mysql登录之后不显示数据库</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/mysql/">mysql</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/踩坑录/">踩坑录</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2016-06-14T07:40:30.000Z"
+                       itemprop="datePublished">2016-06-14 15:40:30</time>
+            
+            更新: <time datetime="2016-09-08T07:22:18.000Z"
+                       itemprop="dateModified">2016-09-08 15:22:18</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+
+            <p>上次在服务器上搞了个<a href="http://thx.github.io/RAP/" target="_blank" rel="external">RAP</a>服务，主要是为了给前后端写接口以及mock数据提供一个统一的平台。说实话RAP还是挺好用的，不过在使用了一段时间后，我发现了几个使用不太舒服的地方，</p>
+<ul>
+<li>定制好的组织结构。其实很多时候这种团队-&gt;产品线-&gt;分组-&gt;项目这种组织结构可能会对我写接口造成干扰。我希望的是最好能够自由定制组织。</li>
+<li>功能不完全的mock.js引擎。rap中使用的mock数据引擎是<a href="http://mockjs.com" target="_blank" rel="external">mock.js</a>，但是并没有具备所有的功能。在实际mock数据的场景中，有些稍微复杂点的数据在mock起来还是有点难度的。</li>
+<li>可视化的接口编写。有的人可能认为这是rap的优势，不过我个人对可视化的接口编写并不十分感兴趣，从我个人角度来说，我更倾向使用标记语言，比如markdown、yaml等，去写接口文档。</li>
+<li>可视化的编写时，因为是在表格中编写，当某些接口字段需要大量的描述时，表格给的内容可能会放不下，给人一种非常别扭的感觉。</li>
+<li>独占式的接口编写。rap不支持多人对同一个项目中的接口同时进行改动。我个人猜测可能是实现起来比较麻烦，所以作者这里可能就偷懒了，直接暴力的加锁来防止别人同时修改。当想在同一个项目中同时编辑不同的功能模块就会加锁，这个在多人合作的项目中有非常大的限制。</li>
+</ul>
+<p>吐槽完毕。下面说一下今天遇到的一个问题。</p>
+<p>之前跑的好好的rap服务，突然在编辑后不能保存了。页面提示“发生了严重错误，保存现场后联系管理员”。当时我就懵了，我就是管理员啊，我也不知道出了啥问题。</p>
+<p>ssh上服务器之后，查看了一下rap服务需要的进程都在活的好好的，一眼实在没看出啥问题。</p>
+<p>采取另一种思路，我打开了chrome的开发者功能，追踪一下保存时调用的接口，看接口返回的结果，说什么JDBC数据库出问题了。</p>
+<p>看到这里我更懵了，数据库出啥问题了？二话不说，登录mysql看看吧。</p>
+<p>登录mysql之后，我<code>show databases;</code>之后，令我震惊的是，就一个<code>infomation_schema</code>数据库。我的天，其他的数据库呢？这什么灵异事件？</p>
+<p>我在本地使用Sequel Pro远程链接mysql之后，奇怪的是，发现其他的数据库都在啊。这是怎么回事？</p>
+<p>在服务器的命令行上<code>use mysql;</code>时，给了一个错误信息，Access denied for user ‘’@’localhost’ to database ‘mysql’。</p>
+<p>localhost前有一个空用户？这是怎么回事？我查阅了很多资料，实在不知道这个空名字的用户到底是如何生成的。</p>
+<p>最后，google上有人说，要将这些空名字的用户都删掉。因为服务器上的命令行中没有mysql数据库的权限，我只能在Sequel　Pro上将多余的两个空名字用户删除掉。</p>
+<p>问题解决。</p>
+<p>顺便提一句，经过高人点拨之后，服务器上的东西出问题，应该考虑的优先解决方案是去找各种各样日志，然后根据错误日志去排查错误。</p>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://gejiawen.github.io/about">@gejiawen</a>.</p>
+    <p class="link">本文链接：<a href="http://blog.gejiawen.com/2016/06/14/">http://blog.gejiawen.com/2016/06/14/</a></p>
+
+    <div class="share">
+    分享本页：
+    
+        <div class="bdsharebuttonbox"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_more" data-cmd="more"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    
+    
+</div>
+
+</div>
+
+
+            
+    <section class="comment">
+    <div class="ds-thread" data-thread-key="" data-title="解决Mysql登录之后不显示数据库" data-url="http://blog.gejiawen.com/2016/06/14/" data-author-key="gejiawen"></div>
+</section>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gejiawen-blog"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

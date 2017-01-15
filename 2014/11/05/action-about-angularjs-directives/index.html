@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="本文将介绍AngularJS中指令间的交互方法。
+假设我们有这样一个场景，
+
+在一个html元素中有多条指令，且指令间有一些逻辑上的交互。
+
+那么，我们如何来创建这些指令，而且让这些指令能够交互起来呢？
+看下面的html代码，
+123&amp;lt;superman strength&amp;gt;动感超人---力">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AngularJS指令间的交互 | 蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "2014/11/05/action-about-angularjs-directives/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>AngularJS指令间的交互</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/ng/">ng</a>&nbsp;<a href="/tags/实践/">实践</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/ANGULARJS/">ANGULARJS</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2014-11-05T02:24:34.000Z"
+                       itemprop="datePublished">2014-11-05 10:24:34</time>
+            
+            更新: <time datetime="2017-01-15T17:16:24.000Z"
+                       itemprop="dateModified">2017-01-16 01:16:24</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+
+            <p>本文将介绍AngularJS中指令间的交互方法。</p>
+<p>假设我们有这样一个场景，</p>
+<blockquote>
+<p>在一个html元素中有多条指令，且指令间有一些逻辑上的交互。</p>
+</blockquote>
+<p>那么，我们如何来创建这些指令，而且让这些指令能够交互起来呢？</p>
+<p>看下面的html代码，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">superman</span> <span class="attr">strength</span>&gt;</span>动感超人---力量<span class="tag">&lt;/<span class="name">superman</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">superman</span> <span class="attr">strength</span> <span class="attr">speed</span>&gt;</span>动感超人2---力量+敏捷<span class="tag">&lt;/<span class="name">superman</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">superman</span> <span class="attr">strength</span> <span class="attr">speed</span> <span class="attr">light</span>&gt;</span>动感超人3---力量+敏捷+发光<span class="tag">&lt;/<span class="name">superman</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>从代码中可以看出，上面html代码中包含了4个自定义的指令<code>superman</code>，<code>strength</code>，<code>speed</code>和<code>light</code>。</p>
+<p>其中<code>superman</code>指令的代码如下，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myModule = angular.module(<span class="string">"MyModule"</span>, []);</span><br><span class="line">myModule.directive(<span class="string">"superman"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        scope: &#123;&#125;,</span><br><span class="line">        restrict: <span class="string">'AE'</span>,</span><br><span class="line">        controller: <span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>) </span>&#123;</span><br><span class="line">            $scope.abilities = [];</span><br><span class="line">            <span class="keyword">this</span>.addStrength = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                $scope.abilities.push(<span class="string">"strength"</span>);</span><br><span class="line">            &#125;;</span><br><span class="line">            <span class="keyword">this</span>.addSpeed = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                $scope.abilities.push(<span class="string">"speed"</span>);</span><br><span class="line">            &#125;;</span><br><span class="line">            <span class="keyword">this</span>.addLight = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                $scope.abilities.push(<span class="string">"light"</span>);</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;,</span><br><span class="line">        link: <span class="function"><span class="keyword">function</span>(<span class="params">scope, element, attrs</span>) </span>&#123;</span><br><span class="line">            element.bind(<span class="string">"mouseenter"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(scope.abilities);</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><code>superman</code>指令中的<code>scope</code>属性表示该指令的独立作用域，指令的独立作用域其实是跟指令的实例绑定的，即不同的指令实例，其独立作用域是不同的。这是复用指令的必要条件。</p>
+<p><code>superman</code>指令中的<code>restrict</code>属性表示该指令的使用形式。有4个选项：<strong>EAMC</strong>。可以参考之前的<a href="http://blog.gejiawen.com/2014/11/05/action-about-angularjs-directives/#return对象参数说明">一篇文章</a>，这里不多作解释。</p>
+<p><code>superman</code>指令中的<code>controller</code>属性是指令内部的控制器。其目的一般是为该指令暴露一些接口供外部使用。控制器函数的参数<code>$scope</code>就是指向该指令的独立作用域。</p>
+<p>其他三个指令的代码如下，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">myModule.directive(<span class="string">"strength"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="built_in">require</span>: <span class="string">'^superman'</span>,</span><br><span class="line">        link: <span class="function"><span class="keyword">function</span>(<span class="params">scope, element, attrs, supermanCtrl</span>) </span>&#123;</span><br><span class="line">            supermanCtrl.addStrength();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">myModule.directive(<span class="string">"speed"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="built_in">require</span>: <span class="string">'^superman'</span>,</span><br><span class="line">        link: <span class="function"><span class="keyword">function</span>(<span class="params">scope, element, attrs, supermanCtrl</span>) </span>&#123;</span><br><span class="line">            supermanCtrl.addSpeed();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">myModule.directive(<span class="string">"light"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="built_in">require</span>: <span class="string">'^superman'</span>,</span><br><span class="line">        link: <span class="function"><span class="keyword">function</span>(<span class="params">scope, element, attrs, supermanCtrl</span>) </span>&#123;</span><br><span class="line">            supermanCtrl.addLight();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>这里需要注意的地方就是，<code>strength</code>，<code>speed</code>及<code>light</code>指令的定义中使用了<code>require</code>属性，这个<code>require</code>的解释如下，</p>
+<blockquote>
+<p>请求另外的controller，传入当前directive的linking function中。require需要传入一个directive controller的名称。如果找不到这个名称对应的controller，那么将会抛出一个error。名称可以加入以下前缀：</p>
+<p><strong><code>?</code></strong> 不要抛出异常。这将使得这个依赖变为一个可选项。</p>
+<p><strong><code>^</code></strong> 允许查找父元素的controller。</p>
+</blockquote>
+<p>在这里，这三个指令都依赖之前的<code>superman</code>指令。且在指令的<code>link</code>方法中使用了第四个参数<code>supermanCtrl</code>，这个参数其实就是指令<code>superman</code>的<code>controller</code>的注入。所以在这三个指令的<code>link</code>方法中可以使用<code>superman</code>指令控制器中定义的几个方法。</p>
+<p>最开始的那一段html代码的运行效果就是，</p>
+<ul>
+<li>鼠标划过文本时，会在console中输出<code>$scope.abilities</code>的值</li>
+<li>因为<code>superman</code>指令中<code>abilities</code>属性其实是属于独立作用域的，所以html中每一行的<code>superman</code>都会有一个独立的<code>abilities</code>属性</li>
+</ul>
+<p>总结：指令间的交互依赖指令的<code>controller</code>创建一些供外部调用的接口，而调用这些接口的指令需要<code>require</code>接口的指令名称。</p>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://gejiawen.github.io/about">@gejiawen</a>.</p>
+    <p class="link">本文链接：<a href="http://blog.gejiawen.com/2014/11/05/action-about-angularjs-directives/">http://blog.gejiawen.com/2014/11/05/action-about-angularjs-directives/</a></p>
+
+    <div class="share">
+    分享本页：
+    
+        <div class="bdsharebuttonbox"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_more" data-cmd="more"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    
+    
+</div>
+
+</div>
+
+
+            
+    <section class="comment">
+    <div class="ds-thread" data-thread-key="action-about-angularjs-directives" data-title="AngularJS指令间的交互" data-url="http://blog.gejiawen.com/2014/11/05/action-about-angularjs-directives/" data-author-key="gejiawen"></div>
+</section>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gejiawen-blog"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

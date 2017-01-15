@@ -1,0 +1,312 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="本文是深入理解JavaScript系列的第三篇读文笔记，博客原文在这里。
+内容简要本文是整个深入理解JavaScript系列中第一篇稍微有点难啃的文章，特别是对新手来说。大叔这篇文章的写作借鉴了下面两篇文章，
+
+JavaScript Module Pattern: In-Depth
+A JavaSc">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>深入理解JavaScript系列（3）-全面解析Module模式 | 蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "2014/12/01/deep-into-javascript-module-model/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>深入理解JavaScript系列（3）-全面解析Module模式</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/js/">js</a>&nbsp;<a href="/tags/深入理解JavaScript系列/">深入理解JavaScript系列</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2014-12-01T07:54:58.000Z"
+                       itemprop="datePublished">2014-12-01 15:54:58</time>
+            
+            更新: <time datetime="2017-01-15T17:16:24.000Z"
+                       itemprop="dateModified">2017-01-16 01:16:24</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+                <div id="toc" class="toc-article well">
+                    <strong class="toc-title">大纲</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#内容简要"><span class="toc-number">1.</span> <span class="toc-text">内容简要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BACKBONE"><span class="toc-number">2.</span> <span class="toc-text">BACKBONE</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本用法"><span class="toc-number">2.1.</span> <span class="toc-text">基本用法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#匿名闭包和全局变量"><span class="toc-number">2.2.</span> <span class="toc-text">匿名闭包和全局变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#高级用法"><span class="toc-number">2.3.</span> <span class="toc-text">高级用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#扩展"><span class="toc-number">2.3.1.</span> <span class="toc-text">扩展</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#克隆和继承"><span class="toc-number">2.3.2.</span> <span class="toc-text">克隆和继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跨文件共享私有对象"><span class="toc-number">2.3.3.</span> <span class="toc-text">跨文件共享私有对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子模块"><span class="toc-number">2.3.4.</span> <span class="toc-text">子模块</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
+                </div>
+            
+
+            <p>本文是<a href="http://blog.gejiawen.com/2014/11/13/deep-into-javascript-series/">深入理解JavaScript系列</a>的第<strong>三</strong>篇读文笔记，博客原文在<a href="http://www.cnblogs.com/TomXu/archive/2011/12/30/2288372.html" target="_blank" rel="external">这里</a>。</p>
+<h1 id="内容简要"><a href="#内容简要" class="headerlink" title="内容简要"></a>内容简要</h1><p>本文是整个深入理解JavaScript系列中第一篇稍微有点难啃的文章，特别是对新手来说。大叔这篇文章的写作借鉴了下面两篇文章，</p>
+<ul>
+<li><a href="http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html" target="_blank" rel="external">JavaScript Module Pattern: In-Depth</a></li>
+<li><a href="http://yuiblog.com/blog/2007/06/12/module-pattern/" target="_blank" rel="external">A JavaScript Module Pattern</a></li>
+</ul>
+<p>主要参考的是前者。阐述的内容就是<strong>模块化模式</strong>。</p>
+<p>首先，什么叫<strong>模块化模式</strong>？它具有哪些特点？</p>
+<p>模块化模式（或者说模块化编程）在JavaScript中是一个非常常见的编程技巧，它按照功能（或者业务）将JavaScript代码封装在一起组成一个模块，对外暴露特定的额方法和属性。一般来说，模块化模式具有如下几个特点，</p>
+<ul>
+<li>模块化，可重用</li>
+<li>将一系列的方法及属性封装在一起，与其他模块彼此独立，不污染全局作用域，松耦合。（大叔这里说的松耦合的意思，我猜测应该就是指模块的独立性）</li>
+<li>暴露特定的接口（方法或者属性），模块的其他方法外部不可访问</li>
+</ul>
+<h1 id="BACKBONE"><a href="#BACKBONE" class="headerlink" title="BACKBONE"></a>BACKBONE</h1><p>文章的主体将分别介绍模块化模式的基本用法和高级用法。</p>
+<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><p>话不多说，老夫先把大叔的一段代码拉出来溜溜，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Calculator = <span class="function"><span class="keyword">function</span> (<span class="params">eq</span>) </span>&#123;</span><br><span class="line">    <span class="comment">/*</span><br><span class="line">    这里可以声明私有成员</span><br><span class="line">    */</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> eqCtl = <span class="built_in">document</span>.getElementById(eq);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 暴露公开的成员</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        add: <span class="function"><span class="keyword">function</span> (<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> val = x + y;</span><br><span class="line">            eqCtl.innerHTML = val;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>我们可以通过如下的方式来调用：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> calculator = <span class="keyword">new</span> Calculator(<span class="string">'eq'</span>);</span><br><span class="line">calculator.add(<span class="number">2</span>, <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p>这里使用了<code>new Calculator()</code>把函数<code>Calculator</code>当作一个构造函数调用。有的同学可能会问，这里不使用<code>new Calculator()</code>，直接调用<code>Calculator()</code>函数好像也是可以的啊，那<code>new Calculator()</code>和不使用<code>new</code>到底啥区别啊？</p>
+<p>首先我在<a href="http://blog.gejiawen.com/2014/09/19/deep-into-new-object/">之前的文章</a>中有阐述过<code>new xxx()</code>这个操作的本质，不太清楚的可以移步看看。</p>
+<p>在大叔举的这个例子中，使用<code>new</code>与不使用<code>new</code>都是没有错的，下面的<code>calculator.add</code>方法都是可以调用的。</p>
+<p>不过这两者有自己适合的场景，</p>
+<ul>
+<li>使用<code>new</code>一定会返回一个object，其内部的<code>this</code>指向object自身，且object中方法或者属性可以通过<code>this</code>相互访问。这种是使用JavaScript构建OOP编程的基础。</li>
+<li>不使用<code>new</code>的含义就是简单的调用函数，其返回值根据函数的<code>return</code>语句来确定，且内部的<code>this</code>都指向全局作用域。这种一般用于命名空间的管理，独立模块的封装。</li>
+</ul>
+<h2 id="匿名闭包和全局变量"><a href="#匿名闭包和全局变量" class="headerlink" title="匿名闭包和全局变量"></a>匿名闭包和全局变量</h2><p>闭包是函数式编程语言具有的一种语法糖（暂且这么说吧，虽然不太准备）。JavaScript中对闭包的应用随处可见，匿名闭包更是让一切成为可能的基础，而这也是JavaScript最灵活的特性。</p>
+<p>下面我们来创建一个最简单的闭包函数，函数内部的代码一直存在于闭包内，在整个运行周期内，该闭包都保证了内部的代码处于私有状态。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// ...所有的变量和function都在这里声明，并且作用域也只能在这个匿名闭包里</span></span><br><span class="line">    <span class="comment">// ...但是这里的代码依然可以访问外部全局的对象</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>可以看出匿名闭包其实就是一个<strong>自执行函数</strong>。关于自执行函数在后面的文章中还会更加深入的讨论。现在只需要知道自执行函数的本质是一个函数表达式，在运行时将会产生一个封闭作用域（或者说私有作用域），这个封闭作用域可以访问外部的全局变量，但是不能被外部访问。</p>
+<p>这里可能会遇到一个问题，比如下面的代码，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">'a'</span>;</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(name); <span class="comment">// a</span></span><br><span class="line">    name = <span class="string">'b'</span>; <span class="comment">// 这里不带var的赋值，将会将name隐式的提升为全局变量，且覆盖了闭包外部的name</span></span><br><span class="line">    <span class="built_in">console</span>.log(name); <span class="comment">// b</span></span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(name); <span class="comment">// b</span></span><br></pre></td></tr></table></figure>
+<p>可见，由于JavaScript中存在<strong>隐式全局变量</strong>这样一种东西，当在闭包中需要访问外部的全局变量时，万一操作不当，就会隐式的声明一个你不知道的全局变量。</p>
+<p>现在流行的JavaScript库，比如JQuery，都采用这样一种方式来达到从闭包内部访问外部的全局变量的目的，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">window, undefined</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// JQuery的源码其实就是一个大闭包！！</span></span><br><span class="line">&#125;)(<span class="built_in">window</span>);</span><br></pre></td></tr></table></figure>
+<p>可见，我们可以将全局变量当成一个参数传入到匿名函数然后使用，相比隐式全局变量，它又清晰又快。</p>
+<p>有时候可能不仅仅要使用全局变量，而是也想声明全局变量，如何做呢？我们可以通过将匿名函数的返回值赋值给这个全局变量，代码如下，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> blogModule = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> my = &#123;&#125;,</span><br><span class="line">        privateName = <span class="string">"博客园"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">privateAddTopic</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 这里是内部处理代码</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    my.Name = privateName;</span><br><span class="line">    my.AddTopic = <span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">        privateAddTopic(data);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> my;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>上面的代码声明了一个全局变量<code>blogModule</code>，并且带有2个可访问的属性：<code>blogModule.AddTopic</code>和<code>blogModule.Name</code>，除此之外，其它代码都在匿名函数的闭包里保持着私有状态。</p>
+<h2 id="高级用法"><a href="#高级用法" class="headerlink" title="高级用法"></a>高级用法</h2><p>下面将会阐述几种稍微高级一点的用法，其实都是对上面所说的基本用法的扩展。</p>
+<h3 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h3><p>前面的基本用法可能不太适合大型的项目。因为大型的项目往往会有多人协作开发，每个人负责的模块不尽相同，这时候就需要把一个模块分割到不同的文件中去。</p>
+<p>看下面的代码，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> blogModule = (<span class="function"><span class="keyword">function</span>(<span class="params">my</span>) </span>&#123;</span><br><span class="line">    my.AddPhoto = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//添加内部代码</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> my;</span><br><span class="line">&#125;)(blogModule);</span><br></pre></td></tr></table></figure>
+<p>发现了没有，我们将<code>blogModule</code>自身作为参数传递给自执行函数。这个自执行函数执行完毕后，<code>blogModule</code>上就会多处一个方法<code>AddPhoto</code>。试想一下，多人开发中每个人都采用这种模式，那么完全就可以彼此独立的给<code>blogModule</code>添加自己所需的方法和属性。</p>
+<p>一般来说，我们还会做一些异常判断，因为多人协作的过程中，每个人都不知道自己拿到的<code>blogModule</code>究竟有哪些东西，甚至都不知道这个对象是否为<code>undefined</code>的，改进如下，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> blogModule = (<span class="function"><span class="keyword">function</span>(<span class="params">my</span>) </span>&#123;</span><br><span class="line">    my.AddPhoto = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">//添加内部代码</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> my;</span><br><span class="line">&#125;)(blogModule || &#123;&#125;); <span class="comment">// 这里是重点</span></span><br></pre></td></tr></table></figure>
+<p>如上面的代码，我们在传递参数的时候，其实传入的是一个判断表达式，这样就保证了在闭包内部<code>blogModule</code>必定是不为<code>undefined</code>，是不是很巧妙？ :)</p>
+<p>然而，有的时候我们在扩展的时候需要对某一些方法进行重写，那么该怎么办呢？看如下的代码，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> blogModule = (<span class="function"><span class="keyword">function</span> (<span class="params">my</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> oldAddPhotoMethod = my.AddPhoto;</span><br><span class="line"></span><br><span class="line">    my.AddPhoto = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 重写方法，依然可通过oldAddPhotoMethod调用旧的方法</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> my;</span><br><span class="line">&#125;)(blogModule);</span><br></pre></td></tr></table></figure>
+<p>代码中，我们使用私有变量<code>oldAddPhotoMethod</code>缓存了原先的<code>AddPhoto</code>方法，然后重写了<code>AddPhoto</code>方法。通过这种方式，我们达到了重写的目的，当然如果你想在继续在内部使用原有的属性，你可以调用<code>oldAddPhotoMethod</code>来用。</p>
+<h3 id="克隆和继承"><a href="#克隆和继承" class="headerlink" title="克隆和继承"></a>克隆和继承</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> blogModule = (<span class="function"><span class="keyword">function</span> (<span class="params">old</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> my = &#123;&#125;,</span><br><span class="line">        key;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (key <span class="keyword">in</span> old) &#123;</span><br><span class="line">        <span class="keyword">if</span> (old.hasOwnProperty(key)) &#123;</span><br><span class="line">            my[key] = old[key];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> oldAddPhotoMethod = old.AddPhoto;</span><br><span class="line">    my.AddPhoto = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 克隆以后，进行了重写，当然也可以继续调用oldAddPhotoMethod</span></span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> my;</span><br><span class="line">&#125;)(blogModule);</span><br></pre></td></tr></table></figure>
+<p>说实话，我有点没太看懂这部分的内容，代码中的<code>for in</code>循环其实是将<code>old</code>对象克隆了一份赋值给<code>my</code>对象。但是这个克隆过程中，<code>old</code>对象中的<code>object</code>以及<code>function</code>类型的数据其实并没有发生克隆，只是多了个<code>my</code>对象的相应引用而已。</p>
+<p>我不太明白的是，这个跟JavaScript的模块化有什么关系呢？望大神解惑。</p>
+<h3 id="跨文件共享私有对象"><a href="#跨文件共享私有对象" class="headerlink" title="跨文件共享私有对象"></a>跨文件共享私有对象</h3><p>说实话，这部分的我看了很久才弄明白，别看代码量就10来行，但是真的不是那么好理解的。（也可能是我比较菜。）</p>
+<p>这里的需求是这样的，一个module分割到多个文件中，我们想要各个文件中的私有变量能够交叉访问，该怎么做呢？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> blogModule = (<span class="function"><span class="keyword">function</span> (<span class="params">my</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> _private = my._private = my._private || &#123;&#125;,</span><br><span class="line"></span><br><span class="line">        _seal = my._seal = my._seal || <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">delete</span> my._private;</span><br><span class="line">            <span class="keyword">delete</span> my._seal;</span><br><span class="line">            <span class="keyword">delete</span> my._unseal;</span><br><span class="line"></span><br><span class="line">        &#125;,</span><br><span class="line"></span><br><span class="line">        _unseal = my._unseal = my._unseal || <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            my._private = _private;</span><br><span class="line">            my._seal = _seal;</span><br><span class="line">            my._unseal = _unseal;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> my;</span><br><span class="line">&#125;)(blogModule || &#123;&#125;);</span><br></pre></td></tr></table></figure>
+<p>任何文件都可以对他们的局部变量<code>_private</code>设置，并且此设置对其他的文件也立即生效。一旦这个模块加载结束，应用会调用<code>blogModule._seal()</code>进行“上锁”，这会阻止外部接入内部的<code>_private</code>。如果这个模块需要再次增生，应用的生命周期内，任何文件都可以调用<code>_unseal()</code>进行“开锁”，然后再加载新文件，加载新文件后又会初始化<code>_pravite</code>、<code>_seal</code>和<code>_unseal</code>，然后再次调用<code>_seal()</code>“上锁”。</p>
+<p>这个过程很巧妙。其实我觉得，<del>各个文件中的私有变量能够交叉访问</del>这个需求简直就是个奇葩，为什么各个文件中的私有变量要交叉访问呢？这不是破坏了模块的独立性么？有人说其实这里的多文件其实仍然描述的是同一个模块，那我想说，这种情况下使用<strong>子模块</strong>应该是一种更优的选择。</p>
+<h3 id="子模块"><a href="#子模块" class="headerlink" title="子模块"></a>子模块</h3><p>子模块是最简单也是最经常使用的设计思路，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">blogModule.subModule = (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> my = &#123;&#125;;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> my;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>其实我个人觉得，子模块+模块扩展就足够应付一般的模块化模式需求了。使用过多的高级用法，必定给代码增加复杂度，给日后的维护和升级肯定为增加难度。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>就我目前的经验来说，模块化模式经常用到的几种方法包括，<strong>松耦合扩展</strong>，<strong>私有作用域</strong>以及<strong>子模块</strong>。这几种就是最常用的方式。</p>
+<p>不过现在业界出现了CMD、AMD等规范后，JavaScript代码的模块化管理更趋向于代码级别而不再是设计级别。所以本文中所描述的模块化模式，我猜测日后将会越来越淡化，越来越轻量化，比如用在配置中，工具方法的管理上等等。</p>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://gejiawen.github.io/about">@gejiawen</a>.</p>
+    <p class="link">本文链接：<a href="http://blog.gejiawen.com/2014/12/01/deep-into-javascript-module-model/">http://blog.gejiawen.com/2014/12/01/deep-into-javascript-module-model/</a></p>
+
+    <div class="share">
+    分享本页：
+    
+        <div class="bdsharebuttonbox"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_more" data-cmd="more"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    
+    
+</div>
+
+</div>
+
+
+            
+    <section class="comment">
+    <div class="ds-thread" data-thread-key="deep-into-javascript-module-model" data-title="深入理解JavaScript系列（3）-全面解析Module模式" data-url="http://blog.gejiawen.com/2014/12/01/deep-into-javascript-module-model/" data-author-key="gejiawen"></div>
+</section>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gejiawen-blog"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,305 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="NodeJS模块所谓的NodeJS模块其实就是指NodeJS package，即nodejs包。
+在使用NodeJS进行开发的时候，往往需要用到各种各样的第三方包。当然，很多时候我们在实际开发的时候自己也会按照功能或者需求来封装一个本地的包。
+那么问题来了，NodeJS模块究竟是什么？
+什么是Nod">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NodeJS模块全面指南 | 蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "2015/03/17/nodejs-module-guide/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>NodeJS模块全面指南</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/nodejs/">nodejs</a>&nbsp;<a href="/tags/漫游NodeJS系列/">漫游NodeJS系列</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/NODEJS/">NODEJS</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2015-03-17T10:16:24.000Z"
+                       itemprop="datePublished">2015-03-17 18:16:24</time>
+            
+            更新: <time datetime="2017-01-15T17:16:24.000Z"
+                       itemprop="dateModified">2017-01-16 01:16:24</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+                <div id="toc" class="toc-article well">
+                    <strong class="toc-title">大纲</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#NodeJS模块"><span class="toc-number">1.</span> <span class="toc-text">NodeJS模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是NodeJS模块？"><span class="toc-number">1.1.</span> <span class="toc-text">什么是NodeJS模块？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NodeJS包和模块"><span class="toc-number">1.2.</span> <span class="toc-text">NodeJS包和模块</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#npm包管理器"><span class="toc-number">2.</span> <span class="toc-text">npm包管理器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建包"><span class="toc-number">2.1.</span> <span class="toc-text">创建包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#导出包接口"><span class="toc-number">2.2.</span> <span class="toc-text">导出包接口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#发布包"><span class="toc-number">2.3.</span> <span class="toc-text">发布包</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#额外的问题"><span class="toc-number">2.4.</span> <span class="toc-text">额外的问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#创建命令行工具包"><span class="toc-number">3.</span> <span class="toc-text">创建命令行工具包</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#添加bin字段"><span class="toc-number">3.1.</span> <span class="toc-text">添加bin字段</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命令行参数的解析"><span class="toc-number">3.2.</span> <span class="toc-text">命令行参数的解析</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考示例"><span class="toc-number">4.</span> <span class="toc-text">参考示例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考列表"><span class="toc-number">5.</span> <span class="toc-text">参考列表</span></a></li></ol>
+                </div>
+            
+
+            <h1 id="NodeJS模块"><a href="#NodeJS模块" class="headerlink" title="NodeJS模块"></a>NodeJS模块</h1><p>所谓的NodeJS模块其实就是指NodeJS package，即nodejs包。</p>
+<p>在使用NodeJS进行开发的时候，往往需要用到各种各样的第三方包。当然，很多时候我们在实际开发的时候自己也会按照功能或者需求来封装一个本地的包。</p>
+<p>那么问题来了，NodeJS模块究竟是什么？</p>
+<h2 id="什么是NodeJS模块？"><a href="#什么是NodeJS模块？" class="headerlink" title="什么是NodeJS模块？"></a>什么是NodeJS模块？</h2><p>在说这个问题之前，我们有必要先提出一个概念，即<strong>模块规范</strong>。关于模块规范可以参与之前的这篇文章<a href="http://blog.gejiawen.com/2014/08/12/from-commonjs-to-seajs/">从CommonJS到Sea.js</a>。</p>
+<p>所以，现阶段Javascript领域大体上有三种比较流行的模块规范，一种是AMD规范，一种是CMD规范，还有一种就是CommonJS规范。NodeJS采用的规范就是CommonJS规范。这三种规范中，前两者专注于客户端，即浏览器端的规范标准，而后者而其实是服务器端的规范。</p>
+<p>CommonJS规范说，一个单独的文件其实就是一个模块。在NodeJS中，一个模块可以是一个单独的文件，也可以是一个包含多个文件（子模块）的目录。与此同时，CommonJS规范还要求模块都采用统一的格式<code>exports</code>或者<code>module.exports</code>导出模块接口。</p>
+<h2 id="NodeJS包和模块"><a href="#NodeJS包和模块" class="headerlink" title="NodeJS包和模块"></a>NodeJS包和模块</h2><p>上面我们已经知道了模块的概念，那么包其实就是<strong>包含多个模块目录</strong>。同时，还要附加一个重要的<code>package.json</code>文件。那么这个<code>package.json</code>文件是个什么情况呢？如下图，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/NodeJS模块全面指南-001.png" alt=""></p>
+<p>这个json文件可以配置的很简略，也可以配置的很复杂。关于各个字段的具体含义可以参阅<a href="https://docs.npmjs.com/" target="_blank" rel="external">官方文档</a>或者<a href="http://mujiang.info/translation/npmjs/files/package.json.html" target="_blank" rel="external">汉化文档</a>。</p>
+<p>其实<code>package.json</code>就是用来声明NodeJS包的，包括包名字，版本，作者，包入口信息，依赖等信息。</p>
+<p>其中有两个字段这里稍微提一下，<code>dependencies</code>和<code>devDependencies</code>字段。前者表明包在生产环境需要的第三方依赖，而后者表明包在开发阶段所需要的第三方依赖（比如构建、测试等第三方包等）。</p>
+<h1 id="npm包管理器"><a href="#npm包管理器" class="headerlink" title="npm包管理器"></a>npm包管理器</h1><p><a href="https://www.npmjs.com/" target="_blank" rel="external">NPM</a>是NodeJS包管理器，可以看成类似Java中的Maven或者Ruby中gem。</p>
+<p>现在的npm是在最初的版本上改版而来的，界面更好看了，对包信息的展示更加人性化了。而且目前除了用于面向普通开发者提供服务之外，还提供私有包仓库和企业级包仓库。听说马上再一次改版的npm3.0也要到来了，提供了众多的优化和新特性，详情请参阅<a href="http://www.tuicool.com/articles/6nM7Bf" target="_blank" rel="external">这篇文章</a>。</p>
+<h2 id="创建包"><a href="#创建包" class="headerlink" title="创建包"></a>创建包</h2><p>前面我们说<code>package.json</code>是NodeJS包的标识或者说配置文件。所以，任何一个NodeJS包都是从新建<code>package.json</code>文件开始的。</p>
+<p>这里我们一般不会傻傻的手动去新建一个<code>package.json</code>文件，而是通过npm工具来生成。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> YOUR_PROJECT_DIR</span><br><span class="line">$ npm init</span><br></pre></td></tr></table></figure>
+<p>在命令行中键入<code>npm init</code>后，CLI将会出现一些互动的提示来引导你完成<code>package.json</code>的生成。如下图，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/NodeJS模块全面指南-002.png" alt=""></p>
+<p>当然CLI只会询问你一些<code>package.json</code>文件必须的字段，而且它会智能的给出一些默认值（括号中的内容），最后它会向你确认是否可行。</p>
+<p><code>package.json</code>中有一个字段为<code>main</code>，此字段为意为包的入口。如果留空的话，NodeJS会默认将包目录下的<code>index.js</code>作为入口文件。</p>
+<h2 id="导出包接口"><a href="#导出包接口" class="headerlink" title="导出包接口"></a>导出包接口</h2><p>NodeJS模块使用的是CommonJS规范，使用<code>exports</code>或者<code>module.exports</code>导出模块准备暴露的接口。比如，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">exports.sayHello = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// your code</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">exports.sayGoodbye = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// your code</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>或者，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> <span class="title">People</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// your code</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>那么，<code>exports</code>和<code>module.exports</code>这两种方式到底有什么区别呢？</p>
+<p>其实在NodeJS内部，模块真正返回的是<code>module.exports</code>对象，而<code>exports</code>只是<code>module.exports</code>的引用而已。如下，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">exports = <span class="built_in">module</span>.exports = &#123;&#125;;</span><br></pre></td></tr></table></figure>
+<p>如果你直接赋值一个函数（<code>function</code>）或者一个对象（<code>{}</code>）给<code>exports</code>，这样的话就破坏了<code>exports</code>和<code>module.exports</code>的引用关系了，而模块将会返回空对象。所以当我们需要暴露一个函数或者一个对象时，应该直接赋值给<code>module.exports</code>而不是<code>exports</code>。</p>
+<p>本博客前面有一篇文章<a href="http://blog.gejiawen.com/2014/10/16/how-to-export-nodejs-module/">如何导出NodeJS模块</a>就是阐述NodeJS如何返回接口的。</p>
+<h2 id="发布包"><a href="#发布包" class="headerlink" title="发布包"></a>发布包</h2><p>好了，在我们完成模块的编写之后。我们希望将自己的包发布到NPM上，成就自己的同时又方便他人。该怎么做呢？</p>
+<p>其实很简单。npm同样提供了相应的接口，<strong><a href="https://docs.npmjs.com/cli/adduser" target="_blank" rel="external">npm adduser</a></strong>和<strong><a href="https://docs.npmjs.com/cli/publish" target="_blank" rel="external">npm publish</a></strong>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm adduser</span><br></pre></td></tr></table></figure>
+<p>npm会向你索要<a href="https://www.npmjs.com/" target="_blank" rel="external">npmjs.com</a>用户名，密码以及Email。如果没有问题，接下来就可以执行<code>npm publish</code>了。</p>
+<p>这里提一下执行<code>npm publish</code>时经常会遇到的两个问题。</p>
+<p>第一，提示你没有权限发布。这种情况往往是你的包名已经在npm仓库中被占用了。所以这种情况你需要给你的包换个名字。<br>第二，提示你必须更新版本。这种情况一般是你是在本地更新了包，然后想更新npm仓库时却出现了这种错误。造成这个错误的原因其实很简单，因为已经发布在npm仓库中的包不允许不改变版本号的情况下就改变包代码。所以这种情况你需要改动<code>package.json</code>中的<code>version</code>字段。</p>
+<h2 id="额外的问题"><a href="#额外的问题" class="headerlink" title="额外的问题"></a>额外的问题</h2><p>我们说整个NodeJS社区都是一片欣欣向荣的景象，npm仓库的包数量很多，社区也很活跃。这些都是好现象，而且我个人也非常看好NodeJS在未来的发展。</p>
+<p>但是，就我个人使用NodeJS的经验，遇到两个可能存在一些隐患的地方。</p>
+<p>第一，npm仓库上的第三方包质量参差不齐，有的包基本就是垃圾，给使用者可能会造成一些损失。<br>第二，有些第三方包本身升级了，但是其周边插件包的更新却跟不上，有时候你为了向插件包妥协，不得不放弃新版本而使用低版本。<br>第三，因为第三方包是可以直接在服务器端运行的，有时候可能需要考虑一些安全因素。</p>
+<h1 id="创建命令行工具包"><a href="#创建命令行工具包" class="headerlink" title="创建命令行工具包"></a>创建命令行工具包</h1><p>通过<code>npm install -g xxx</code>命令安装的部分第三方包后，就可以直接在命令行上运行相关命令了。比如下图，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/NodeJS模块全面指南-003.png" alt=""></p>
+<p>这种效果是如何做的呢？</p>
+<h2 id="添加bin字段"><a href="#添加bin字段" class="headerlink" title="添加bin字段"></a>添加<code>bin</code>字段</h2><p>我们可以在<code>package.json</code>文件中添加一个叫做<code>bin</code>的字段。比如，npm cli中就是这样的，</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"bin"</span>: &#123;</span><br><span class="line">        <span class="attr">"npm"</span> : <span class="string">"./cli.js"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后你在命令行中输入<code>npm</code>，NodeJS就会去执行对应的NodeJS模块。</p>
+<p>如果你只有一个可执行命令，并且还和包名一致，那么<code>package.json</code>中你可以这么写，</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"my-package"</span>,</span><br><span class="line">    <span class="attr">"version"</span>: <span class="string">"1.2.5"</span>,</span><br><span class="line">    <span class="attr">"bin"</span>: <span class="string">"./bin/my-package"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后，你需要在<code>bin/my-package</code>文件的第一行添加如下代码，</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env node</span></span><br></pre></td></tr></table></figure>
+<h2 id="命令行参数的解析"><a href="#命令行参数的解析" class="headerlink" title="命令行参数的解析"></a>命令行参数的解析</h2><p>我们通过命令行使用部分第三方包时，有时候包会提供各种命令和参数，如下图，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/NodeJS模块全面指南-004.png" alt=""></p>
+<p>从图中可以看出，这个<a href="http://harpjs.com/" target="_blank" rel="external">harp</a>提供四个命令以及两个参数，并且简略的展示了Usage。</p>
+<p>那么这种比较完备的命令行包是如何做的呢？</p>
+<p>这里我们一般会有两个方案去做成这件事，第一就是使用原生的<code>progress.argv</code>来解析，另一种方案就是使用<a href="https://www.npmjs.com/package/commander" target="_blank" rel="external">commander.js</a>。后面我会专门写篇文章来阐述<code>commander.js</code>的用法。</p>
+<h1 id="参考示例"><a href="#参考示例" class="headerlink" title="参考示例"></a>参考示例</h1><p><a href="https://www.npmjs.com/package/bullhead" target="_blank" rel="external">bullhead</a>是作者随便写的一个小玩意儿，主要目的是用来联系npm包创建及发布等操作。有兴趣可以参考。</p>
+<h1 id="参考列表"><a href="#参考列表" class="headerlink" title="参考列表"></a>参考列表</h1><ul>
+<li><a href="https://www.npmjs.com/" target="_blank" rel="external">npmjs.com</a></li>
+<li><a href="http://blog.fens.me/nodejs-npm-package/" target="_blank" rel="external">快速创建基于npm的nodejs库</a></li>
+</ul>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://gejiawen.github.io/about">@gejiawen</a>.</p>
+    <p class="link">本文链接：<a href="http://blog.gejiawen.com/2015/03/17/nodejs-module-guide/">http://blog.gejiawen.com/2015/03/17/nodejs-module-guide/</a></p>
+
+    <div class="share">
+    分享本页：
+    
+        <div class="bdsharebuttonbox"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_more" data-cmd="more"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    
+    
+</div>
+
+</div>
+
+
+            
+    <section class="comment">
+    <div class="ds-thread" data-thread-key="nodejs-module-guide" data-title="NodeJS模块全面指南" data-url="http://blog.gejiawen.com/2015/03/17/nodejs-module-guide/" data-author-key="gejiawen"></div>
+</section>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gejiawen-blog"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

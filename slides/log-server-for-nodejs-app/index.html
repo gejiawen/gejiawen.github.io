@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Log Server for NodeJS App</title>
+
+    <meta name="description" content="YOUR SLIDES CONTENT">
+    <meta name="author" content="gejiawen">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="../../lib/css/reveal.min.css">
+    <link rel="stylesheet" href="../../lib/css/theme/default.css" id="theme">
+    <!-- theme list: default, sky, beige, blood, simple, serif, night, moon, solarized -->
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+        if (window.location.search.match(/print-pdf/gi)) {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = '../../lib/css/pdf.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="../../lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+       <section data="首页">
+           <h1>Log Server for NodeJS App</h1>
+           <p class="fragment">
+                <small>Created by <a href="http://blog.gejiawen.com">@gejiawen</a> for qxwz</small>
+                <br>
+                <small>2016.9.25</small>
+            </p>
+       </section>
+
+       <section>
+           <h2>Agenda</h2>
+           <ol class="fragment">
+               <li>目标</li>
+               <li>基本思路和规范</li>
+               <li>日志框架选型</li>
+               <li>功能增强</li>
+               <li>现阶段实践</li>
+               <li>未来愿景</li>
+           </ol>
+       </section>
+
+       <section>
+           <h2>1. 目标</h2>
+       </section>
+
+       <section>
+           <p>
+               通常来说，应用程序的日志可作为程序排错、问题追踪、服务监控等服务的有效途径。
+           </p>
+       </section>
+
+       <section>
+           <h3>现阶段遇到的问题</h3>
+       </section>
+
+       <section>
+           <section>
+               <p>目前我们的开发架构如下</p>
+           </section>
+           <section>
+               <img src="../../res/slides/log-server-for-nodejs-app/001.png" alt="">
+           </section>
+           <section>
+               <p>NodeJS层直接为UI层提供服务，这里的UI层可简单的视为用户能够看见的一切东西。</p>
+               <p>理论上，NodeJS这一层需要完善的日志系统以及用户行为跟踪系统来记录用户UI操作。</p>
+           </section>
+           <section>
+               <p>需要这样一个系统有两个典型的好处，</p>
+               <ol class="fragment">
+                   <li>UI层异常告警，为排错提供支持</li>
+                   <li>用户UI操作监控，可做用户行为分析、数据挖掘、运营导向等</li>
+               </ol>
+           </section>
+           <section>
+               <p>就目前网站技术的开发架构来说，NodeJS层的日志服务并不完善。</p>
+           </section>
+       </section>
+
+       <section>
+           <h2>2. 基本思路和规范</h2>
+       </section>
+
+       <section>
+           <p>基本思路</p>
+       </section>
+
+       <section>
+           <p>因为NodeJS应用直接为UI层提供服务，我这里将日志分为两大类，</p>
+           <ol class="fragment">
+               <li>模板渲染日志</li>
+               <li>REST服务调用日志</li>
+           </ol>
+       </section>
+
+       <section>
+           <img src="../../res/slides/log-server-for-nodejs-app/002.png" alt="">
+       </section>
+
+       <section>
+           <p>模板渲染日志将会记录用户访问页面日志以及其上下游页面关系。</p>
+       </section>
+
+       <section>
+           <p>REST服务调用日志将会记录NodeJS层调用REST服务的request和response。</p>
+       </section>
+
+       <section>
+           <p>基本规范</p>
+       </section>
+
+       <section>
+           <section>
+               <p>文件名称</p>
+           </section>
+           <section>
+               <p>由“项目名称” + “日期” + “.log”构成。</p>
+               <p>eg. venus-msite-2016-9-25.log</p>
+           </section>
+           <section>
+               <p>为日志文件约定规范的目的是为日后的日志分析平台作准备。</p>
+           </section>
+       </section>
+
+       <section>
+           <section>
+               <p>日志存储</p>
+           </section>
+           <section>
+               <p日志文件中的每一条日志称为：“record”。</p>
+               <p>record的本质其实是一个序列化的json对象。</p>
+               <p>至于为何使用json对象而不是plain/text，有两个主要原因，</p>
+               <ol>
+                   <li>日志框架的要求</li>
+                   <li>json格式对机器和程序更加友好</li>
+               </ol>
+           </section>
+           <section>
+               <p>一条record示例如下，</p>
+               <pre>
+                   <code>{"name":"venus-msite","hostname":"Gejiawen.local","pid":40453,"level":30,"category":"info","msg":"start listening","time":"2016-09-25T07:59:32.984Z","v":0}</code>
+               </pre>
+           </section>
+       </section>
+
+       <section>
+           <section>
+               <p>日志分类</p>
+           </section>
+           <section>
+               <p>为了增强日志的可分析性，我给每一条日志record添加了“category”域。</p>
+           </section>
+           <section>
+               <p>目前总共有如下几种分类，</p>
+               <ol class="fragment">
+                   <li>fatal</li>
+                   <li>error</li>
+                   <li>warn</li>
+                   <li>info</li>
+                   <li>debug</li>
+                   <li>trace</li>
+                   <li>request</li>
+                   <li>response</li>
+                   <li>template</li>
+               </ol>
+           </section>
+           <section style="text-align: left">
+               <p>这里我有意弱化了日志等级（level）的概念，而是使用分类（category）的概念来代替。</p>
+               <p>前面有说过，现在日志将主要分为两大类，一类是REST调用日志，一类是模板渲染日志。</p>
+               <p>严格来说还有第三类日志，就是在程序中主观录入的一些日志信息，这些信息可能并不属于以上两类。</p>
+               <p>日志记录无非就是将日志信息写到文件中。从这个角度来说，每一条被写入的日志其实都是record，他们并不存在level，但是应该需要一个category字段来标识。</p>
+           </section>
+           <section>
+               <p>当然，真实写入文件的每一条record都会存在category和level，支持从不同维度对日志记录进行分析和过滤。</p>
+           </section>
+       </section>
+
+       <section>
+           <section>
+               <p>何时写日志</p>
+           </section>
+           <section>
+               <p>在NodeJS程序运行期间，我们应该何时在何地写日志？</p>
+           </section>
+           <section>
+               <p>我的观点是，不要随意的主观录入日志，除非你的确需要。</p>
+           </section>
+           <section>
+               <p>在当前的NodeJS开发框架中，我们已经将日志记录的时机集成在各个必要的中间件中了。当请求流过NodeJS中间件时，中间件会自动记录日志，并不需要开发人员关注这件事。</p>
+           </section>
+           <section>
+               <p>目前，我们将会在以下几个地方添加自动日志记录，</p>
+               <ol>
+                   <li>请求模板渲染</li>
+                   <li>REST调用请求</li>
+                   <li>REST调用响应</li>
+                   <li>应用级别的致命错误</li>
+               </ol>
+           </section>
+           <section>
+               <p>所以，在生产环境中，理论上不应该随意在应用中随意添加日志记录点。</p>
+           </section>
+       </section>
+
+       <section>
+           <h2>3. 日志框架选型</h2>
+       </section>
+
+       <section>
+           <p>在对比几种流行框架之后，决定选择<a href="https://github.com/trentm/node-bunyan">bunyan</a>作为NodeJS层的核心日志框架。</p>
+       </section>
+
+       <section>
+           <p>bunyan有如下几个优势，</p>
+               <ol>
+                   <li>简单轻量、侵入性小</li>
+                   <li>采用json格式存储，对程序分析友好</li>
+                   <li>支持对日志文件进行分析和条件筛选</li>
+               </ol>
+       </section>
+
+       <section>
+           <p>bunyan简单使用</p>
+       </section>
+
+       <section>
+               <ol>
+                   <li>创建logger实例</li>
+                   <li>添加stream</li>
+                   <li>添加serilizer</li>
+                   <li>调用方法记录日志</li>
+               </ol>
+       </section>
+
+       <section>
+           <p>具体用法参考<a href="https://github.com/gejiawen/test-bunyan">demo</a></p>
+       </section>
+
+       <section>
+           <h2>4. 功能增强</h2>
+       </section>
+
+       <section>
+           <p>结合目前的项目，额外做了如下两项处理，</p>
+            <ol>
+                <li>日志按天切片</li>
+                <li>日志缓冲写入</li>
+            </ol>
+       </section>
+
+       <section>
+           <section>
+               <p>TODO List</p>
+           </section>
+           <section>
+               <ol>
+                   <li>丰富req_serailizer和res_serailizer</li>
+                   <li>匹配request及其response</li>
+                   <li>LocalTimeString定制</li>
+               </ol>
+           </section>
+       </section>
+
+       <section>
+           <h2>5. 现阶段实践</h2>
+       </section>
+
+       <section>
+           <p>TODO</p>
+       </section>
+
+       <section>
+           <h2>6. 未来愿景</h2>
+       </section>
+
+       <section>
+           <p>在将来，希望有一个日志平台，给日志分析提供统一服务。</p>
+       </section>
+
+       <section>
+           <p>目前能够想到的可以做的事，包括，</p>
+               <ol>
+                   <li>日志离线处理（实时处理现在还比较遥远）。</li>
+                   <li>日志监控及异常告警。</li>
+                   <li>日志可视化分析，数据挖掘。</li>
+               </ol>
+       </section>
+
+       <section>
+            <h1>THE END</h1>
+            <h4>Thank you everyone!</h4>
+        </section>
+
+    </div>
+
+</div>
+
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.min.js"></script>
+
+<script>
+
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        slideNumber: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [{
+            src: '../../lib/js/classList.js',
+            condition: function () {
+                return !document.body.classList;
+            }
+        }, {
+            src: '../../lib/js/marked.js',
+            condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: '../../lib/js/markdown.js',
+            condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: '../../lib/js/highlight.js',
+            async: true,
+            callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+        }, {
+            src: '../../lib/js/zoom.js',
+            async: true,
+            condition: function () {
+                return !!document.body.classList;
+            }
+        }, {
+            src: '../../lib/js/notes.js',
+            async: true,
+            condition: function () {
+                return !!document.body.classList;
+            }
+        }]
+    });
+
+</script>
+
+</body>
+</html>

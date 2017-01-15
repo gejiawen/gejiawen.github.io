@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="注意：由于CSS3中的部分内容尚未完全定稿，所以本文的部分可能会随时更新。
+缘起W3C的官方文档于2011/9/29更新了Selectors Level 3。时至今日，已经过去了将近4年的时间，各家浏览器厂商对CSS3的支持程度也越来越高。按理说作为一名前端从业人员不应该等某项新技术普遍被支持后才去">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS3新特性概述 | 蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "2015/04/13/css3-new-feature/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>CSS3新特性概述</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/CSS拾遗系列/">CSS拾遗系列</a>&nbsp;<a href="/tags/css3/">css3</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2015-04-13T09:03:49.000Z"
+                       itemprop="datePublished">2015-04-13 17:03:49</time>
+            
+            更新: <time datetime="2016-04-26T01:58:59.000Z"
+                       itemprop="dateModified">2016-04-26 09:58:59</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+                <div id="toc" class="toc-article well">
+                    <strong class="toc-title">大纲</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#缘起"><span class="toc-number">1.</span> <span class="toc-text">缘起</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#新增特性"><span class="toc-number">2.</span> <span class="toc-text">新增特性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#选择器的拓展"><span class="toc-number">3.</span> <span class="toc-text">选择器的拓展</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#页面布局的加强"><span class="toc-number">4.</span> <span class="toc-text">页面布局的加强</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#多列布局方式"><span class="toc-number">4.1.</span> <span class="toc-text">多列布局方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可变更的盒模型"><span class="toc-number">4.2.</span> <span class="toc-text">可变更的盒模型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#可伸缩的布局方式"><span class="toc-number">4.3.</span> <span class="toc-text">可伸缩的布局方式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#元素修饰的加强"><span class="toc-number">5.</span> <span class="toc-text">元素修饰的加强</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#RGBA和透明度"><span class="toc-number">5.1.</span> <span class="toc-text">RGBA和透明度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#圆角支持"><span class="toc-number">5.2.</span> <span class="toc-text">圆角支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#多背景图片支持"><span class="toc-number">5.3.</span> <span class="toc-text">多背景图片支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#渐变效果支持"><span class="toc-number">5.4.</span> <span class="toc-text">渐变效果支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#阴影和反射效果"><span class="toc-number">5.5.</span> <span class="toc-text">阴影和反射效果</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#开放字体的支持"><span class="toc-number">6.</span> <span class="toc-text">开放字体的支持</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#多终端的适配"><span class="toc-number">7.</span> <span class="toc-text">多终端的适配</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#动画支持"><span class="toc-number">8.</span> <span class="toc-text">动画支持</span></a></li></ol>
+                </div>
+            
+
+            <p><strong>注意</strong>：由于CSS3中的部分内容尚未完全定稿，所以本文的部分可能会随时更新。</p>
+<h1 id="缘起"><a href="#缘起" class="headerlink" title="缘起"></a>缘起</h1><p>W3C的官方文档于2011/9/29更新了<a href="http://www.w3.org/TR/css3-selectors/" target="_blank" rel="external">Selectors Level 3</a>。时至今日，已经过去了将近4年的时间，各家浏览器厂商对CSS3的支持程度也越来越高。按理说作为一名前端从业人员不应该等某项新技术普遍被支持后才去学习，但是由于一些个人的原因（半路出家的FE？懒惰？没时间？），我还尚未对CSS3新增的新特性进行过系统的学习。</p>
+<p>CSS作为一名web前端开发人员的必备熟练技能，实在是不应该成为自身技术栈的短板。此文便是博主学习CSS3新增特性的一个记录，不过本文将不会详细的阐述每一个新增特性，只作概述性的描述。（后面将会对每一项新增特性另作文章进行描述）</p>
+<h1 id="新增特性"><a href="#新增特性" class="headerlink" title="新增特性"></a>新增特性</h1><p>本文将CSS3新增的特性按照功能分为下面的几个部分，</p>
+<ul>
+<li>选择器的拓展</li>
+<li>页面布局的加强</li>
+<li>元素修饰的加强</li>
+<li>开放字体的支持</li>
+<li>多终端的适配</li>
+<li>动画支持</li>
+</ul>
+<h1 id="选择器的拓展"><a href="#选择器的拓展" class="headerlink" title="选择器的拓展"></a>选择器的拓展</h1><p>CSS3新增了许多可使用的选择器使得前端开发人员在选择页面元素时更加灵活。新增的选择器包含如下几个方面，</p>
+<ul>
+<li>属性选择器</li>
+<li>结构伪类选择器</li>
+<li>UI元素状态伪类选择器</li>
+<li>目标伪类选择器</li>
+<li>否定选择器</li>
+<li>通用兄弟选择器</li>
+</ul>
+<p>具体的不打算在本文展开叙述，可参考博主之前的这篇文章<a href="http://blog.gejiawen.com/2015/04/09/first-to-css3-selectors/">初识CSS3选择器</a>。</p>
+<h1 id="页面布局的加强"><a href="#页面布局的加强" class="headerlink" title="页面布局的加强"></a>页面布局的加强</h1><h2 id="多列布局方式"><a href="#多列布局方式" class="headerlink" title="多列布局方式"></a>多列布局方式</h2><p>在以前，如果我们需要实现一个多列的页面布局，往往采用的方案是浮动或者绝对定位。CSS3中新增了多列布局使得页面布局更加灵活。</p>
+<p><a href="http://www.w3.org/TR/css3-multicol/" target="_blank" rel="external">这里</a>是多列布局的W3C官方文档。CSS3中新增了相关的属性<code>column-count</code>和<code>column-width</code>来设定具体的多列布局样式。示例代码如下，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span><br><span class="line">    <span class="selector-tag">div</span> &#123;</span><br><span class="line">        <span class="attribute">-webkit-column-count</span>: <span class="number">2</span>;</span><br><span class="line">        <span class="attribute">-webkit-column-width</span>: <span class="number">100px</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    blablablabla....</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>效果如下图，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/CSS3新特性概述-001.png" alt=""></p>
+<p>在实际的使用中，我们往往仅需要设置<code>column-count</code>或者<code>column-width</code>其中的一个属性就好，浏览器会自动根据可展示的空间对相应的元素进行分列或者设置每一列的宽度（从某种角度说，这也是一种自适应）。</p>
+<p>除了<code>column-count</code>或者<code>column-width</code>属性之外，还有<code>column-gap</code>及<code>column-rule</code>属性可供设置，如下示例代码，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span><br><span class="line">    <span class="selector-tag">div</span> &#123;</span><br><span class="line">        <span class="attribute">-webkit-column-count</span>: <span class="number">3</span>;</span><br><span class="line">        <span class="attribute">-webkit-column-gap</span>: <span class="number">40px</span>;</span><br><span class="line">        <span class="attribute">-webkit-column-rule</span>: <span class="number">4px</span> solid red</span><br><span class="line">    &#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    blablablabla....</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其效果如下，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/CSS3新特性概述-002.png" alt=""></p>
+<p>关于CSS3多列布局更加详细的内容，请参阅博主的这篇文章<a href="http://blog.gejiawen.com/2015/04/14/css3-multi-column-guide/">CSS3多列布局</a>。</p>
+<h2 id="可变更的盒模型"><a href="#可变更的盒模型" class="headerlink" title="可变更的盒模型"></a>可变更的盒模型</h2><p>我们知道W3C的CSS2.1规范中，默认的盒模型在计算盒子的总大小的时候，元素的<code>border</code>和<code>padding</code>是被被加入到宽度和高度之中的。而IE系的老旧浏览器的行为恰恰与之相反。</p>
+<p>CSS3规范提供了<code>box-sizing</code>属性并允许设置浏览器使用的盒模型。</p>
+<p>简单来说<code>box-sizing</code>属性提供了<code>content-box</code>和<code>border-box</code>两种赋值来确定元素究竟使用哪一种盒模型。其中现代浏览器默认的取值是<code>content-box</code>，既符合W3C标准的盒模型。关于<code>box-sizing</code>更多的内容，请参与博主之前的一篇文章<a href="http://blog.gejiawen.com/2014/11/18/CSS/CSS%E7%9B%92%E6%A8%A1%E5%9E%8B%E7%A7%91%E6%99%AE/#box-sizing属性">CSS盒模型科普#box-sizing属性</a>。</p>
+<h2 id="可伸缩的布局方式"><a href="#可伸缩的布局方式" class="headerlink" title="可伸缩的布局方式"></a>可伸缩的布局方式</h2><p>CSS3引入了可以算是一种新的盒模型：<strong>弹性盒模型</strong>，该模型决定一个盒子在其他盒子中的分布方式以及如何处理可用的空间。</p>
+<p>看下面的示例代码，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span><br><span class="line">    <span class="selector-class">.boxcontainer</span> &#123; </span><br><span class="line">        <span class="attribute">width</span>: <span class="number">1000px</span>; </span><br><span class="line">        <span class="attribute">display</span>: -webkit-box; </span><br><span class="line">        <span class="attribute">display</span>: -moz-box; </span><br><span class="line">        <span class="attribute">-webkit-box-orient</span>: horizontal; </span><br><span class="line">        <span class="attribute">-moz-box-orient</span>: horizontal; </span><br><span class="line">    &#125; </span><br><span class="line">    </span><br><span class="line">    <span class="selector-class">.item</span> &#123; </span><br><span class="line">        <span class="attribute">background</span>: blue; </span><br><span class="line">        <span class="attribute">font-weight</span>: bold; </span><br><span class="line">        <span class="attribute">margin</span>: <span class="number">2px</span>; </span><br><span class="line">        <span class="attribute">padding</span>: <span class="number">20px</span>; </span><br><span class="line">        <span class="attribute">color</span>: <span class="number">#fff</span>; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.flex</span> &#123; </span><br><span class="line">        <span class="attribute">-webkit-box-flex</span>: <span class="number">1</span>; </span><br><span class="line">        <span class="attribute">-moz-box-flex</span>: <span class="number">1</span>; </span><br><span class="line">    &#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"boxcontainer"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item flex"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span> </span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其展示如下，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/CSS3新特性概述-003.png" alt=""></p>
+<p>关于弹性盒模型的更多内容，请参阅博主的这篇文章<a href="">CSS3弹性盒模型</a>。</p>
+<h1 id="元素修饰的加强"><a href="#元素修饰的加强" class="headerlink" title="元素修饰的加强"></a>元素修饰的加强</h1><p>CSS3提供一系列属性来支持以前必须使用图片或者js操作才能实现的效果，大大的提升了页面展示效果的开发效率。</p>
+<h2 id="RGBA和透明度"><a href="#RGBA和透明度" class="headerlink" title="RGBA和透明度"></a>RGBA和透明度</h2><p>CSS3提供rgba来支持为元素设置透明度。如下示例代码，</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="built_in">rgba</span>(255, 0, 0, 0.75); </span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">hsla</span>(112, 72%, 33%, 0.68);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>从示例代码可见，CSS3支持<a href="http://baike.baidu.com/link?url=zgOBh1f7XcxGJY4sqCmoy5c3IgFZjVLlvlc1OPQNV8kAI3mADyGTOBgYAAdgdvjLnGWa4VnuSYqhSPT4hOmO-K" target="_blank" rel="external">rgb</a>和<a href="http://baike.baidu.com/link?url=DCmxScQ1REfGOBTgDrNhiIjJXfFnSAlKhjOkrQFW8e_79Ysk3pvUEKTTkunoiXeW_zSbKpGT7g-5ExUVUmH1r_" target="_blank" rel="external">hsl</a>两种颜色声明方式，最后一位参数即表示透明度，其取值范围为0~1，0为完全透明1为完全不透明。</p>
+<p><strong>注意</strong>，使用<code>rgba</code>和<code>opacity</code>都能够使得某元素变得透明，但是两者有一个非常核心的区别，<code>opacity</code>属性将某元素<strong>及其所有的子元素</strong>都应用透明样式，而<code>rgba</code>只在被设置的元素应用透明样式并不影响其子元素。</p>
+<h2 id="圆角支持"><a href="#圆角支持" class="headerlink" title="圆角支持"></a>圆角支持</h2><p>CSS3为圆角（<code>border-radius</code>）提供了更加一般的支持，</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.border-radius</span> &#123;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">15px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>效果如下，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/CSS3新特性概述-007.png" alt=""></p>
+<p>关于CSS3圆角的更多内容，请参阅博主的这篇文章<a href="http://blog.gejiawen.com/2015/04/23/css3-radius-guide/">CSS3圆角</a>。</p>
+<h2 id="多背景图片支持"><a href="#多背景图片支持" class="headerlink" title="多背景图片支持"></a>多背景图片支持</h2><p>如果我们需要实现一系列背景图片堆叠在一起，一般的做法可能是需要使用多个div元素进行布局，通过调试每个div的背景样式来达到堆叠的目的。</p>
+<p>CSS3允许你使用多个属性（<code>background-*</code>系列属性），在某一个页面元素上添加多层背景图片。（有点类似PS中图层的概念）</p>
+<p>如下面的示例代码，</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;   </span><br><span class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(bg1.jpg) top left no-repeat,</span><br><span class="line">        <span class="built_in">url</span>(bg2.jpg) bottom left no-repeat,   </span><br><span class="line">        <span class="built_in">url</span>(bg3.jpg) center center repeat-y;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样就可以在同一个div元素中应用多个背景图片。具体的实践请参阅这篇文章<a href="http://blog.gejiawen.com/2015/04/21/css3-background-guide/">CSS3背景</a>。</p>
+<h2 id="渐变效果支持"><a href="#渐变效果支持" class="headerlink" title="渐变效果支持"></a>渐变效果支持</h2><p>CSS3中提供了渐变（gradient）的支持，所谓的渐变就是两种或多种颜色之间的平滑过度。CSS3提供的渐变支持中又分为两种，<strong>线性渐变</strong>和<strong>径向渐变</strong>。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span><br><span class="line">    <span class="selector-class">.linear-gradient</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">20px</span>;</span><br><span class="line">        <span class="attribute">background-image</span>: <span class="built_in">-webkit-gradient</span>(linear, 0% 0%,100% 0%, from(#2A8BBE),<span class="built_in">to</span>(#FE280E));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.radial-gradient</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">        <span class="attribute">background</span>: <span class="built_in">-webkit-gradient</span>(radial, 50 50, 50, 50 50, 0, from(blue), <span class="built_in">to</span>(red));</span><br><span class="line">    &#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"linear-gradient"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"radial-gradient"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其效果如下下图，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/CSS3新特性概述-004.png" alt=""></p>
+<p>关于CSS3渐变的更多内容，请参阅博主的这篇文章<a href="http://blog.gejiawen.com/2015/04/23/css3-gradient-guide/">CSS3渐变</a>。</p>
+<h2 id="阴影和反射效果"><a href="#阴影和反射效果" class="headerlink" title="阴影和反射效果"></a>阴影和反射效果</h2><p>我们可以使用<code>text-shadow</code>和<code>box-shadow</code>来达到阴影的目的。</p>
+<p>如下示例代码，</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.class1</span>&#123; </span><br><span class="line">   <span class="attribute">text-shadow</span>:<span class="number">5px</span> <span class="number">2px</span> <span class="number">6px</span> <span class="built_in">rgba</span>(64, 64, 64, 0.5);</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="selector-class">.class2</span>&#123; </span><br><span class="line">   <span class="attribute">box-shadow</span>:<span class="number">3px</span> <span class="number">3px</span> <span class="number">3px</span> <span class="built_in">rgba</span>(0, 64, 128, 0.3);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中<code>text-shadow</code>是针对文字进行阴影设置，而<code>box-shadow</code>是针对容器元素进行阴影设置。同时<code>text-shadow</code>和<code>box-shadow</code>都支持同时对一个元素设置多个阴影属性（即所谓的多重阴影）。例如，</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.class1</span>&#123; </span><br><span class="line">    <span class="attribute">text-shadow</span>:<span class="number">1px</span> <span class="number">1px</span> <span class="number">2px</span> <span class="number">#c10ccc</span>,</span><br><span class="line">        <span class="number">1px</span> <span class="number">1px</span> <span class="number">2px</span> <span class="number">#648cb4</span>,</span><br><span class="line">        <span class="number">1px</span> <span class="number">1px</span> <span class="number">6px</span> <span class="number">#cc150c</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>效果如下，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/CSS3新特性概述-005.png" alt=""></p>
+<p>再来谈谈反射效果，所谓的反射其实看起来就跟水中的倒影一样，如下图的效果，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/CSS3新特性概述-006.png" alt=""></p>
+<p>其实它的设置很简单，</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.classReflect</span>&#123; </span><br><span class="line">    <span class="attribute">-webkit-box-reflect</span>: below <span class="number">10px</span> <span class="built_in">-webkit-gradient</span>(linear, left top, left bottom, from(transparent), <span class="built_in">to</span>(rgba(255, 255, 255, 0.51))); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>关于CSS3中阴影和反射更多的内容，请参阅博主的另一篇文章<a href="">CSS3阴影和反射</a>。</p>
+<h1 id="开放字体的支持"><a href="#开放字体的支持" class="headerlink" title="开放字体的支持"></a>开放字体的支持</h1><p>CSS3提供<code>@font-face</code>特性为页面自定义字体的展示提供支持。通过<code>@font-face</code>你可以在页面中嵌入不同的自定义字体，为不同的元素应用不同的字体。</p>
+<p>其一般用法如下，</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 自定义字体 */</span></span><br><span class="line">@<span class="keyword">font-face</span> &#123; </span><br><span class="line">    <span class="attribute">font-family</span>: BorderWeb; </span><br><span class="line">    <span class="attribute">src</span>:<span class="built_in">url</span>(BORDERW0.eot); </span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">font-face</span> &#123; </span><br><span class="line">    <span class="attribute">font-family</span>: Runic; </span><br><span class="line">    <span class="attribute">src</span>:<span class="built_in">url</span>(RUNICMT0.eot); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 为不同的元素应用不同的字体 */</span></span><br><span class="line"><span class="selector-class">.border</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">"BorderWeb"</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">35px</span>; <span class="attribute">color</span>: black;</span><br><span class="line">&#125; </span><br><span class="line"><span class="selector-class">.event</span> &#123;</span><br><span class="line">    <span class="attribute">font-family</span>: <span class="string">"Runic"</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">110px</span>;</span><br><span class="line">    <span class="attribute">color</span>: black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>关于<code>@font-face</code>更多的内容请参阅博主之前的另一篇文章<a href="http://blog.gejiawen.com/2015/03/04/webfont-and-icon-guide/">WebFont与页面ICON图标研究</a>。</p>
+<h1 id="多终端的适配"><a href="#多终端的适配" class="headerlink" title="多终端的适配"></a>多终端的适配</h1><p>之前为了适配不同的设备（主要是不同设备的屏幕不一样），可能需要为不同设备准备不同的css文件。CSS3提供了更加方便的方式，通过媒体查询（media queries）可以让你为不同的设备基于它们的能力定义不同的样式。</p>
+<p>比如，在可视区域小于480像素的时候，你可能想让网站的侧栏显示在主内容的下边，这样它就不应该浮动并显示在右侧了，</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#sidebar</span> &#123;   </span><br><span class="line">    <span class="attribute">float</span>: right;   </span><br><span class="line">    <span class="attribute">display</span>: inline; <span class="comment">/* IE Double-Margin Bugfix */</span>  </span><br><span class="line">&#125;   </span><br><span class="line">  </span><br><span class="line">@<span class="keyword">media</span> all and (max-width:<span class="number">480px</span>) &#123;   </span><br><span class="line">    <span class="selector-id">#sidebar</span> &#123;   </span><br><span class="line">        <span class="attribute">float</span>: none;   </span><br><span class="line">        <span class="attribute">clear</span>: both;   </span><br><span class="line">    &#125;   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>关于CSS3媒体查询的更多内容，请参阅博主的这篇文章<a href="">CSS3媒体查询</a>。</p>
+<h1 id="动画支持"><a href="#动画支持" class="headerlink" title="动画支持"></a>动画支持</h1><p>web开发中要在页面上实现动画有许多种途径。CSS3为我们提供了一系列方便的方法。在CSS3中，有如下三个关键字可以用来实现动画，</p>
+<ul>
+<li><code>transition</code>，意为<strong>过渡</strong></li>
+<li><code>transform</code>，意为<strong>变换</strong></li>
+<li><code>animation</code>，意为<strong>动画</strong></li>
+</ul>
+<p>这三者之间稍有区别，关于他们更加详细的用法，请参阅博主的这篇文章<a href="">CSS动画与@keyframes研究</a>。</p>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://gejiawen.github.io/about">@gejiawen</a>.</p>
+    <p class="link">本文链接：<a href="http://blog.gejiawen.com/2015/04/13/css3-new-feature/">http://blog.gejiawen.com/2015/04/13/css3-new-feature/</a></p>
+
+    <div class="share">
+    分享本页：
+    
+        <div class="bdsharebuttonbox"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_more" data-cmd="more"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    
+    
+</div>
+
+</div>
+
+
+            
+    <section class="comment">
+    <div class="ds-thread" data-thread-key="css3-new-feature" data-title="CSS3新特性概述" data-url="http://blog.gejiawen.com/2015/04/13/css3-new-feature/" data-author-key="gejiawen"></div>
+</section>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gejiawen-blog"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

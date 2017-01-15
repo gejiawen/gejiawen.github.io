@@ -1,0 +1,312 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="前言AngularJS中的指令是其尤为复杂的一个部分，但是这也是其比较好玩的地方。今天我们就来说一说AngularJS中的NgModelController。
+在AngularJS的内置指令中，有一个directive叫做ngModel，我们可以用它来沟通控制器和视图层的数据交换。说的简单点，就是我">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>在Angular指令中使用NgModelController做数据绑定 | 蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "2015/12/20/using-ng-model-controller-with-angular-directive/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>在Angular指令中使用NgModelController做数据绑定</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/ng/">ng</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/ANGULARJS/">ANGULARJS</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2015-12-20T13:59:03.000Z"
+                       itemprop="datePublished">2015-12-20 21:59:03</time>
+            
+            更新: <time datetime="2017-01-15T17:16:24.000Z"
+                       itemprop="dateModified">2017-01-16 01:16:24</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+                <div id="toc" class="toc-article well">
+                    <strong class="toc-title">大纲</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#示例"><span class="toc-number">2.</span> <span class="toc-text">示例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义指令"><span class="toc-number">2.1.</span> <span class="toc-text">自定义指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用NgModelController"><span class="toc-number">2.2.</span> <span class="toc-text">使用NgModelController</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#viewValue和-modelValue"><span class="toc-number">2.2.1.</span> <span class="toc-text">$viewValue和$modelValue</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#formatters和-parses"><span class="toc-number">2.2.2.</span> <span class="toc-text">$formatters和$parses</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#完善指令逻辑"><span class="toc-number">2.2.3.</span> <span class="toc-text">完善指令逻辑</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考列表"><span class="toc-number">3.</span> <span class="toc-text">参考列表</span></a></li></ol>
+                </div>
+            
+
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>AngularJS中的指令是其尤为复杂的一个部分，但是这也是其比较好玩的地方。今天我们就来说一说AngularJS中的<a href="https://docs.angularjs.org/api/ng/type/ngModel.NgModelController" target="_blank" rel="external">NgModelController</a>。</p>
+<p>在AngularJS的内置指令中，有一个directive叫做<a href="https://docs.angularjs.org/api/ng/directive/ngModel" target="_blank" rel="external">ngModel</a>，我们可以用它来沟通控制器和视图层的数据交换。说的简单点，就是我们可以用它来做<strong>双方数据绑定</strong>。</p>
+<p>这篇文章我们就来说一说如何在我们自定义的指令中，利用<code>ngModel</code>的<code>controller</code>来做双向数据绑定。</p>
+<p>注意，本篇文章不是对<code>NgModelController</code>文档的说明，而是更偏向实践。下面我将全程带领大家去实现一个自定义指令，并且利用<code>ng-model</code>属性来做双方的数据绑定。</p>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><p>我们的app中使用了一个自定义的指令，名字叫做<code>timeDruation</code>，如下，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-app</span>=<span class="string">"HelloApp"</span> <span class="attr">ng-controller</span>=<span class="string">"HelloController"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>自定义指令<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">time-duration</span> <span class="attr">ng-model</span>=<span class="string">"test"</span>&gt;</span><span class="tag">&lt;/<span class="name">time-duration</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span>&gt;</span>默认指令<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">ng-model</span>=<span class="string">"test"</span>&gt;</span>second</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>JS代码如下，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">angular.module(<span class="string">'HelloApp'</span>, [])</span><br><span class="line">    .directive(<span class="string">'timeDuration'</span>, TimeDurationDirective);</span><br><span class="line">    .controller(<span class="string">'HelloController'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>) </span>&#123;</span><br><span class="line">        $scope.test = <span class="number">1</span>;</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure>
+<p>我们的示例指令可以做这样一件事，可以指定几个常见的时间单位，并且能够输入数据。最终我们将得到对应的秒数。其功能的截图如下，</p>
+<p><img src="/res/using-ng-model-controller-with-angular-directive/001.png" alt=""></p>
+<p>这里我们特意将<code>test</code>变量分别绑定到我们的自定义指令和默认指令中，以观察其效果。</p>
+<h2 id="自定义指令"><a href="#自定义指令" class="headerlink" title="自定义指令"></a>自定义指令</h2><p>闲话少叙，show my code.</p>
+<p>先上指令的模板。从上图中可以看出，指令包含一个输入框一个下拉选择框。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"time-duration"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">ng-model</span>=<span class="string">'num'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">ng-model</span>=<span class="string">'unit'</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"seconds"</span>&gt;</span>Seconds<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"minutes"</span>&gt;</span>Minutes<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"hours"</span>&gt;</span>Hours<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"days"</span>&gt;</span>Days<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>模板其实很简单，这里就不多说了。下面我们来看看这个指令的逻辑部分。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">TimeDurationDirective</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> tpl = <span class="string">'....'</span>; <span class="comment">// 指令模板代码就是上面的内容，这里就不复制了。</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        restrict: <span class="string">'E'</span>,</span><br><span class="line">        replace: <span class="literal">true</span>,</span><br><span class="line">        template: tpl,</span><br><span class="line">        <span class="built_in">require</span>: <span class="string">'ngModel'</span>,</span><br><span class="line">        scope: &#123;&#125;,</span><br><span class="line">        link: <span class="function"><span class="keyword">function</span>(<span class="params">scope, element, attrs, ngModelController</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> multiplierMap = &#123;</span><br><span class="line">                seconds: <span class="number">1</span>,</span><br><span class="line">                minutes: <span class="number">60</span>,</span><br><span class="line">                hours: <span class="number">3600</span>,</span><br><span class="line">                days: <span class="number">86400</span></span><br><span class="line">            &#125;;</span><br><span class="line">            <span class="keyword">var</span> multiplierTypes = [<span class="string">'seconds'</span>, <span class="string">'minutes'</span>, <span class="string">'hours'</span>, <span class="string">'days'</span>];</span><br><span class="line"></span><br><span class="line">            <span class="comment">// TODO</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>指令的<code>link</code>方法我们暂时TODO了它。后面会逐步完善。</p>
+<p>我先来看看这个指令的定义，其中用到了<code>require</code>声明。我的博客中这篇文章<a href="http://blog.gejiawen.com/2014/07/16/usage-for-angularjs-directive/">AngularJS Directive用法说明</a>对<code>require</code>的用法作了详细的说明。简单来说，<code>require</code>的作用就是为这个directive声明一个依赖关系，表明此directive依赖另一个指令的<code>controller</code>属性。</p>
+<p>这里稍微说明一下require的衍生用法。我们可以在<code>require</code>前加上修辞量词，比如，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="built_in">require</span>: <span class="string">'^ngModel'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="built_in">require</span>: <span class="string">'?ngModel'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="built_in">require</span>: <span class="string">'?^ngModel'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>^</code>前缀修饰表示允许查找当前指令的父级指令，如果找不到对应指令的controller则抛出一个错误。</li>
+<li><code>?</code>则表示将这个require动作变成一个可选项，意思就是找不到对应指令的controller就算了，不会抛出错误。</li>
+<li>当然，我们也可以联合使用这两个前缀修饰。</li>
+</ul>
+<p>相对<code>?ngModel</code>，<code>^ngModel</code>我们使用的频率要更加高一点。比如，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">my-directive</span> <span class="attr">ng-model</span>=<span class="string">"my-model"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">other-directive</span>&gt;</span><span class="tag">&lt;/<span class="name">other-directive</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">my-directive</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这时，我们在<code>other-directive</code>中使用<code>require: ^ngModel</code>，它将会自动查找<code>my-directive</code>指令声明中的<code>controller</code>属性。</p>
+<h2 id="使用NgModelController"><a href="#使用NgModelController" class="headerlink" title="使用NgModelController"></a>使用NgModelController</h2><p>当我们声明了<code>require: &#39;ngModel&#39;</code>之后，在<code>link</code>方法中会注入第四个参数，这个参数就是我们require的那个指令对应的controller。这里就是内置指令<code>ngModel</code>的指控器<code>ngModeController</code>了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">link: <span class="function"><span class="keyword">function</span> (<span class="params">scope, element, attrs, ngModelCtrl</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// TODO</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="viewValue和-modelValue"><a href="#viewValue和-modelValue" class="headerlink" title="$viewValue和$modelValue"></a><code>$viewValue</code>和<code>$modelValue</code></h3><p>在<code>ngModelController</code>中有两个很重要的属性，一个叫做<code>$viewValue</code>，一个叫做<code>$modeValue</code>。这两者的含义官方的解释如下，</p>
+<blockquote>
+<p><code>$viewValue</code>: Actual string value in the view.<br><code>$modelValue</code>: The value in the model, that the control is bound to.</p>
+</blockquote>
+<p>如果你对上面的官方解释有疑惑的话，我这里给出一种我个人的解释。</p>
+<p><code>$viewView</code>就是指令渲染模板所用的值，而<code>$modelView</code>是在控制器中流通的值。很多时候，这两个值可能是不一样的。</p>
+<p>比如你在页面上展示了一个日期，它显示的可能是“Oct. 20 2015”这样的字符串，但是呢，这个字符串在控制器中对应的值可能是一个Javascript的Date对象的实例。</p>
+<p>再比如，我们的这个<code>time-duration</code>示例中，<code>$viewValue</code>其实指的是指令模板中<code>num</code>和<code>unit</code>组合出来的值，而<code>$modelValue</code>是HelloAppController中<code>test</code>变量对应的值。</p>
+<h3 id="formatters和-parses"><a href="#formatters和-parses" class="headerlink" title="$formatters和$parses"></a><code>$formatters</code>和<code>$parses</code></h3><p>除了<code>$viewValue</code>和<code>$modelValue</code>这两个属性之外，还有两个用来处理他们的方法。分别是<code>$parses</code>和<code>$formatters</code>。</p>
+<p>前者的是作用是将<code>$viewValue</code>-&gt;<code>$modelValue</code>，后者的作用恰好相反，是将<code>$modelValue</code>-&gt;<code>$viewValue</code>。</p>
+<p><code>time-duration</code>指令与外部控制器以及其内部的运作如下图，</p>
+<p><img src="/res/using-ng-model-controller-with-angular-directive/002.png" alt=""></p>
+<ol>
+<li>在外部控制器中（即这里的<code>HelloApp</code>的controller），我们通过<code>ng-model=&quot;test&quot;</code>将test变量传入指令<code>time-duration</code>中，并建立绑定关系。</li>
+<li>在指令内部，<code>$modelValue</code>其实就是<code>test</code>值的一份拷贝。</li>
+<li>我们通过<code>$formatters()</code>方法将<code>$modelValue</code>转变成<code>$viewValue</code>。</li>
+<li>然后调用<code>$render()</code>方法将<code>$viewValue</code>渲染到directive template中。</li>
+<li>当我们通过某种途径监控到指令模板中的变量发生变化之后，我们调用<code>$setViewValue()</code>来更新<code>$viewValue</code>。</li>
+<li>与<strong>（4）</strong>相对应，我们通过<code>$parsers</code>方法将<code>$viewValue</code>转化成<code>$modelValue</code>。</li>
+<li>当<code>$modelValue</code>发生变化后，则会去更新HelloApp的UI。</li>
+</ol>
+<h3 id="完善指令逻辑"><a href="#完善指令逻辑" class="headerlink" title="完善指令逻辑"></a>完善指令逻辑</h3><p>按照上面的流程，我们先来将<code>$modelValue</code>转化成<code>$viewValue</code>，然后在指令模板中进行渲染。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// $formatters接受一个数组</span></span><br><span class="line"><span class="comment">// 数组是一系列方法，用于将modelValue转化成viewValue</span></span><br><span class="line">ngModelController.$formatters.push(<span class="function"><span class="keyword">function</span>(<span class="params">modelValue</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> unit = <span class="string">'minutes'</span>, num = <span class="number">0</span>, i, unitName;</span><br><span class="line">    modelValue = <span class="built_in">parseInt</span>(modelValue || <span class="number">0</span>);</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span> (i = multiplierTypes.length<span class="number">-1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        unitName = multiplierTypes[i];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (modelValue % multiplierMap[unitName] === <span class="number">0</span>) &#123;</span><br><span class="line">            unit = unitName;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (modelValue) &#123;</span><br><span class="line">        num = modelValue / multiplierMap[unit];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        unit: unit,</span><br><span class="line">        num:  num</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>最后返回的对象就是<code>$viewValue</code>的value。（当然<code>$viewValue</code>还会有其他的一些属性。）</p>
+<p>第二步，我们调用<code>$render</code>方法将<code>$viewValue</code>渲染到指令模板中去。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// $render用于将viewValue渲染到指令的模板中</span></span><br><span class="line">ngModelController.$render = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    scope.unit = ngModelCtrl.$viewValue.unit;</span><br><span class="line">    scope.num = ngModelCtrl.$viewValue.num;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>第三步，我们通过<code>$watch</code>来监控指令模板中<code>num</code>和<code>unit</code>变量。当其发生变化时，我们需要更新<code>$viewValue</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">scope.$watch(<span class="string">'unit + num'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="comment">// $setViewValue用于更新viewValue</span></span><br><span class="line">    ngModelController.$setViewValue(&#123;</span><br><span class="line">        unit: scope.unit,</span><br><span class="line">        num: scope.num</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>第四步，我们通过<code>$parsers</code>将<code>$viewValue</code>-&gt;<code>$modelValue</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// $parsers接受一个数组</span></span><br><span class="line"><span class="comment">// 数组是一系列方法，用于将viewValue转化成modelValue</span></span><br><span class="line">ngModelController.$parsers.push(<span class="function"><span class="keyword">function</span>(<span class="params">viewValue</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> unit = viewValue.unit；</span><br><span class="line">    <span class="keyword">var</span> num = viewValue.num;</span><br><span class="line">    <span class="keyword">var</span> multiplier;</span><br><span class="line"></span><br><span class="line">    multiplier = multiplierMap[unit];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> num * multiplier;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>这样一个双方的数据绑定逻辑就建立了。<a href="http://runjs.cn/detail/rjfiybzv" target="_blank" rel="external">这里</a>有一个在线示例，就是文中示例的完整代码，你可以去体验一下。</p>
+<h1 id="参考列表"><a href="#参考列表" class="headerlink" title="参考列表"></a>参考列表</h1><ul>
+<li><a href="https://docs.angularjs.org/api/ng/directive/ngModel" target="_blank" rel="external">官方文档：ngModel</a></li>
+<li><a href="https://docs.angularjs.org/api/ng/type/ngModel.NgModelController" target="_blank" rel="external">官方文档：ngModelController</a></li>
+<li><a href="http://stackoverflow.com/questions/19383812/whats-the-difference-between-ngmodel-modelvalue-and-ngmodel-viewvalue" target="_blank" rel="external">stackoverflow</a></li>
+<li><a href="http://www.chroder.com/2014/02/01/using-ngmodelcontroller-with-custom-directives/" target="_blank" rel="external">Using NgModelController with custom directives</a></li>
+</ul>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://gejiawen.github.io/about">@gejiawen</a>.</p>
+    <p class="link">本文链接：<a href="http://blog.gejiawen.com/2015/12/20/using-ng-model-controller-with-angular-directive/">http://blog.gejiawen.com/2015/12/20/using-ng-model-controller-with-angular-directive/</a></p>
+
+    <div class="share">
+    分享本页：
+    
+        <div class="bdsharebuttonbox"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_more" data-cmd="more"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    
+    
+</div>
+
+</div>
+
+
+            
+    <section class="comment">
+    <div class="ds-thread" data-thread-key="using-ng-model-controller-with-angular-directive" data-title="在Angular指令中使用NgModelController做数据绑定" data-url="http://blog.gejiawen.com/2015/12/20/using-ng-model-controller-with-angular-directive/" data-author-key="gejiawen"></div>
+</section>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gejiawen-blog"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

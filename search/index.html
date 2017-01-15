@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="蛋糕仙人的个人博客。生活，工作，技术，思考，沉淀，人生。">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>检索结果 | 蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "search/index.html";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post search container">
+    <div class="well post-body first-post last-post">
+        <h1>检索结果</h1>
+
+        <div class="search-keywords">
+            <span>检索关键字：</span>
+            <div class="keywords-list"></div>
+            <div style="margin-top: 10px">相关文章：<span class="post-number"></span>篇</div>
+        </div>
+
+        <div class="post-body-inner search-result">
+            <!--<article>-->
+                <!--<h1><a href="">通读Cheerio文档</a></h1>-->
+                <!--<div class="catetags">-->
+                    <!--Tags: <span></span>-->
+                <!--</div>-->
+                <!--<div class="">-->
+
+                <!--</div>-->
+            <!--</article>-->
+        </div>
+    </div>
+</article>
+
+<script src="http://apps.bdimg.com/libs/underscore.js/1.7.0/underscore-min.js"></script>
+<script>
+    var data = [];
+    var rets = [];
+
+    var query = window.location.search;
+    var keywords = query.split('=')[1].split(',');
+
+    if (!keywords[0]) {
+        $('.search-keywords').html('<div class="no-result">请给出检索关键字</div>');
+    } else {
+        _.each(keywords, function(keyword, i) {
+            keywords[i] = decodeURIComponent(keyword).toLowerCase();
+        });
+        var keywordsTemplate = '';
+
+        _.each(keywords, function(keyword) {
+            keywordsTemplate += '<span class="keywords">' + keyword + '</span>';
+        });
+        $('.keywords-list').html(keywordsTemplate);
+
+        $('#nav-search input').val(keywords.join(' '));
+
+        // boot
+        _sendAjax();
+    }
+
+
+
+    function _scanKeywords(obj, keyword) {
+        var reg = new RegExp(keyword, 'g');
+        if (reg.test(obj.title.toLowerCase())) {
+            return true;
+        }
+        if (reg.test(obj.category.category.toLowerCase())) {
+            return true;
+        }
+        for (var i = 0; i < obj.tags.length; i++) {
+            if (reg.test(obj.tags[i].tag.toLowerCase())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function _getReset() {
+        _.each(data, function (v) {
+            var pushed = false;
+            _.each(keywords, function (keyword) {
+                if (_scanKeywords(v, keyword) && !pushed) {
+                    rets.push(v);
+                    pushed = true;
+                }
+            })
+        });
+
+        var retsTemplate = '';
+        if (!rets.length) {
+            retsTemplate += '<div class="no-result">很遗憾，博主尚未涉猎' + keywordsTemplate + '方面的内容哦！</div>'
+            retsTemplate += '<div class="no-result">你可以尝试组合其他关联的关键字来进行搜索！</div>'
+        } else {
+            _.each(rets, function (ret, i) {
+                retsTemplate += [
+                    '<article>',
+                    '<h3><a href=' + ret.href + ' target="_blank">' + ++i + '. ' + ret.title + '</a></h3>',
+                    '<div class="published">创作时间：' + ret.published.slice(0, 10) + '</div>',
+                    '<div class="classify">',
+                    '<span class="category">Category: <a href="' + ret.category.href + '">' + ret.category.category + '</a></span>'
+                ].join('');
+
+                retsTemplate += '<span class="tags">Tags: '
+                _.each(ret.tags, function (tag, i) {
+                    retsTemplate += '<a href=" + tag.href + ">' + tag.tag;
+                })
+
+                retsTemplate += '</span></div></article>';
+            });
+        }
+
+        $('.post-number').html(rets.length);
+        $('.search-result').html(retsTemplate);
+    }
+
+    function _sendAjax() {
+        $.ajax({
+            url: '/atom.xml',
+            success: function (dom) {
+                entries = $(dom).find('entry');
+
+                _.each(entries, function (e) {
+                    data.push({
+                        id: $(e).find('id').text(),
+                        href: $(e).find('link').attr('href'),
+                        title: $(e).find('title').text(),
+                        published: $(e).find('published').text(),
+                        updated: $(e).find('updated').text(),
+                        tags: (function () {
+                            var catetags = $(e).find('category');
+                            catetags = catetags.splice(0, catetags.length - 1);
+                            return _.map(catetags, function(v) {
+                                return {
+                                    tag: $(v).attr('term'),
+                                    href: $(v).attr('scheme')
+                                };
+                            });
+                        })(),
+                        category: (function () {
+                            var catetags = $(e).find('category');
+                            catetags = catetags.splice(catetags.length - 1);
+                            return _.map(catetags, function(v) {
+                                return {
+                                    category: $(v).attr('term'),
+                                    href: $(v).attr('scheme')
+                                };
+                            })[0];
+                        })()
+                        /*summary: (function () {
+                         var summary = $(e).find('summary').text();
+                         return summary;
+                         })(),
+                         content: (function () {
+                         var content = $(e).find('content').text();
+                         return content;
+                         })()*/
+                    });
+                });
+
+                _getReset();
+            }
+        });
+    }
+
+    function _isLocalStorage() {
+        return !!window.localStorage;
+    }
+
+    function _setLocalStorage() {
+        localStorage.setItem('searchObject', JSON.stringify(data));
+    }
+
+    function _getLocalStorage() {
+        return JSON.parse(localStorage.getItem('searchObject'));
+    }
+
+    function _isLocalStorageExpire() {
+
+    }
+
+</script>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,2644 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>蛋糕仙人</title>
+  <subtitle>技术人需要危机感</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://blog.gejiawen.com/"/>
+  <updated>2017-01-15T17:18:36.000Z</updated>
+  <id>http://blog.gejiawen.com/</id>
+  
+  <author>
+    <name>gejiawen</name>
+    <email>806717031@qq.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git Flow精简模型</title>
+    <link href="http://blog.gejiawen.com/2016/12/12/git-flow-compact-model/"/>
+    <id>http://blog.gejiawen.com/2016/12/12/git-flow-compact-model/</id>
+    <published>2016-12-12T01:52:23.000Z</published>
+    <updated>2017-01-15T17:18:36.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Git版本控制系统因为其快速、分布式、轻量的多分支模型等优点，现在正在逐步取代SVN等集中式版本控制系统。&lt;/p&gt;
+&lt;p&gt;讲道理的话，git的命令其实挺多的，而且底层的文件模型其实挺复杂的，但是一旦熟练使用的话，灵活、快速这些特点就不必说了，很多时候更有化腐朽为神奇的能力。
+    
+    </summary>
+    
+      <category term="技术思考" scheme="http://blog.gejiawen.com/categories/%E6%8A%80%E6%9C%AF%E6%80%9D%E8%80%83/"/>
+    
+    
+      <category term="git" scheme="http://blog.gejiawen.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>UI组件库和静态服务域的相关实践</title>
+    <link href="http://blog.gejiawen.com/2016/11/21/how-to-build-ui-widget-and-static-domain/"/>
+    <id>http://blog.gejiawen.com/2016/11/21/how-to-build-ui-widget-and-static-domain/</id>
+    <published>2016-11-21T02:58:17.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这是一篇懒散的随笔，写作时，完全没有考虑到读者的感受，仅仅是作者对UI和组件化等topic的一些胡思乱想。勿喷。&lt;/p&gt;
+&lt;p&gt;我一直觉得，一个有逼格、有深度的公司，应该在UI这块有自己的一套规范，无论是从0到1自己实现的也好，还是站在巨人的肩膀上。&lt;/p&gt;
+&lt;p&gt;人都有身
+    
+    </summary>
+    
+      <category term="技术思考" scheme="http://blog.gejiawen.com/categories/%E6%8A%80%E6%9C%AF%E6%80%9D%E8%80%83/"/>
+    
+    
+      <category term="组件化" scheme="http://blog.gejiawen.com/tags/%E7%BB%84%E4%BB%B6%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Web开发模式的探索与思考</title>
+    <link href="http://blog.gejiawen.com/2016/11/10/discovery-and-thought-on-web-development/"/>
+    <id>http://blog.gejiawen.com/2016/11/10/discovery-and-thought-on-web-development/</id>
+    <published>2016-11-10T15:14:50.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近这几年，随着软硬件技术的发展，Web开发的相关技术也在突飞猛进，跟十年之前甚至五年之前相比，无论是业务复杂度还是技术选型已经完全是两个维度。&lt;/p&gt;
+&lt;p&gt;本文是一篇随笔，主要阐述一些作者个人对web开发模式的一些认知和思考。&lt;/p&gt;
+&lt;h1 id=&quot;前言&quot;&gt;&lt;a hr
+    
+    </summary>
+    
+      <category term="技术思考" scheme="http://blog.gejiawen.com/categories/%E6%8A%80%E6%9C%AF%E6%80%9D%E8%80%83/"/>
+    
+    
+      <category term="web开发" scheme="http://blog.gejiawen.com/tags/web%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我为什么不写分号</title>
+    <link href="http://blog.gejiawen.com/2016/09/28/why-dont-i-write-semicolon-forever/"/>
+    <id>http://blog.gejiawen.com/2016/09/28/why-dont-i-write-semicolon-forever/</id>
+    <published>2016-09-28T01:34:53.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在程序员这个行业，撕逼会发生在任何地点、任何时间、任何观点，有的时候会让人猝不及防。&lt;/p&gt;
+&lt;p&gt;曾经看过一个段子，分享一下：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;程序员的鄙视链是什么？&lt;br&gt;老婆漂亮的程序员，鄙视老婆不漂亮的程序员；&lt;br&gt;有老婆的程序员，鄙视没有
+    
+    </summary>
+    
+      <category term="CODER" scheme="http://blog.gejiawen.com/categories/CODER/"/>
+    
+    
+      <category term="撕逼" scheme="http://blog.gejiawen.com/tags/%E6%92%95%E9%80%BC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用commander.js做一个Nodejs命令行程序</title>
+    <link href="http://blog.gejiawen.com/2016/09/21/make-a-node-cli-program-by-commander-js/"/>
+    <id>http://blog.gejiawen.com/2016/09/21/make-a-node-cli-program-by-commander-js/</id>
+    <published>2016-09-21T07:45:01.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;在当下，作为一名前端码农，不知道Nodejs是不可原谅的。可以说，除了一些特别要求的业务范畴，常见的后端业务Nodejs都能handle住。
+    
+    </summary>
+    
+      <category term="NODEJS" scheme="http://blog.gejiawen.com/categories/NODEJS/"/>
+    
+    
+      <category term="nodejs" scheme="http://blog.gejiawen.com/tags/nodejs/"/>
+    
+      <category term="漫游NodeJS系列" scheme="http://blog.gejiawen.com/tags/%E6%BC%AB%E6%B8%B8NodeJS%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="commanderjs" scheme="http://blog.gejiawen.com/tags/commanderjs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>解决Mysql登录之后不显示数据库</title>
+    <link href="http://blog.gejiawen.com/2016/06/14//"/>
+    <id>http://blog.gejiawen.com/2016/06/14//</id>
+    <published>2016-06-14T07:40:30.000Z</published>
+    <updated>2016-09-08T07:22:18.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;上次在服务器上搞了个&lt;a href=&quot;http://thx.github.io/RAP/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RAP&lt;/a&gt;服务，主要是为了给前后端写接口以及mock数据提供一个统一的平台。说实话RAP还是挺好用的，不过在使用了一
+    
+    </summary>
+    
+      <category term="踩坑录" scheme="http://blog.gejiawen.com/categories/%E8%B8%A9%E5%9D%91%E5%BD%95/"/>
+    
+    
+      <category term="mysql" scheme="http://blog.gejiawen.com/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gogs部署小记</title>
+    <link href="http://blog.gejiawen.com/2016/05/31/note-for-deploy-gogs/"/>
+    <id>http://blog.gejiawen.com/2016/05/31/note-for-deploy-gogs/</id>
+    <published>2016-05-31T06:22:37.000Z</published>
+    <updated>2016-11-10T15:00:47.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://gogs.io&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gogs&lt;/a&gt;是一款使用golang编写的轻量的、开源的、自助式git托管服务。其功能与&lt;a href=&quot;http://github.com&quot; target=&quot;
+    
+    </summary>
+    
+      <category term="踩坑录" scheme="http://blog.gejiawen.com/categories/%E8%B8%A9%E5%9D%91%E5%BD%95/"/>
+    
+    
+      <category term="gogs" scheme="http://blog.gejiawen.com/tags/gogs/"/>
+    
+      <category term="部署" scheme="http://blog.gejiawen.com/tags/%E9%83%A8%E7%BD%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Angular指令中使用NgModelController做数据绑定</title>
+    <link href="http://blog.gejiawen.com/2015/12/20/using-ng-model-controller-with-angular-directive/"/>
+    <id>http://blog.gejiawen.com/2015/12/20/using-ng-model-controller-with-angular-directive/</id>
+    <published>2015-12-20T13:59:03.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;AngularJS中的指令是其尤为复杂的一个部分，但是这也是其比较好玩的地方。今天我们就来说一说AngularJS中的&lt;a href=&quot;ht
+    
+    </summary>
+    
+      <category term="ANGULARJS" scheme="http://blog.gejiawen.com/categories/ANGULARJS/"/>
+    
+    
+      <category term="ng" scheme="http://blog.gejiawen.com/tags/ng/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AngularJS路由二三事（一）：ngRoute</title>
+    <link href="http://blog.gejiawen.com/2015/12/15/routes-solution-on-angular-ng-route/"/>
+    <id>http://blog.gejiawen.com/2015/12/15/routes-solution-on-angular-ng-route/</id>
+    <published>2015-12-15T02:41:43.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;AngularJS路由二三事&lt;/strong&gt;专题文章，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.gejiawen.com/2015/12/15/routes-solution-on-angular-ng-route/&quot;&gt;Angu
+    
+    </summary>
+    
+      <category term="ANGULARJS" scheme="http://blog.gejiawen.com/categories/ANGULARJS/"/>
+    
+    
+      <category term="ng" scheme="http://blog.gejiawen.com/tags/ng/"/>
+    
+      <category term="AngularJS路由二三事" scheme="http://blog.gejiawen.com/tags/AngularJS%E8%B7%AF%E7%94%B1%E4%BA%8C%E4%B8%89%E4%BA%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端开发中的测试及相关技术栈</title>
+    <link href="http://blog.gejiawen.com/2015/12/07/web-front-testing-and-technique/"/>
+    <id>http://blog.gejiawen.com/2015/12/07/web-front-testing-and-technique/</id>
+    <published>2015-12-07T10:06:51.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;测试是一个很大的topic。记得从大学时代的软件工程就开始接触测试这个概念，当时被灌输这样一种思想，&lt;strong&gt;软件工程领域把测试视为软
+    
+    </summary>
+    
+      <category term="大前端" scheme="http://blog.gejiawen.com/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="测试" scheme="http://blog.gejiawen.com/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+      <category term="mocha" scheme="http://blog.gejiawen.com/tags/mocha/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gulp备忘录（一）：API指南</title>
+    <link href="http://blog.gejiawen.com/2015/12/05/gulp-reminder-1-api/"/>
+    <id>http://blog.gejiawen.com/2015/12/05/gulp-reminder-1-api/</id>
+    <published>2015-12-05T14:58:55.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;gulp备忘录&lt;/strong&gt;专题文章，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.gejiawen.com/2015/12/05/gulp-reminder-1-api/&quot;&gt;gulp备忘录（一）：API指南&lt;/a&gt;&lt;/li&gt;
+&lt;
+    
+    </summary>
+    
+      <category term="NODEJS" scheme="http://blog.gejiawen.com/categories/NODEJS/"/>
+    
+    
+      <category term="gulp" scheme="http://blog.gejiawen.com/tags/gulp/"/>
+    
+      <category term="gulp备忘录" scheme="http://blog.gejiawen.com/tags/gulp%E5%A4%87%E5%BF%98%E5%BD%95/"/>
+    
+      <category term="nodejs" scheme="http://blog.gejiawen.com/tags/nodejs/"/>
+    
+      <category term="漫游NodeJS系列" scheme="http://blog.gejiawen.com/tags/%E6%BC%AB%E6%B8%B8NodeJS%E7%B3%BB%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于Javascript中sort方法的联想</title>
+    <link href="http://blog.gejiawen.com/2015/11/26/think-about-javascript-sort/"/>
+    <id>http://blog.gejiawen.com/2015/11/26/think-about-javascript-sort/</id>
+    <published>2015-11-26T08:10:42.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;掉坑&quot;&gt;&lt;a href=&quot;#掉坑&quot; class=&quot;headerlink&quot; title=&quot;掉坑&quot;&gt;&lt;/a&gt;掉坑&lt;/h1&gt;&lt;p&gt;近两天深陷需求快速迭代的漩涡之中，无瑕去写一些东西。今下午好不容易挤出点时间，随便写点东西，是关于前不久刚踩过的一个坑。&lt;/p&gt;
+&lt;p&gt;其实
+    
+    </summary>
+    
+      <category term="踩坑录" scheme="http://blog.gejiawen.com/categories/%E8%B8%A9%E5%9D%91%E5%BD%95/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Array.prototype.slice(arguments)的猫腻</title>
+    <link href="http://blog.gejiawen.com/2015/11/04/perf-about-array-prototype-slice-arguments/"/>
+    <id>http://blog.gejiawen.com/2015/11/04/perf-about-array-prototype-slice-arguments/</id>
+    <published>2015-11-04T03:25:43.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;在我博客之前有过这样一篇文章，&lt;a href=&quot;http://blog.gejiawen.com/2015/04/02/confused-m
+    
+    </summary>
+    
+      <category term="踩坑录" scheme="http://blog.gejiawen.com/categories/%E8%B8%A9%E5%9D%91%E5%BD%95/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于AMD,CMD,CommonJS及UMD规范</title>
+    <link href="http://blog.gejiawen.com/2015/11/03/what-is-amd-cmd-commonjs-umd/"/>
+    <id>http://blog.gejiawen.com/2015/11/03/what-is-amd-cmd-commonjs-umd/</id>
+    <published>2015-11-03T06:01:28.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点我&lt;/a&gt;看原文。&lt;/p&gt;
+&lt;p&gt;译文开始。&lt;/p&gt;
+&lt;p&gt;Javas
+    
+    </summary>
+    
+      <category term="大前端" scheme="http://blog.gejiawen.com/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="翻译" scheme="http://blog.gejiawen.com/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="前端规范" scheme="http://blog.gejiawen.com/tags/%E5%89%8D%E7%AB%AF%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Gitbook快速指南</title>
+    <link href="http://blog.gejiawen.com/2015/10/28/gitbook-fast-started/"/>
+    <id>http://blog.gejiawen.com/2015/10/28/gitbook-fast-started/</id>
+    <published>2015-10-28T15:11:12.000Z</published>
+    <updated>2016-06-13T05:15:26.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://github.com/GitbookIO/gitbook&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gitbook&lt;/a&gt;是一款利用git及markdown快速构建在线书籍的工具。官网是&lt;a href=&quot;http://
+    
+    </summary>
+    
+      <category term="教程" scheme="http://blog.gejiawen.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="gitbook" scheme="http://blog.gejiawen.com/tags/gitbook/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript中常见的异步编程模型</title>
+    <link href="http://blog.gejiawen.com/2015/10/12/some-javascript-async-pattern/"/>
+    <id>http://blog.gejiawen.com/2015/10/12/some-javascript-async-pattern/</id>
+    <published>2015-10-12T07:26:30.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Javascript异步编程专题，目前包含以下几篇文章，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.gejiawen.com/2015/10/12/think-about-async-in-javascript/&quot;&gt;浅谈Javascript中的异步
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+      <category term="Javascript异步编程专题" scheme="http://blog.gejiawen.com/tags/Javascript%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B%E4%B8%93%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浅谈Javascript中的异步</title>
+    <link href="http://blog.gejiawen.com/2015/10/12/think-about-async-in-javascript/"/>
+    <id>http://blog.gejiawen.com/2015/10/12/think-about-async-in-javascript/</id>
+    <published>2015-10-12T07:12:51.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近心血来潮，准备整理一下Javascript中有关异步编程方面的东西，写几篇文章。当然同时也是为了沉淀一下自己所学。&lt;/p&gt;
+&lt;p&gt;暂时将这个专题命名为&lt;strong&gt;Javascript异步编程专题&lt;/strong&gt;吧，目前包含以下几篇文章，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+      <category term="Javascript异步编程专题" scheme="http://blog.gejiawen.com/tags/Javascript%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B%E4%B8%93%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JQuery编码规范与最佳实践</title>
+    <link href="http://blog.gejiawen.com/2015/10/08/jquery-coding-standards-and-best-practices/"/>
+    <id>http://blog.gejiawen.com/2015/10/08/jquery-coding-standards-and-best-practices/</id>
+    <published>2015-10-08T04:51:37.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;偶然发现我很少写jquery相关的文章。作为一名前端从业人员，jquery可以说一门必备的技能，能够熟练使用jquery是每一个前端开发者应该掌握的。不过这篇文章我并不打算写成从零开始的教程式文章，仅仅阐述一些使用jquery需要注意的一些内容。&lt;/p&gt;
+&lt;p&gt;前几日有幸读
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+      <category term="jquery" scheme="http://blog.gejiawen.com/tags/jquery/"/>
+    
+      <category term="翻译" scheme="http://blog.gejiawen.com/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JQuery中的浏览器特性检测</title>
+    <link href="http://blog.gejiawen.com/2015/09/22/think-about-jquery-support/"/>
+    <id>http://blog.gejiawen.com/2015/09/22/think-about-jquery-support/</id>
+    <published>2015-09-22T15:06:06.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天在公交车上，突然想到一个问题。具体是这个样子的。&lt;/p&gt;
+&lt;p&gt;JQuery从1.9版本开始废弃了一个对象&lt;code&gt;$.browser&lt;/code&gt;。此对象在jq1.9之前的版本中，常用于浏览器的检测，比如&lt;/p&gt;
+&lt;figure class=&quot;highlight j
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+      <category term="jquery" scheme="http://blog.gejiawen.com/tags/jquery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript实用黑科技45条</title>
+    <link href="http://blog.gejiawen.com/2015/09/22/45-useful-javascript-tips-tricks-and-best-practices/"/>
+    <id>http://blog.gejiawen.com/2015/09/22/45-useful-javascript-tips-tricks-and-best-practices/</id>
+    <published>2015-09-22T12:22:00.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文是一篇翻译文章。原文：&lt;a href=&quot;http://modernweb.com/2013/12/23/45-useful-javascript-tips-tricks-and-best-practices/&quot; target=&quot;_blank&quot; rel=&quot;external
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+      <category term="翻译" scheme="http://blog.gejiawen.com/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="黑科技" scheme="http://blog.gejiawen.com/tags/%E9%BB%91%E7%A7%91%E6%8A%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript中使用RegExp的简略指南</title>
+    <link href="http://blog.gejiawen.com/2015/09/17/regexp-in-javascript/"/>
+    <id>http://blog.gejiawen.com/2015/09/17/regexp-in-javascript/</id>
+    <published>2015-09-17T02:42:14.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;RegExp是Javascript中的一个内置对象。使用它可以在javascript中进行一些正则方面的操作。本文打不打算详细的介绍RegE
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="正则表达式" scheme="http://blog.gejiawen.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>读文笔记：认识URI和URL</title>
+    <link href="http://blog.gejiawen.com/2015/09/14/different-between-url-and-uri/"/>
+    <id>http://blog.gejiawen.com/2015/09/14/different-between-url-and-uri/</id>
+    <published>2015-09-14T07:27:02.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前两天在看&lt;a href=&quot;http://item.jd.com/11449491.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;图解HTTP&lt;/a&gt;，其中有关于url和uri的相关叙述。想起之前我也是对这两个概念理解的很模糊，看了网上的各种资源
+    
+    </summary>
+    
+      <category term="读文笔记" scheme="http://blog.gejiawen.com/categories/%E8%AF%BB%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="http" scheme="http://blog.gejiawen.com/tags/http/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Chrome插件开发简要指南</title>
+    <link href="http://blog.gejiawen.com/2015/08/18/chrome-plugin-dev-guide/"/>
+    <id>http://blog.gejiawen.com/2015/08/18/chrome-plugin-dev-guide/</id>
+    <published>2015-08-18T06:48:49.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Chrome是个非常牛逼的浏览器，速度快，界面清爽，对开发人员友好。而且提供了种类齐全且高质的插件。今天我们就来简单聊一聊如何开发chrome插件。&lt;/p&gt;
+&lt;h1 id=&quot;基本知识&quot;&gt;&lt;a href=&quot;#基本知识&quot; class=&quot;headerlink&quot; title=&quot;基本
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="chrome" scheme="http://blog.gejiawen.com/tags/chrome/"/>
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>通读Cheerio文档</title>
+    <link href="http://blog.gejiawen.com/2015/08/17/read-cheerio-doc/"/>
+    <id>http://blog.gejiawen.com/2015/08/17/read-cheerio-doc/</id>
+    <published>2015-08-17T09:18:48.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/cheeriojs/cheerio&quot; target=&quot;_blank&quot; rel=&quot;ex
+    
+    </summary>
+    
+      <category term="NODEJS" scheme="http://blog.gejiawen.com/categories/NODEJS/"/>
+    
+    
+      <category term="nodejs" scheme="http://blog.gejiawen.com/tags/nodejs/"/>
+    
+      <category term="漫游NodeJS系列" scheme="http://blog.gejiawen.com/tags/%E6%BC%AB%E6%B8%B8NodeJS%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="翻译" scheme="http://blog.gejiawen.com/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="cheerio" scheme="http://blog.gejiawen.com/tags/cheerio/"/>
+    
+      <category term="中文文档" scheme="http://blog.gejiawen.com/tags/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>通读SuperAgent文档</title>
+    <link href="http://blog.gejiawen.com/2015/08/14/read-superagent-doc/"/>
+    <id>http://blog.gejiawen.com/2015/08/14/read-superagent-doc/</id>
+    <published>2015-08-14T08:51:17.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文主要参考superagent的&lt;a href=&quot;http://visionmedia.github.io/superagent/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方文档&lt;/a&gt;，基本上就是它的翻译。&lt;/p&gt;
+&lt;p&gt;题外话，superag
+    
+    </summary>
+    
+      <category term="NODEJS" scheme="http://blog.gejiawen.com/categories/NODEJS/"/>
+    
+    
+      <category term="nodejs" scheme="http://blog.gejiawen.com/tags/nodejs/"/>
+    
+      <category term="漫游NodeJS系列" scheme="http://blog.gejiawen.com/tags/%E6%BC%AB%E6%B8%B8NodeJS%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="翻译" scheme="http://blog.gejiawen.com/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="中文文档" scheme="http://blog.gejiawen.com/tags/%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3/"/>
+    
+      <category term="superagent" scheme="http://blog.gejiawen.com/tags/superagent/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Express4入门指南</title>
+    <link href="http://blog.gejiawen.com/2015/08/13/first-to-express4-guide/"/>
+    <id>http://blog.gejiawen.com/2015/08/13/first-to-express4-guide/</id>
+    <published>2015-08-13T06:52:29.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://expressjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Express&lt;/a&gt;是基于&lt;a href=&quot;https://nodejs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;
+    
+    </summary>
+    
+      <category term="NODEJS" scheme="http://blog.gejiawen.com/categories/NODEJS/"/>
+    
+    
+      <category term="nodejs" scheme="http://blog.gejiawen.com/tags/nodejs/"/>
+    
+      <category term="漫游NodeJS系列" scheme="http://blog.gejiawen.com/tags/%E6%BC%AB%E6%B8%B8NodeJS%E7%B3%BB%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript中浮点数的计算精度问题</title>
+    <link href="http://blog.gejiawen.com/2015/08/11/javascript-float-count-precision/"/>
+    <id>http://blog.gejiawen.com/2015/08/11/javascript-float-count-precision/</id>
+    <published>2015-08-11T10:01:15.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如果我问你 0.1 + 0.2 = ？你可能会觉得我是个傻逼。因为这个连学龄前的小朋友可能都知道答案呢。&lt;/p&gt;
+&lt;p&gt;在现实生活中0.1 + 0.2 = 0.3，这当然没什么问题的。但是在程序语言中，或者说计算机世界中，可就不一定了。&lt;/p&gt;
+&lt;p&gt;不信？那我们来做几个实
+    
+    </summary>
+    
+      <category term="踩坑录" scheme="http://blog.gejiawen.com/categories/%E8%B8%A9%E5%9D%91%E5%BD%95/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>npm adduser的坑</title>
+    <link href="http://blog.gejiawen.com/2015/08/05/npm-adduser-refuse/"/>
+    <id>http://blog.gejiawen.com/2015/08/05/npm-adduser-refuse/</id>
+    <published>2015-08-05T12:10:32.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;场景回放&quot;&gt;&lt;a href=&quot;#场景回放&quot; class=&quot;headerlink&quot; title=&quot;场景回放&quot;&gt;&lt;/a&gt;场景回放&lt;/h1&gt;&lt;p&gt;今天在折腾&lt;a href=&quot;https://github.com/gejiawen/nproxy2&quot; target=&quot;_bl
+    
+    </summary>
+    
+      <category term="踩坑录" scheme="http://blog.gejiawen.com/categories/%E8%B8%A9%E5%9D%91%E5%BD%95/"/>
+    
+    
+      <category term="nodejs" scheme="http://blog.gejiawen.com/tags/nodejs/"/>
+    
+      <category term="npm" scheme="http://blog.gejiawen.com/tags/npm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES2015新特性简介</title>
+    <link href="http://blog.gejiawen.com/2015/07/28/es2015-new-feature/"/>
+    <id>http://blog.gejiawen.com/2015/07/28/es2015-new-feature/</id>
+    <published>2015-07-28T10:26:10.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;ES6（ECMAScript 6）终于在2015年6月正式发布了。距离上一次正式公开的ES5（于2009年发布的）已经相距了不短的时间了。其实在ES6正式发布之前的一段时间内，ECMA组织已经不再向ES6中添加新特性了，所以其实在ES6正式发布之前，业界已经有许多对ES6的
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="es6" scheme="http://blog.gejiawen.com/tags/es6/"/>
+    
+      <category term="ECMAScript6学习笔记系列" scheme="http://blog.gejiawen.com/tags/ECMAScript6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B3%BB%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ES2015学习笔记系列</title>
+    <link href="http://blog.gejiawen.com/2015/07/27/es2015-series/"/>
+    <id>http://blog.gejiawen.com/2015/07/27/es2015-series/</id>
+    <published>2015-07-27T13:08:30.000Z</published>
+    <updated>2016-09-24T14:01:54.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本系列将整理一系列博主学习ECMAScript最新修正版&lt;a href=&quot;http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf&quot; target=&quot;_blank&quot; rel=&quot;exte
+    
+    </summary>
+    
+      <category term="系列" scheme="http://blog.gejiawen.com/categories/%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="目录" scheme="http://blog.gejiawen.com/tags/%E7%9B%AE%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ECMAScript5.1及其新增API简介</title>
+    <link href="http://blog.gejiawen.com/2015/07/27/es5-new-api/"/>
+    <id>http://blog.gejiawen.com/2015/07/27/es5-new-api/</id>
+    <published>2015-07-27T08:03:09.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;以前一种对ECMAScript的概念比较模糊，以及它跟Javascript、Jscript等脚本语言之间的关系不是太明白。本篇文章将就这些问题展示叙述。&lt;/p&gt;
+&lt;h1 id=&quot;什么是ECMAScript&quot;&gt;&lt;a href=&quot;#什么是ECMAScript&quot; class=&quot;h
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="es5" scheme="http://blog.gejiawen.com/tags/es5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS3 Flexbox属性与弹性盒模型</title>
+    <link href="http://blog.gejiawen.com/2015/05/20/css3-flexbox-guide/"/>
+    <id>http://blog.gejiawen.com/2015/05/20/css3-flexbox-guide/</id>
+    <published>2015-05-20T10:12:00.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h1&gt;&lt;p&gt;CSS3新增的&lt;a href=&quot;http://www.w3.org/TR/css-flexbox/&quot; target=&quot;_blank&quot; rel
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css3" scheme="http://blog.gejiawen.com/tags/css3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS3媒体查询与自适应网页设计</title>
+    <link href="http://blog.gejiawen.com/2015/05/18/css3-media-query-and-responsive-design/"/>
+    <id>http://blog.gejiawen.com/2015/05/18/css3-media-query-and-responsive-design/</id>
+    <published>2015-05-18T08:24:46.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前序&quot;&gt;&lt;a href=&quot;#前序&quot; class=&quot;headerlink&quot; title=&quot;前序&quot;&gt;&lt;/a&gt;前序&lt;/h1&gt;&lt;p&gt;Media Query（媒体查询）是CSS3中的新增内容，用于定义&lt;strong&gt;不同媒体类型在不同CSS属性时的样式表现&lt;/strong&gt;
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css3" scheme="http://blog.gejiawen.com/tags/css3/"/>
+    
+      <category term="响应式布局" scheme="http://blog.gejiawen.com/tags/%E5%93%8D%E5%BA%94%E5%BC%8F%E5%B8%83%E5%B1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS动画攻略</title>
+    <link href="http://blog.gejiawen.com/2015/05/05/css-animation-guide/"/>
+    <id>http://blog.gejiawen.com/2015/05/05/css-animation-guide/</id>
+    <published>2015-05-05T09:18:30.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在网页设计中给适当的元素添加动画交互无疑是一个大幅度提升用户体验的措施。纵观整个Web开发的发展历史，从最早的原始阶段（都是静态页面），到如今这样一个非常讲究用户体验的时代，人们越来越在意页面的表现能力（用户体验），干巴巴的展现内容往往是没有什么竞争力的。&lt;/p&gt;
+&lt;p&gt;就
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css研究" scheme="http://blog.gejiawen.com/tags/css%E7%A0%94%E7%A9%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS3阴影和反射</title>
+    <link href="http://blog.gejiawen.com/2015/05/05/css3-shadow-and-reflect/"/>
+    <id>http://blog.gejiawen.com/2015/05/05/css3-shadow-and-reflect/</id>
+    <published>2015-05-05T02:28:45.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;对网页设计人员来说，阴影可能是比较常用的一种用来增强页面修饰的手段（可能反射用的频率较少）。在CSS3支持阴影和反射效果之前，大部分的解决方案都是通过图片来展现所需要的效果，但是我们知道使用图片往往会有各种弊端。本篇文章将会阐述CSS3中阴影和反射的一系列使用方法。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css3" scheme="http://blog.gejiawen.com/tags/css3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS3渐变</title>
+    <link href="http://blog.gejiawen.com/2015/04/23/css3-gradient-guide/"/>
+    <id>http://blog.gejiawen.com/2015/04/23/css3-gradient-guide/</id>
+    <published>2015-04-23T12:22:10.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;⚠️注意&lt;/strong&gt;：由于CSS3中的部分内容尚未完全定稿，所以本文的部分可能会随时更新。&lt;/p&gt;
+&lt;h1 id=&quot;缘起&quot;&gt;&lt;a href=&quot;#缘起&quot; class=&quot;headerlink&quot; title=&quot;缘起&quot;&gt;&lt;/a&gt;缘起&lt;/h1&gt;&lt;p&gt;在之前的一篇
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css3" scheme="http://blog.gejiawen.com/tags/css3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS3圆角</title>
+    <link href="http://blog.gejiawen.com/2015/04/23/css3-radius-guide/"/>
+    <id>http://blog.gejiawen.com/2015/04/23/css3-radius-guide/</id>
+    <published>2015-04-23T03:52:48.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：由于CSS3中的部分内容尚未完全定稿，所以本文的部分可能会随时更新。&lt;/p&gt;
+&lt;p&gt;CSS Level3中正式开始支持圆角属性，官方给出的文档在&lt;a href=&quot;http://www.w3.org/TR/css3-background
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css3" scheme="http://blog.gejiawen.com/tags/css3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS3背景</title>
+    <link href="http://blog.gejiawen.com/2015/04/21/css3-background-guide/"/>
+    <id>http://blog.gejiawen.com/2015/04/21/css3-background-guide/</id>
+    <published>2015-04-21T11:55:27.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：由于CSS3中的部分内容尚未完全定稿，所以本文的部分可能会随时更新。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.w3.org/TR/css3-background/&quot; target=&quot;_blank&quot; rel=&quot;extern
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css3" scheme="http://blog.gejiawen.com/tags/css3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用::selection自定义选中文本的颜色</title>
+    <link href="http://blog.gejiawen.com/2015/04/14/usage-for-selection-pseudo-class/"/>
+    <id>http://blog.gejiawen.com/2015/04/14/usage-for-selection-pseudo-class/</id>
+    <published>2015-04-13T17:42:31.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;selection&quot;&gt;&lt;a href=&quot;#selection&quot; class=&quot;headerlink&quot; title=&quot;::selection&quot;&gt;&lt;/a&gt;::selection&lt;/h1&gt;&lt;p&gt;有的人在浏览网页时，喜欢一边选中文本一边阅读（博主就是这类强迫症患者）。在浏
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css技巧" scheme="http://blog.gejiawen.com/tags/css%E6%8A%80%E5%B7%A7/"/>
+    
+      <category term="css" scheme="http://blog.gejiawen.com/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS3多列布局</title>
+    <link href="http://blog.gejiawen.com/2015/04/14/css3-multi-column-guide/"/>
+    <id>http://blog.gejiawen.com/2015/04/14/css3-multi-column-guide/</id>
+    <published>2015-04-13T16:15:38.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：由于CSS3中的部分内容尚未完全定稿，所以本文的部分可能会随时更新。&lt;/p&gt;
+&lt;p&gt;CSS3中新出现的多列布局(&lt;a href=&quot;http://www.w3.org/TR/css3-multicol/&quot; target=&quot;_blank&quot;
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css3" scheme="http://blog.gejiawen.com/tags/css3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS选择器的一般性优化建议</title>
+    <link href="http://blog.gejiawen.com/2015/04/13/suggestion-for-css-selectors/"/>
+    <id>http://blog.gejiawen.com/2015/04/13/suggestion-for-css-selectors/</id>
+    <published>2015-04-13T13:56:00.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如何对选择器进行优化并不是一个那么新鲜的话题，但是个人觉得，css作为前端开发人员一项必备的专业技能，有必要深入了解下css在页面渲染的一些关键点，并以此为css的优化提供依据。我们这篇文章将讨论选择器优化的一般性建议。&lt;/p&gt;
+&lt;h1 id=&quot;浏览器如何应用选择器&quot;&gt;&lt;a
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css研究" scheme="http://blog.gejiawen.com/tags/css%E7%A0%94%E7%A9%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS3新特性概述</title>
+    <link href="http://blog.gejiawen.com/2015/04/13/css3-new-feature/"/>
+    <id>http://blog.gejiawen.com/2015/04/13/css3-new-feature/</id>
+    <published>2015-04-13T09:03:49.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：由于CSS3中的部分内容尚未完全定稿，所以本文的部分可能会随时更新。&lt;/p&gt;
+&lt;h1 id=&quot;缘起&quot;&gt;&lt;a href=&quot;#缘起&quot; class=&quot;headerlink&quot; title=&quot;缘起&quot;&gt;&lt;/a&gt;缘起&lt;/h1&gt;&lt;p&gt;W3C的官方文档
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css3" scheme="http://blog.gejiawen.com/tags/css3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>初识CSS3选择器</title>
+    <link href="http://blog.gejiawen.com/2015/04/09/first-to-css3-selectors/"/>
+    <id>http://blog.gejiawen.com/2015/04/09/first-to-css3-selectors/</id>
+    <published>2015-04-08T17:26:15.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;注意&lt;/strong&gt;：由于CSS3中的部分内容尚未完全定稿，所以本文的部分可能会随时更新。&lt;/p&gt;
+&lt;p&gt;现在谈起CSS3的相关内容，其实CSS3已经不算是一个新东西了，毕竟出来有一段时间了。不过我却没有什么系统的经验，上次被人问到是否了解CSS3新增的选
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css3" scheme="http://blog.gejiawen.com/tags/css3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浅谈前端模版</title>
+    <link href="http://blog.gejiawen.com/2015/04/08/talk-about-fontend-templates/"/>
+    <id>http://blog.gejiawen.com/2015/04/08/talk-about-fontend-templates/</id>
+    <published>2015-04-08T14:59:05.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;随着近几年Web方面技术的爆发式发展，前端应用变得越来越复杂，基于后端的Node.js（io.js）也开始拥有了自己的一片天地，谁也没能想到Javascript这样一门在几年前被看作是玩具的客户端脚本语言现在被赋予了新的生命力。依稀记得大学那会学习web开发时，不止一次的被
+    
+    </summary>
+    
+      <category term="大前端" scheme="http://blog.gejiawen.com/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+      <category term="前端模版" scheme="http://blog.gejiawen.com/tags/%E5%89%8D%E7%AB%AF%E6%A8%A1%E7%89%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS中易混淆方法备忘录</title>
+    <link href="http://blog.gejiawen.com/2015/04/02/confused-methods-in-javascript/"/>
+    <id>http://blog.gejiawen.com/2015/04/02/confused-methods-in-javascript/</id>
+    <published>2015-04-02T09:52:46.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;本篇文章将会持续更新，以便收录将来可能会出现让博主犯糊涂的方法们。。。。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;Array&lt;/code&gt;对象是Javascript内置的&lt;a href=&quot;https://developer.mozil
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JS中的双向数据绑定及Object.defineProperty方法</title>
+    <link href="http://blog.gejiawen.com/2015/04/02/2-way-data-binding-and-define-property/"/>
+    <id>http://blog.gejiawen.com/2015/04/02/2-way-data-binding-and-define-property/</id>
+    <published>2015-04-02T02:35:01.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;缘起&quot;&gt;&lt;a href=&quot;#缘起&quot; class=&quot;headerlink&quot; title=&quot;缘起&quot;&gt;&lt;/a&gt;缘起&lt;/h1&gt;&lt;p&gt;前几天在看一些流行的迷你mvvm框架（比如&lt;a href=&quot;http://avalonjs.github.io/&quot; target=&quot;_bla
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jsdoc简明指南</title>
+    <link href="http://blog.gejiawen.com/2015/03/23/light-guide-for-jsdoc/"/>
+    <id>http://blog.gejiawen.com/2015/03/23/light-guide-for-jsdoc/</id>
+    <published>2015-03-23T08:39:39.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;为何要使用jsdoc&quot;&gt;&lt;a href=&quot;#为何要使用jsdoc&quot; class=&quot;headerlink&quot; title=&quot;为何要使用jsdoc&quot;&gt;&lt;/a&gt;为何要使用jsdoc&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://usejsdoc.org/index.htm
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="jsdoc" scheme="http://blog.gejiawen.com/tags/jsdoc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>区分JS中的__proto__和prototype</title>
+    <link href="http://blog.gejiawen.com/2015/03/18/different-from-proto-and-prototype/"/>
+    <id>http://blog.gejiawen.com/2015/03/18/different-from-proto-and-prototype/</id>
+    <published>2015-03-18T08:29:26.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们知道javascript是&lt;strong&gt;基于原型（prototype）继承&lt;/strong&gt;的语言。关于javascript原型继承的更多内容请参阅之前的这篇文章&lt;a href=&quot;http://blog.gejiawen.com/2014/10/16/prototyp
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NodeJS模块全面指南</title>
+    <link href="http://blog.gejiawen.com/2015/03/17/nodejs-module-guide/"/>
+    <id>http://blog.gejiawen.com/2015/03/17/nodejs-module-guide/</id>
+    <published>2015-03-17T10:16:24.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;NodeJS模块&quot;&gt;&lt;a href=&quot;#NodeJS模块&quot; class=&quot;headerlink&quot; title=&quot;NodeJS模块&quot;&gt;&lt;/a&gt;NodeJS模块&lt;/h1&gt;&lt;p&gt;所谓的NodeJS模块其实就是指NodeJS package，即nodejs包。&lt;/p&gt;
+&lt;
+    
+    </summary>
+    
+      <category term="NODEJS" scheme="http://blog.gejiawen.com/categories/NODEJS/"/>
+    
+    
+      <category term="nodejs" scheme="http://blog.gejiawen.com/tags/nodejs/"/>
+    
+      <category term="漫游NodeJS系列" scheme="http://blog.gejiawen.com/tags/%E6%BC%AB%E6%B8%B8NodeJS%E7%B3%BB%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>漫游NodeJS系列</title>
+    <link href="http://blog.gejiawen.com/2015/03/17/nodejs-series/"/>
+    <id>http://blog.gejiawen.com/2015/03/17/nodejs-series/</id>
+    <published>2015-03-17T09:16:40.000Z</published>
+    <updated>2016-09-21T17:03:27.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;为什么会有这个系列&quot;&gt;&lt;a href=&quot;#为什么会有这个系列&quot; class=&quot;headerlink&quot; title=&quot;为什么会有这个系列&quot;&gt;&lt;/a&gt;为什么会有这个系列&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://blog.gejiawen.com/2015/03/
+    
+    </summary>
+    
+      <category term="系列" scheme="http://blog.gejiawen.com/categories/%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="目录" scheme="http://blog.gejiawen.com/tags/%E7%9B%AE%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>认识CSS权重</title>
+    <link href="http://blog.gejiawen.com/2015/03/16/css-weight-guide/"/>
+    <id>http://blog.gejiawen.com/2015/03/16/css-weight-guide/</id>
+    <published>2015-03-16T10:07:51.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://www.w3.org/TR/CSS2/cascade.html#specificity&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CSS权重&lt;/a&gt;是在使用CSS进行布局时经常会遇到的一个问题，我们针对某一些元素应用一些
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css" scheme="http://blog.gejiawen.com/tags/css/"/>
+    
+      <category term="css科普" scheme="http://blog.gejiawen.com/tags/css%E7%A7%91%E6%99%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS常用布局之各种元素的水平垂直居中</title>
+    <link href="http://blog.gejiawen.com/2015/03/13/css-layout-horizontal-and-vertical-for-elements/"/>
+    <id>http://blog.gejiawen.com/2015/03/13/css-layout-horizontal-and-vertical-for-elements/</id>
+    <published>2015-03-13T03:22:49.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;水平（垂直）居中是CSS布局中经常会遇到的一个场景。但是由于各个元素的差异（比如不同的元素可分为&lt;strong&gt;行内元素&lt;/strong&gt;，&lt;strong&gt;行内块级元素&lt;/strong&gt;，&lt;strong&gt;块级元素&lt;/strong&gt;等），其水平或者垂直居中的策略也是不一样的。
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css技巧" scheme="http://blog.gejiawen.com/tags/css%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS常用布局之宽高自适应</title>
+    <link href="http://blog.gejiawen.com/2015/03/12/css-layout-width-height-responsive/"/>
+    <id>http://blog.gejiawen.com/2015/03/12/css-layout-width-height-responsive/</id>
+    <published>2015-03-12T13:52:27.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本篇文章将会介绍CSS布局中可能经常会遇到宽度或者高度自适应问题。&lt;/p&gt;
+&lt;h1 id=&quot;宽度自适应&quot;&gt;&lt;a href=&quot;#宽度自适应&quot; class=&quot;headerlink&quot; title=&quot;宽度自适应&quot;&gt;&lt;/a&gt;宽度自适应&lt;/h1&gt;&lt;p&gt;我们经常会看到这样的页面，左侧（或
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css技巧" scheme="http://blog.gejiawen.com/tags/css%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浅析Date对象及常用时间格式</title>
+    <link href="http://blog.gejiawen.com/2015/03/11/light-guide-to-date-format/"/>
+    <id>http://blog.gejiawen.com/2015/03/11/light-guide-to-date-format/</id>
+    <published>2015-03-11T10:29:24.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;Date&lt;/code&gt;（时间）对象是JavaScript在浏览器环境的一个内置对象，用于处理客户端时间逻辑。本篇文章将会简单的介绍Date对象，重点是介绍Web开发中涉及到时间时常用的几种时间字符串格式。&lt;/p&gt;
+&lt;h1 id=&quot;Date对象&quot;&gt;&lt;a href=
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS控制本文换行：word-wrap与word-break</title>
+    <link href="http://blog.gejiawen.com/2015/03/09/usage-for-word-wrap-and-word-break/"/>
+    <id>http://blog.gejiawen.com/2015/03/09/usage-for-word-wrap-and-word-break/</id>
+    <published>2015-03-09T04:43:52.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在页面上对文本进行修饰的时候，特别是针对西文文本，往往会涉及到单词过长需要换行的问题（这里暂不讨论&lt;a href=&quot;http://baike.baidu.com/link?url=9xJ8r-baLr_w8ahUivDOKViqJ3HnjpRlkc1eyqrJ6CYlShT
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css科普" scheme="http://blog.gejiawen.com/tags/css%E7%A7%91%E6%99%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS布局模型</title>
+    <link href="http://blog.gejiawen.com/2015/03/04/css-layout-model/"/>
+    <id>http://blog.gejiawen.com/2015/03/04/css-layout-model/</id>
+    <published>2015-03-04T09:10:48.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;CSS布局模型，又称为CCS盒布局模型。其实布局模型是建立在盒模型基础之上的，但是又不同于我们常说的CSS布局样式或CSS布局模板。如果说布局模型是本质，那么CSS布局模板就是外在的表现形式。&lt;/p&gt;
+&lt;p&gt;CSS包含3中基本的布局模型，分别为：Flow（流动布局模型）、F
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css科普" scheme="http://blog.gejiawen.com/tags/css%E7%A7%91%E6%99%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>WebFont与页面ICON图标研究</title>
+    <link href="http://blog.gejiawen.com/2015/03/04/webfont-and-icon-guide/"/>
+    <id>http://blog.gejiawen.com/2015/03/04/webfont-and-icon-guide/</id>
+    <published>2015-03-04T06:20:34.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;当你打开（绝大部分）网站，页面上将会有许多形形色色的小图标（icon），适当的icon的可以达到一图胜千言的目的，使网页的表现效果更佳。&lt;/p&gt;
+&lt;p&gt;关于页面icon的制作，比较传统的方法是，让设计师去设计一个个的小图片，然后网页程式员再将设计好的icon放到页面上适当的
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css研究" scheme="http://blog.gejiawen.com/tags/css%E7%A0%94%E7%A9%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS的长度单位参考</title>
+    <link href="http://blog.gejiawen.com/2015/03/03/css-length-unit-guide/"/>
+    <id>http://blog.gejiawen.com/2015/03/03/css-length-unit-guide/</id>
+    <published>2015-03-03T03:38:36.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;CSS中有相当一部分属性的值是根据长度来定义的，而长度单位在CSS中并不是统一的，本文将详细介绍CSS（及CSS3新增的）几种长度单位，并给出常用场景。&lt;/p&gt;
+&lt;p&gt;按照大的类别来分，CSS的长度单位可分为绝对长度单位和相对长度单位。&lt;/p&gt;
+&lt;h1 id=&quot;绝对长度单位
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css科普" scheme="http://blog.gejiawen.com/tags/css%E7%A7%91%E6%99%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>回顾2014，展望2015</title>
+    <link href="http://blog.gejiawen.com/2015/03/02/bye-2014-and-hello-2015/"/>
+    <id>http://blog.gejiawen.com/2015/03/02/bye-2014-and-hello-2015/</id>
+    <published>2015-03-02T05:26:27.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我的历年总结&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/2015/03/02/bye-2014-and-hello-2015&quot;&gt;回顾2014，展望2015&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;正文开始&lt;/p&gt;
+&lt;p&gt;从2015年的1月份开始，由于一些杂七杂八的
+    
+    </summary>
+    
+      <category term="计划与总结" scheme="http://blog.gejiawen.com/categories/%E8%AE%A1%E5%88%92%E4%B8%8E%E6%80%BB%E7%BB%93/"/>
+    
+    
+      <category term="总结" scheme="http://blog.gejiawen.com/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="年末总结" scheme="http://blog.gejiawen.com/tags/%E5%B9%B4%E6%9C%AB%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>gulp vs. grunt</title>
+    <link href="http://blog.gejiawen.com/2015/01/09/gulp-vs-grunt/"/>
+    <id>http://blog.gejiawen.com/2015/01/09/gulp-vs-grunt/</id>
+    <published>2015-01-09T05:17:58.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;http://gulpjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Gulp&lt;/a&gt;和&lt;a href=&quot;http://gruntjs.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Grunt&lt;/
+    
+    </summary>
+    
+      <category term="NODEJS" scheme="http://blog.gejiawen.com/categories/NODEJS/"/>
+    
+    
+      <category term="gulp" scheme="http://blog.gejiawen.com/tags/gulp/"/>
+    
+      <category term="nodejs" scheme="http://blog.gejiawen.com/tags/nodejs/"/>
+    
+      <category term="漫游NodeJS系列" scheme="http://blog.gejiawen.com/tags/%E6%BC%AB%E6%B8%B8NodeJS%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="grunt" scheme="http://blog.gejiawen.com/tags/grunt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深入理解JavaScript系列（7）-根本就没有“JSON对象”这回事！</title>
+    <link href="http://blog.gejiawen.com/2014/12/30/deep-into-javascript-about-json-object/"/>
+    <id>http://blog.gejiawen.com/2014/12/30/deep-into-javascript-about-json-object/</id>
+    <published>2014-12-30T11:25:03.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文是&lt;a href=&quot;http://blog.gejiawen.com/2014/11/13/deep-into-javascript-series/&quot;&gt;深入理解JavaScript系列&lt;/a&gt;的第&lt;strong&gt;七&lt;/strong&gt;篇读文笔记，博客原文在&lt;a href=
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+      <category term="深入理解JavaScript系列" scheme="http://blog.gejiawen.com/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JavaScript%E7%B3%BB%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深入理解JavaScript系列（6）-JavaScript中的S.O.L.I.D原则</title>
+    <link href="http://blog.gejiawen.com/2014/12/30/deep-into-javascript-solid-rules/"/>
+    <id>http://blog.gejiawen.com/2014/12/30/deep-into-javascript-solid-rules/</id>
+    <published>2014-12-30T10:38:03.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文是&lt;a href=&quot;http://blog.gejiawen.com/2014/11/13/deep-into-javascript-series/&quot;&gt;深入理解JavaScript系列&lt;/a&gt;的第&lt;strong&gt;六&lt;/strong&gt;篇读文笔记，博客原文如下，&lt;/p&gt;
+&lt;
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+      <category term="深入理解JavaScript系列" scheme="http://blog.gejiawen.com/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JavaScript%E7%B3%BB%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深入理解JavaScript系列（5）-强大的原型和原型链</title>
+    <link href="http://blog.gejiawen.com/2014/12/29/deep-into-javascript-prototype-and-prototype-chain/"/>
+    <id>http://blog.gejiawen.com/2014/12/29/deep-into-javascript-prototype-and-prototype-chain/</id>
+    <published>2014-12-29T12:53:27.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文是&lt;a href=&quot;http://blog.gejiawen.com/2014/11/13/deep-into-javascript-series/&quot;&gt;深入理解JavaScript系列&lt;/a&gt;的第&lt;strong&gt;五&lt;/strong&gt;篇读文笔记，博客原文在&lt;a href=
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+      <category term="深入理解JavaScript系列" scheme="http://blog.gejiawen.com/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JavaScript%E7%B3%BB%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Angularjs的ng-cloak指令避免页面乱码</title>
+    <link href="http://blog.gejiawen.com/2014/12/28/usage-for-angularjs-ng-cloak/"/>
+    <id>http://blog.gejiawen.com/2014/12/28/usage-for-angularjs-ng-cloak/</id>
+    <published>2014-12-28T08:10:58.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在使用Anguarjs进行web开发或者进行SPA（single page application）开发时，往往会遇到下面这样的问题。&lt;/p&gt;
+&lt;p&gt;刷新页面时，页面会出现一些乱码，这里的乱码具体是指`{{expression}}`或者`{{expression | fil
+    
+    </summary>
+    
+      <category term="ANGULARJS" scheme="http://blog.gejiawen.com/categories/ANGULARJS/"/>
+    
+    
+      <category term="ng" scheme="http://blog.gejiawen.com/tags/ng/"/>
+    
+      <category term="实践" scheme="http://blog.gejiawen.com/tags/%E5%AE%9E%E8%B7%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS如何使元素水平垂直定位</title>
+    <link href="http://blog.gejiawen.com/2014/12/21/how-to-horizontal-and-vertical-positioning/"/>
+    <id>http://blog.gejiawen.com/2014/12/21/how-to-horizontal-and-vertical-positioning/</id>
+    <published>2014-12-21T03:28:54.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;作为一名前端工程师，在进行web页面开发的时候，可能会遇到这样一种问题：如何使一个元素相对父容器水平垂直居中，也就是所谓的绝对居中呢？这篇文章将会针对这个问题介绍几种常用的方法。&lt;/p&gt;
+&lt;p&gt;谈到这个问题，相信有点经验的同学们可能心里已经有了答案了。&lt;/p&gt;
+&lt;p&gt;不过，
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css技巧" scheme="http://blog.gejiawen.com/tags/css%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS如何让页脚固定在页面底部</title>
+    <link href="http://blog.gejiawen.com/2014/12/16/how-to-fix-footer-to-bottom/"/>
+    <id>http://blog.gejiawen.com/2014/12/16/how-to-fix-footer-to-bottom/</id>
+    <published>2014-12-16T12:35:36.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在进行Web开发实现页面时，可能会遇到这样一种场景：将页脚footer固定在页面的底部，如果页面的主体不能充满屏幕高度，则footer位于&lt;strong&gt;屏幕的底部&lt;/strong&gt;；如果页面的主体超出了屏幕高度，则footer始终位于&lt;strong&gt;页面底部&lt;/stron
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css技巧" scheme="http://blog.gejiawen.com/tags/css%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS拾遗系列</title>
+    <link href="http://blog.gejiawen.com/2014/12/16/css-series/"/>
+    <id>http://blog.gejiawen.com/2014/12/16/css-series/</id>
+    <published>2014-12-16T06:38:32.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本系列是一个随笔式的学习笔记，主要记录与css相关的一系列内容。&lt;/p&gt;
+&lt;h1 id=&quot;为什么会有这个系列&quot;&gt;&lt;a href=&quot;#为什么会有这个系列&quot; class=&quot;headerlink&quot; title=&quot;为什么会有这个系列&quot;&gt;&lt;/a&gt;为什么会有这个系列&lt;/h1&gt;&lt;p&gt;前段
+    
+    </summary>
+    
+      <category term="系列" scheme="http://blog.gejiawen.com/categories/%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="目录" scheme="http://blog.gejiawen.com/tags/%E7%9B%AE%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深入理解JavaScript系列（4）-立即调用的函数表达式</title>
+    <link href="http://blog.gejiawen.com/2014/12/15/deep-into-javascript-exec-function-expression/"/>
+    <id>http://blog.gejiawen.com/2014/12/15/deep-into-javascript-exec-function-expression/</id>
+    <published>2014-12-15T12:46:20.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文是&lt;a href=&quot;http://blog.gejiawen.com/2014/11/13/deep-into-javascript-series/&quot;&gt;深入理解JavaScript系列&lt;/a&gt;的第&lt;strong&gt;四&lt;/strong&gt;篇读文笔记，博客原文在&lt;a href=
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+      <category term="深入理解JavaScript系列" scheme="http://blog.gejiawen.com/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JavaScript%E7%B3%BB%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深入理解JavaScript系列（3）-全面解析Module模式</title>
+    <link href="http://blog.gejiawen.com/2014/12/01/deep-into-javascript-module-model/"/>
+    <id>http://blog.gejiawen.com/2014/12/01/deep-into-javascript-module-model/</id>
+    <published>2014-12-01T07:54:58.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文是&lt;a href=&quot;http://blog.gejiawen.com/2014/11/13/deep-into-javascript-series/&quot;&gt;深入理解JavaScript系列&lt;/a&gt;的第&lt;strong&gt;三&lt;/strong&gt;篇读文笔记，博客原文在&lt;a href=
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+      <category term="深入理解JavaScript系列" scheme="http://blog.gejiawen.com/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JavaScript%E7%B3%BB%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript轻量级框架系列（2）--功能强大的幻灯片框架Reveal.js</title>
+    <link href="http://blog.gejiawen.com/2014/11/30/javascript-light-framework-revealjs/"/>
+    <id>http://blog.gejiawen.com/2014/11/30/javascript-light-framework-revealjs/</id>
+    <published>2014-11-30T07:13:55.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文是&lt;a href=&quot;http://blog.gejiawen.com/2014/11/26/%E7%B3%BB%E5%88%97/JavaScript%E8%BD%BB%E9%87%8F%E7%BA%A7%E6%A1%86%E6%9E%B6%E7%B3%BB%E5%88
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+      <category term="JavaScript轻量级框架系列" scheme="http://blog.gejiawen.com/tags/JavaScript%E8%BD%BB%E9%87%8F%E7%BA%A7%E6%A1%86%E6%9E%B6%E7%B3%BB%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript轻量级框架系列</title>
+    <link href="http://blog.gejiawen.com/2014/11/26/javascript-light-framework-series/"/>
+    <id>http://blog.gejiawen.com/2014/11/26/javascript-light-framework-series/</id>
+    <published>2014-11-26T03:04:36.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本系列是一个JavaScript框架学习笔记。主要学习一些流行的、好玩的、有意思的JavaScript&lt;strong&gt;轻量级&lt;/strong&gt;框架，包括&lt;strong&gt;单一功能性框架&lt;/strong&gt;、&lt;strong&gt;工具性框架&lt;/strong&gt;，后期不排除会自己写一两框架
+    
+    </summary>
+    
+      <category term="系列" scheme="http://blog.gejiawen.com/categories/%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="目录" scheme="http://blog.gejiawen.com/tags/%E7%9B%AE%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深入理解JavaScript系列（2）-揭秘命名函数表达式</title>
+    <link href="http://blog.gejiawen.com/2014/11/25/deep-into-javascript-function-expression/"/>
+    <id>http://blog.gejiawen.com/2014/11/25/deep-into-javascript-function-expression/</id>
+    <published>2014-11-25T14:59:34.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文是&lt;a href=&quot;http://blog.gejiawen.com/2014/11/13/deep-into-javascript-series/&quot;&gt;深入理解JavaScript系列&lt;/a&gt;的第&lt;strong&gt;二&lt;/strong&gt;篇读文笔记，博客原文在&lt;a href=
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+      <category term="深入理解JavaScript系列" scheme="http://blog.gejiawen.com/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JavaScript%E7%B3%BB%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>读文笔记：只是为了好玩——Linux之父林纳斯自传</title>
+    <link href="http://blog.gejiawen.com/2014/11/25/read-just-for-fun/"/>
+    <id>http://blog.gejiawen.com/2014/11/25/read-just-for-fun/</id>
+    <published>2014-11-25T03:28:15.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;花了将近两周的时间，将此书看完了。&lt;/p&gt;
+&lt;p&gt;本书以一种轻松幽默的风格阐述了Linus的生平，包括其成长、Linux的诞生、和一些关于对开源及生命等问题的观点。个人认为Linus大神之所以备受业界推崇，不仅仅是他个人在源代码开发上的成就，更多的是他的综合魅力。&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="读文笔记" scheme="http://blog.gejiawen.com/categories/%E8%AF%BB%E6%96%87%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="linux" scheme="http://blog.gejiawen.com/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浅谈CSS中的伪元素和伪类</title>
+    <link href="http://blog.gejiawen.com/2014/11/20/pseudo-element-and-pseudo-class/"/>
+    <id>http://blog.gejiawen.com/2014/11/20/pseudo-element-and-pseudo-class/</id>
+    <published>2014-11-20T07:32:33.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在CSS中，模式匹配（pattern match）规则决定文档树上的元素使用究竟哪个样式规则。这个模式就叫做选择器（selector）。&lt;/p&gt;
+&lt;h1 id=&quot;CSS选择器&quot;&gt;&lt;a href=&quot;#CSS选择器&quot; class=&quot;headerlink&quot; title=&quot;CSS选
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css科普" scheme="http://blog.gejiawen.com/tags/css%E7%A7%91%E6%99%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSS盒模型科普</title>
+    <link href="http://blog.gejiawen.com/2014/11/18/css-box-model-guide/"/>
+    <id>http://blog.gejiawen.com/2014/11/18/css-box-model-guide/</id>
+    <published>2014-11-18T11:07:18.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文写作的目标是对css的盒模型进行科普性阐述，也是自己学习css这么长时间的关于盒模型的一个积累。当然，这篇文章还会涉及到讨论盒模型时最经常遇到的两个问题。最后将会给出一些关于css3中的&lt;code&gt;box-sizing&lt;/code&gt;属性的说明和用法。&lt;/p&gt;
+&lt;h1 i
+    
+    </summary>
+    
+      <category term="CSS" scheme="http://blog.gejiawen.com/categories/CSS/"/>
+    
+    
+      <category term="CSS拾遗系列" scheme="http://blog.gejiawen.com/tags/CSS%E6%8B%BE%E9%81%97%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="css科普" scheme="http://blog.gejiawen.com/tags/css%E7%A7%91%E6%99%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深入理解JavaScript系列（1）-编写高质量JavaScript代码的基本要点</title>
+    <link href="http://blog.gejiawen.com/2014/11/13/deep-into-javascript-points-about-good-javascript-code/"/>
+    <id>http://blog.gejiawen.com/2014/11/13/deep-into-javascript-points-about-good-javascript-code/</id>
+    <published>2014-11-13T04:22:22.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文是&lt;a href=&quot;http://blog.gejiawen.com/2014/11/13/deep-into-javascript-series/&quot;&gt;深入理解JavaScript系列&lt;/a&gt;的第&lt;strong&gt;一&lt;/strong&gt;篇读文笔记，博客原文在&lt;a href=
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+      <category term="深入理解JavaScript系列" scheme="http://blog.gejiawen.com/tags/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3JavaScript%E7%B3%BB%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>深入理解JavaScript系列</title>
+    <link href="http://blog.gejiawen.com/2014/11/13/deep-into-javascript-series/"/>
+    <id>http://blog.gejiawen.com/2014/11/13/deep-into-javascript-series/</id>
+    <published>2014-11-13T03:33:39.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本系列是一个读文笔记，博客原文在&lt;a href=&quot;http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+&lt;h1 id=
+    
+    </summary>
+    
+      <category term="系列" scheme="http://blog.gejiawen.com/categories/%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="目录" scheme="http://blog.gejiawen.com/tags/%E7%9B%AE%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AngularJS指令间的交互</title>
+    <link href="http://blog.gejiawen.com/2014/11/05/action-about-angularjs-directives/"/>
+    <id>http://blog.gejiawen.com/2014/11/05/action-about-angularjs-directives/</id>
+    <published>2014-11-05T02:24:34.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文将介绍AngularJS中指令间的交互方法。&lt;/p&gt;
+&lt;p&gt;假设我们有这样一个场景，&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在一个html元素中有多条指令，且指令间有一些逻辑上的交互。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;那么，我们如何来创建这些指令，而且让这些
+    
+    </summary>
+    
+      <category term="ANGULARJS" scheme="http://blog.gejiawen.com/categories/ANGULARJS/"/>
+    
+    
+      <category term="ng" scheme="http://blog.gejiawen.com/tags/ng/"/>
+    
+      <category term="实践" scheme="http://blog.gejiawen.com/tags/%E5%AE%9E%E8%B7%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Object.observe()带来的数据绑定变革</title>
+    <link href="http://blog.gejiawen.com/2014/10/30/intro-for-observe-and-data-binding/"/>
+    <id>http://blog.gejiawen.com/2014/10/30/intro-for-observe-and-data-binding/</id>
+    <published>2014-10-30T07:48:29.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;英文原文： &lt;a href=&quot;http://www.html5rocks.com/en/tutorials/es7/observe/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Data-binding Revolutions with Ob
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="转载" scheme="http://blog.gejiawen.com/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+      <category term="翻译" scheme="http://blog.gejiawen.com/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="es6" scheme="http://blog.gejiawen.com/tags/es6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>http请求防抖动</title>
+    <link href="http://blog.gejiawen.com/2014/10/30/prevent-http-jitter/"/>
+    <id>http://blog.gejiawen.com/2014/10/30/prevent-http-jitter/</id>
+    <published>2014-10-30T02:15:03.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;假设我们正处在这样的一个场景：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;程序将会根据我们的输入，实时的发送http请求，向后端请求数据。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;此场景的一个实例如下：&lt;/p&gt;
+&lt;p&gt;有一个搜索框，我们在搜索框中输入一些关键字，程序将会&lt;s
+    
+    </summary>
+    
+      <category term="CODER" scheme="http://blog.gejiawen.com/categories/CODER/"/>
+    
+    
+      <category term="实践" scheme="http://blog.gejiawen.com/tags/%E5%AE%9E%E8%B7%B5/"/>
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何在自定义directive的callback中传递参数</title>
+    <link href="http://blog.gejiawen.com/2014/10/24/how-to-pass-args-in-directive-callback/"/>
+    <id>http://blog.gejiawen.com/2014/10/24/how-to-pass-args-in-directive-callback/</id>
+    <published>2014-10-24T08:48:16.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;directive&lt;/strong&gt;是angularjs中一个比较复杂的概念，是用户可自定义html标签的重要手段，本博客之前有&lt;a href=&quot;http://blog.gejiawen.com/2014/07/16/usage-for-angularjs-
+    
+    </summary>
+    
+      <category term="ANGULARJS" scheme="http://blog.gejiawen.com/categories/ANGULARJS/"/>
+    
+    
+      <category term="ng" scheme="http://blog.gejiawen.com/tags/ng/"/>
+    
+      <category term="实践" scheme="http://blog.gejiawen.com/tags/%E5%AE%9E%E8%B7%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何在自定义的directive中使用自定义的filter</title>
+    <link href="http://blog.gejiawen.com/2014/10/24/how-to-use-custom-filter-in-custom-directive/"/>
+    <id>http://blog.gejiawen.com/2014/10/24/how-to-use-custom-filter-in-custom-directive/</id>
+    <published>2014-10-24T07:49:40.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;笔者前两天在使用AngularJS做一个项目时，遇到这样一个需求，&lt;strong&gt;在一个自定义的directive中使用一个自定义的filter&lt;/strong&gt;。刚开始我没有意识到这里面会涉及&lt;strong&gt;依赖注入&lt;/strong&gt;的问题（唉，人蠢没办法啊！），导致走了
+    
+    </summary>
+    
+      <category term="ANGULARJS" scheme="http://blog.gejiawen.com/categories/ANGULARJS/"/>
+    
+    
+      <category term="ng" scheme="http://blog.gejiawen.com/tags/ng/"/>
+    
+      <category term="实践" scheme="http://blog.gejiawen.com/tags/%E5%AE%9E%E8%B7%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何导出NodeJS模块</title>
+    <link href="http://blog.gejiawen.com/2014/10/16/how-to-export-nodejs-module/"/>
+    <id>http://blog.gejiawen.com/2014/10/16/how-to-export-nodejs-module/</id>
+    <published>2014-10-16T07:55:39.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;英文原文： &lt;a href=&quot;http://bites.goodeggs.com/posts/export-this/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Export This: Interface Design Patterns for No
+    
+    </summary>
+    
+      <category term="NODEJS" scheme="http://blog.gejiawen.com/categories/NODEJS/"/>
+    
+    
+      <category term="nodejs" scheme="http://blog.gejiawen.com/tags/nodejs/"/>
+    
+      <category term="漫游NodeJS系列" scheme="http://blog.gejiawen.com/tags/%E6%BC%AB%E6%B8%B8NodeJS%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="翻译" scheme="http://blog.gejiawen.com/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浅谈Javascript中的原型继承</title>
+    <link href="http://blog.gejiawen.com/2014/10/16/prototype-inherit-in-javascript/"/>
+    <id>http://blog.gejiawen.com/2014/10/16/prototype-inherit-in-javascript/</id>
+    <published>2014-10-16T04:55:27.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;英文原文： &lt;a href=&quot;http://mrjoelkemp.com/2014/01/javascript-an-exploration-of-prototypal-inheritance/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Javascr
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+      <category term="翻译" scheme="http://blog.gejiawen.com/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用ES6的Generator代替回调函数</title>
+    <link href="http://blog.gejiawen.com/2014/10/16/use-generator-to-replace-callback/"/>
+    <id>http://blog.gejiawen.com/2014/10/16/use-generator-to-replace-callback/</id>
+    <published>2014-10-16T04:14:46.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;英文原文： &lt;a href=&quot;http://modernweb.com/2014/02/10/replacing-callbacks-with-es6-generators/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Replacing callbac
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="翻译" scheme="http://blog.gejiawen.com/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+      <category term="es6" scheme="http://blog.gejiawen.com/tags/es6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript模块模式</title>
+    <link href="http://blog.gejiawen.com/2014/10/14/javascript-module-pattern/"/>
+    <id>http://blog.gejiawen.com/2014/10/14/javascript-module-pattern/</id>
+    <published>2014-10-14T09:46:11.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;英文原文 &lt;a href=&quot;http://javascriptplayground.com/blog/2012/04/javascript-module-pattern/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;The JavaScrip
+    
+    </summary>
+    
+      <category term="大前端" scheme="http://blog.gejiawen.com/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+      <category term="翻译" scheme="http://blog.gejiawen.com/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端面经</title>
+    <link href="http://blog.gejiawen.com/2014/10/14/fe-interview-book/"/>
+    <id>http://blog.gejiawen.com/2014/10/14/fe-interview-book/</id>
+    <published>2014-10-14T06:42:45.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文系转载，&lt;a href=&quot;http://blog.sourcing.io/interview-questions?utm_source=ourjs.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;点我&lt;/a&gt;看原文。&lt;/p&gt;
+&lt;p&gt;2月30日 2
+    
+    </summary>
+    
+      <category term="大前端" scheme="http://blog.gejiawen.com/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="转载" scheme="http://blog.gejiawen.com/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ECMAScript继承实现</title>
+    <link href="http://blog.gejiawen.com/2014/09/29/ecmascript-inherit/"/>
+    <id>http://blog.gejiawen.com/2014/09/29/ecmascript-inherit/</id>
+    <published>2014-09-29T07:42:06.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;实现&quot;&gt;&lt;a href=&quot;#实现&quot; class=&quot;headerlink&quot; title=&quot;实现&quot;&gt;&lt;/a&gt;实现&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://zh.wikipedia.org/wiki/ECMAScript&quot; target=&quot;_blank&quot; rel=
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript设计模式简述</title>
+    <link href="http://blog.gejiawen.com/2014/09/23/javascript-design-pattern/"/>
+    <id>http://blog.gejiawen.com/2014/09/23/javascript-design-pattern/</id>
+    <published>2014-09-23T03:42:43.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文系转载，来自&lt;a href=&quot;http://www.cnblogs.com/Darren_code/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;博客园-聂微东&lt;/a&gt;。&lt;/p&gt;
+&lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;he
+    
+    </summary>
+    
+      <category term="大前端" scheme="http://blog.gejiawen.com/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="转载" scheme="http://blog.gejiawen.com/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+      <category term="设计模式" scheme="http://blog.gejiawen.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>简述前端性能优化切入点</title>
+    <link href="http://blog.gejiawen.com/2014/09/23/points-about-fe-performance-optimization/"/>
+    <id>http://blog.gejiawen.com/2014/09/23/points-about-fe-performance-optimization/</id>
+    <published>2014-09-23T03:18:07.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文仅对前端性能优化时经常需要考虑到的方面进行一些简单阐述，起一个抛砖引玉的作用。&lt;br&gt;&lt;em&gt;本篇文章貌似是某个地方看到的，但是不记得原文的地址了。&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id=&quot;请减少HTTP请求&quot;&gt;&lt;a href=&quot;#请减少HTTP请求&quot; class=&quot;head
+    
+    </summary>
+    
+      <category term="大前端" scheme="http://blog.gejiawen.com/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="转载" scheme="http://blog.gejiawen.com/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+      <category term="性能优化" scheme="http://blog.gejiawen.com/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript轻量级框架系列（1）--超炫3D效果的幻灯片框架Impress.js</title>
+    <link href="http://blog.gejiawen.com/2014/09/23/javascript-light-framework-impressjs/"/>
+    <id>http://blog.gejiawen.com/2014/09/23/javascript-light-framework-impressjs/</id>
+    <published>2014-09-23T02:30:21.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文是&lt;a href=&quot;http://blog.gejiawen.com/2014/11/26/%E7%B3%BB%E5%88%97/JavaScript%E8%BD%BB%E9%87%8F%E7%BA%A7%E6%A1%86%E6%9E%B6%E7%B3%BB%E5%88
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+      <category term="JavaScript轻量级框架系列" scheme="http://blog.gejiawen.com/tags/JavaScript%E8%BD%BB%E9%87%8F%E7%BA%A7%E6%A1%86%E6%9E%B6%E7%B3%BB%E5%88%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何组织大型JavaScript应用中的代码</title>
+    <link href="http://blog.gejiawen.com/2014/09/22/how-to-manage-javascript-code-in-big-project/"/>
+    <id>http://blog.gejiawen.com/2014/09/22/how-to-manage-javascript-code-in-big-project/</id>
+    <published>2014-09-22T13:17:27.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;英文原文 &lt;a href=&quot;http://cliffmeyers.com/blog/2013/4/21/code-organization-angularjs-javascript&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Code Org
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+      <category term="翻译" scheme="http://blog.gejiawen.com/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript中几种实用的跨域方法</title>
+    <link href="http://blog.gejiawen.com/2014/09/19/methods-for-cross-region/"/>
+    <id>http://blog.gejiawen.com/2014/09/19/methods-for-cross-region/</id>
+    <published>2014-09-19T10:10:37.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这里说的js跨域是指通过js在不同的域之间进行数据传输或通信，比如用ajax向一个不同的域请求数据，或者通过js获取页面中不同域的框架中(iframe)的数据。只要协议、域名、端口有任何一个不同，都被当作是不同的域。&lt;/p&gt;
+&lt;p&gt;下表给出了相对&lt;code&gt;http://s
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript中几个高级语言特性</title>
+    <link href="http://blog.gejiawen.com/2014/09/19/some-javascript-advanced-feature/"/>
+    <id>http://blog.gejiawen.com/2014/09/19/some-javascript-advanced-feature/</id>
+    <published>2014-09-19T09:12:58.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;感谢Node.js开发指南，参考了它的附录部分内容。&lt;/em&gt;&lt;/p&gt;
+&lt;h1 id=&quot;作用域&quot;&gt;&lt;a href=&quot;#作用域&quot; class=&quot;headerlink&quot; title=&quot;作用域&quot;&gt;&lt;/a&gt;作用域&lt;/h1&gt;&lt;p&gt;Javascript中的作用域是通过函数来确定的，这一点与&lt;code&gt;C&lt;/code&gt;、&lt;code&gt;Java&lt;/code&gt;等静态语言有一些不一样的地方。&lt;/p&gt;
+&lt;h2 id=&quot;最简单的例子&quot;&gt;&lt;a href=&quot;#最简单的例子&quot; class=&quot;headerlink&quot; title=&quot;最简单的例子&quot;&gt;&lt;/a&gt;最简单的例子&lt;/h2&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;literal&quot;&gt;true&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a =  &lt;span class=&quot;string&quot;&gt;&#39;Value&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(a); &lt;span class=&quot;comment&quot;&gt;// Value&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;上面的代码片段将会输出Value。（在浏览器环境中）&lt;/p&gt;
+&lt;h2 id=&quot;更加common的例子&quot;&gt;&lt;a href=&quot;#更加common的例子&quot; class=&quot;headerlink&quot; title=&quot;更加common的例子&quot;&gt;&lt;/a&gt;更加common的例子&lt;/h2&gt;&lt;p&gt;再来一个更加common的例子，&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a1 = &lt;span class=&quot;string&quot;&gt;&#39;Valve&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; foo1 = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(a1);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;foo1(); &lt;span class=&quot;comment&quot;&gt;// Value&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; foo2 = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a1 = &lt;span class=&quot;string&quot;&gt;&#39;DOTA2&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(a1);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;foo2(); &lt;span class=&quot;comment&quot;&gt;// DOTA2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;显然，&lt;code&gt;foo1&lt;/code&gt;的结果是Value，&lt;code&gt;foo2&lt;/code&gt;的结果是DOTA2，这应该很容易理解。&lt;/p&gt;
+&lt;h2 id=&quot;有点迷惑的例子&quot;&gt;&lt;a href=&quot;#有点迷惑的例子&quot; class=&quot;headerlink&quot; title=&quot;有点迷惑的例子&quot;&gt;&lt;/a&gt;有点迷惑的例子&lt;/h2&gt;&lt;p&gt;接下来这个例子将会让人感到迷惑，&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a1 = &lt;span class=&quot;string&quot;&gt;&#39;mercurial&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; foo = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;built_in&quot;&gt;console&lt;/span&gt;.log(a1);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; a1 = &lt;span class=&quot;string&quot;&gt;&#39;git&#39;&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;foo(); &lt;span class=&quot;comment&quot;&gt;// undefined&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;此时，结果将会是&lt;code&gt;undefined&lt;/code&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript中New xxx()的本质</title>
+    <link href="http://blog.gejiawen.com/2014/09/19/deep-into-new-object/"/>
+    <id>http://blog.gejiawen.com/2014/09/19/deep-into-new-object/</id>
+    <published>2014-09-19T09:07:47.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在Javascript中，&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td c
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NodeJS最佳实践</title>
+    <link href="http://blog.gejiawen.com/2014/09/19/nodejs-best-practices/"/>
+    <id>http://blog.gejiawen.com/2014/09/19/nodejs-best-practices/</id>
+    <published>2014-09-19T08:17:10.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;英文原文 &lt;a href=&quot;http://blog.risingstack.com/node-js-best-practices/?utm_source=nodeweekly&amp;amp;utm_medium=email&quot; target=&quot;_blank&quot; rel=&quot;
+    
+    </summary>
+    
+      <category term="NODEJS" scheme="http://blog.gejiawen.com/categories/NODEJS/"/>
+    
+    
+      <category term="nodejs" scheme="http://blog.gejiawen.com/tags/nodejs/"/>
+    
+      <category term="漫游NodeJS系列" scheme="http://blog.gejiawen.com/tags/%E6%BC%AB%E6%B8%B8NodeJS%E7%B3%BB%E5%88%97/"/>
+    
+      <category term="翻译" scheme="http://blog.gejiawen.com/tags/%E7%BF%BB%E8%AF%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Sea.js中require的书写规范</title>
+    <link href="http://blog.gejiawen.com/2014/08/12/require-in-seajs/"/>
+    <id>http://blog.gejiawen.com/2014/08/12/require-in-seajs/</id>
+    <published>2014-08-12T07:32:23.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;使用Sea-js书写模块代码时，需要遵循一些简单规则。&quot;&gt;&lt;a href=&quot;#使用Sea-js书写模块代码时，需要遵循一些简单规则。&quot; class=&quot;headerlink&quot; title=&quot;使用Sea.js书写模块代码时，需要遵循一些简单规则。&quot;&gt;&lt;/a&gt;使用Sea
+    
+    </summary>
+    
+      <category term="大前端" scheme="http://blog.gejiawen.com/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="转载" scheme="http://blog.gejiawen.com/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+      <category term="前端规范" scheme="http://blog.gejiawen.com/tags/%E5%89%8D%E7%AB%AF%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从CommonJS到Sea.js</title>
+    <link href="http://blog.gejiawen.com/2014/08/12/from-commonjs-to-seajs/"/>
+    <id>http://blog.gejiawen.com/2014/08/12/from-commonjs-to-seajs/</id>
+    <published>2014-08-12T07:10:55.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;CoomonJS是什么&quot;&gt;&lt;a href=&quot;#CoomonJS是什么&quot; class=&quot;headerlink&quot; title=&quot;CoomonJS是什么&quot;&gt;&lt;/a&gt;CoomonJS是什么&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;http://wiki.commonjs.org/
+    
+    </summary>
+    
+      <category term="大前端" scheme="http://blog.gejiawen.com/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="转载" scheme="http://blog.gejiawen.com/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+      <category term="前端规范" scheme="http://blog.gejiawen.com/tags/%E5%89%8D%E7%AB%AF%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Seajs与Nodejs的兼容</title>
+    <link href="http://blog.gejiawen.com/2014/08/12/about-seajs-and-nodejs/"/>
+    <id>http://blog.gejiawen.com/2014/08/12/about-seajs-and-nodejs/</id>
+    <published>2014-08-12T06:30:47.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://github.com/seajs/seajs&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Sea.js&lt;/a&gt;的模块遵循&lt;a href=&quot;https://github.com/seajs/seajs/issues/242
+    
+    </summary>
+    
+      <category term="大前端" scheme="http://blog.gejiawen.com/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="转载" scheme="http://blog.gejiawen.com/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+      <category term="前端规范" scheme="http://blog.gejiawen.com/tags/%E5%89%8D%E7%AB%AF%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript操作Cookie</title>
+    <link href="http://blog.gejiawen.com/2014/07/18/how-to-use-cookie-in-javascript/"/>
+    <id>http://blog.gejiawen.com/2014/07/18/how-to-use-cookie-in-javascript/</id>
+    <published>2014-07-18T09:43:40.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文系转载，但是找不到原文的地址了。:(&lt;/p&gt;
+&lt;h1 id=&quot;什么是Cookie&quot;&gt;&lt;a href=&quot;#什么是Cookie&quot; class=&quot;headerlink&quot; title=&quot;什么是Cookie&quot;&gt;&lt;/a&gt;什么是Cookie&lt;/h1&gt;&lt;p&gt;“cookie是存储于访问者
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="转载" scheme="http://blog.gejiawen.com/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AMD/CMD与前端规范</title>
+    <link href="http://blog.gejiawen.com/2014/07/18/small-talk-about-fe-spec/"/>
+    <id>http://blog.gejiawen.com/2014/07/18/small-talk-about-fe-spec/</id>
+    <published>2014-07-18T09:10:07.000Z</published>
+    <updated>2016-04-26T01:58:59.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;AMD与CMD&quot;&gt;&lt;a href=&quot;#AMD与CMD&quot; class=&quot;headerlink&quot; title=&quot;AMD与CMD&quot;&gt;&lt;/a&gt;AMD与CMD&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;AMD规范：&lt;a href=&quot;https://github.com/amdjs/amdj
+    
+    </summary>
+    
+      <category term="大前端" scheme="http://blog.gejiawen.com/categories/%E5%A4%A7%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="前端规范" scheme="http://blog.gejiawen.com/tags/%E5%89%8D%E7%AB%AF%E8%A7%84%E8%8C%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用AngularJS实现观察者模式</title>
+    <link href="http://blog.gejiawen.com/2014/07/18/observe-pattern-by-angularjs/"/>
+    <id>http://blog.gejiawen.com/2014/07/18/observe-pattern-by-angularjs/</id>
+    <published>2014-07-18T08:55:03.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;观察者模式一种应用非常广泛的设计模式。在AngularJS构建的webapp中也有很多的应用场景。众所周知，AngularJS不同的Controller之间的通信、数据共享有多重途径，比如：官方提供的&lt;code&gt;$broadcast&lt;/code&gt;，&lt;code&gt;$emit&lt;/
+    
+    </summary>
+    
+      <category term="CODER" scheme="http://blog.gejiawen.com/categories/CODER/"/>
+    
+    
+      <category term="ng" scheme="http://blog.gejiawen.com/tags/ng/"/>
+    
+      <category term="实践" scheme="http://blog.gejiawen.com/tags/%E5%AE%9E%E8%B7%B5/"/>
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript中函数闭包</title>
+    <link href="http://blog.gejiawen.com/2014/07/18/what-is-function-closure/"/>
+    <id>http://blog.gejiawen.com/2014/07/18/what-is-function-closure/</id>
+    <published>2014-07-18T08:35:07.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;闭包在js中是一个非常常见的语法糖。下面将会介绍如何实现一个函数闭包。&lt;/p&gt;
+&lt;p&gt;看下面的代码&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class
+    
+    </summary>
+    
+      <category term="CODER" scheme="http://blog.gejiawen.com/categories/CODER/"/>
+    
+    
+      <category term="实践" scheme="http://blog.gejiawen.com/tags/%E5%AE%9E%E8%B7%B5/"/>
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript深拷贝</title>
+    <link href="http://blog.gejiawen.com/2014/07/18/javascript-deep-copy/"/>
+    <id>http://blog.gejiawen.com/2014/07/18/javascript-deep-copy/</id>
+    <published>2014-07-18T08:22:14.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;因为js中的对象可以&lt;strong&gt;无限嵌套&lt;/strong&gt;，所以一般来说，给js的对象做&lt;strong&gt;深度拷贝&lt;/strong&gt;不是一个好的主意。但是有时候，我们偏偏又有这种需求，下面简要介绍下如何在js中做深度拷贝。&lt;/p&gt;
+&lt;p&gt;看下面的代码，支持&lt;strong&gt;
+    
+    </summary>
+    
+      <category term="CODER" scheme="http://blog.gejiawen.com/categories/CODER/"/>
+    
+    
+      <category term="实践" scheme="http://blog.gejiawen.com/tags/%E5%AE%9E%E8%B7%B5/"/>
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>angularjs的依赖注入</title>
+    <link href="http://blog.gejiawen.com/2014/07/17/dependence-injector-in-angularjs/"/>
+    <id>http://blog.gejiawen.com/2014/07/17/dependence-injector-in-angularjs/</id>
+    <published>2014-07-17T09:37:14.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;AngularJS&lt;/strong&gt;为我们提供了&lt;code&gt;angular.injector(modules)&lt;/code&gt;DI注入注射器。但是在我们使用注入的时候常常是不需要关心具体的如何注入。我们只需要按照其规则书写我们的angularjs代码就会很容易
+    
+    </summary>
+    
+      <category term="ANGULARJS" scheme="http://blog.gejiawen.com/categories/ANGULARJS/"/>
+    
+    
+      <category term="ng" scheme="http://blog.gejiawen.com/tags/ng/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>创建可复用angularjs组件</title>
+    <link href="http://blog.gejiawen.com/2014/07/17/reusable-angularjs-directive/"/>
+    <id>http://blog.gejiawen.com/2014/07/17/reusable-angularjs-directive/</id>
+    <published>2014-07-17T09:04:29.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;AngularJS框架可以用&lt;code&gt;Service&lt;/code&gt;和&lt;code&gt;Directive&lt;/code&gt;降低开发复杂性。这个特性非常适合用于分离代码，创建可测试组件，然后将它们变成可重用组件。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Directive&lt;/code&gt;是一组独立的
+    
+    </summary>
+    
+      <category term="ANGULARJS" scheme="http://blog.gejiawen.com/categories/ANGULARJS/"/>
+    
+    
+      <category term="ng" scheme="http://blog.gejiawen.com/tags/ng/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AngularJS的ngTransclude</title>
+    <link href="http://blog.gejiawen.com/2014/07/17/usage-for-angularjs-ng-transclude/"/>
+    <id>http://blog.gejiawen.com/2014/07/17/usage-for-angularjs-ng-transclude/</id>
+    <published>2014-07-17T07:51:45.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;transclued的定义&quot;&gt;&lt;a href=&quot;#transclued的定义&quot; class=&quot;headerlink&quot; title=&quot;transclued的定义&quot;&gt;&lt;/a&gt;transclued的定义&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;Transclude&lt;/strong
+    
+    </summary>
+    
+      <category term="ANGULARJS" scheme="http://blog.gejiawen.com/categories/ANGULARJS/"/>
+    
+    
+      <category term="ng" scheme="http://blog.gejiawen.com/tags/ng/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AngularJS Directive用法说明</title>
+    <link href="http://blog.gejiawen.com/2014/07/16/usage-for-angularjs-directive/"/>
+    <id>http://blog.gejiawen.com/2014/07/16/usage-for-angularjs-directive/</id>
+    <published>2014-07-16T06:22:51.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;Directive&lt;/strong&gt;可能是AngularJS中比较复杂的一个东西了。一般我们将其理解成&lt;strong&gt;指令&lt;/strong&gt;。AngularJS自带了不少预设的指令，比如&lt;code&gt;ng-app&lt;/code&gt;，&lt;code&gt;ng-control
+    
+    </summary>
+    
+      <category term="ANGULARJS" scheme="http://blog.gejiawen.com/categories/ANGULARJS/"/>
+    
+    
+      <category term="ng" scheme="http://blog.gejiawen.com/tags/ng/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AngularJS的scope.$apply</title>
+    <link href="http://blog.gejiawen.com/2014/07/14/usage-for-angularjs-scope-apply/"/>
+    <id>http://blog.gejiawen.com/2014/07/14/usage-for-angularjs-scope-apply/</id>
+    <published>2014-07-14T10:12:57.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如果你写过angular程序，肯定对&lt;code&gt;scope.$apply&lt;/code&gt;不会陌生，表面上，他的作用就是把改变同步绑定到界面上。但是它为什么存在呢？我们什么时候需要用到它呢？什么时候不需要呢？&lt;/p&gt;
+&lt;p&gt;要真正理解$apply, 就必须知道我们为什么需要它。
+    
+    </summary>
+    
+      <category term="ANGULARJS" scheme="http://blog.gejiawen.com/categories/ANGULARJS/"/>
+    
+    
+      <category term="ng" scheme="http://blog.gejiawen.com/tags/ng/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AngularJS Filters</title>
+    <link href="http://blog.gejiawen.com/2014/07/14/desp-for-angularjs-filters/"/>
+    <id>http://blog.gejiawen.com/2014/07/14/desp-for-angularjs-filters/</id>
+    <published>2014-07-14T09:53:30.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文将简单介绍AngularJS中的filter组件，即AngularJS的过滤器。&lt;/p&gt;
+&lt;p&gt;在正文之前，先来回顾一下ng中的一些基本概念：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;module&lt;/code&gt;，代码的组织单元，其它东西都是在具体的模块中定义的&lt;/li&gt;
+
+    
+    </summary>
+    
+      <category term="ANGULARJS" scheme="http://blog.gejiawen.com/categories/ANGULARJS/"/>
+    
+    
+      <category term="ng" scheme="http://blog.gejiawen.com/tags/ng/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AngularJS中使用Directive、Controller、Service</title>
+    <link href="http://blog.gejiawen.com/2014/07/14/different-from-angularjs-directive-controller-service/"/>
+    <id>http://blog.gejiawen.com/2014/07/14/different-from-angularjs-directive-controller-service/</id>
+    <published>2014-07-14T08:52:33.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;写在前面：本文适合AngularJS新手，老手略过。&lt;/p&gt;
+&lt;p&gt; AngularJS是一款非常强大的前端MVC框架。同时，它也引入了相当多的概念，这些概念我们可能不是太熟悉。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Directive 指令&lt;/li&gt;
+&lt;li&gt;Controller 控
+    
+    </summary>
+    
+      <category term="ANGULARJS" scheme="http://blog.gejiawen.com/categories/ANGULARJS/"/>
+    
+    
+      <category term="ng" scheme="http://blog.gejiawen.com/tags/ng/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AngularJS服务中的provider、factory、service</title>
+    <link href="http://blog.gejiawen.com/2014/07/14/different-from-angularjs-provider-factory-service/"/>
+    <id>http://blog.gejiawen.com/2014/07/14/different-from-angularjs-provider-factory-service/</id>
+    <published>2014-07-14T08:17:18.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;当我们创建一个AngularJS服务时，通常可以有三种方式来自定义service。&lt;/p&gt;
+&lt;p&gt;简单来说，&lt;code&gt;provider&lt;/code&gt;是被 &lt;strong&gt;注入控制器&lt;/strong&gt; 使用的一个对象，注入机制通过调用一个&lt;code&gt;provider&lt;/co
+    
+    </summary>
+    
+      <category term="ANGULARJS" scheme="http://blog.gejiawen.com/categories/ANGULARJS/"/>
+    
+    
+      <category term="ng" scheme="http://blog.gejiawen.com/tags/ng/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AngularJS:ngClass用法小解</title>
+    <link href="http://blog.gejiawen.com/2014/07/14/usage-for-angularjs-ng-class/"/>
+    <id>http://blog.gejiawen.com/2014/07/14/usage-for-angularjs-ng-class/</id>
+    <published>2014-07-14T08:00:03.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;ngClass&lt;/code&gt;是 &lt;strong&gt;AngularJS&lt;/strong&gt; 预设的一个指令，用于动态自定义dom元素的css类。这里是官网给出的使用指南&lt;a href=&quot;http://docs.angularjs.org/api/ng.directiv
+    
+    </summary>
+    
+      <category term="ANGULARJS" scheme="http://blog.gejiawen.com/categories/ANGULARJS/"/>
+    
+    
+      <category term="ng" scheme="http://blog.gejiawen.com/tags/ng/"/>
+    
+      <category term="转载" scheme="http://blog.gejiawen.com/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>AngularJS:select指令用法详解</title>
+    <link href="http://blog.gejiawen.com/2014/07/14/usage-for-angularjs-ng-select/"/>
+    <id>http://blog.gejiawen.com/2014/07/14/usage-for-angularjs-ng-select/</id>
+    <published>2014-07-14T06:49:28.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;code&gt;select&lt;/code&gt;指令是 &lt;strong&gt;AngularJS&lt;/strong&gt; 预设的一组&lt;code&gt;directive&lt;/code&gt;。这里是AngularJS官网给出的用法： &lt;a href=&quot;http://docs.angularjs.org/api
+    
+    </summary>
+    
+      <category term="ANGULARJS" scheme="http://blog.gejiawen.com/categories/ANGULARJS/"/>
+    
+    
+      <category term="ng" scheme="http://blog.gejiawen.com/tags/ng/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Javascript函数内部覆盖形参对象</title>
+    <link href="http://blog.gejiawen.com/2014/06/19/javascript-override-formal-args/"/>
+    <id>http://blog.gejiawen.com/2014/06/19/javascript-override-formal-args/</id>
+    <published>2014-06-19T09:37:25.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;有一个js的函数，其参数是一个&lt;code&gt;object&lt;/code&gt;型的数据，如果在函数内部使用另外一个对象将其覆盖，会发生什么事情呢？&lt;/p&gt;
+&lt;p&gt;现在有一个Javascript函数，如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript
+    
+    </summary>
+    
+      <category term="JAVASCRIPT" scheme="http://blog.gejiawen.com/categories/JAVASCRIPT/"/>
+    
+    
+      <category term="js" scheme="http://blog.gejiawen.com/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hexo-your-blog</title>
+    <link href="http://blog.gejiawen.com/2014/06/19/hexo-your-blog/"/>
+    <id>http://blog.gejiawen.com/2014/06/19/hexo-your-blog/</id>
+    <published>2014-06-19T02:46:57.000Z</published>
+    <updated>2017-01-15T17:16:24.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我曾纠结在哪里写博客，使用过的blog产品有oschina, cnblog这些博客站，还有过自己搭建博客。前者因为都现有的blog站点上写博客，有着很多的条条框框，不是太舒服。后者，由于没有自己的空间（穷屌丝，买不起服务器空间），所以折腾完就丢了。&lt;/p&gt;
+&lt;p&gt;直到我看到
+    
+    </summary>
+    
+      <category term="教程" scheme="http://blog.gejiawen.com/categories/%E6%95%99%E7%A8%8B/"/>
+    
+    
+      <category term="nodejs" scheme="http://blog.gejiawen.com/tags/nodejs/"/>
+    
+      <category term="hexo" scheme="http://blog.gejiawen.com/tags/hexo/"/>
+    
+  </entry>
+  
+</feed>

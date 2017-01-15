@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="Chrome是个非常牛逼的浏览器，速度快，界面清爽，对开发人员友好。而且提供了种类齐全且高质的插件。今天我们就来简单聊一聊如何开发chrome插件。
+基本知识在具体的开发之前，我们先来科普一些基础知识。
+现阶段的chrome的应用商店中，将插件（这里说的插件指代chrome应用的所有分类，下文亦同）">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chrome插件开发简要指南 | 蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "2015/08/18/chrome-plugin-dev-guide/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>Chrome插件开发简要指南</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/chrome/">chrome</a>&nbsp;<a href="/tags/js/">js</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2015-08-18T06:48:49.000Z"
+                       itemprop="datePublished">2015-08-18 14:48:49</time>
+            
+            更新: <time datetime="2017-01-15T17:16:24.000Z"
+                       itemprop="dateModified">2017-01-16 01:16:24</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+                <div id="toc" class="toc-article well">
+                    <strong class="toc-title">大纲</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基本知识"><span class="toc-number">1.</span> <span class="toc-text">基本知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#文件结构"><span class="toc-number">1.1.</span> <span class="toc-text">文件结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#manifest-json文件"><span class="toc-number">1.2.</span> <span class="toc-text">manifest.json文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#两种用户界面"><span class="toc-number">1.3.</span> <span class="toc-text">两种用户界面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#弹出窗口和后台页面"><span class="toc-number">1.4.</span> <span class="toc-text">弹出窗口和后台页面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他"><span class="toc-number">1.5.</span> <span class="toc-text">其他</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#自己做一个"><span class="toc-number">2.</span> <span class="toc-text">自己做一个</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#小结"><span class="toc-number">3.</span> <span class="toc-text">小结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考链接"><span class="toc-number">4.</span> <span class="toc-text">参考链接</span></a></li></ol>
+                </div>
+            
+
+            <p>Chrome是个非常牛逼的浏览器，速度快，界面清爽，对开发人员友好。而且提供了种类齐全且高质的插件。今天我们就来简单聊一聊如何开发chrome插件。</p>
+<h1 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h1><p>在具体的开发之前，我们先来科普一些基础知识。</p>
+<p>现阶段的chrome的应用商店中，将插件（这里说的插件指代chrome应用的所有分类，下文亦同）分为如下几种，包括<strong>应用</strong>、<strong>游戏</strong>、<strong>扩展程序</strong>、<strong>主题背景</strong>。而且插件的种类多种多样，保罗万象，基本上都能找到你想要的功能的插件。</p>
+<h2 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h2><p>在应用商店中下载下来的插件基本上都是以<code>.crx</code>为文件后缀，该文件其实就是一个压缩包，包括插件所需要的html、css、javascript、图片资源等等文件。</p>
+<p>下图是<a href="http://www.baidufe.com/fehelper" target="_blank" rel="external">FEHelper</a>的插件包解压后的文件，</p>
+<p><img src="/res/chrome-plugin-dev-guide/001.png" alt=""></p>
+<p>其中，</p>
+<ul>
+<li><code>manifest.json</code>是整个插件的功能及文件配置清单，非常重要。</li>
+<li><code>static</code>目录是放置整个插件的静态资源文件的，包括css、js、图片等等资源</li>
+<li><code>template</code>目录是放置整个插件的功能页面模板的。</li>
+<li><code>_locales</code>目录是放置整个插件的国际化语言脚本的。</li>
+</ul>
+<p>一般来说，清单文件<code>manifest.json</code>文件是必须的，且必须放在插件开发目录的根目录上。其他的目录都可以自定义。</p>
+<p>这个插件安装好的用户界面如下图，</p>
+<p><img src="/res/chrome-plugin-dev-guide/002.png" alt=""></p>
+<p>图中的每一个链接都是一个功能项，点击后将会打开一个chrome-extension下的页面，url类似这样，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chrome-extension://pkgccpejnmalmdinmhkkfafefagiiiad/template/fehelper_endecode.html</span><br></pre></td></tr></table></figure>
+<p>而这些页面其实就是我们之前看到的<code>template</code>中的模板文件。</p>
+<h2 id="manifest-json文件"><a href="#manifest-json文件" class="headerlink" title="manifest.json文件"></a><code>manifest.json</code>文件</h2><p>清单文件的作用是提供插件的各种信息，例如插件能够做的事情，以及插件的文件配置等等信息。下面是一个清单文件的示例，</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"我的扩展程序"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"2.1"</span>,</span><br><span class="line">  <span class="attr">"manifest_version"</span>: <span class="number">2</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">"从Google获得信息。"</span>,</span><br><span class="line">  <span class="attr">"icons"</span>: &#123;</span><br><span class="line">    <span class="attr">"128"</span>: <span class="string">"icon_128.png"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"background"</span>: &#123;</span><br><span class="line">    <span class="attr">"persistent"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"scripts"</span>: [<span class="string">"bg.js"</span>]</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"permissions"</span>: [<span class="string">"http://*.google.com/"</span>, <span class="string">"https://*.google.com/"</span>],</span><br><span class="line">  <span class="attr">"browser_action"</span>: &#123;</span><br><span class="line">    <span class="attr">"default_title"</span>: <span class="string">""</span>,</span><br><span class="line">    <span class="attr">"default_icon"</span>: <span class="string">"icon_19.png"</span>,</span><br><span class="line">    <span class="attr">"default_popup"</span>: <span class="string">"popup.html"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>mianfest.json</code>文件每个字段都有其特殊的含义，<a href="http://chrome.liuyixi.com/manifest.html" target="_blank" rel="external">这份文档</a>有对清单文件的每个字段进行解释。</p>
+<h2 id="两种用户界面"><a href="#两种用户界面" class="headerlink" title="两种用户界面"></a>两种用户界面</h2><p>chrome插件一般有两种用户界面，一种是<strong>浏览器按钮</strong>，一种是<strong>页面地址栏按钮</strong>。前者称之为<strong>Browser Actions</strong>，后者被称之为<strong>Page Actions</strong>。如下图，</p>
+<p><img src="/res/chrome-plugin-dev-guide/003.png" alt=""></p>
+<p><em>Page Actions</em> 与 <em>Browser Actions</em> 的区别就是 <em>Page Actions</em> 并不是在每个页面上都是有用的，它必须在特定的页面中插件功能才能使用。</p>
+<p>这两种用户面界面分别对应<code>manifest.json</code>中的<code>browser_action</code>和<code>page_action</code>字段。</p>
+<h2 id="弹出窗口和后台页面"><a href="#弹出窗口和后台页面" class="headerlink" title="弹出窗口和后台页面"></a>弹出窗口和后台页面</h2><p>弹出窗口一般用于插件和用户的交互，而后台页面一般用于插件本身做一些额外的事情。比如有时候，插件需要联网进行数据同步等操作，这种操作用户是无感知的，所有就要求插件需要有一个后台页面来运行这部分的逻辑。</p>
+<p>其实后台页面还可以分为<a href="http://chrome.liuyixi.com/background_pages.html" target="_blank" rel="external">持久运行的后端页面</a>和<a href="http://chrome.liuyixi.com/event_pages.html" target="_blank" rel="external">事件页面</a>，这里对这两者就不多做说明了，更多的内容可以参阅具体的文档。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>chrome插件的相关知识，远远不止上面介绍的几点，比如邮件菜单、插件与浏览器之间的交互、内容安全（CSP）、消息传递、国际化、部署与托管等等方面，由于篇幅原因，这里将不会作过多的描述。更多的内容请参阅相关文档，<a href="http://chrome.liuyixi.com/docs.html" target="_blank" rel="external">这里</a>。</p>
+<h1 id="自己做一个"><a href="#自己做一个" class="headerlink" title="自己做一个"></a>自己做一个</h1><p>有了上面的基础知识之后，我们就可以尝试自己来做一个chrome插件玩玩了。</p>
+<p>首先我们新建一个文件夹叫做<code>todo-plugin</code>，作为插件开发的工作目录，然后在目录中新建清单文件，<code>manifest.json</code>文件内容如下，</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"todo-plugin"</span>,</span><br><span class="line">    <span class="attr">"version"</span>: <span class="string">"0.9.0"</span>,</span><br><span class="line">    <span class="attr">"manifest_version"</span>: <span class="number">2</span>,</span><br><span class="line">    <span class="attr">"description"</span>: <span class="string">"chrome plugin demo"</span>,</span><br><span class="line">    <span class="attr">"browser_action"</span>: &#123;</span><br><span class="line">        <span class="attr">"default_icon"</span>: <span class="string">"icon.png"</span>,</span><br><span class="line">        <span class="attr">"default_title"</span>: <span class="string">"Todo List"</span>,</span><br><span class="line">        <span class="attr">"default_popup"</span>: <span class="string">"popup.html"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在清单文件中，我们定义了插件的名称、版本、描述，插件的浏览器按钮行为以及插件所需要注入的脚本文件。按钮行为中还包括了默认的按钮图标、按钮标题（鼠标悬停时显示）以及默认的弹出框<code>popup.html</code>。</p>
+<p><strong>注意</strong>：新版的chrome插件开发需要在清单文件中制定<code>mainfest_version</code>为2。</p>
+<p>这里的弹出框其实就是我们这个插件与用户交互的主要界面，它其实就是一个html页面。不过这个<code>popup.html</code>文件并不需要<code>&lt;html&gt;&lt;/html&gt;</code>、<code>&lt;body&gt;&lt;/body&gt;</code>、<code>&lt;head&gt;&lt;/head&gt;</code>这样的标签。<code>popup.html</code>文件内容如下，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span><br><span class="line">    <span class="selector-tag">body</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">150px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-id">#add-new-item</span> &#123;</span><br><span class="line">        <span class="attribute">cursor</span>: pointer;</span><br><span class="line">        <span class="attribute">color</span>: <span class="number">#CCC</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.hide</span> &#123;</span><br><span class="line">        <span class="attribute">display</span>: none;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.show</span> &#123;</span><br><span class="line">        <span class="attribute">display</span>: block;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.item</span> &#123;</span><br><span class="line">        <span class="attribute">cursor</span>: pointer;</span><br><span class="line">        <span class="attribute">margin</span>: <span class="number">5px</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.item</span> <span class="selector-tag">input</span> &#123;</span><br><span class="line">        <span class="attribute">display</span>: inline-block;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">12px</span>;</span><br><span class="line">        <span class="attribute">height</span>: <span class="number">12px</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="selector-tag">input</span> &#123;</span><br><span class="line">        <span class="attribute">width</span>: <span class="number">120px</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"add-new-item"</span>&gt;</span>添加新项<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"add-new-item-input"</span> <span class="attr">class</span>=<span class="string">"hide"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"new-item-title"</span> <span class="attr">placeholder</span>=<span class="string">"添加新任务"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"item-list"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"main.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这个html文件其实很简单（chrome插件的html页面往往都非常简单，都是一些列表的展示，轻量的输入控件等等），而且为了简便，我把弹出窗的样式直接写在html中了。</p>
+<p>最后一行我们使用外链的方式加载了popup页面的交互逻辑。<code>main.js</code>内容也很简单，如下，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> $ = <span class="function"><span class="keyword">function</span> (<span class="params">id</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">document</span>.getElementById(id);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> Tasks = &#123;</span><br><span class="line">        show: <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>&#123;</span><br><span class="line">            obj.className = <span class="string">''</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        hide: <span class="function"><span class="keyword">function</span> (<span class="params">obj</span>) </span>&#123;</span><br><span class="line">            obj.className = <span class="string">'hide'</span>;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        $addNewItem: $(<span class="string">'add-new-item'</span>),</span><br><span class="line">        $addNewItemInput: $(<span class="string">'add-new-item-input'</span>),</span><br><span class="line">        $itemList: $(<span class="string">'item-list'</span>),</span><br><span class="line">        $newItemTitle: $(<span class="string">'new-item-title'</span>),</span><br><span class="line"></span><br><span class="line">        init: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">//打开添加文本框</span></span><br><span class="line">            Tasks.$addNewItem.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                Tasks.show(Tasks.$addNewItemInput).hide(Tasks.$addNewItem);</span><br><span class="line">                Tasks.$newItemTitle.focus();</span><br><span class="line">            &#125;, <span class="literal">true</span>);</span><br><span class="line">            <span class="comment">//回车添加任务</span></span><br><span class="line">            Tasks.$newItemTitle.addEventListener(<span class="string">'keyup'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">ev</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> ev = ev || <span class="built_in">window</span>.event;</span><br><span class="line">                <span class="keyword">if</span> (ev.keyCode == <span class="number">13</span>) &#123;</span><br><span class="line">                    <span class="comment">//<span class="doctag">TODO:</span>写入本地数据</span></span><br><span class="line">                    <span class="keyword">var</span> task = Tasks.$newItemTitle.value;</span><br><span class="line">                    Tasks.AppendHtml(task);</span><br><span class="line">                    Tasks.$newItemTitle.value = <span class="string">''</span>;</span><br><span class="line">                    Tasks.hide(Tasks.$addNewItemInput).show(Tasks.$addNewItem);</span><br><span class="line">                &#125;</span><br><span class="line">                ev.preventDefault();</span><br><span class="line">            &#125;, <span class="literal">true</span>);</span><br><span class="line">            <span class="comment">//取消添加</span></span><br><span class="line">            Tasks.$newItemTitle.addEventListener(<span class="string">'blur'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                Tasks.$newItemTitle.value = <span class="string">''</span>;</span><br><span class="line">                Tasks.hide(Tasks.$addNewItemInput).show(Tasks.$addNewItem);</span><br><span class="line">            &#125;, <span class="literal">true</span>);</span><br><span class="line">            <span class="comment">//TODO 初始化数据，加载本地数据，生成html</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">//增加</span></span><br><span class="line">        Add: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">//TODO</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">//修改</span></span><br><span class="line">        Edit: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">//TODO</span></span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="comment">//删除</span></span><br><span class="line">        Del: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">//TODO</span></span><br><span class="line">        &#125;,</span><br><span class="line">        AppendHtml: <span class="function"><span class="keyword">function</span> (<span class="params">title</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> oDiv = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>);</span><br><span class="line">            oDiv.className = <span class="string">'item item-todo'</span>;</span><br><span class="line">            <span class="keyword">var</span> oInput = <span class="built_in">document</span>.createElement(<span class="string">'input'</span>);</span><br><span class="line">            oInput.type = <span class="string">'checkbox'</span>;</span><br><span class="line">            <span class="keyword">var</span> oTitle = <span class="built_in">document</span>.createElement(<span class="string">'span'</span>);</span><br><span class="line">            oTitle.innerHTML = title;</span><br><span class="line">            oDiv.appendChild(oInput);</span><br><span class="line">            oDiv.appendChild(oTitle);</span><br><span class="line">            Tasks.$itemList.appendChild(oDiv);</span><br><span class="line"></span><br><span class="line">            oDiv.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="comment">//TODO</span></span><br><span class="line">            &#125;, <span class="literal">true</span>);</span><br><span class="line">        &#125;,</span><br><span class="line">        RemoveHtml: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">//TODO</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    Tasks.init();</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>在这段js中，我们声明了一个<code>Tasks</code>对象，这个对象包括了一系列的功能方法，当然有部分未实现，不过核心功能都实现了。在<code>Tasks.init</code>方法中，我们给一个操作实体（一个div元素）注册了点击事件，当触发点击事件时，我们将会展示一个输入框让用户输入任务描述，通过回车键来添加用户刚输入的任务。好了，这就是<code>todo-plugin</code>插件的基本功能。下面是本插件的效果预览，</p>
+<p><img src="/res/chrome-plugin-dev-guide/004.png" alt=""></p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><p>好了，至此我们总算完成一个简陋的chrome插件的开发了。功能虽然简陋，但是基本上所有的chrome插件开发都是遵循这条路。本文示例的代码中有许多的<code>TODO</code>，其实我们可以将这个todo插件做的更加复杂，比如可以采用localstorage来存储数据，甚至可以使用网络来存储数据。至于更多的内容，本文就不再作过多的阐述了，因为本文毕竟是<strong>简要指南</strong>嘛😎😂</p>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
+<li><a href="http://chrome.liuyixi.com/overview.html" target="_blank" rel="external">chrome插件中文开发文档(非官方)</a></li>
+<li><a href="http://www.cnblogs.com/walkingp/archive/2011/03/31/2001628.html" target="_blank" rel="external">手把手教你开发Chrome扩展</a></li>
+</ul>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://gejiawen.github.io/about">@gejiawen</a>.</p>
+    <p class="link">本文链接：<a href="http://blog.gejiawen.com/2015/08/18/chrome-plugin-dev-guide/">http://blog.gejiawen.com/2015/08/18/chrome-plugin-dev-guide/</a></p>
+
+    <div class="share">
+    分享本页：
+    
+        <div class="bdsharebuttonbox"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_more" data-cmd="more"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    
+    
+</div>
+
+</div>
+
+
+            
+    <section class="comment">
+    <div class="ds-thread" data-thread-key="chrome-plugin-dev-guide" data-title="Chrome插件开发简要指南" data-url="http://blog.gejiawen.com/2015/08/18/chrome-plugin-dev-guide/" data-author-key="gejiawen"></div>
+</section>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gejiawen-blog"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

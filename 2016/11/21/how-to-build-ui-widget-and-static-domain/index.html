@@ -1,0 +1,335 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="这是一篇懒散的随笔，写作时，完全没有考虑到读者的感受，仅仅是作者对UI和组件化等topic的一些胡思乱想。勿喷。
+我一直觉得，一个有逼格、有深度的公司，应该在UI这块有自己的一套规范，无论是从0到1自己实现的也好，还是站在巨人的肩膀上。
+人都有身不由己的时候，无论码农还是设计师们。在这样一个背景下，">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UI组件库和静态服务域的相关实践 | 蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "2016/11/21/how-to-build-ui-widget-and-static-domain/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>UI组件库和静态服务域的相关实践</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/组件化/">组件化</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/技术思考/">技术思考</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2016-11-21T02:58:17.000Z"
+                       itemprop="datePublished">2016-11-21 10:58:17</time>
+            
+            更新: <time datetime="2017-01-15T17:16:24.000Z"
+                       itemprop="dateModified">2017-01-16 01:16:24</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+
+            <p>这是一篇懒散的随笔，写作时，完全没有考虑到读者的感受，仅仅是作者对UI和组件化等topic的一些胡思乱想。勿喷。</p>
+<p>我一直觉得，一个有逼格、有深度的公司，应该在UI这块有自己的一套规范，无论是从0到1自己实现的也好，还是站在巨人的肩膀上。</p>
+<p>人都有身不由己的时候，无论码农还是设计师们。在这样一个背景下，往往做出一些割裂的产品和设计。比如，UI风格混乱、交互风格混乱、特效混乱、代码混乱……</p>
+<p>We need rules.</p>
+<p>试想一下，如果你处在下图的工作场景中，</p>
+<p><img src="/res/slides/how-to-build-ui-widget-and-static-domain/008.png" alt=""></p>
+<p>这里的Nyx即是我们的UI规范。</p>
+<p>1，产品在产出需求原型时，在展示和交互部分，会借鉴参考UI规范。把合适的UI放在合适的原型展示上。<br>2，设计师们拿到原型后，参考UI规范，做出视觉稿。<br>3，前端开发在拿到视觉稿之后，使用UI规范的组件实现，快速实现。</p>
+<p>Perfect!</p>
+<p>这期间可能会有一些坑在里面，但是我认为这个思想和方向应该是没有问题的。</p>
+<p>那么问题来了，我们该怎么做？</p>
+<p>1，想好了，我们到底应该是站在巨人的肩膀上？还是自己要做巨人？这关系到，我们到底是选一套主流的UI作为底层基础UI，还是应该自己造一个。两种方案各有优劣，我个人倾向后者。因为我一个信奉拿来主义的人。<br>2，选好了底层的基本UI库之后，我们仔细研读，弄清楚它每一个部分。为什么需要这么做？一个字，避坑。<br>3，这时候需要我们的设计师兄弟上场了。前端开发们与之亲密合作，目的只有一个，那就是决定好我们到底需要哪些基本的UI。更进一步，我们还需要决定这些基础UI长成什么样子。基本UI的本质应该是一堆CSS文件。<br>4，好了，这时候我们已经有了基础UI了，这时候我们可以动一动组件的心思了。</p>
+<p>有一个问题来了，什么是组件？组件跟之前提到的UI又是什么关系？</p>
+<p>我的脑海里，UI指的是页面元素的表现风格，它是一套规范，它规定了页面元素应该如何表现自己。而组件是对UI规范的一种多样化实现。</p>
+<p>举个例子来说，一个按钮的UI规范可能是这样的：是一个矩形，中间有文本，边界有边框，可以点击，点击的时候会有一种特殊的视觉效果，……</p>
+<p>那么，与之对应的按钮组件，我们可以抽象出来很多参数，根据需求来自定义按钮的UI，并且把这些参数都量化成代码实现。</p>
+<p>组件更多的内容，我们后面还会继续探讨。现在，言归正传。</p>
+<p>5，我们现在有了UI和组件，我们可以做更多的事情了。我们以UI和组件为基础，搭建上层的静态域，为业务域提供服务。怎么理解这句话？</p>
+<p>这里有一张图，</p>
+<p><img src="/res/slides/how-to-build-ui-widget-and-static-domain/007.png" alt=""></p>
+<p>简单概括来说，我们会一个称之为<strong>静态域</strong>的东西，为所有的其他的业务域提供通用的UI和交互服务支持，包括但不限于静态文件分发、UI及组件化支持、通用页面版本支持等等。</p>
+<p>所以，接下来让我们来具体的量化一下我们的计划。</p>
+<p><strong>0，准备阶段</strong></p>
+<ol>
+<li>在做这些事之前，我们应该自问三个问题，为什么要做？解决什么问题？目标是什么？</li>
+<li>敲定底层方案的选型和实现方式。</li>
+<li>相关规范和计划的制定。</li>
+</ol>
+<p>我觉得到文章这里，我们应该已经准备好了。</p>
+<p><strong>1，第一阶段</strong></p>
+<ol>
+<li>基础UI的抽象及分类。</li>
+<li>构建底层的CSS基础代码。</li>
+<li>UI的派生继承方式及实现。</li>
+<li>UI多态化抽象。</li>
+</ol>
+<p>关于UI分类，参考了很多前辈的成果，如下图</p>
+<p><img src="/res/slides/how-to-build-ui-widget-and-static-domain/002.png" alt=""></p>
+<p>个人觉得按照这种feature的概念和维护队UI做分类可能更具延展性和拓展性。</p>
+<p>关于底层CSS基础代码的构建，我觉得<a href="https://github.com/twbs/bootstrap" target="_blank" rel="external">bootstrap</a>是一个不错的做法，提供一个可供高度自定义的用户编译界面。</p>
+<p>此阶段中，我们还会做一些UI多态化的工作。什么是UI多态化？举一个简单的例子，你是一个按钮。你可以是红的，你可以绿的，你还可以是黑的；你可以胖胖的，你还可以很苗条；你可以是高富帅，也可以是矮矬穷。</p>
+<p>同一类的UI可以拥有不同维度的变化，比如颜色、大小、交互特性等等。</p>
+<p>正式因为UI的多态性，给了我们丰满的UI展示。</p>
+<p><strong>2，第二阶段</strong></p>
+<ol>
+<li>基础UI的动效及分类。</li>
+<li>实现UI动效（渐进增强）。</li>
+<li>UI多态化实现。</li>
+<li>多终端支持</li>
+</ol>
+<p>如果你的页面自带各种酷炫的动效，相比朴素的UI，你无疑会更加被人青睐。但是动效何其多，我们需要需要给不同种类的UI装备合适的动效，以达到完美契合度。本人是十分厌恶无脑滥用动画的。合适的就是最好的。</p>
+<p>此外，我们在实现动效的时候，还有一个准则，就是渐进增强。而且全部都依赖CSS3，我们不会使用Javascript来操作dom来实现某一些动画效果，绝不。简而言之，那些不支持CSS3的可怜浏览器们，只能注定被扔在矮矬穷的阵营里面了。</p>
+<p>此阶段中，我们还是把UI多态化的task做掉。一般来说，会有两种做法，一种是独立式的css实现方式，一种是堆叠式的css实现方式。比如，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"btn-butcher"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"btn btn-green btn-large"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>两者都表示绿胖子。明显的，后者具有更强的定制化，更加灵活。</p>
+<p>关于多终端。在这之前，我们都应该了解一下，什么是响应式设计（Responsive design，RWD）？什么是自适应设计（Adaptive design，AWD）？</p>
+<p>举一个例子。一个页面，如果无论你如何的缩放浏览器的窗口大小，这个页面都会较好的展现。那我们就说这个页面是响应式的。<br>如果你用不同尺寸的设备去访问这个页面，它也能非常自如在不同的设备展现，此时，我们就说这个页面是自适应的。</p>
+<ul>
+<li>RWD：倾向基于Media Queries、Content-Based Breakpoint来改变页面适配不同的分辨率尺寸。</li>
+<li>AWD：倾向针对几种特定的分辨率尺寸做定制。可能会有好几套页面。</li>
+</ul>
+<p>但是在有时候，他们又会相会渗透，配合使用。</p>
+<p><strong>3，第三阶段</strong></p>
+<ol>
+<li>组件化实现方式的探索，如何组合UI和交互？</li>
+<li>构建基础组件及组件分类</li>
+<li>构建复杂组件及交互实现</li>
+</ol>
+<p>前面已经说到了，组件是对UI的具体实现。UI是一套规范，要想将这一套组件转变成组件，我们需要思考一件非常重要的事，就是：如何将UI实现为组件？我的意思是，实现的途径是什么？</p>
+<p>想要回答这一个问题，先得回答一个前提问题？我们怎么去定义一个组件？言下之意，一个组件，应该包含什么内容？</p>
+<p>现下，普遍的一种观点认为，一个组件应该包含三部分，展现载体（模板）+ 视觉展示（样式）+ 交互特性（交互）这三部分组成。</p>
+<p>基本上我们前面说的UI指代就是模板 + 样式。所以，我们现在还缺一点，我们如何给组件引入交互？</p>
+<p>我们需要一个世界观去架构模板、式样和交互，让他们有机的组合在一起。我来看看react是如何做组件化的。</p>
+<p><img src="/res/slides/how-to-build-ui-widget-and-static-domain/009.png" alt=""></p>
+<p>从图中我们可以看出，</p>
+<ol>
+<li>要有良好的类继承机制。</li>
+<li>需要方便的引入机制。包括引入自身的样式，也包括引入别的组件。</li>
+<li>需要一个接口对外暴露组件自身。</li>
+</ol>
+<p>我们的组件化最少也需要从这三个方面考虑。或者我们完全可以采用react为实现载体也并无不可。</p>
+<p><strong>4，第四阶段</strong></p>
+<ol>
+<li>什么是静态域？解决什么问题？</li>
+<li>静态资源分发，UI和组件支持。</li>
+<li>业务域中通用界面和操作的统一支持。</li>
+<li>……</li>
+</ol>
+<p>所谓静态域，其实就是在UI库和组件化这两者较为完备之后，我们为了让UI和组件的服务输出更加智能和高效，从而搭建的一种上层应用。他的具体作用，我觉得这张图完全可以意传了。</p>
+<p><img src="/res/slides/how-to-build-ui-widget-and-static-domain/007.png" alt=""></p>
+<p>除了静态资源分发，UI和组件支持这一点之外，业务域中通用的板块也可以使用静态域来做分发。举个例子，有一个管理中心的用户后台，这个管理中心是好几个业务线控制台的聚合体。它会有一个左侧导航菜单，每一个菜单对应各自业务的页面。我们在是实现上，可能会在每一个独立的业务域中都做一套这个左侧菜单，一旦某个菜单项发生更新，将会影响到所有包含这个左侧菜单的业务域。这无疑是一个很烂的方案。</p>
+<p>假如我们静态域已经可以提供服务了，那么不同的业务域甚至只要调用业务域的一个js脚本就可以在各个业务域中生成左侧菜单了。</p>
+<p>perfect!</p>
+<p>终于唠叨完了。</p>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://gejiawen.github.io/about">@gejiawen</a>.</p>
+    <p class="link">本文链接：<a href="http://blog.gejiawen.com/2016/11/21/how-to-build-ui-widget-and-static-domain/">http://blog.gejiawen.com/2016/11/21/how-to-build-ui-widget-and-static-domain/</a></p>
+
+    <div class="share">
+    分享本页：
+    
+        <div class="bdsharebuttonbox"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_more" data-cmd="more"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    
+    
+</div>
+
+</div>
+
+
+            
+    <section class="comment">
+    <div class="ds-thread" data-thread-key="how-to-build-ui-widget-and-static-domain" data-title="UI组件库和静态服务域的相关实践" data-url="http://blog.gejiawen.com/2016/11/21/how-to-build-ui-widget-and-static-domain/" data-author-key="gejiawen"></div>
+</section>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gejiawen-blog"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

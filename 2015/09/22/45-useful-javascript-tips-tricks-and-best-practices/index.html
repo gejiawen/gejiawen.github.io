@@ -1,0 +1,368 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="本文是一篇翻译文章。原文：45 Useful JavaScript Tips, Tricks and Best Practices
+译文开始。
+众所周知，Javascript是全球最流行的语言之一，它涉足Web开发，移动端开发（PhoneGap、Appcelerator），服务端开发（Nodejs、">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript实用黑科技45条 | 蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "2015/09/22/45-useful-javascript-tips-tricks-and-best-practices/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>Javascript实用黑科技45条</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/js/">js</a>&nbsp;<a href="/tags/翻译/">翻译</a>&nbsp;<a href="/tags/黑科技/">黑科技</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2015-09-22T12:22:00.000Z"
+                       itemprop="datePublished">2015-09-22 20:22:00</time>
+            
+            更新: <time datetime="2017-01-15T17:16:24.000Z"
+                       itemprop="dateModified">2017-01-16 01:16:24</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+                <div id="toc" class="toc-article well">
+                    <strong class="toc-title">大纲</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#使用var关键字进行变量赋值"><span class="toc-number">1.</span> <span class="toc-text">使用var关键字进行变量赋值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用-来代替-进行判等"><span class="toc-number">2.</span> <span class="toc-text">使用===来代替==进行判等</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined，null，0，false，NaN，-39-39-（空字符串）都为逻辑假值"><span class="toc-number">3.</span> <span class="toc-text">undefined，null，0，false，NaN，''（空字符串）都为逻辑假值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用分号-来结束一行代码"><span class="toc-number">4.</span> <span class="toc-text">使用分号;来结束一行代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用对象构造器"><span class="toc-number">5.</span> <span class="toc-text">使用对象构造器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用typeof、instanceof、constructor时要谨慎小心"><span class="toc-number">6.</span> <span class="toc-text">使用typeof、instanceof、constructor时要谨慎小心</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#学会使用自调用函数"><span class="toc-number">7.</span> <span class="toc-text">学会使用自调用函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#随机从数组中取出一个元素"><span class="toc-number">8.</span> <span class="toc-text">随机从数组中取出一个元素</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#从一个指定的范围中取出一个随机数"><span class="toc-number">9.</span> <span class="toc-text">从一个指定的范围中取出一个随机数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#生成一个从0开始到指定数字的序列"><span class="toc-number">10.</span> <span class="toc-text">生成一个从0开始到指定数字的序列</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#生成一个随机的字母数字序列"><span class="toc-number">11.</span> <span class="toc-text">生成一个随机的字母数字序列</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#打乱一个数字数组的顺序"><span class="toc-number">12.</span> <span class="toc-text">打乱一个数字数组的顺序</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#字符串去空格"><span class="toc-number">13.</span> <span class="toc-text">字符串去空格</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#将一个数组追加到另一个数组中"><span class="toc-number">14.</span> <span class="toc-text">将一个数组追加到另一个数组中</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#将argruments转换成数组"><span class="toc-number">15.</span> <span class="toc-text">将argruments转换成数组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#检验一个参数是否为数字"><span class="toc-number">16.</span> <span class="toc-text">检验一个参数是否为数字</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#检验一个参数是否为数组"><span class="toc-number">17.</span> <span class="toc-text">检验一个参数是否为数组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#取出一个数组中的最大值和最小值"><span class="toc-number">18.</span> <span class="toc-text">取出一个数组中的最大值和最小值</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#清空一个数组"><span class="toc-number">19.</span> <span class="toc-text">清空一个数组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#不用使用delete关键字来移除一个数组元素"><span class="toc-number">20.</span> <span class="toc-text">不用使用delete关键字来移除一个数组元素</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#可以通过操作数组长度length来截断一个数组"><span class="toc-number">21.</span> <span class="toc-text">可以通过操作数组长度length来截断一个数组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在条件中使用-amp-amp-及-进行短语判断"><span class="toc-number">22.</span> <span class="toc-text">在条件中使用&&及||进行短语判断</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用map-对数组进行遍历操作"><span class="toc-number">23.</span> <span class="toc-text">使用map()对数组进行遍历操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#保留指定位数的小数点"><span class="toc-number">24.</span> <span class="toc-text">保留指定位数的小数点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#浮点数计算问题"><span class="toc-number">25.</span> <span class="toc-text">浮点数计算问题</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用for-in来遍历对象的属性"><span class="toc-number">26.</span> <span class="toc-text">使用for...in来遍历对象的属性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#逗号运算符"><span class="toc-number">27.</span> <span class="toc-text">逗号运算符</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#缓存临时变量用于避免再次计算或者查询"><span class="toc-number">28.</span> <span class="toc-text">缓存临时变量用于避免再次计算或者查询</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#提前检查传入isFinite-的参数"><span class="toc-number">29.</span> <span class="toc-text">提前检查传入isFinite()的参数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#避免对数组进行负值索引"><span class="toc-number">30.</span> <span class="toc-text">避免对数组进行负值索引</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用JSON来进行序列化和反序列化"><span class="toc-number">31.</span> <span class="toc-text">使用JSON来进行序列化和反序列化</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#避免使用eval-和函数构造器"><span class="toc-number">32.</span> <span class="toc-text">避免使用eval()和函数构造器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#避免使用with"><span class="toc-number">33.</span> <span class="toc-text">避免使用with()</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#避免使用for-in遍历数组"><span class="toc-number">34.</span> <span class="toc-text">避免使用for...in遍历数组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#给setTimeout-及setInterval-传递函数而不是字符串更好"><span class="toc-number">35.</span> <span class="toc-text">给setTimeout()及setInterval()传递函数而不是字符串更好</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用switch-case来代替一坨if-else"><span class="toc-number">36.</span> <span class="toc-text">使用switch/case来代替一坨if/else</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#在switch-case中使用数字范围进行分界"><span class="toc-number">37.</span> <span class="toc-text">在switch/case中使用数字范围进行分界</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为创建的对象指定原型"><span class="toc-number">38.</span> <span class="toc-text">为创建的对象指定原型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#html转义函数"><span class="toc-number">39.</span> <span class="toc-text">html转义函数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#不要在循环中使用try-catch-finally"><span class="toc-number">40.</span> <span class="toc-text">不要在循环中使用try...catch...finally</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#使用XMLHttpRequests时注意设置超时参数"><span class="toc-number">41.</span> <span class="toc-text">使用XMLHttpRequests时注意设置超时参数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#处理websocket超时"><span class="toc-number">42.</span> <span class="toc-text">处理websocket超时</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#记住：原生操作肯定比函数调用要效率高"><span class="toc-number">43.</span> <span class="toc-text">记住：原生操作肯定比函数调用要效率高</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#编码时注意保持代码的优雅格式，上生产环境前做一些压缩工作。"><span class="toc-number">44.</span> <span class="toc-text">编码时注意保持代码的优雅格式，上生产环境前做一些压缩工作。</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Javascript是一门很吊的语言，这里还有很多资源"><span class="toc-number">45.</span> <span class="toc-text">Javascript是一门很吊的语言，这里还有很多资源</span></a></li></ol>
+                </div>
+            
+
+            <p>本文是一篇翻译文章。原文：<a href="http://modernweb.com/2013/12/23/45-useful-javascript-tips-tricks-and-best-practices/" target="_blank" rel="external">45 Useful JavaScript Tips, Tricks and Best Practices</a></p>
+<p>译文开始。</p>
+<p>众所周知，Javascript是全球最流行的语言之一，它涉足Web开发，移动端开发（<a href="http://phonegap.com/" target="_blank" rel="external">PhoneGap</a>、<a href="http://www.appcelerator.com/" target="_blank" rel="external">Appcelerator</a>），服务端开发（<a href="http://nodejs.org/" target="_blank" rel="external">Nodejs</a>、<a href="http://wakanda.org/" target="_blank" rel="external">Wakanda</a>），还有多种第三方实现（CoffeeScript这种）。此外Javascript还是许多开发者进入编程世界所接触的第一门语言。它既可以在浏览器中简单的弹出一个alert窗口，也能达到控制机器人这种复杂的程度（比如<a href="http://nodebots.io/" target="_blank" rel="external">nodebot</a>、<a href="http://semu.github.io/noduino/" target="_blank" rel="external">nodruino</a>）。现在那些能够熟练编写结构清晰、性能卓越的Javascript开发者们，已经成为招聘市场上炙手可热的应聘者了。</p>
+<p>在这篇文章中，我将向你展示一系列Javascript相关的小技巧和一些最佳实践。除了少数几个示例，大部分示例都可以在浏览器环境或者服务端环境适用。</p>
+<p>注意，文章中所有的代码片段都已经在Google Chrome V30(V8 3.20.17.15)测试通过。</p>
+<h1 id="使用var关键字进行变量赋值"><a href="#使用var关键字进行变量赋值" class="headerlink" title="使用var关键字进行变量赋值"></a>使用<code>var</code>关键字进行变量赋值</h1><p>在Javascript中，如果一个变量没有经过声明就直接进行赋值操作，那么这个变量就会自动转变成全局变量。我们要尽量避免这种情况（全局变量）。</p>
+<h1 id="使用-来代替-进行判等"><a href="#使用-来代替-进行判等" class="headerlink" title="使用===来代替==进行判等"></a>使用<code>===</code>来代替<code>==</code>进行判等</h1><p><code>==</code>和<code>!=</code>操作符会在某些情况下自动进行类型转化。但是<code>===</code>和<code>!==</code>不会做自动转化，它们在做比较时，会同时比较数据类型和值，这也使得<code>===</code>和<code>!==</code>要比<code>==</code>和<code>!=</code>的速度要快。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">10</span>] === <span class="number">10</span>    <span class="comment">// is false</span></span><br><span class="line">[<span class="number">10</span>]  == <span class="number">10</span>    <span class="comment">// is true</span></span><br><span class="line"><span class="string">'10'</span> == <span class="number">10</span>     <span class="comment">// is true</span></span><br><span class="line"><span class="string">'10'</span> === <span class="number">10</span>    <span class="comment">// is false</span></span><br><span class="line">[] == <span class="number">0</span>        <span class="comment">// is true</span></span><br><span class="line">[] ===  <span class="number">0</span>      <span class="comment">// is false</span></span><br><span class="line"><span class="string">''</span> == <span class="literal">false</span>    <span class="comment">// is true but true == "a" is false</span></span><br><span class="line"><span class="string">''</span> ===   <span class="literal">false</span> <span class="comment">// is false</span></span><br></pre></td></tr></table></figure>
+<h1 id="undefined，null，0，false，NaN，-39-39-（空字符串）都为逻辑假值"><a href="#undefined，null，0，false，NaN，-39-39-（空字符串）都为逻辑假值" class="headerlink" title="undefined，null，0，false，NaN，&#39;&#39;（空字符串）都为逻辑假值"></a><code>undefined</code>，<code>null</code>，0，<code>false</code>，<code>NaN</code>，<code>&#39;&#39;</code>（空字符串）都为逻辑假值</h1><h1 id="使用分号-来结束一行代码"><a href="#使用分号-来结束一行代码" class="headerlink" title="使用分号;来结束一行代码"></a>使用分号<code>;</code>来结束一行代码</h1><p>使用分号来结束代码行是一个被Javascript社区推荐的最佳实践。如果你忘了也没有关系，因为现在的Javascript引擎将会自动给你加上分号。至于我们为什么应该使用分号，可以参阅这篇文章<a href="http://davidwalsh.name/javascript-semicolons" target="_blank" rel="external">http://davidwalsh.name/javascript-semicolons</a>。</p>
+<h1 id="使用对象构造器"><a href="#使用对象构造器" class="headerlink" title="使用对象构造器"></a>使用对象构造器</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">firstName, lastName</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.firstName =  firstName;</span><br><span class="line">    <span class="keyword">this</span>.lastName = lastName;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> Saad = <span class="keyword">new</span> Person(<span class="string">"Saad"</span>, <span class="string">"Mousliki"</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="使用typeof、instanceof、constructor时要谨慎小心"><a href="#使用typeof、instanceof、constructor时要谨慎小心" class="headerlink" title="使用typeof、instanceof、constructor时要谨慎小心"></a>使用<code>typeof</code>、<code>instanceof</code>、<code>constructor</code>时要谨慎小心</h1><ul>
+<li><code>typeof</code>：JavaScript的一元操作符，用于以字符串的形式返回变量的原始类型，注意，<code>typeof null</code>也会返回<code>object</code>，大多数的对象类型（数组<code>Array</code>、时间<code>Date</code>等）也会返回<code>object</code></li>
+<li><code>constructor</code>：对象（函数）的内部原型属性，它是可写的（可以被重写）</li>
+<li><code>instanceof</code>：JavaScript操作符，会在原型链中的构造器中搜索，找到则返回<code>true</code>，否则返回<code>false</code>（常用于判断某一个对象是否是某个构造器或者其父类构造器的实例）</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>];</span><br><span class="line"><span class="keyword">typeof</span> arr;   <span class="comment">// return "object" </span></span><br><span class="line">arr <span class="keyword">instanceof</span> <span class="built_in">Array</span> <span class="comment">// true</span></span><br><span class="line">arr.constructor();  <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
+<h1 id="学会使用自调用函数"><a href="#学会使用自调用函数" class="headerlink" title="学会使用自调用函数"></a>学会使用自调用函数</h1><p>函数在创建之后直接自动执行，通常称之为自调用匿名函数（Self-Invoked Anonymous Function）或直接调用函数表达式（Immediately Invoked Function Expression ）。比如，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="comment">// some private code that will be executed automatically</span></span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> result = a+b;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;)(<span class="number">10</span>,<span class="number">20</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="随机从数组中取出一个元素"><a href="#随机从数组中取出一个元素" class="headerlink" title="随机从数组中取出一个元素"></a>随机从数组中取出一个元素</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> items = [<span class="number">12</span>, <span class="number">548</span> , <span class="string">'a'</span> , <span class="number">2</span> , <span class="number">5478</span> , <span class="string">'foo'</span> , <span class="number">8852</span>, , <span class="string">'Doe'</span> , <span class="number">2145</span> , <span class="number">119</span>];</span><br><span class="line"><span class="keyword">var</span> randomItem = items[<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * items.length)];</span><br></pre></td></tr></table></figure>
+<h1 id="从一个指定的范围中取出一个随机数"><a href="#从一个指定的范围中取出一个随机数" class="headerlink" title="从一个指定的范围中取出一个随机数"></a>从一个指定的范围中取出一个随机数</h1><p>这个功能在生成测试用的假数据时特别有用。比如取一个指定范围内的工资数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * (max - min + <span class="number">1</span>)) + min;</span><br></pre></td></tr></table></figure>
+<h1 id="生成一个从0开始到指定数字的序列"><a href="#生成一个从0开始到指定数字的序列" class="headerlink" title="生成一个从0开始到指定数字的序列"></a>生成一个从0开始到指定数字的序列</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbersArray = [] , max = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">for</span>( <span class="keyword">var</span> i=<span class="number">1</span>; numbersArray.push(i++) &lt; max;);  <span class="comment">// numbers = [1,2,3 ... 100]</span></span><br></pre></td></tr></table></figure>
+<h1 id="生成一个随机的字母数字序列"><a href="#生成一个随机的字母数字序列" class="headerlink" title="生成一个随机的字母数字序列"></a>生成一个随机的字母数字序列</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">generateRandomAlphaNum</span>(<span class="params">len</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> rdmString = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span>( ;rdmString.length &lt; len; rdmString  += <span class="built_in">Math</span>.random().toString(<span class="number">36</span>).substr(<span class="number">2</span>));</span><br><span class="line">        <span class="keyword">return</span>  rdmString.substr(<span class="number">0</span>, len);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>译者注</p>
+<blockquote>
+<p><code>toString()</code>方法可以接受一个参数表示数字进制。而36进制刚好可以使用a-z和0-9这些字符。所以此方法可以用于生成简单的随机串。</p>
+</blockquote>
+<h1 id="打乱一个数字数组的顺序"><a href="#打乱一个数字数组的顺序" class="headerlink" title="打乱一个数字数组的顺序"></a>打乱一个数字数组的顺序</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers = [<span class="number">5</span>, <span class="number">458</span> , <span class="number">120</span> , <span class="number">-215</span> , <span class="number">228</span> , <span class="number">400</span> , <span class="number">122205</span>, <span class="number">-85411</span>];</span><br><span class="line">numbers = numbers.sort(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="keyword">return</span> <span class="built_in">Math</span>.random() - <span class="number">0.5</span>&#125;);</span><br><span class="line"><span class="comment">/* the array numbers will be equal for example to [120, 5, 228, -215, 400, 458, -85411, 122205]  */</span></span><br></pre></td></tr></table></figure>
+<p>这里采用了原生的排序函数<code>sort()</code>，此外我们还可以使用专门的工具库来得到这一目的。</p>
+<h1 id="字符串去空格"><a href="#字符串去空格" class="headerlink" title="字符串去空格"></a>字符串去空格</h1><p>像Java、C#、PHP这些语言都内置了<code>trim()</code>功能函数用于字符串去空格。但是Javascript没有这个内置方法。可以通过下面的方法来得到此目的，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">String</span>.prototype.trim = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.replace(<span class="regexp">/^\s+|\s+$/g</span>, <span class="string">""</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>不过，在新的Javascript引擎中，已经内置支持了这个功能。</p>
+<h1 id="将一个数组追加到另一个数组中"><a href="#将一个数组追加到另一个数组中" class="headerlink" title="将一个数组追加到另一个数组中"></a>将一个数组追加到另一个数组中</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array1 = [<span class="number">12</span> , <span class="string">"foo"</span> , &#123;name <span class="string">"Joe"</span>&#125; , <span class="number">-2458</span>];</span><br><span class="line"><span class="keyword">var</span> array2 = [<span class="string">"Doe"</span> , <span class="number">555</span> , <span class="number">100</span>];</span><br><span class="line"><span class="built_in">Array</span>.prototype.push.apply(array1, array2);</span><br><span class="line"><span class="comment">/* array1 值为  [12 , "foo" , &#123;name "Joe"&#125; , -2458 , "Doe" , 555 , 100] */</span></span><br></pre></td></tr></table></figure>
+<h1 id="将argruments转换成数组"><a href="#将argruments转换成数组" class="headerlink" title="将argruments转换成数组"></a>将<code>argruments</code>转换成数组</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> argArray = <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="检验一个参数是否为数字"><a href="#检验一个参数是否为数字" class="headerlink" title="检验一个参数是否为数字"></a>检验一个参数是否为数字</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isNumber</span>(<span class="params">n</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> !<span class="built_in">isNaN</span>(<span class="built_in">parseFloat</span>(n)) &amp;&amp; <span class="built_in">isFinite</span>(n);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="检验一个参数是否为数组"><a href="#检验一个参数是否为数组" class="headerlink" title="检验一个参数是否为数组"></a>检验一个参数是否为数组</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isArray</span>(<span class="params">obj</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(obj) === <span class="string">'[object Array]'</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果<code>toString()</code>被重写过的话，上面的方法就不行了。此时我们可以使用下面的方法，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.isArray(obj); <span class="comment">// its a new Array method</span></span><br></pre></td></tr></table></figure>
+<p>如果在浏览器中没有使用iframe，还可以用<code>instanceof</code>，但如果上下文太复杂，也有可能出错。比如，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myFrame = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>);</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(myFrame);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> myArray = <span class="built_in">window</span>.frames[<span class="built_in">window</span>.frames.length<span class="number">-1</span>].Array;</span><br><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> myArray(a,b,<span class="number">10</span>); <span class="comment">// [a,b,10]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// myArray 的构造器已经丢失，instanceof 的结果将不正常</span></span><br><span class="line"><span class="comment">// 不同iframe中的构造器是不能共享的</span></span><br><span class="line">arr <span class="keyword">instanceof</span> <span class="built_in">Array</span>; <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h1 id="取出一个数组中的最大值和最小值"><a href="#取出一个数组中的最大值和最小值" class="headerlink" title="取出一个数组中的最大值和最小值"></a>取出一个数组中的最大值和最小值</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers = [<span class="number">5</span>, <span class="number">458</span> , <span class="number">120</span> , <span class="number">-215</span> , <span class="number">228</span> , <span class="number">400</span> , <span class="number">122205</span>, <span class="number">-85411</span>]; </span><br><span class="line"><span class="keyword">var</span> maxInNumbers = <span class="built_in">Math</span>.max.apply(<span class="built_in">Math</span>, numbers); </span><br><span class="line"><span class="keyword">var</span> minInNumbers = <span class="built_in">Math</span>.min.apply(<span class="built_in">Math</span>, numbers);</span><br></pre></td></tr></table></figure>
+<h1 id="清空一个数组"><a href="#清空一个数组" class="headerlink" title="清空一个数组"></a>清空一个数组</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myArray = [<span class="number">12</span> , <span class="number">222</span> , <span class="number">1000</span> ];  </span><br><span class="line">myArray.length = <span class="number">0</span>; <span class="comment">// myArray will be equal to [].</span></span><br></pre></td></tr></table></figure>
+<h1 id="不用使用delete关键字来移除一个数组元素"><a href="#不用使用delete关键字来移除一个数组元素" class="headerlink" title="不用使用delete关键字来移除一个数组元素"></a>不用使用<code>delete</code>关键字来移除一个数组元素</h1><p>应该使用<code>splice</code>方法而不是<code>delete</code>来移除一个数组元素。对一个数组元素使用<code>delete</code>会让这个数组元素的值变为<code>undefined</code>，并没有将这个数组元素给删除掉。</p>
+<p>错误的用法，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> items = [<span class="number">12</span>, <span class="number">548</span> ,<span class="string">'a'</span> , <span class="number">2</span> , <span class="number">5478</span> , <span class="string">'foo'</span> , <span class="number">8852</span>, , <span class="string">'Doe'</span> ,<span class="number">2154</span> , <span class="number">119</span> ]; </span><br><span class="line">items.length; <span class="comment">// return 11 </span></span><br><span class="line"><span class="keyword">delete</span> items[<span class="number">3</span>]; <span class="comment">// return true </span></span><br><span class="line">items.length; <span class="comment">// return 11 </span></span><br><span class="line"><span class="comment">/* items will be equal to [12, 548, "a", undefined × 1, 5478, "foo", 8852, undefined × 1, "Doe", 2154,       119]   */</span></span><br></pre></td></tr></table></figure>
+<p>正确的用法，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> items = [<span class="number">12</span>, <span class="number">548</span> ,<span class="string">'a'</span> , <span class="number">2</span> , <span class="number">5478</span> , <span class="string">'foo'</span> , <span class="number">8852</span>, , <span class="string">'Doe'</span> ,<span class="number">2154</span> , <span class="number">119</span> ]; </span><br><span class="line">items.length; <span class="comment">// return 11 </span></span><br><span class="line">items.splice(<span class="number">3</span>,<span class="number">1</span>) ; </span><br><span class="line">items.length; <span class="comment">// return 10 </span></span><br><span class="line"><span class="comment">/* items 结果为 [12, 548, "a", 5478, "foo", 8852, undefined × 1, "Doe", 2154, 119] */</span></span><br></pre></td></tr></table></figure>
+<p>注意，要想移除一个对象的属性，应该采用<code>delete</code>方法。</p>
+<h1 id="可以通过操作数组长度length来截断一个数组"><a href="#可以通过操作数组长度length来截断一个数组" class="headerlink" title="可以通过操作数组长度length来截断一个数组"></a>可以通过操作数组长度<code>length</code>来截断一个数组</h1><p>与前面那个使用<code>length</code>清空数组的示例类似，我们可以使用<code>length</code>来截断一个数组。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myArray = [<span class="number">12</span> , <span class="number">222</span> , <span class="number">1000</span> , <span class="number">124</span> , <span class="number">98</span> , <span class="number">10</span> ];  </span><br><span class="line">myArray.length = <span class="number">4</span>; <span class="comment">// myArray will be equal to [12 , 222 , 1000 , 124].</span></span><br></pre></td></tr></table></figure>
+<p>除此之外，如果我们使用一个更大的值去重写<code>length</code>，那么数组的长度将会改变，同时会用<code>undefined</code>填充新增的数组元素。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">myArray.length = <span class="number">10</span>; <span class="comment">// the new array length is 10 </span></span><br><span class="line">myArray[myArray.length - <span class="number">1</span>] ; <span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+<h1 id="在条件中使用-amp-amp-及-进行短语判断"><a href="#在条件中使用-amp-amp-及-进行短语判断" class="headerlink" title="在条件中使用&amp;&amp;及||进行短语判断"></a>在条件中使用<code>&amp;&amp;</code>及<code>||</code>进行短语判断</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foo = <span class="number">10</span>;  </span><br><span class="line">foo == <span class="number">10</span> &amp;&amp; doSomething(); <span class="comment">// is the same thing as if (foo == 10) doSomething(); </span></span><br><span class="line">foo == <span class="number">5</span> || doSomething(); <span class="comment">// is the same thing as if (foo != 5) doSomething();</span></span><br></pre></td></tr></table></figure>
+<p><code>||</code>还用于给函数参数设置默认值，比如</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomething</span>(<span class="params">arg1</span>)</span>&#123; </span><br><span class="line">    arg1 = arg1 || <span class="number">10</span>; <span class="comment">// arg1 will have 10 as a default value if it’s not already set</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="使用map-对数组进行遍历操作"><a href="#使用map-对数组进行遍历操作" class="headerlink" title="使用map()对数组进行遍历操作"></a>使用<code>map()</code>对数组进行遍历操作</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> squares = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>].map(<span class="function"><span class="keyword">function</span> (<span class="params">val</span>) </span>&#123;  </span><br><span class="line">    <span class="keyword">return</span> val * val;  </span><br><span class="line">&#125;); </span><br><span class="line"><span class="comment">// squares will be equal to [1, 4, 9, 16]</span></span><br></pre></td></tr></table></figure>
+<h1 id="保留指定位数的小数点"><a href="#保留指定位数的小数点" class="headerlink" title="保留指定位数的小数点"></a>保留指定位数的小数点</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> num = <span class="number">2.443242342</span>;</span><br><span class="line">num = num.toFixed(<span class="number">4</span>);  <span class="comment">// num will be equal to 2.4432</span></span><br></pre></td></tr></table></figure>
+<p>注意，<code>toFixed()</code>方法返回的是字符串而不是一个数字。</p>
+<h1 id="浮点数计算问题"><a href="#浮点数计算问题" class="headerlink" title="浮点数计算问题"></a>浮点数计算问题</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0.1</span> + <span class="number">0.2</span> === <span class="number">0.3</span> <span class="comment">// is false </span></span><br><span class="line"><span class="number">9007199254740992</span> + <span class="number">1</span> <span class="comment">// is equal to 9007199254740992  </span></span><br><span class="line"><span class="number">9007199254740992</span> + <span class="number">2</span> <span class="comment">// is equal to 9007199254740994</span></span><br></pre></td></tr></table></figure>
+<p>为什么呢？因为0.1+0.2等于0.30000000000000004。JavaScript的数字都遵循IEEE 754标准构建，在内部都是64位浮点小数表示，具体可以参阅<a href="http://www.2ality.com/2012/04/number-encoding.html" target="_blank" rel="external">这篇文章</a>。</p>
+<p>另外，你也可以使用<code>toFixed()</code>或者<code>toPrecision()</code>来解决这个问题。</p>
+<p>译者注</p>
+<blockquote>
+<p>关于这个问题，博主也有一篇相关的文章，<a href="http://blog.gejiawen.com/2015/08/11/javascript-float-count-precision/">Javascript中浮点数的计算精度问题</a>。</p>
+</blockquote>
+<h1 id="使用for-in来遍历对象的属性"><a href="#使用for-in来遍历对象的属性" class="headerlink" title="使用for...in来遍历对象的属性"></a>使用<code>for...in</code>来遍历对象的属性</h1><p>下面的代码片段使用<code>for...in</code>来遍历对象属性，可以防止遍历到对象原型链上的属性。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> name <span class="keyword">in</span> object) &#123;  </span><br><span class="line">    <span class="keyword">if</span> (object.hasOwnProperty(name)) &#123; </span><br><span class="line">        <span class="comment">// do something with name                    </span></span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="逗号运算符"><a href="#逗号运算符" class="headerlink" title="逗号运算符"></a>逗号运算符</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0</span>; </span><br><span class="line"><span class="keyword">var</span> b = ( a++, <span class="number">99</span> ); </span><br><span class="line"><span class="built_in">console</span>.log(a);  <span class="comment">// a will be equal to 1 </span></span><br><span class="line"><span class="built_in">console</span>.log(b);  <span class="comment">// b is equal to 99</span></span><br></pre></td></tr></table></figure>
+<h1 id="缓存临时变量用于避免再次计算或者查询"><a href="#缓存临时变量用于避免再次计算或者查询" class="headerlink" title="缓存临时变量用于避免再次计算或者查询"></a>缓存临时变量用于避免再次计算或者查询</h1><p>在使用jquery时，我们可以临时缓存整个jq对象，比如</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> navright = <span class="built_in">document</span>.querySelector(<span class="string">'#right'</span>); </span><br><span class="line"><span class="keyword">var</span> navleft = <span class="built_in">document</span>.querySelector(<span class="string">'#left'</span>); </span><br><span class="line"><span class="keyword">var</span> navup = <span class="built_in">document</span>.querySelector(<span class="string">'#up'</span>); </span><br><span class="line"><span class="keyword">var</span> navdown = <span class="built_in">document</span>.querySelector(<span class="string">'#down'</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="提前检查传入isFinite-的参数"><a href="#提前检查传入isFinite-的参数" class="headerlink" title="提前检查传入isFinite()的参数"></a>提前检查传入<code>isFinite()</code>的参数</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">isFinite</span>(<span class="number">0</span>/<span class="number">0</span>) ; <span class="comment">// false </span></span><br><span class="line"><span class="built_in">isFinite</span>(<span class="string">"foo"</span>); <span class="comment">// false </span></span><br><span class="line"><span class="built_in">isFinite</span>(<span class="string">"10"</span>); <span class="comment">// true </span></span><br><span class="line"><span class="built_in">isFinite</span>(<span class="number">10</span>);   <span class="comment">// true </span></span><br><span class="line"><span class="built_in">isFinite</span>(<span class="literal">undefined</span>);  <span class="comment">// false </span></span><br><span class="line"><span class="built_in">isFinite</span>();   <span class="comment">// false </span></span><br><span class="line"><span class="built_in">isFinite</span>(<span class="literal">null</span>);  <span class="comment">// true  注意这里！！！</span></span><br></pre></td></tr></table></figure>
+<h1 id="避免对数组进行负值索引"><a href="#避免对数组进行负值索引" class="headerlink" title="避免对数组进行负值索引"></a>避免对数组进行负值索引</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbersArray = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]; </span><br><span class="line"><span class="keyword">var</span> <span class="keyword">from</span> = numbersArray.indexOf(<span class="string">"foo"</span>) ;  <span class="comment">// from is equal to -1 </span></span><br><span class="line">numbersArray.splice(<span class="keyword">from</span>,<span class="number">2</span>);    <span class="comment">// will return [5]</span></span><br></pre></td></tr></table></figure>
+<p>注意传给<code>splice</code>的索引参数不要是负数，当是负数时，会从数组结尾处删除元素。</p>
+<h1 id="使用JSON来进行序列化和反序列化"><a href="#使用JSON来进行序列化和反序列化" class="headerlink" title="使用JSON来进行序列化和反序列化"></a>使用<code>JSON</code>来进行序列化和反序列化</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;name :<span class="string">'Saad'</span>, age : <span class="number">26</span>, department : &#123;ID : <span class="number">15</span>, name : <span class="string">"R&amp;D"</span>&#125; &#125;; </span><br><span class="line"><span class="keyword">var</span> stringFromPerson = <span class="built_in">JSON</span>.stringify(person); </span><br><span class="line"><span class="comment">/* stringFromPerson is equal to "&#123;"name":"Saad","age":26,"department":&#123;"ID":15,"name":"R&amp;D"&#125;&#125;"   */</span> </span><br><span class="line"><span class="keyword">var</span> personFromString = <span class="built_in">JSON</span>.parse(stringFromPerson);  </span><br><span class="line"><span class="comment">/* personFromString is equal to person object  */</span></span><br></pre></td></tr></table></figure>
+<h1 id="避免使用eval-和函数构造器"><a href="#避免使用eval-和函数构造器" class="headerlink" title="避免使用eval()和函数构造器"></a>避免使用<code>eval()</code>和函数构造器</h1><p><code>eval()</code>和函数构造器（<code>Function</code> consturctor）的开销都比较大，每次调用JavaScript引擎都要将源代码转换为可执行的代码。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> func1 = <span class="keyword">new</span> <span class="built_in">Function</span>(functionCode);</span><br><span class="line"><span class="keyword">var</span> func2 = <span class="built_in">eval</span>(functionCode);</span><br></pre></td></tr></table></figure>
+<h1 id="避免使用with"><a href="#避免使用with" class="headerlink" title="避免使用with()"></a>避免使用<code>with()</code></h1><p>使用<code>with()</code>语法会将变量注入到全局变量中。因此，如果有重名的变量，就会发生覆盖或者重写的问题。</p>
+<h1 id="避免使用for-in遍历数组"><a href="#避免使用for-in遍历数组" class="headerlink" title="避免使用for...in遍历数组"></a>避免使用<code>for...in</code>遍历数组</h1><p>错误的用法，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum = <span class="number">0</span>;  </span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i <span class="keyword">in</span> arrayNumbers) &#123;  </span><br><span class="line">    sum += arrayNumbers[i];  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>更好的做法，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum = <span class="number">0</span>;  </span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>, len = arrayNumbers.length; i &lt; len; i++) &#123;  </span><br><span class="line">    sum += arrayNumbers[i];  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>除此之外，<code>i</code>和<code>len</code>是在<code>for</code>循环的第一个声明中，二者只会初始化一次，这要比下面这种写法快：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arrayNumbers.length; i++)</span><br></pre></td></tr></table></figure>
+<p>为什么呢？因为数组<code>arrayNumbers</code>的长度在每次遍历的时候都会计算一次，这就造成了不必要的消耗。</p>
+<p>注意，这个问题其实在最新的Javascript引擎中已经被修复了。</p>
+<h1 id="给setTimeout-及setInterval-传递函数而不是字符串更好"><a href="#给setTimeout-及setInterval-传递函数而不是字符串更好" class="headerlink" title="给setTimeout()及setInterval()传递函数而不是字符串更好"></a>给<code>setTimeout()</code>及<code>setInterval()</code>传递函数而不是字符串更好</h1><p>如果你给<code>setTimeout()</code>或者<code>setInterval()</code>传递字符串的话，那么它内部的执行机制其实是和<code>eval()</code>是一样的，这样会比较慢。</p>
+<p>错误的用法，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setInterval(<span class="string">'doSomethingPeriodically()'</span>, <span class="number">1000</span>);  </span><br><span class="line">setTimeout(<span class="string">'doSomethingAfterFiveSeconds()'</span>, <span class="number">5000</span>);</span><br></pre></td></tr></table></figure>
+<p>正确的用法，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setInterval(doSomethingPeriodically, <span class="number">1000</span>);  </span><br><span class="line">setTimeout(doSomethingAfterFiveSeconds, <span class="number">5000</span>);</span><br></pre></td></tr></table></figure>
+<h1 id="使用switch-case来代替一坨if-else"><a href="#使用switch-case来代替一坨if-else" class="headerlink" title="使用switch/case来代替一坨if/else"></a>使用<code>switch/case</code>来代替一坨<code>if/else</code></h1><p>当判断有超过两个分支的时候使用<code>switch/case</code>要更快一些，而且也更优雅，更利于代码的组织，当然，如果有超过10个分支，就不要使用<code>switch/case</code>了。</p>
+<h1 id="在switch-case中使用数字范围进行分界"><a href="#在switch-case中使用数字范围进行分界" class="headerlink" title="在switch/case中使用数字范围进行分界"></a>在<code>switch/case</code>中使用数字范围进行分界</h1><p>其实<code>switch/case</code>中的<code>case</code>条件，还可以这样写：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCategory</span>(<span class="params">age</span>) </span>&#123;  </span><br><span class="line">    <span class="keyword">var</span> category = <span class="string">""</span>;  </span><br><span class="line">    <span class="keyword">switch</span> (<span class="literal">true</span>) &#123;  </span><br><span class="line">        <span class="keyword">case</span> <span class="built_in">isNaN</span>(age):  </span><br><span class="line">            category = <span class="string">"not an age"</span>;  </span><br><span class="line">            <span class="keyword">break</span>;  </span><br><span class="line">        <span class="keyword">case</span> (age &gt;= <span class="number">50</span>):  </span><br><span class="line">            category = <span class="string">"Old"</span>;  </span><br><span class="line">            <span class="keyword">break</span>;  </span><br><span class="line">        <span class="keyword">case</span> (age &lt;= <span class="number">20</span>):  </span><br><span class="line">            category = <span class="string">"Baby"</span>;  </span><br><span class="line">            <span class="keyword">break</span>;  </span><br><span class="line">        <span class="keyword">default</span>:  </span><br><span class="line">            category = <span class="string">"Young"</span>;  </span><br><span class="line">            <span class="keyword">break</span>;  </span><br><span class="line">    &#125;;  </span><br><span class="line">    <span class="keyword">return</span> category;  </span><br><span class="line">&#125;  </span><br><span class="line">getCategory(<span class="number">5</span>);  <span class="comment">// will return "Baby"</span></span><br></pre></td></tr></table></figure>
+<h1 id="为创建的对象指定原型"><a href="#为创建的对象指定原型" class="headerlink" title="为创建的对象指定原型"></a>为创建的对象指定原型</h1><p>下面的示例演示了可以给定对象作为参数，来创建以此为原型的新对象：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">clone</span>(<span class="params">object</span>) </span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">OneShotConstructor</span>(<span class="params"></span>)</span>&#123;&#125;; </span><br><span class="line">    OneShotConstructor.prototype = object;  </span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> OneShotConstructor(); </span><br><span class="line">&#125; </span><br><span class="line">clone(<span class="built_in">Array</span>).prototype ;  <span class="comment">// []</span></span><br></pre></td></tr></table></figure>
+<h1 id="html转义函数"><a href="#html转义函数" class="headerlink" title="html转义函数"></a>html转义函数</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">escapeHTML</span>(<span class="params">text</span>) </span>&#123;  </span><br><span class="line">    <span class="keyword">var</span> replacements= &#123;<span class="string">'&lt;'</span>: <span class="string">'&amp;lt;'</span>, <span class="string">'&gt;'</span>: <span class="string">'&amp;gt;'</span>, <span class="string">'&amp;'</span>: <span class="string">'&amp;amp;'</span>, <span class="string">'"'</span>: <span class="string">'&amp;quot;'</span>&#125;;                      </span><br><span class="line">    <span class="keyword">return</span> text.replace(<span class="regexp">/[&lt;&gt;&amp;"]/g</span>, <span class="function"><span class="keyword">function</span>(<span class="params">character</span>) </span>&#123;  </span><br><span class="line">        <span class="keyword">return</span> replacements[character];  </span><br><span class="line">    &#125;); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="不要在循环中使用try-catch-finally"><a href="#不要在循环中使用try-catch-finally" class="headerlink" title="不要在循环中使用try...catch...finally"></a>不要在循环中使用<code>try...catch...finally</code></h1><p><code>try...catch...finally</code>在捕获一个异常时，会创建一个运行时环境的子作用域。而异常变量的生命周期仅限在这个运行时的子作用域。</p>
+<p>译者注</p>
+<blockquote>
+<p>这里我们可以使用闭包来保存这个运行时的异常变量。</p>
+</blockquote>
+<p>错误的用法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object = [<span class="string">'foo'</span>, <span class="string">'bar'</span>], i;  </span><br><span class="line"><span class="keyword">for</span> (i = <span class="number">0</span>, len = object.length; i &lt;len; i++) &#123;  </span><br><span class="line">    <span class="keyword">try</span> &#123;  </span><br><span class="line">        <span class="comment">// do something that throws an exception </span></span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;   </span><br><span class="line">        <span class="comment">// handle exception  </span></span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>正确的用法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object = [<span class="string">'foo'</span>, <span class="string">'bar'</span>], i;  </span><br><span class="line"><span class="keyword">try</span> &#123; </span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>, len = object.length; i &lt;len; i++) &#123;  </span><br><span class="line">        <span class="comment">// do something that throws an exception </span></span><br><span class="line">    &#125; </span><br><span class="line">&#125; <span class="keyword">catch</span> (e) &#123;   </span><br><span class="line">    <span class="comment">// handle exception  </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="使用XMLHttpRequests时注意设置超时参数"><a href="#使用XMLHttpRequests时注意设置超时参数" class="headerlink" title="使用XMLHttpRequests时注意设置超时参数"></a>使用<code>XMLHttpRequests</code>时注意设置超时参数</h1><p>如果一个ajax请求长时间没有响应，我们应该中止请求。否则浏览器将会一直等待。我们可以使用<code>setTimeout()</code>来做一个定时器，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest (); </span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;  </span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.readyState == <span class="number">4</span>) &#123;  </span><br><span class="line">        clearTimeout(timeout);  </span><br><span class="line">        <span class="comment">// do something with response data </span></span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="keyword">var</span> timeout = setTimeout( <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;  </span><br><span class="line">    xhr.abort(); <span class="comment">// call error callback  </span></span><br><span class="line">&#125;, <span class="number">60</span>*<span class="number">1000</span> <span class="comment">/* timeout after a minute */</span> ); </span><br><span class="line">xhr.open(<span class="string">'GET'</span>, url, <span class="literal">true</span>);  </span><br><span class="line">xhr.send();</span><br></pre></td></tr></table></figure>
+<p>除此之外，我们应该避免同时发送多个<strong>同步的</strong>ajax请求。</p>
+<h1 id="处理websocket超时"><a href="#处理websocket超时" class="headerlink" title="处理websocket超时"></a>处理websocket超时</h1><p>一般地，WebSocket连接创建后，如果30秒内没有任何活动服务器端会对连接进行超时处理，防火墙也可以对单位周期内没有活动的连接进行超时处理。</p>
+<p>为了防止超时中断，你需要每隔一段时间发送一个心跳数据（空字符串）以保持websocket连接。下面的两个方法一个用于周期的发送心跳数据保持连接，一个是取消心跳数据包。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> timerID = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">keepAlive</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> timeout = <span class="number">15000</span>;</span><br><span class="line">    <span class="keyword">if</span> (webSocket.readyState == webSocket.OPEN) &#123;</span><br><span class="line">        webSocket.send(<span class="string">''</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    timerId = setTimeout(keepAlive, timeout);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">cancelKeepAlive</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (timerId) &#123;</span><br><span class="line">        cancelTimeout(timerId);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>keepAlive()</code>方法应该被添加在<code>webSOcket</code>连接的<code>onOpen()</code>方法的最后，而<code>cancelKeepAlive()</code>添加在<code>onClose()</code>方法的最后。</p>
+<h1 id="记住：原生操作肯定比函数调用要效率高"><a href="#记住：原生操作肯定比函数调用要效率高" class="headerlink" title="记住：原生操作肯定比函数调用要效率高"></a>记住：原生操作肯定比函数调用要效率高</h1><p>比如，</p>
+<p>在有些时候，相比下面这种用法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> min = <span class="built_in">Math</span>.min(a,b); </span><br><span class="line">A.push(v);</span><br></pre></td></tr></table></figure>
+<p>可能在性能方面会比不上下面的做法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> min = a &lt; b ? a : b; </span><br><span class="line">A[A.length] = v;</span><br></pre></td></tr></table></figure>
+<h1 id="编码时注意保持代码的优雅格式，上生产环境前做一些压缩工作。"><a href="#编码时注意保持代码的优雅格式，上生产环境前做一些压缩工作。" class="headerlink" title="编码时注意保持代码的优雅格式，上生产环境前做一些压缩工作。"></a>编码时注意保持代码的优雅格式，上生产环境前做一些压缩工作。</h1><h1 id="Javascript是一门很吊的语言，这里还有很多资源"><a href="#Javascript是一门很吊的语言，这里还有很多资源" class="headerlink" title="Javascript是一门很吊的语言，这里还有很多资源"></a>Javascript是一门很吊的语言，这里还有很多资源</h1><ul>
+<li>Code Academy JavaScript tracks: <a href="http://www.codecademy.com/tracks/javascript" target="_blank" rel="external">http://www.codecademy.com/tracks/javascript</a></li>
+<li>Eloquent JavaScript by Marjin Haverbeke: <a href="http://eloquentjavascript.net/" target="_blank" rel="external">http://eloquentjavascript.net/</a></li>
+<li>Advanced JavaScript by John Resig: <a href="http://ejohn.org/apps/learn/" target="_blank" rel="external">http://ejohn.org/apps/learn/</a></li>
+</ul>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://gejiawen.github.io/about">@gejiawen</a>.</p>
+    <p class="link">本文链接：<a href="http://blog.gejiawen.com/2015/09/22/45-useful-javascript-tips-tricks-and-best-practices/">http://blog.gejiawen.com/2015/09/22/45-useful-javascript-tips-tricks-and-best-practices/</a></p>
+
+    <div class="share">
+    分享本页：
+    
+        <div class="bdsharebuttonbox"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_more" data-cmd="more"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    
+    
+</div>
+
+</div>
+
+
+            
+    <section class="comment">
+    <div class="ds-thread" data-thread-key="45-useful-javascript-tips-tricks-and-best-practices" data-title="Javascript实用黑科技45条" data-url="http://blog.gejiawen.com/2015/09/22/45-useful-javascript-tips-tricks-and-best-practices/" data-author-key="gejiawen"></div>
+</section>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gejiawen-blog"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

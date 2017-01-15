@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>UI组件库和静态服务域的相关实践</title>
+    <meta name="description" content="YOUR SLIDES CONTENT">
+    <meta name="author" content="gejiawen">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="../../lib/css/reveal.min.css">
+    <link rel="stylesheet" href="../../lib/css/theme/default.css" id="theme">
+    <!-- theme list: default, sky, beige, blood, simple, serif, night, moon, solarized -->
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="../../lib/css/zenburn.css">
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+        if (window.location.search.match(/print-pdf/gi)) {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = '../../lib/css/pdf.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+    </script>
+    <!--[if lt IE 9]>
+    <script src="../../lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="reveal">
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section>
+            <h1>UI组件库和静态服务域的相关实践</h1>
+            <p class="fragment">
+                <small>Created by <a href="http://blog.gejiawen.com">@gejiawen</a> for qxwz</small>
+                <br>
+                <small>2016.11.25</small>
+            </p>
+        </section>
+
+        <section>
+            <h1>Agenda</h1>
+        </section>
+
+        <section data-background="#007777" data-background-transition="slide">
+            <ul>
+                <li>背景和目标</li>
+                <li>UI规范、组件化、静态域</li>
+                <li>第一阶段，产出基础UI</li>
+                <li>第二阶段，丰富基础UI</li>
+                <li>第三阶段，组件化</li>
+                <li>第四阶段，静态服务域</li>
+                <li>愿景与远景</li>
+            </ul>
+        </section>
+
+        <section>
+            <h1>Let's Go!</h1>
+        </section>
+
+        <section data-background="#8c4738" data-background-transition="slide">
+            <h1>背景和目标</h1>
+        </section>
+
+        <section>
+            <h3>网站技术现在的现状</h3>
+        </section>
+
+        <section>
+            <ul>
+                <li>官网UI没有规范，设计较为随意</li>
+                <li>前端UI代码基本没有沉淀，复用率微小</li>
+                <li>产品对现有的UI没有概念，原型靠脑补</li>
+                <li>......</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>怎么办？</h3>
+        </section>
+
+        <section>
+            <h3>对症下药，解决UI层面的痛点</h3>
+        </section>
+
+        <section>
+            <h3>怎么解决？</h3>
+        </section>
+
+        <section>
+            <ol>
+                <li>站在巨人的肩膀上，主要参考了bootstrap和ant.design</li>
+                <li>结合我们自己需求，抽象一套基础UI</li>
+                <li>有了基本UI之后，衍生基础组件、复杂组件、带交互的组件</li>
+                <li>以UI和组件为基础，搭建上层的静态域，为业务域提供服务</li>
+            </ol>
+        </section>
+
+
+        <section data-background="#8c4738" data-background-transition="slide">
+            <h1>UI规范、组件化、静态域</h1>
+        </section>
+
+        <section>
+            <p>有了上面目标之后，我们将会有四个阶段的计划</p>
+        </section>
+
+        <section>
+            <h3>Phase 0</h3>
+        </section>
+
+        <section>
+            <ul>
+                <li>为什么要做？解决什么问题？目标是什么？</li>
+                <li>底层方案的选型和实现方式的确定</li>
+                <li>相关规范和计划的制定</li>
+            </ul>
+        </section>
+
+        <!--
+        <section>
+            <h3>我们需要什么样的UI规范？</h3>
+        </section>
+
+        <section>
+            <ul>
+                <li>站在巨人的肩膀上</li>
+                <li>轻量、简单、易拓展</li>
+                <li>契合我们的业务场景</li>
+            </ul>
+        </section>
+        -->
+
+        <section>
+            <h3>Phase 1</h3>
+        </section>
+
+        <section>
+            <ul>
+                <li>基础UI的抽象及分类</li>
+                <li>构建底层css基础代码</li>
+                <li>UI的派生继承方式及实现</li>
+                <li>UI多态化（场景、尺寸等）</li>
+            </ul>
+        </section>
+
+        <!--
+        <section>
+            <h3>底层选型，</h3>
+            <p class="fragment">以bootstrap为底层基础代码，我们会以强侵入的方式修改其源码。</p>
+        </section>
+
+        <section>
+            <h3>前端开发与UI设计师的工作，</h3>
+            <ul class="fragment">
+                <li>一起抽象基础UI，制定UI规范。比如button，input，icon等等</li>
+                <li>设计师给出设计稿</li>
+                <li>前端开发根据设计稿进行实现</li>
+            </ul>
+        </section>
+        -->
+
+        <section>
+            <h3>Phase 2</h3>
+        </section>
+
+        <section>
+            <ul>
+                <li>基础UI的动效及分类</li>
+                <li>渐进增强的实现UI动效</li>
+                <li>UI多态化实现（场景、尺寸等）</li>
+                <li>多终端支持</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Phase 3</h3>
+        </section>
+
+        <section>
+            <ul>
+                <li>组件化计划启动</li>
+                <li>组件化实现方式的探索，如何组合UI和交互？</li>
+                <li>构建基础组件及组件分类</li>
+                <li>构建复杂组件及交互实现</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Phase 4</h3>
+        </section>
+
+        <section>
+            <ul>
+                <li>静态域计划启动，什么是静态域？解决什么问题？</li>
+                <li>静态资源分发，UI和组件支持</li>
+                <li>业务域中通用界面和操作的统一支持</li>
+                <li>......</li>
+            </ul>
+        </section>
+
+        <section>
+            <img src="../../res/slides/how-to-build-ui-widget-and-static-domain/001.png" alt="">
+        </section>
+
+        <section>
+            <h3>相关文档，详见<a href="https://code.wz-inc.com/nyx/nyx-doc" target="_blank">nyx-doc</a></h3>
+        </section>
+
+        <section data-background="#8c4738" data-background-transition="slide">
+            <h1>第一阶段<br>产出UI</h1>
+        </section>
+
+        <section>
+            <h3>UI分类</h3>
+        </section>
+
+        <section>
+            <section>
+                <img src="../../res/slides/how-to-build-ui-widget-and-static-domain/002.png" alt="">
+            </section>
+            <section>
+                <a href="http://naotu.baidu.com/file/6ea20de9fab8839c93c5bd00c39e77ac?token=ff7cee92f79b0e05" target="_blank">点我看大图</a>
+            </section>
+        </section>
+
+        <section>
+            <h3>构建UI底层CSS代码</h3>
+        </section>
+
+        <section>
+            <a href="https://code.wz-inc.com/nyx/nyx-ui" target="_blank">nyx-ui</a>
+        </section>
+
+        <section>
+            <h3>UI多态化</h3>
+        </section>
+
+        <section>
+            <h3>何为UI多态化？它可以做什么？</h3>
+        </section>
+
+        <section>
+            <section>
+                <ul>
+                    <li>以某一种基础UI为祖先，衍生出不同维度上变化。</li>
+                    <li>不同维度有：色系、尺寸、状态、多终端适配、交互特性等方面</li>
+                    <li>衍生方案采用继承式（堆叠式）。</li>
+                </ul>
+            </section>
+            <section>
+                <img src="../../res/slides/common/003.png" alt="举个例子">
+            </section>
+            <section>
+                <p>尺寸变化</p><br>
+                <img src="../../res/slides/how-to-build-ui-widget-and-static-domain/003.png" alt="">
+            </section>
+            <section>
+                <p>色系变化</p><br>
+                <img src="../../res/slides/how-to-build-ui-widget-and-static-domain/004.png" alt="">
+            </section>
+            <section>
+                <p>交互特性</p><br>
+                <img src="../../res/slides/how-to-build-ui-widget-and-static-domain/005.png" alt="">
+            </section>
+        </section>
+
+        <section data-background="#8c4738" data-background-transition="slide">
+            <h1>第二阶段<br>丰富UI</h1>
+        </section>
+
+        <section>
+            <h3>UI动效的分类及实现</h3>
+        </section>
+
+        <section>
+            <section>
+                <img src="../../res/slides/how-to-build-ui-widget-and-static-domain/006.png" alt="">
+            </section>
+            <section>
+                <a href="http://naotu.baidu.com/file/7e596076d1aad286fa8c0ef8bfd74ca6?token=cd2a1f2f5828685e"
+                   target="_blank">点我看大图</a>
+            </section>
+        </section>
+
+        <section>
+            <h3>永无止境的动画效果，全靠你的想象</h3>
+            <ul class="fragment">
+                <li>
+                    <a href="http://leaverou.github.io/animatable" target="_blank">One property, two values, endless possibilities</a>
+                </li>
+                <li>
+                    <a href="http://cubic-bezier.com/" target="_blank">bezier curve</a>
+                </li>
+                <li>
+                    <a href="https://daneden.github.io/animate.css/" target="_blank">Animate.css</a>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>动效的实现方案</h3>
+        </section>
+
+        <section>
+            <ul>
+                <li>渐进增强。</li>
+                <li>依赖CSS3，禁用JS动画。</li>
+                <li>不滥用，在需要的场景下使用合适的动效。</li>
+                <li>不夸张，拒绝大开大合的动效。（个人观点）</li>
+            </ul>
+        </section>
+
+        <section>
+            <p>此阶段中，还有一件事我们要解决，就是UI的多终端的支持。</p>
+        </section>
+
+        <section>
+            <section>
+                <ul>
+                    <li>什么是响应式？（Responsive design，RWD）</li>
+                    <li>什么是自适应？（Adaptive design，AWD）</li>
+                </ul>
+            </section>
+            <section>
+                <ul>
+                    <li>RWD：倾向基于Media Queries、Content-Based Breakpoint来改变页面适配不同的分辨率尺寸。</li>
+                    <li>AWD：倾向针对几种特定的分辨率尺寸做定制。可能会有好几套页面。</li>
+                </ul>
+            </section>
+            <section>
+                <h3>场景举例</h3>
+            </section>
+        </section>
+
+        <section>
+            <p>多终端适配支持，我们会从以下几个方面去考量</p>
+            <ul class="fragment">
+                <li>栅格系统的适配</li>
+                <li>UI尺寸的适配</li>
+                <li>UI特效的适配</li>
+                <li>UI交互的适配</li>
+            </ul>
+            <p class="fragment">在组件化方案产出之前，多终端的适配不会过多的去考虑特效和交互</p>
+        </section>
+
+
+
+        <section data-background="#8c4738" data-background-transition="slide">
+            <h1>第三阶段<br>组件化</h1>
+        </section>
+
+        <section>
+            <section>
+                <p>什么是UI？什么组件？</p>
+            </section>
+            <section>
+                <!--<p>个人的观点，</p>-->
+                <ul>
+                    <li>UI是一套视觉规范和风格。</li>
+                    <li>组件是对这套视觉规范和风格的实现。</li>
+                </ul>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <p>什么是组件化？</p>
+            </section>
+            <section>
+                <!--<p>个人观点，</p>-->
+                <ul>
+                    <li>系统化，对现有视觉规范和风格的统一实现，自成体系。</li>
+                    <li>通用性，与具体业务隔离。</li>
+                    <li>易用性，在不同的业务场景下通过入参可以定制差异化的具体表现甚至是交互逻辑。</li>
+                    <li>易拓展、易维护、等等</li>
+                </ul>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <img src="../../res/slides/common/003.png" alt="举个例子">
+            </section>
+            <section>
+                <ul>
+                    <li><a href="https://www.sencha.com/products/extjs/#overview" target="_blank">Sencha ExtJS</a></li>
+                    <li><a href="http://jqueryui.com/" target="_blank">jQuery UI</a></li>
+                    <li><a href="https://ant.design/" target="_blank">ANT DESIGN</a></li>
+                </ul>
+            </section>
+        </section>
+
+        <section>
+            <h3>我们的组件化计划，<a href="https://code.wz-inc.com/nyx/nyx-components" target="_blank">Nyx-Components</a></h3>
+        </section>
+
+        <section>
+            <p>组件化主要做哪些事？</p>
+            <ul class="fragment">
+                <li>组件化实现方式的探索。</li>
+                <li>组件化的派生体系。</li>
+                <li>构建基础组件及组件分类。</li>
+                <li>构建复杂组件及交互实现。</li>
+            </ul>
+        </section>
+
+        <section data-background="#8c4738" data-background-transition="slide">
+            <h1>第四阶段<br>静态服务域</h1>
+        </section>
+
+        <section>
+            <p>什么是静态域？静态域解决什么问题？</p>
+        </section>
+
+        <section>
+            <p>可替代CDN、SSO，提供通用业务的在线支持。</p>
+        </section>
+
+        <section>
+            <ul>
+                <li>静态资源分发。</li>
+                <li>向业务域输出UI和组件支持。</li>
+                <li>业务域中通用界面和操作的统一支持。</li>
+            </ul>
+        </section>
+
+        <section data-background="#8c4738" data-background-transition="slide">
+            <h1>愿景与远景</h1>
+        </section>
+
+        <section>
+            <h3>愿景</h3>
+        </section>
+
+        <section>
+            <img src="../../res/slides/how-to-build-ui-widget-and-static-domain/007.png" alt="">
+        </section>
+
+        <section>
+            <img src="../../res/slides/how-to-build-ui-widget-and-static-domain/008.png" alt="">
+        </section>
+
+        <section>
+            <h3>远景</h3>
+        </section>
+
+        <section>
+            <h1>THE END</h1>
+            <h4>Thank you everyone!</h4>
+        </section>
+
+        <section>
+            <h1>Q & A</h1>
+        </section>
+    </div>
+</div>
+<script src="../../lib/js/head.min.js"></script>
+<script src="../../lib/js/reveal.min.js"></script>
+<script>
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        slideNumber: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+        // Parallax scrolling
+        // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+        // parallaxBackgroundSize: '2100px 900px',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [{
+            src: '../../lib/js/classList.js',
+            condition: function () {
+                return !document.body.classList;
+            }
+        }, {
+            src: '../../lib/js/marked.js',
+            condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: '../../lib/js/markdown.js',
+            condition: function () {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: '../../lib/js/highlight.js',
+            async: true,
+            callback: function () {
+                hljs.initHighlightingOnLoad();
+            }
+        }, {
+            src: '../../lib/js/zoom.js',
+            async: true,
+            condition: function () {
+                return !!document.body.classList;
+            }
+        }, {
+            src: '../../lib/js/notes.js',
+            async: true,
+            condition: function () {
+                return !!document.body.classList;
+            }
+        }]
+    });
+</script>
+</body>
+</html>

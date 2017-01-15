@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="我们知道javascript是基于原型（prototype）继承的语言。关于javascript原型继承的更多内容请参阅之前的这篇文章浅谈Javascript中的原型继承，内容绝对不会让你失望。
+不过本篇文章将会详细阐述javascript中用于原型继承的两个重要的东西__proto__和proto">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>区分JS中的__proto__和prototype | 蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "2015/03/18/different-from-proto-and-prototype/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>区分JS中的__proto__和prototype</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/js/">js</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2015-03-18T08:29:26.000Z"
+                       itemprop="datePublished">2015-03-18 16:29:26</time>
+            
+            更新: <time datetime="2017-01-15T17:16:24.000Z"
+                       itemprop="dateModified">2017-01-16 01:16:24</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+                <div id="toc" class="toc-article well">
+                    <strong class="toc-title">大纲</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#proto-和prototype的概念"><span class="toc-number">1.</span> <span class="toc-text">__proto__和prototype的概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#new的过程"><span class="toc-number">2.</span> <span class="toc-text">new的过程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#示例"><span class="toc-number">3.</span> <span class="toc-text">示例</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一个示例"><span class="toc-number">3.1.</span> <span class="toc-text">第一个示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二个示例"><span class="toc-number">3.2.</span> <span class="toc-text">第二个示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#示例总结"><span class="toc-number">3.3.</span> <span class="toc-text">示例总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#一些额外的问题"><span class="toc-number">4.</span> <span class="toc-text">一些额外的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Object-create方法"><span class="toc-number">4.1.</span> <span class="toc-text">Object.create方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#instanceof背后的逻辑"><span class="toc-number">4.2.</span> <span class="toc-text">instanceof背后的逻辑</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考列表"><span class="toc-number">5.</span> <span class="toc-text">参考列表</span></a></li></ol>
+                </div>
+            
+
+            <p>我们知道javascript是<strong>基于原型（prototype）继承</strong>的语言。关于javascript原型继承的更多内容请参阅之前的这篇文章<a href="http://blog.gejiawen.com/2014/10/16/prototype-inherit-in-javascript/">浅谈Javascript中的原型继承</a>，内容绝对不会让你失望。</p>
+<p>不过本篇文章将会详细阐述javascript中用于原型继承的两个重要的东西<code>__proto__</code>和<code>prototype</code>，以及由它们延伸出的一点容易让人疑惑的方面。</p>
+<h1 id="proto-和prototype的概念"><a href="#proto-和prototype的概念" class="headerlink" title="__proto__和prototype的概念"></a><code>__proto__</code>和<code>prototype</code>的概念</h1><p><strong><code>prototype</code></strong>就是原型的意思，就是函数（构造器）的一个属性，每个函数都将会有一个<code>prototype</code>属性。此属性是一个引用类型（指针），它指向函数的原型集对象。我们一般可以通过<code>prototype</code>修改函数的原型属性。而<strong><code>__proto__</code></strong>是一个对象（可以是某个构造器的实例）的属性，它在对象（实例）被创建时跟随被创建，它也是一个引用类型（指针），指向函数（构造器）的<code>prototype</code>属性。</p>
+<p>两者的关系如下，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo = <span class="keyword">new</span> Foo();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(foo.__proto__ === Foo.prototype); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>额外提一点，<code>__proto__</code>属性目前在IE浏览器中貌似不能直接访问，不过在Chrome和Firefox中是可以直接访问的。</p>
+<h1 id="new的过程"><a href="#new的过程" class="headerlink" title="new的过程"></a><code>new</code>的过程</h1><p>如下代码，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> foo = <span class="keyword">new</span> Foo();</span><br></pre></td></tr></table></figure>
+<p>我们使用<code>new</code>创建了构造器<code>Foo</code>的一个实例<code>foo</code>。那么这个过程究竟是怎么样的呢？它将分为以下几步，</p>
+<ul>
+<li>创建一个对象<code>foo</code>，并且<code>foo = {}</code></li>
+<li>将构造器的原型链到<code>foo</code>的<code>__proto__</code>上，即<code>foo.__proto__ = Foo.prototype</code>。这一步至关重要，为<em>实例能够访问构造器原型方法</em>及<em>原型链查找</em>等操作做好了铺垫。</li>
+<li>执行构造器<code>Foo</code>，并将对象<code>foo</code>绑定到其上下文环境中，即<code>Foo.call(foo)</code>。其实就是将<code>Foo</code>中的<code>this</code>指针指向<code>foo</code>。</li>
+</ul>
+<h1 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h1><h2 id="第一个示例"><a href="#第一个示例" class="headerlink" title="第一个示例"></a>第一个示例</h2><p>下面让我们来看个完整的例子来探索一下<code>prototype</code>和<code>__proto</code>属性的相互关系，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.eats = <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> cat = <span class="keyword">new</span> Animal();</span><br><span class="line">Animal.prototype.jumps = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(cat.eats); <span class="comment">// true;</span></span><br><span class="line"><span class="built_in">console</span>.log(cat.jumps); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// change constructor's prototype</span></span><br><span class="line">Animal.prototype = &#123;</span><br><span class="line">    bark: <span class="literal">true</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> dog = <span class="keyword">new</span> Animal();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(cat.bark); <span class="comment">// undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(dog.bark); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(cat.__proto === Animal.prototype); <span class="comment">// false;</span></span><br><span class="line"><span class="built_in">console</span>.log(dog.__proto === Animal.prototype); <span class="comment">// true;</span></span><br></pre></td></tr></table></figure>
+<p>下面是一张关于上述代码中<code>Animal</code>（构造器）及两个实例（<code>cat</code>及<code>dog</code>）的原型关系图，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/区分JS中的__proto__和prototype-001.png" alt=""></p>
+<p>从图中我们可以看出，</p>
+<ul>
+<li><code>cat</code>和<code>dog</code>是<code>Animal</code>构造出的实例</li>
+<li><code>cat</code>的<code>__proto__</code>属性指向一个对象，此对象是<code>Animal</code>改变prototype之<strong>前</strong>的指向。</li>
+<li><code>dog</code>的<code>__proto__</code>属性指向一个对象，此对象是<code>Animal</code>改变prototype之<strong>后</strong>的指向。和<code>Animal.prototype</code>的指向一致。</li>
+<li>通过<code>cat</code>或者<code>dog</code>的<code>__proto__</code>属性，经过层层查找，最终的都会指向同一个对象，即<code>Object.prototype</code>，而<code>Object.prototype</code>的<code>__proto__</code>指向<code>null</code>，此时原型链已经到顶。</li>
+</ul>
+<h2 id="第二个示例"><a href="#第二个示例" class="headerlink" title="第二个示例"></a>第二个示例</h2><p>下面我们再来看个例子来探索一下javascript是如何在其原型链上进行属性查找的，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = <span class="string">'gejiawen'</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">this</span>.secret = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'I am a secret!'</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Person.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'My name is '</span>, <span class="keyword">this</span>.name);</span><br><span class="line">&#125;;</span><br><span class="line">Person.prototype.secret = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'I am a secret on prototype!'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> p = <span class="keyword">new</span> Person();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(p.name); <span class="comment">// gejiawen</span></span><br><span class="line"><span class="built_in">console</span>.log(p.secret()); <span class="comment">// I am a secret!</span></span><br><span class="line"><span class="built_in">console</span>.log(p.sayName()); <span class="comment">// My name is gejiawen</span></span><br></pre></td></tr></table></figure>
+<p>下面是实例对象<code>p</code>在Chrome console中的打印，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/区分JS中的__proto__和prototype-002.png" alt=""></p>
+<p>所以，各个打印的解释如下，</p>
+<ul>
+<li><code>p.name</code>，直接在对象<code>p</code>中找到了，将其打印出来。</li>
+<li><code>p.secret</code>，在对象<code>p</code>中也直接找到了，执行相应方法。</li>
+<li><code>p.sayName</code>，在对象<code>p</code>中并未找到相关定义，此时将会开始检索<code>p.__proto__</code>中对象，发现了<code>sayName</code>的定义，此时就终止检索，执行相应函数。</li>
+</ul>
+<p>有两点需要额外提出来，</p>
+<ol>
+<li>我们可以看到在构造器和<code>prototype</code>中定义了一个同名方法<code>secret</code>，从上述代码中可以看出，是不会执行<code>prototype</code>中的<code>secret</code>函数。因为javascript在示例对象<code>p</code>自身的定义找到<code>secret</code>时就终止检索了。</li>
+<li>针对上面的第三点解释，如果我们在<code>p.__proto__</code>仍然未找到<code>sayName</code>的相关定义，那么javascript会继续向上检索，继续检查<code>p.__proto__.__proto__</code>，如此反复，直至到<code>Object.prototype</code>。</li>
+</ol>
+<h2 id="示例总结"><a href="#示例总结" class="headerlink" title="示例总结"></a>示例总结</h2><p>通过上面的示例，我们可以看出，示例对象的<code>__proto__</code>在javascript的原型继承模型中扮演着不可或缺的角色。</p>
+<p>可以说<code>__proto__</code>就是将一个个的对象串成一条完整原型链的粘合器。</p>
+<p>个人觉得<code>prototype</code>相对于<code>__proto__</code>更加像是一个开放的接口，而<code>__proto__</code>更倾向是原型链模型的内部实现。我们在平时进行javascript开发时，可以在适当的时候应用一些prototype的知识来提高代码质量。</p>
+<h1 id="一些额外的问题"><a href="#一些额外的问题" class="headerlink" title="一些额外的问题"></a>一些额外的问题</h1><h2 id="Object-create方法"><a href="#Object-create方法" class="headerlink" title="Object.create方法"></a><code>Object.create</code>方法</h2><p><code>Object.create</code>是ES5中引入的方法，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Object</span>.create(proto[, propertiesObject])</span><br></pre></td></tr></table></figure>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create" target="_blank" rel="external">MDN上</a>给出的定义如下，</p>
+<blockquote>
+<p>The <code>Object.create()</code> method creates a new object with the specified prototype object and properties.</p>
+</blockquote>
+<p>意思就是我们可以在创建对象时，可以自定义其原型。（需要注意的是，当给<code>Object.create</code>传入的参数不是一个对象或者<code>null</code>时，它将会抛出一个错误）</p>
+<p>看下面的代码，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> animal = &#123;</span><br><span class="line">    eats: <span class="literal">true</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> rabbit = <span class="built_in">Object</span>.create(animal);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(rabbit.eats); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>此时，<code>rabbit.__proto__</code>上将会有<code>eats</code>属性，如关系如下图，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/区分JS中的__proto__和prototype-003.png" alt=""></p>
+<p>请注意各个对象的<code>__proto__</code>之间的关系。</p>
+<h2 id="instanceof背后的逻辑"><a href="#instanceof背后的逻辑" class="headerlink" title="instanceof背后的逻辑"></a><code>instanceof</code>背后的逻辑</h2><p>我们知道<code>instanceof</code>可以判断某个实例对象是否是某个构造器的实例。那么<code>instanceof</code>判断的依据是什么呢？</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> A();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a <span class="keyword">instanceof</span> A); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p><code>instanceof</code>的过程如下，</p>
+<ol>
+<li>对比<code>a.__proto__</code>和<code>A.prototype</code>。</li>
+<li>若第一步的返回为<code>true</code>，则表示<code>a</code>即为<code>A</code>的实例。</li>
+<li>若第一步的返回为<code>false</code>，此时执行类似这样的操作<code>a = a.__proto__</code>，然后重复第一步。</li>
+</ol>
+<p>其实说白了，<code>instanceof</code>的实质就是比较<code>__proto__</code>和<code>prototype</code>，我们来看个示例来看下是否能说明这个问题，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Animal</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">   <span class="keyword">this</span>.name = <span class="string">'wangcai'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dog</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Dog.prototype =  <span class="keyword">new</span> Animal();</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> dog = <span class="keyword">new</span> Dog();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(dog.name); <span class="comment">// 'wangcai'</span></span><br><span class="line"><span class="built_in">console</span>.log(dog <span class="keyword">instanceof</span> Animal); <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// change the prototype of Class</span></span><br><span class="line">Dog.prototype = &#123;</span><br><span class="line">  name: <span class="string">'yingcai'</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(dog <span class="keyword">instanceof</span> Dog); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(dog <span class="keyword">instanceof</span> Animal); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(Animal.prototype.__proto__ === <span class="built_in">Object</span>.prototype); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>这个例子中，我们中间改变了<code>Dog</code>的<code>prototype</code>，此时造成的后果就是破坏了原先<code>dog</code>对象的<code>__proto__</code>与<code>Dog.prototype</code>的引用关系，从而<code>dog instanceof Dog</code>返回的结果为<code>false</code>。</p>
+<h1 id="参考列表"><a href="#参考列表" class="headerlink" title="参考列表"></a>参考列表</h1><ul>
+<li><a href="http://www.cnblogs.com/yangjinjin/archive/2013/02/01/2889103.html" target="_blank" rel="external">JS的prototype和<strong>proto</strong></a></li>
+<li><a href="http://zhiye.li/2014-02-11-_proto__-prototype-shareslide.html" target="_blank" rel="external">JS进阶：<code>__proto__</code> 和 <code>prototype</code></a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/create" target="_blank" rel="external">MDN:Object.create</a></li>
+</ul>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://gejiawen.github.io/about">@gejiawen</a>.</p>
+    <p class="link">本文链接：<a href="http://blog.gejiawen.com/2015/03/18/different-from-proto-and-prototype/">http://blog.gejiawen.com/2015/03/18/different-from-proto-and-prototype/</a></p>
+
+    <div class="share">
+    分享本页：
+    
+        <div class="bdsharebuttonbox"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_more" data-cmd="more"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    
+    
+</div>
+
+</div>
+
+
+            
+    <section class="comment">
+    <div class="ds-thread" data-thread-key="different-from-proto-and-prototype" data-title="区分JS中的__proto__和prototype" data-url="http://blog.gejiawen.com/2015/03/18/different-from-proto-and-prototype/" data-author-key="gejiawen"></div>
+</section>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gejiawen-blog"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

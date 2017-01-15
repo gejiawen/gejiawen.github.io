@@ -1,0 +1,390 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="最近心血来潮，准备整理一下Javascript中有关异步编程方面的东西，写几篇文章。当然同时也是为了沉淀一下自己所学。
+暂时将这个专题命名为Javascript异步编程专题吧，目前包含以下几篇文章，
+
+浅谈Javascript中的异步
+Javascript中常见的异步编程模型
+Generator函数">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>浅谈Javascript中的异步 | 蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "2015/10/12/think-about-async-in-javascript/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>浅谈Javascript中的异步</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/js/">js</a>&nbsp;<a href="/tags/Javascript异步编程专题/">Javascript异步编程专题</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2015-10-12T07:12:51.000Z"
+                       itemprop="datePublished">2015-10-12 15:12:51</time>
+            
+            更新: <time datetime="2017-01-15T17:16:24.000Z"
+                       itemprop="dateModified">2017-01-16 01:16:24</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+                <div id="toc" class="toc-article well">
+                    <strong class="toc-title">大纲</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Javascript的单线程"><span class="toc-number">1.</span> <span class="toc-text">Javascript的单线程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Javascript中的异步原理"><span class="toc-number">2.</span> <span class="toc-text">Javascript中的异步原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#两组概念"><span class="toc-number">2.1.</span> <span class="toc-text">两组概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Javascript中的异步"><span class="toc-number">2.2.</span> <span class="toc-text">Javascript中的异步</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#事件和任务队列"><span class="toc-number">3.</span> <span class="toc-text">事件和任务队列</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#EventLoop的解释"><span class="toc-number">3.1.</span> <span class="toc-text">EventLoop的解释</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Javascript中的定时器"><span class="toc-number">4.</span> <span class="toc-text">Javascript中的定时器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#定时器的时间精度问题"><span class="toc-number">4.1.</span> <span class="toc-text">定时器的时间精度问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#setTimeout-fn-0-的理解"><span class="toc-number">4.2.</span> <span class="toc-text">setTimeout(fn, 0)的理解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#定时器的区别"><span class="toc-number">4.3.</span> <span class="toc-text">定时器的区别</span></a></li></ol></li></ol>
+                </div>
+            
+
+            <p>最近心血来潮，准备整理一下Javascript中有关异步编程方面的东西，写几篇文章。当然同时也是为了沉淀一下自己所学。</p>
+<p>暂时将这个专题命名为<strong>Javascript异步编程专题</strong>吧，目前包含以下几篇文章，</p>
+<ul>
+<li><a href="http://blog.gejiawen.com/2015/10/12/think-about-async-in-javascript/">浅谈Javascript中的异步</a></li>
+<li><a href="http://blog.gejiawen.com/2015/10/12/some-javascript-async-pattern/">Javascript中常见的异步编程模型</a></li>
+<li>Generator函数处理异步调用</li>
+</ul>
+<hr>
+<p>本篇文章是本专题的第一篇文章。</p>
+<p>正文开始。</p>
+<p>Javascript这门语言出身“低贱”，但是随着近年来社区的活跃，反而给人以耀眼的活跃。同时带来的也是各种各样的对这门原先被当作玩具语言的解析。本篇文章将会带了Javascript中关于异步编程以及其周边内容的介绍。</p>
+<h1 id="Javascript的单线程"><a href="#Javascript的单线程" class="headerlink" title="Javascript的单线程"></a>Javascript的单线程</h1><p><em>Javascript是单线程的</em>。javascript的程序员一定要时刻谨记这句话。</p>
+<p>可以说单线程是Javascript语言最本质的特性之一。言外之意，Javascript引擎在运行js代码的时候，同一个时间只能执行单个任务。</p>
+<p>这是为何呢？</p>
+<p>其实这跟Javascript的历史有关系。Javascript最初被设计成一种浏览器脚本语言，决策者们仅仅是需要一门轻量的浏览器脚本语言来做一些简单的用户交互及DOM操作。在这样一个背景下，据说Javascript的设计者仅仅花了10天就完成了这门语言的设计。</p>
+<p>相比多线程，单线程不需要考虑创建线程、销毁线程、线程间通信等等诸如此类的复杂问题。所以，为了避免复杂性，Javascript从诞生伊始就是单线程，而且日后也应该不会改变这一特性。</p>
+<h1 id="Javascript中的异步原理"><a href="#Javascript中的异步原理" class="headerlink" title="Javascript中的异步原理"></a>Javascript中的异步原理</h1><p>在C#、Java等语言中，异步操作往往是创建一个线程来执行异步任务，异步任务执行完毕之后再将执行结果通知给主线程。这其中往往会伴随着，多线程、线程池、并发等相关术语。但是在Javascript中不存在这些。</p>
+<p>如前文所述，Javascript是单线程的，那么Javascript的异步是怎么回事呢？Javascript又是如何在单线程上给出所谓的异步编程呢？</p>
+<h2 id="两组概念"><a href="#两组概念" class="headerlink" title="两组概念"></a>两组概念</h2><p>在解释这个问题之前，我们应该首先明确两组概念。就是<strong>同步</strong>和<strong>异步</strong>以及<strong>阻塞</strong>和<strong>非阻塞</strong>这两组概念。</p>
+<p>首先这是两组不同的概念。同步、异步一般指的是消息的通信机制；而阻塞、非阻塞一般强调的是程序在等待（消息）时的状态。</p>
+<p>他们的概念如下，</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">名称</th>
+<th style="text-align:left">解释</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">同步</td>
+<td style="text-align:left">发出一个功能调用（执行函数）时，在没有得到调用结果之前，该调用就不会返回</td>
+<td style="text-align:left">-</td>
+</tr>
+<tr>
+<td style="text-align:left">异步</td>
+<td style="text-align:left">发出一个调用后，不关心结果返回，而是立即返回。结果出来后，将会通过一些额外手段通知调用者</td>
+<td style="text-align:left"><em>注1</em></td>
+</tr>
+<tr>
+<td style="text-align:left">阻塞</td>
+<td style="text-align:left">在调用结果返回之前，当前线程会被挂起等待。直到得到结果之后函数调用才会返回。</td>
+<td style="text-align:left">-</td>
+</tr>
+<tr>
+<td style="text-align:left">非阻塞</td>
+<td style="text-align:left">在不能立刻得到结果之前，该函数不会阻塞当前线程，而会立刻返回。</td>
+<td style="text-align:left">-</td>
+</tr>
+</tbody>
+</table>
+<p><em>注1</em>：这里所说的额外手段，往往是指异步调用的一些具体实现方式，比如事件监听、轮询等等。</p>
+<p>可见，同步、异步和阻塞、非阻塞是两组概念，我们不应该混淆他们。同时，这两组概念其实是可以共存，可以混合搭配最多四种模式。</p>
+<p>后面我们会说到其实Javascript中的异步并非真正意思上的异步，它最多能做到非阻塞的地步。所以Node.js官网在介绍自己时仅仅是说“基于事件驱动”，“非阻塞IO模型”，并没有提到异步的字眼。</p>
+<p>好了，关于这两组概念虽然还有许多可以说的内容，不过这篇文章的重点并不是介绍这两组概念，有兴趣的可自行查阅相关资料。</p>
+<h2 id="Javascript中的异步"><a href="#Javascript中的异步" class="headerlink" title="Javascript中的异步"></a>Javascript中的异步</h2><p>让我们言归正传。在Javascript中，什么样的调用可以算是异步调用呢？</p>
+<p>我个人认为，Javascript中异步的应用场景主要有两个，其一是基于浏览器的各种异步IO和事件监听，其二是Javascript代码中的关于定时器（<code>setTimeout</code>、<code>setInterval</code>）的应用。</p>
+<p>对于异步IO，比如ajax请求（当然，ajax分为同步ajax和异步ajax，这里我们仅用异步ajax来作示例）。当js代码发出一个ajax请求时，浏览器仍然会接着往下执行js代码。我们将处理ajax返回的逻辑绑定在ajax回调函数上，当ajax请求完毕成功返回时会触发回调函数，然后接着执行我们绑定的处理逻辑。如下图，</p>
+<p><img src="/res/think-about-async-in-javascript/001.png" alt=""></p>
+<p>这种场景下的异步其实涉及到了两个线程，一个是javascript线程，一个是浏览器为了发出ajax请求而开辟的线程（它属于浏览器进程的子线程）。</p>
+<p>对于定时器的异步场景，我们可以用一段示例代码来说明，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'foo start'</span>);</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        callback();</span><br><span class="line">    &#125;, <span class="number">2000</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'foo end'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Hello!'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">foo(foo2);</span><br></pre></td></tr></table></figure>
+<p>这段代码的执行过程如下图，</p>
+<p><img src="/res/think-about-async-in-javascript/002.png" alt=""></p>
+<p>从图中我们可以看出执行<code>foo(foo2)</code>使用了50ms，其中在1010ms时开始执行<code>setTimeout</code>语句。由于我们使用<code>setTimeout</code>设置了一个延时，所以在执行<code>foo(foo2)</code>时并没有真正的执行<code>foo2()</code>，而是将其时机推迟了。直到3010ms左右时才去真正的执行<code>foo2()</code>的代码。</p>
+<p>（<strong>注</strong>，为了方便叙述，上述时间都是假设的，不必纠结。下同。）</p>
+<p>从上图中可以看出，整个执行过程中只有一个javascript线程，异步调用的部分的代码，最终也是在javascript线程上执行的，只不过被<strong>延迟</strong>了。</p>
+<p>从上面的两个示例中，我们足以管中窥豹。笼统的说，<strong>单线程的Javascript中其实没办法实现真正意义上的异步，Javascript中所谓的异步可以理解成延迟执行</strong>。</p>
+<h1 id="事件和任务队列"><a href="#事件和任务队列" class="headerlink" title="事件和任务队列"></a>事件和任务队列</h1><p>往往在Javascript运行环境中，除了Javascript线程之外，还有会有一个专门维护任务队列的线程。说到这里，有人会问，不是说好的Javascript是单线程吗？怎么这里会有两个线程？</p>
+<p>好问题！注意这里我并没有说Javascript语言，而是<strong>Javascript运行环境</strong>（Javascript Runtime）。常见的运行环境有各种浏览器（浏览器中的Javascript解释引擎），Nodejs环境等等。</p>
+<p>这里我们就以浏览器环境作为示例来进行相关说明。首先试想一下我们现在有这样的一个场景。我们在一段js代码中发出了一个ajax请求，同时给click和press注册了事件监听。那么当我们执行这段代码后，其效果图如下，</p>
+<p><img src="/res/think-about-async-in-javascript/003.png" alt=""></p>
+<p>因为Javascript是单线程的，就意味着Javascript同一时间只能处理一个任务。如果一旦任务产生的速度过快，那么后续的任务就得排队。每一个任务往往与一个事件相对应。</p>
+<p>如上图所示，当浏览器的用于ajax的线程得到ajax返回结果后会产生一个事件，将其放入任务队列。（其实这里还涉及到Ajax线程如何通知任务队列等等问题，这里我们就不讨论了）</p>
+<p>除此之外，可能用户还在页面进行了鼠标点击操作和按下键盘输入。这两个动作都将会产生一个事件，将产生的事件压入任务队列。</p>
+<h2 id="EventLoop的解释"><a href="#EventLoop的解释" class="headerlink" title="EventLoop的解释"></a>EventLoop的解释</h2><p>上图中还有一个叫做<strong>Event Loop</strong>的东西，这个东西是什么东西呢？</p>
+<blockquote>
+<p>Event Loop是一个程序结构，用于等待和发送消息和事件。（a programming construct that waits for and dispatches events or messages in a program.）</p>
+</blockquote>
+<p>简单来说，EventLoop也是一个程序，它会不停的轮询任务队列中的事件。如果Javascript线程空了，则取出任务队列的第一个事件，然后找到此事件的处理函数并执行处理函数。当前一个事件执行完了（此时Javascript又会空下来），那么继续取出任务队列中的下一个事件。如此往复。</p>
+<p>回到我们上面的例子中，当从任务队伍队列中取出第一个事件时（Ajax返回事件），Javascript线程将会去执行函数<code>foo1</code>。其实从图中可以看出，先前绑定的三个回调函数最终都是在Javascript线程上执行的，只不过由于任务队列的存在，导致了他们的执行时机是不一样的。</p>
+<h1 id="Javascript中的定时器"><a href="#Javascript中的定时器" class="headerlink" title="Javascript中的定时器"></a>Javascript中的定时器</h1><p>Javascript中内置了两个方法，用于设置定时任务。分别是<code>setTimeout</code>和<code>setInterval</code>。它们的具体用法我这里不展开说了。</p>
+<p>前文有提到过，在Javascript中常见的有两种异步场景，一种是异步IO，另一种就是定时任务。</p>
+<p>JQuery的作者John Resig有一篇<a href="http://ejohn.org/blog/how-javascript-timers-work/" target="_blank" rel="external">文章</a>，就是探讨Javascript中的定时器是如何工作的。我觉得大神文章中的示例对<code>setTimeout</code>和<code>setInterval</code>的运行原理，以及它们在Javascript中是如何与异步任务协调工作的，说明的都非常好。我这里就直接拿过来用了。</p>
+<p>首先我们来看一张场景图，</p>
+<p><img src="/res/think-about-async-in-javascript/004.png" alt=""></p>
+<p>乍一看这张图一坨方块加一坨英文，看不出头绪。其实Javascript定时器的秘密就隐藏在其中，让我们一步一步来解析。</p>
+<p>图中深蓝色的方块可以理解成Javascript线程的执行过程，左侧是时序。右侧是对每一个Javascript代码发生了什么事作的说明。</p>
+<p>先看第一个Javascript代码块，它在整个时序中占用了不到20ms（大概18ms的样子），它依次发生哪些事情呢？</p>
+<ul>
+<li>初始化了一个10ms的<code>setTimeout</code>定时器</li>
+<li>鼠标被点击了一次</li>
+<li>初始化了一个10ms的<code>setInterval</code>定时器</li>
+<li>触发10ms的<strong>Timer</strong>定时器</li>
+</ul>
+<p>我们发现</p>
+<ul>
+<li>发生了一次鼠标点击，将产生一个鼠标click事件，此事件将会压入任务队列，等待执行。</li>
+<li><strong>Timer</strong>计时器的回调实际上会在第一个代码块执行完毕前被触发。但是这里注意的是，它不会立即执行（单线程上不能这样做，因为当前的Javascript线程还在处理第一个代码块呢）。实际上，触发的回调将被排成一个队列，等待下一个可执行时间。</li>
+</ul>
+<p>直到Javascript执行完第一块js代码，我们的任务队列中已经有两个待执行的任务了。如下，</p>
+<p><img src="/res/think-about-async-in-javascript/005.png" alt=""></p>
+<p>现在Javascript线程已经处于空闲状态了，此时任务队列已经有2个任务在等待执行了，按照入队顺序，我们先处理click事件。队列后面的任务继续排队等待。</p>
+<p>回到场景图中，我们现在开始处理click事件，即执行click事件绑定的回调函数。这其中触发了一次10ms的<strong>Interval</strong>定时器。但是此时Javascript线程上正在执行click事件的回调，所以即使<strong>Interval</strong>触发了，但是并不能执行。怎么办呢？只能对它说不好意思了，让它去排队吧。</p>
+<p>此时，任务队列的情况如下，</p>
+<p><img src="/res/think-about-async-in-javascript/006.png" alt=""></p>
+<p>可以看到，之前的click事件已经出队了，但是又新增了一个<strong>Interval</strong>定时器回调。</p>
+<p>随着时间的推移，在完成click事件任务完成之后，继续从任务队列中取出任务。从上图可知，下一个任务是<strong>Timer</strong>定时器的回调。</p>
+<p>我们在执行<strong>Timer</strong>定时器任务时，发现又有一个<strong>Interval</strong>定时器触发了。不过此时Javascript线程还在执行<strong>Timer</strong>定时器的任务呢，所以刚触发的<strong>Interval</strong>定时器任务只能去排队了。</p>
+<p>此时，任务队列如下，</p>
+<p><img src="/res/think-about-async-in-javascript/007.png" alt=""></p>
+<p>现在任务队列里面已经有两个一样的<strong>Interval</strong>定时器任务在等待执行了。</p>
+<hr>
+<p><strong>注</strong>：John Resig的原文中说，在<strong>Timer</strong>定时器执行期间触发的<strong>Interval</strong>定时器会被<em>Dropped</em>。起先我百思不得其解。按道理应该将其入队才对啊。后又仔细研读了原文，外加查阅了相关资料，终于知道是为何了。</p>
+<p>在John Resig的原文中，他给出的两个定时器的初始化如下，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> id = setTimeout(fn, delay);</span><br><span class="line"><span class="keyword">var</span> id = setInterval(fn, delay);</span><br></pre></td></tr></table></figure>
+<p>关键的地方来了，这里<code>setTimeout</code>和<code>setInterval</code>使用的回调函数都是同一个函数<code>fn</code>。在这种先提条件下，在前面的分析中，当Javascript正在执行<strong>Timer</strong>定时器的回调时，虽然又一次触发了<strong>Interval</strong>回调，但是由于两个定时器采用回调都是同一个函数。所以导致此时被触发的<strong>Interval</strong>定时器由于绑定的回调函数正在被执行，所以此次触发就被抛弃了。</p>
+<hr>
+<p>让我们继续回到分析之中来。</p>
+<p>当<strong>Timer</strong>定时器的回调执行完毕之后，我们与之前一样，从任务队列中取出下一个任务。这次是<strong>Interval</strong>定时器的回调。</p>
+<p>因为John Resig给的示例中，<strong>Interval</strong>定时器的回调执行将在10ms之内完成，所以按照上述的分析如此往复之后，最后将会出现Javascript线程空等的情况。</p>
+<p>在40-50ms这段时间之内，我们将积累的两个<strong>Interval</strong>定时器任务执行完毕了，发现任务队列中没有等待执行的任务了。那么接下来Javascript线程就会处于“空等”状态。</p>
+<p>在50ms的时候，有一个<strong>Interval</strong>定时器触发了。我们同样将其入队。不过由于之前任务队列本来就是空的，所以这个触发就立马执行了。</p>
+<h2 id="定时器的时间精度问题"><a href="#定时器的时间精度问题" class="headerlink" title="定时器的时间精度问题"></a>定时器的时间精度问题</h2><p>根据前文所述，其实不管是<code>setTimeout</code>还是<code>setInterval</code>定时器，因为Javascript的单线程缘故，他们当在任务量较多的时候，都会涉及到一个排队等待执行的问题。所以定时器的对于时间间隔的把握其实不是那么精确的。</p>
+<p>就拿前文的例子来说，如果click事件的回调要消耗1000ms，那么后面的<strong>Timer</strong>和<strong>Interval</strong>定时器的回调都得等着，直接click事件的回调执行完毕。所以真正等到定时器回调执行时，可能早就过了原先设定的10ms了。</p>
+<p>这点对于<code>setInterval</code>的影响更为严重。比如，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">&#125;,<span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">  sleeping(<span class="number">3000</span>);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>上面的第一行语句要求每隔1000毫秒，就输出一个2。但是，第二行语句需要3000毫秒才能完成，请问会发生什么结果？</p>
+<p>结果就是等到第二行语句运行完成以后，立刻连续输出三个2，然后开始每隔1000毫秒，输出一个2。也就是说，<code>setIntervel</code>具有累积效应，如果某个操作特别耗时，超过了<code>setInterval</code>的时间间隔，排在后面的操作会被累积起来，然后在很短的时间内连续触发，这可能或造成性能问题（比如集中发出Ajax请求）。</p>
+<h2 id="setTimeout-fn-0-的理解"><a href="#setTimeout-fn-0-的理解" class="headerlink" title="setTimeout(fn, 0)的理解"></a>setTimeout(fn, 0)的理解</h2><p>记得以前有被人问过这句代码的含义😂😂😂。</p>
+<p>按照常规理解，定时器的延时参数为0，表示是立即执行么？显然不是。</p>
+<p>不管如何，只要经过<code>setTimeout</code>操作，那么<code>fn</code>将会被放到任务队列中排队。我们说一旦进行了任务队列，何时能执行那就由不得你了。得看排在你前面的任务是不是耗时任务。</p>
+<p>所以这里延时参数的含义只有一个。那就是让<code>fn</code>早点去排队！如果任务队列中没有其他待执行任务，那么此时将会直接执行<code>fn</code>，其实这跟直接执行<code>fn</code>的区别不大。如果队列前面有待执行任务，那不好意思，你等着吧。</p>
+<h2 id="定时器的区别"><a href="#定时器的区别" class="headerlink" title="定时器的区别"></a>定时器的区别</h2><p>其实<code>setTimeout</code>和<code>setInterval</code>这两个定时器是有区别的。当然我想说的区别并不是指它们功能上的区别。</p>
+<p><strong>Timer</strong>定时器在触发时，会将其回调任务压入任务队列进行排队。而<strong>Interval</strong>定时器在触发时，它不管当前Javascript线程的状态，它会无差别的往任务队列中压任务。如果某一个任务执行时占用了较多的Javascript线程时间，可能会导致<strong>Interval</strong>定时器连续压入多个回调。导致本来应该存在时间间隔的<strong>Interval</strong>定时器回调连续执行。</p>
+<p>此外，当<strong>Interval</strong>定时器回调正在被当前Javascript线程运行时，此次<strong>Interval</strong>定时器触发将会被抛弃。因为此次触发的<strong>Interval</strong>定时器回调不会被入队。《Javascript高级程序设计》一书中也提到了这一点，</p>
+<blockquote>
+<p>当使用<code>setInterval()</code>时，仅当没有该定时器的任何其他代码实例时，才将定时器代码添加到队列中。</p>
+</blockquote>
+<p>如果你对<strong>Interval</strong>定时器的时间间隔要求比较严格的话，可以尝试使用循环加<code>setTimeout</code>的方式来模拟<code>setInterval</code>的功能。</p>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://gejiawen.github.io/about">@gejiawen</a>.</p>
+    <p class="link">本文链接：<a href="http://blog.gejiawen.com/2015/10/12/think-about-async-in-javascript/">http://blog.gejiawen.com/2015/10/12/think-about-async-in-javascript/</a></p>
+
+    <div class="share">
+    分享本页：
+    
+        <div class="bdsharebuttonbox"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_more" data-cmd="more"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    
+    
+</div>
+
+</div>
+
+
+            
+    <section class="comment">
+    <div class="ds-thread" data-thread-key="think-about-async-in-javascript" data-title="浅谈Javascript中的异步" data-url="http://blog.gejiawen.com/2015/10/12/think-about-async-in-javascript/" data-author-key="gejiawen"></div>
+</section>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gejiawen-blog"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

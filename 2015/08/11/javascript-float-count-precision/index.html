@@ -1,0 +1,275 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="如果我问你 0.1 + 0.2 = ？你可能会觉得我是个傻逼。因为这个连学龄前的小朋友可能都知道答案呢。
+在现实生活中0.1 + 0.2 = 0.3，这当然没什么问题的。但是在程序语言中，或者说计算机世界中，可就不一定了。
+不信？那我们来做几个实验。
+来个简单的javascript片段，就简单的使用">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Javascript中浮点数的计算精度问题 | 蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "2015/08/11/javascript-float-count-precision/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>Javascript中浮点数的计算精度问题</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/js/">js</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/踩坑录/">踩坑录</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2015-08-11T10:01:15.000Z"
+                       itemprop="datePublished">2015-08-11 18:01:15</time>
+            
+            更新: <time datetime="2017-01-15T17:16:24.000Z"
+                       itemprop="dateModified">2017-01-16 01:16:24</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+
+            <p>如果我问你 0.1 + 0.2 = ？你可能会觉得我是个傻逼。因为这个连学龄前的小朋友可能都知道答案呢。</p>
+<p>在现实生活中0.1 + 0.2 = 0.3，这当然没什么问题的。但是在程序语言中，或者说计算机世界中，可就不一定了。</p>
+<p>不信？那我们来做几个实验。</p>
+<p>来个简单的javascript片段，就简单的使用上面的问题吧，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="number">0.1</span> + <span class="number">0.2</span>);</span><br></pre></td></tr></table></figure>
+<p>这行代码的输出是什么呢？0.3？</p>
+<p>其实并不是，我们来看一下这句代码在chrome的dev tools中的输出是什么，</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; console.log(0.1 + 0.2)</span><br><span class="line">&gt; 0.30000000000000004</span><br></pre></td></tr></table></figure>
+<p>好奇怪的结果，怎么会是<code>0.30000000000000004</code>呢？难道是Javascript语言的bug还是chrome dev tools的bug？</p>
+<p>其实，这不是语言的bug或者宿主环境的bug。目前所有的程序设计语言在对浮点数进行四则运算时，都会涉及到浮点数精确度的问题。</p>
+<p>我们知道在计算机的世界中，计算机只认识0，1，我们传入的十进制数字并不会被计算机直接识别。计算机会先将其转换成二进制，然后使用转换后的二进制进行计算。</p>
+<p>那么0.1和0.2转换成二进制分别是，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(0.1) =&gt; 0.0001 1001 1001 1001 1001 1001 1001 1001 1001 1001 1001 1001 1001 101</span><br><span class="line">(0.2) =&gt; 0.0011 0011 0011 0011 0011 0011 0011 0011 0011 0011 0011 0011 0011 01</span><br></pre></td></tr></table></figure>
+<p>然后对上面的两个二进制数字做加法，得到的结果是，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0.0100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1100 1101 01</span><br></pre></td></tr></table></figure>
+<p>再把这个二进制转换成十进制，就是我们前面的结果<code>0.30000000000000004</code>了。</p>
+<blockquote>
+<p>这里提一下，我是通过<a href="http://tool.oschina.net/hexconvert/" target="_blank" rel="external">这个工具</a>进行数制转换的，得到的结果其实是被截断过的。</p>
+</blockquote>
+<p>计算机世界的数值计算基本上都是这个过程，只不过C++、C#、Java这些传统强类型语言将这个边界问题封装在内部了，它们在进行浮点数四则运算时，会在语言层面自动解决这个问题。而Javascript作为一门弱类型的语言，它在语言层面并没有对这个问题进行处理，所以需要我们手动去处理。</p>
+<p>那么，我们如何去避免这个问题呢？</p>
+<p>基本上有两种思路。</p>
+<ul>
+<li>先扩大数值到javascript可精确识别的精度级别（比如个位数级别）然后再进行计算，然后再对结果除以放大的倍数。</li>
+<li>在运算的过程中通过<code>toFixed()</code>指定运算的精度要求。</li>
+</ul>
+<p>比如我们要计算<code>0.1 + 0.2</code>，按照第一种思路，我们可以这么来做，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0.1</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">0.2</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ret = (a * <span class="number">10</span> + b * <span class="number">10</span>) / <span class="number">10</span>;</span><br><span class="line"><span class="built_in">console</span>.log(ret);</span><br></pre></td></tr></table></figure>
+<p>这里，我们在计算之前，现将<code>a</code>和<code>b</code>乘以10（放大10倍，当然放大100、1000倍也是可以的），此时<code>a</code>和<code>b</code>已经不再是浮点数了，整数的四则运算当然是不需要考虑精度问题啦。最后我们还需要除以之前放大的倍数，得到正确的最终结果。其实这是一种迂回的办法来规避掉浮点数的四则运算精度问题。</p>
+<p>按照第二种思路，我们可以这么来做，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0.1</span>;</span><br><span class="line"><span class="keyword">var</span> b = <span class="number">0.2</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ret = (a + b).toFixed(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">var</span> ret = <span class="built_in">parseFloat</span>(ret);</span><br></pre></td></tr></table></figure>
+<p>注意<code>toFixed()</code>返回的是一个<code>String</code>，所以我们还需要进行<code>parseFloat</code>操作。</p>
+<p>所以，以后有前端的面试官问你 0.1 + 0.2 = ? 时，小心他在给你挖坑哦😎</p>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://gejiawen.github.io/about">@gejiawen</a>.</p>
+    <p class="link">本文链接：<a href="http://blog.gejiawen.com/2015/08/11/javascript-float-count-precision/">http://blog.gejiawen.com/2015/08/11/javascript-float-count-precision/</a></p>
+
+    <div class="share">
+    分享本页：
+    
+        <div class="bdsharebuttonbox"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_more" data-cmd="more"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    
+    
+</div>
+
+</div>
+
+
+            
+    <section class="comment">
+    <div class="ds-thread" data-thread-key="javascript-float-count-precision" data-title="Javascript中浮点数的计算精度问题" data-url="http://blog.gejiawen.com/2015/08/11/javascript-float-count-precision/" data-author-key="gejiawen"></div>
+</section>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gejiawen-blog"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

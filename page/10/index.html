@@ -1,0 +1,538 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="蛋糕仙人的个人博客。生活，工作，技术，思考，沉淀，人生。">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "page/10/index.html";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2014/09/23/javascript-light-framework-impressjs/" title="JavaScript轻量级框架系列（1）--超炫3D效果的幻灯片框架Impress.js">JavaScript轻量级框架系列（1）--超炫3D效果的幻灯片框架Impress.js</a></h1>
+
+        
+        <p class="summary">本文是JavaScript轻量级框架系列的第一篇文章。
+Impress.js是基于webkit内核浏览器（Chrome、Safari等）开发，而在其他基于非webkit引擎但支持CSS3 3D的浏览器也能正常运行。
+
+Impress.js源码已经发布在Github上，地址：htt</p>
+        
+
+        <p class="say-title">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/js/">js</a>&nbsp;<a href="/tags/JavaScript轻量级框架系列/">JavaScript轻量级框架系列</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a>
+</span>
+
+
+        </p>
+
+        <p class="say-title">
+            —— <img src="/images/avatar.jpg" class="img-circle index-post-avatar"/>
+            <a href="http://blog.gejiawen.com" target="_blank" title="gejiawen">gejiawen</a>
+            于2014-09-23 10:30:21创作
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2014/09/22/how-to-manage-javascript-code-in-big-project/" title="如何组织大型JavaScript应用中的代码">如何组织大型JavaScript应用中的代码</a></h1>
+
+        
+        <p class="summary">英文原文 Code Organization in Large AngularJS and JavaScript Applications
+
+本文作者Cliff Meyers是一个前端工程师，熟悉HTML5、JavaScript、J2EE开发，他在开发过程中总结了自己在应对Jav</p>
+        
+
+        <p class="say-title">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/js/">js</a>&nbsp;<a href="/tags/翻译/">翻译</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a>
+</span>
+
+
+        </p>
+
+        <p class="say-title">
+            —— <img src="/images/avatar.jpg" class="img-circle index-post-avatar"/>
+            <a href="http://blog.gejiawen.com" target="_blank" title="gejiawen">gejiawen</a>
+            于2014-09-22 21:17:27创作
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2014/09/19/methods-for-cross-region/" title="Javascript中几种实用的跨域方法">Javascript中几种实用的跨域方法</a></h1>
+
+        
+        <p class="summary">这里说的js跨域是指通过js在不同的域之间进行数据传输或通信，比如用ajax向一个不同的域请求数据，或者通过js获取页面中不同域的框架中(iframe)的数据。只要协议、域名、端口有任何一个不同，都被当作是不同的域。
+下表给出了相对http://store.company.com</p>
+        
+
+        <p class="say-title">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/js/">js</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a>
+</span>
+
+
+        </p>
+
+        <p class="say-title">
+            —— <img src="/images/avatar.jpg" class="img-circle index-post-avatar"/>
+            <a href="http://blog.gejiawen.com" target="_blank" title="gejiawen">gejiawen</a>
+            于2014-09-19 18:10:37创作
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2014/09/19/some-javascript-advanced-feature/" title="Javascript中几个高级语言特性">Javascript中几个高级语言特性</a></h1>
+
+        
+        <p class="summary">感谢Node.js开发指南，参考了它的附录部分内容。
+作用域Javascript中的作用域是通过函数来确定的，这一点与C、Java等静态语言有一些不一样的地方。
+最简单的例子1234if (true) &amp;#123;    var a =  &#39;Value&#39;;&amp;#125;consol</p>
+        
+
+        <p class="say-title">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/js/">js</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a>
+</span>
+
+
+        </p>
+
+        <p class="say-title">
+            —— <img src="/images/avatar.jpg" class="img-circle index-post-avatar"/>
+            <a href="http://blog.gejiawen.com" target="_blank" title="gejiawen">gejiawen</a>
+            于2014-09-19 17:12:58创作
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2014/09/19/deep-into-new-object/" title="Javascript中New xxx()的本质">Javascript中New xxx()的本质</a></h1>
+
+        
+        <p class="summary">在Javascript中，
+1var a = new A();
+它做了如下几件事，
+
+创建一个空的对象object
+把object绑定到函数A的上下文中（即A中的this现在指向object）
+执行函数A
+返回object
+
+所以，var a1 = new A()与var a2 </p>
+        
+
+        <p class="say-title">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/js/">js</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a>
+</span>
+
+
+        </p>
+
+        <p class="say-title">
+            —— <img src="/images/avatar.jpg" class="img-circle index-post-avatar"/>
+            <a href="http://blog.gejiawen.com" target="_blank" title="gejiawen">gejiawen</a>
+            于2014-09-19 17:07:47创作
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2014/09/19/nodejs-best-practices/" title="NodeJS最佳实践">NodeJS最佳实践</a></h1>
+
+        
+        <p class="summary">英文原文 Node.js Best Practices
+译者 gejiawen
+
+代码风格回调函数的相关约定所有的模块接口应该遵循 优先暴露错误 这一原则。如下代码所示，
+12345678910module.exports = function (dragonName, call</p>
+        
+
+        <p class="say-title">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/nodejs/">nodejs</a>&nbsp;<a href="/tags/漫游NodeJS系列/">漫游NodeJS系列</a>&nbsp;<a href="/tags/翻译/">翻译</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/NODEJS/">NODEJS</a>
+</span>
+
+
+        </p>
+
+        <p class="say-title">
+            —— <img src="/images/avatar.jpg" class="img-circle index-post-avatar"/>
+            <a href="http://blog.gejiawen.com" target="_blank" title="gejiawen">gejiawen</a>
+            于2014-09-19 16:17:10创作
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2014/08/12/require-in-seajs/" title="Sea.js中require的书写规范">Sea.js中require的书写规范</a></h1>
+
+        
+        <p class="summary">使用Sea.js书写模块代码时，需要遵循一些简单规则。只是书写和调试时的规范！！！构建后的代码完全不需要遵循下面的约定！！！！
+本文系转载，版权归原作者所有，点我看原文。
+正确拼写模块factory构造方法的第一个参数必须命名为require。
+123456789// 错误！de</p>
+        
+
+        <p class="say-title">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/转载/">转载</a>&nbsp;<a href="/tags/前端规范/">前端规范</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/大前端/">大前端</a>
+</span>
+
+
+        </p>
+
+        <p class="say-title">
+            —— <img src="/images/avatar.jpg" class="img-circle index-post-avatar"/>
+            <a href="http://blog.gejiawen.com" target="_blank" title="gejiawen">gejiawen</a>
+            于2014-08-12 15:32:23创作
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2014/08/12/from-commonjs-to-seajs/" title="从CommonJS到Sea.js">从CommonJS到Sea.js</a></h1>
+
+        
+        <p class="summary">CoomonJS是什么CommonJS是一个有志于构建Javascript生态圈的组织。它有一个邮件列表，很多开发者参与其中。整个社区致力于提供Javascript程序的可移植性和可交换性，无论是在服务端还是浏览器端。
+本文系转载，转圈归原作者所有，点我看原文。
+CommonJS</p>
+        
+
+        <p class="say-title">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/转载/">转载</a>&nbsp;<a href="/tags/前端规范/">前端规范</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/大前端/">大前端</a>
+</span>
+
+
+        </p>
+
+        <p class="say-title">
+            —— <img src="/images/avatar.jpg" class="img-circle index-post-avatar"/>
+            <a href="http://blog.gejiawen.com" target="_blank" title="gejiawen">gejiawen</a>
+            于2014-08-12 15:10:55创作
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2014/08/12/about-seajs-and-nodejs/" title="Seajs与Nodejs的兼容">Seajs与Nodejs的兼容</a></h1>
+
+        
+        <p class="summary">Sea.js的模块遵循CMD规范，与Node.js的模块规范非常相近，两者的模块可以很容易相互迁移。
+本文系转载，版权归原作者所有，点我看原文。
+让Sea.js的模块跑在Node上非常简单。先手需要安装seajs的Node模块：
+1$ npm install seajs -g
+安</p>
+        
+
+        <p class="say-title">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/转载/">转载</a>&nbsp;<a href="/tags/前端规范/">前端规范</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/大前端/">大前端</a>
+</span>
+
+
+        </p>
+
+        <p class="say-title">
+            —— <img src="/images/avatar.jpg" class="img-circle index-post-avatar"/>
+            <a href="http://blog.gejiawen.com" target="_blank" title="gejiawen">gejiawen</a>
+            于2014-08-12 14:30:47创作
+        </p>
+    </div>
+</article>
+
+<article class="post container">
+    <div class="jumbotron">
+        <h1><a href="/2014/07/18/how-to-use-cookie-in-javascript/" title="Javascript操作Cookie">Javascript操作Cookie</a></h1>
+
+        
+        <p class="summary">本文系转载，但是找不到原文的地址了。:(
+什么是Cookie“cookie是存储于访问者的计算机中的变量。每当同一台计算机通过浏览器请求某个页面时，就会发送这个 cookie。你可以使用 JavaScript 来创建和取回cookie的值。” - w3school
+cookie是</p>
+        
+
+        <p class="say-title">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/转载/">转载</a>&nbsp;<a href="/tags/js/">js</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/JAVASCRIPT/">JAVASCRIPT</a>
+</span>
+
+
+        </p>
+
+        <p class="say-title">
+            —— <img src="/images/avatar.jpg" class="img-circle index-post-avatar"/>
+            <a href="http://blog.gejiawen.com" target="_blank" title="gejiawen">gejiawen</a>
+            于2014-07-18 17:43:40创作
+        </p>
+    </div>
+</article>
+
+
+<div class="container pagination-div">
+    <div class="well">
+        <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
+    </div>
+</div>
+
+
+<script>
+    $(function () {
+        $("article:first").addClass("first-post");
+    });
+</script>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

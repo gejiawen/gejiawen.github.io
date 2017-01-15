@@ -1,0 +1,628 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="简介CSS3新增的Flexible Box Layout（弹性盒模型布局方式）是CSS3规范中提出的一种新的布局方案。该布局方案提供了一种更加高效简单的方式来处理容器中的元素布局、对齐、空间分配等操作，即使容器中的元素尺寸未知（或者尺寸大小是动态的）也能工作得很好。目前CSS3提出的此种布局方式也被">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS3 Flexbox属性与弹性盒模型 | 蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "2015/05/20/css3-flexbox-guide/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>CSS3 Flexbox属性与弹性盒模型</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/CSS拾遗系列/">CSS拾遗系列</a>&nbsp;<a href="/tags/css3/">css3</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2015-05-20T10:12:00.000Z"
+                       itemprop="datePublished">2015-05-20 18:12:00</time>
+            
+            更新: <time datetime="2016-04-26T01:58:59.000Z"
+                       itemprop="dateModified">2016-04-26 09:58:59</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+                <div id="toc" class="toc-article well">
+                    <strong class="toc-title">大纲</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#初识Flexbox"><span class="toc-number">2.</span> <span class="toc-text">初识Flexbox</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#相关概念"><span class="toc-number">2.1.</span> <span class="toc-text">相关概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#新旧语法"><span class="toc-number">2.2.</span> <span class="toc-text">新旧语法</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#属性详解"><span class="toc-number">3.</span> <span class="toc-text">属性详解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题引导"><span class="toc-number">3.1.</span> <span class="toc-text">问题引导</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#display-flex"><span class="toc-number">3.2.</span> <span class="toc-text">display: flex</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flex-direction"><span class="toc-number">3.3.</span> <span class="toc-text">flex-direction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flex-wrap"><span class="toc-number">3.4.</span> <span class="toc-text">flex-wrap</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flex-flow"><span class="toc-number">3.5.</span> <span class="toc-text">flex-flow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#order"><span class="toc-number">3.6.</span> <span class="toc-text">order</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flex条目的弹性设置"><span class="toc-number">3.7.</span> <span class="toc-text">flex条目的弹性设置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-basis"><span class="toc-number">3.7.1.</span> <span class="toc-text">flex-basis</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-grow"><span class="toc-number">3.7.2.</span> <span class="toc-text">flex-grow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#flex-shrink"><span class="toc-number">3.7.3.</span> <span class="toc-text">flex-shrink</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多行弹性布局的注意事项"><span class="toc-number">3.7.4.</span> <span class="toc-text">多行弹性布局的注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flex复合属性"><span class="toc-number">3.8.</span> <span class="toc-text">flex复合属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flex条目的对齐"><span class="toc-number">3.9.</span> <span class="toc-text">flex条目的对齐</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基于margin-auto对齐"><span class="toc-number">3.9.1.</span> <span class="toc-text">基于margin: auto对齐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于主轴对齐"><span class="toc-number">3.9.2.</span> <span class="toc-text">基于主轴对齐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基于交叉轴对齐"><span class="toc-number">3.9.3.</span> <span class="toc-text">基于交叉轴对齐</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#flex行的对齐"><span class="toc-number">3.10.</span> <span class="toc-text">flex行的对齐</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#浏览器兼容性"><span class="toc-number">4.</span> <span class="toc-text">浏览器兼容性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考列表"><span class="toc-number">5.</span> <span class="toc-text">参考列表</span></a></li></ol>
+                </div>
+            
+
+            <h1 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h1><p>CSS3新增的<a href="http://www.w3.org/TR/css-flexbox/" target="_blank" rel="external">Flexible Box Layout</a>（弹性盒模型布局方式）是CSS3规范中提出的一种新的布局方案。该布局方案提供了一种更加高效简单的方式来处理容器中的元素布局、对齐、空间分配等操作，即使容器中的元素尺寸未知（或者尺寸大小是动态的）也能工作得很好。目前CSS3提出的此种布局方式也被各大主流浏览器所支持，可以预见Flexbox Layout在未来将会被广泛使用。</p>
+<p>本文将详细的介绍该布局模型，同时会辅以一定的示例来具体说明如何在具体的web开发中应用该布局模型，达到传统布局方案（块级布局、内联布局、绝对定位局部等）的效果。</p>
+<h1 id="初识Flexbox"><a href="#初识Flexbox" class="headerlink" title="初识Flexbox"></a>初识Flexbox</h1><p>先让我们来说一说Flexbox Layout（弹性盒模型布局）的基本原理。</p>
+<p>在弹性盒模型布局中，需要事先指定一个容器，后续的所有布局操作都是基于此容器来定义的。其核心是<strong>容器会根据布局的需要（动态的）调整其中所包含的子元素（即布局条目）的尺寸、顺序来填充容器的所有可用空间。</strong></p>
+<p>当容器的尺寸由于屏幕大小（或者浏览器窗口尺寸）发生变化时，其中包含的布局条目也会自动地进行调整。举个例子，当容器尺寸增大时，包含的条目将会自动拉伸以沾满多余的空白空间；当容器尺寸变小时，条目会自动收缩以适应容器的尺寸防止移除容器的范围。</p>
+<p>额外提一点，Flexbox布局是<strong>不存在内置的布局方向</strong>的。这是什么意思呢？比如传统的布局方案中，块级布局（block）默认是将各个块级元素按照垂直方向自上向下依次堆放；内联布局（inline）默认是将各个内联元素按照水平方向按照从左到右的顺序依次堆放。而弹性盒布局不存在这种默认的布局方向限制，它提供了独立的布局方向属性，开发人员可以根据布局需要自行设置。</p>
+<h2 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h2><p>弹性盒布局是一种新的布局方式。它涉及到一些新的概念，这里我们对其加以解释。如下图所示，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-001.png" alt=""></p>
+<p>它包含如下几个概念，</p>
+<ol>
+<li><code>flex container</code>，即所谓的<strong>容器</strong>（或者称之为<strong>弹性盒</strong>、<strong>flex容器</strong>）。注意这里说的容器并不是单纯的dom元素所指代的容器，而是特指设置了弹性盒布局的dom元素。</li>
+<li><code>flex item</code>，即所谓的<strong>条目</strong>（或者称之为<strong>flex条目</strong>）。这里的条目其实就是容器的子元素。比如<code>ul</code>元素为一个flex容器，那么其内部包含的<code>li</code>元素就是flex条目。大部分时候，不同的弹性盒布局真正产生变化的其实就是条目的布局行为发生了变化。</li>
+<li><code>main axis</code>和<code>cross axis</code>，即所谓的<strong>主轴</strong>和<strong>交叉轴</strong>（有的翻译文章也称之为<strong>侧轴</strong>）。这两个属性定义flex布局方向。需要注意的是，虽然图中主轴是水平方向，交叉轴是垂直方向，但是这并不是固定的，开发人员完全自定义主轴和交叉轴的方向。<ol>
+<li>在使用flex布局时，一般我们需要首先明确主轴的方向，然后交叉轴的方向也会随之确定下来。因为<strong>交叉轴的方向始终是与主轴的方向是垂直的</strong>。</li>
+<li>flex容器中flex条目可以根据布局需要排列成<strong>单行</strong>或者<strong>多行</strong>。</li>
+<li>主轴<code>main axis</code>的作用是确定每一行上flex条目的排列方向。</li>
+<li>（当flex条目成多行排列时）交叉轴<code>cross axis</code>的作用是确定行与行之间的排列方向。</li>
+</ol>
+</li>
+<li><code>main start</code>和<code>main end</code>，即所谓的<strong>主轴起点</strong>和<strong>主轴终点</strong>。<ol>
+<li>明确主轴的方向后（如上所述，不管是主轴还是交叉轴其实只有两种方向，即水平或者垂直），还需要确定他们各自的排列方向。</li>
+<li>假如已经明确主轴的方向是水平的，那么其排列方向仍然会有两种可选，一种是<strong>从左到右</strong>的排列方向（flex条目从左到右依次堆放），另一种是<strong>从右到左</strong>排列方向（flex条目从右到左依次堆放）。</li>
+<li>主轴起点在左主轴终点在右即为<strong>从左到右</strong>的排列方向。（如上图所示）</li>
+<li>主轴起点在右主轴终点在左即为<strong>从右到左</strong>的排列方向。</li>
+</ol>
+</li>
+<li><code>cross start</code>和<code>cross end</code>，即所谓的<strong>交叉轴起点</strong>和<strong>交叉轴终点</strong>。<ol>
+<li>跟主轴起点和主轴终点的含义类似，交叉轴起点和交叉轴终点明确了行与行之间的排列顺序。</li>
+<li>假如已经明确交叉轴的方向是垂直的，那么其排列方向仍然将会有两种可选，一种是<strong>从上到下</strong>的排列方向（第二行在第一行的下方），另一种是<strong>从下到上</strong>的排列方向（第二行在第一行的上方）。</li>
+</ol>
+</li>
+<li>所以，在flex容器进行布局时，在每一行中会把其中的flex条目从主轴起始位置开始，依次排列到主轴结束位置。当flex容器中存在多行时，会把每一行从交叉轴起始位置开始，依次排列到交叉轴结束位置。</li>
+<li><code>main size</code>和<code>cross size</code>，即所谓的<strong>主轴尺寸</strong>和<strong>交叉轴尺寸</strong>。对应dom元素在主轴和交叉轴上的大小。<ol>
+<li>如果主轴方向是水平的（那么交叉轴方向肯定是垂直的），此时主轴尺寸即是dom元素（flex容器）的宽度属性，交叉轴尺寸即是dom元素（flex容器）的高度属性。</li>
+<li>如果主轴方向是垂直的，那么主轴尺寸和交叉轴尺寸对应的dom元素宽高属性与之前相反。</li>
+</ol>
+</li>
+</ol>
+<p>继续学习flex布局之前，一定要弄明白这些概念，因为具体的属性设置会与这些概念息息相关。  </p>
+<h2 id="新旧语法"><a href="#新旧语法" class="headerlink" title="新旧语法"></a>新旧语法</h2><p>在进行flex布局相关属性的详细说明之前，有必要提一点。就是flex布局先后有两种语法，一种是W3C于2009年发布的旧语法，另一种是W3C最新发布的新语法。</p>
+<p>这里我不对前后两种语法的差异作解析，仅从语法层面说明存在这个差异。</p>
+<p>旧语法中，所有的flex属性都以<code>box</code>打头，flex设置为<code>display: box</code>。如下图，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-002.png" alt=""></p>
+<p>新语法中，所有的flex属性都以<code>flex</code>打头，flex设置为<code>display: flex</code>。如下图，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-003.png" alt=""></p>
+<p>关于这两种更多的差异请参阅官方文档或者<a href="http://css.doyoe.com/" target="_blank" rel="external">CSS参考手册</a>。</p>
+<p>其中新旧语法中间还有存在一种非官方的过渡语法规范，flex设置为<code>display: flexbox</code></p>
+<p>顺便提一句，关于新旧语法在实际使用时，肯定是推荐使用新语法的，虽然新语法的浏览器支持性不如旧语法，但是毕竟是旧的语法，迟早是要淘汰的，而且新语法的表现也更加一致。</p>
+<h1 id="属性详解"><a href="#属性详解" class="headerlink" title="属性详解"></a>属性详解</h1><p><strong>注意</strong>，flex布局中的css样式声明与一般的css声明不同，它会有两个作用对象，分别是<strong>flex容器</strong>和<strong>flex条目</strong>。即，有的flex属性只能作用于flex容器，而有的flex属性只能作用于flex条目。</p>
+<p>下面我们针对flex布局的各个属性分别作详细说明。</p>
+<h2 id="问题引导"><a href="#问题引导" class="headerlink" title="问题引导"></a>问题引导</h2><p>在详细阐述各个属性之前，我们先来抛出一个比较常见的布局问题。问题是这样的，现在有一个无序列表（<code>ul</code>元素），其包含了6个列表项（<code>li</code>元素），如何做可以让列表项（<code>li</code>元素）自适应父容器的尺寸？换句话说，当父容器尺寸足够大时，所有的<code>li</code>元素平铺成一行；当父容器的尺寸减小时，<code>li</code>元素自动换行。</p>
+<p>大家都能想到的一种常规做法应该就是给<code>li</code>元素设置浮动。不过这里我们将使用flex布局来实现这种布局需求。html和css代码如下，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"flex-container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"flex-item"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"flex-item"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"flex-item"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"flex-item"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"flex-item"</span>&gt;</span>5<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"flex-item"</span>&gt;</span>6<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">flex-direction</span>: row;</span><br><span class="line">    <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.flex-item</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: gold;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>具体的效果可以看这个<a href="http://runjs.cn/detail/yzwrgtml" target="_blank" rel="external">demo</a>。各位看官可以自行缩放浏览器的窗口，观察<code>.flex-item</code>块的排列行为。注意，这里我并没有使用浮动的相关属性。</p>
+<h2 id="display-flex"><a href="#display-flex" class="headerlink" title="display: flex"></a><code>display: flex</code></h2><p>在之前说过，要想使用弹性盒布局必须事先指定一个容器，这个容器就是所谓的flex容器。那么如何指定flex容器呢？很简单，将其<code>display</code>属性设置为<code>flex</code>即可。如下，</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>，如果需要在内联的场景下使用flex布局，则需要设置<code>display: inline-flex</code>。而且以下几种属性设置在弹性盒布局中是不起作用的，</p>
+<ol>
+<li>浮动元素（<code>float</code>）</li>
+<li>清除浮动（<code>clear</code>）</li>
+<li>css3多列布局（<code>columns-*</code>）</li>
+<li>垂直居中（<code>vertical-align</code>）</li>
+<li>首行/首字符选择伪类（<code>::first-line</code>和<code>::first-letter</code>）</li>
+</ol>
+<h2 id="flex-direction"><a href="#flex-direction" class="headerlink" title="flex-direction"></a><code>flex-direction</code></h2><p><code>flex-direction</code>属性的作用是设置<strong>主轴</strong>方向。我们之前有说过，一旦主轴方向确定，那么连带的交叉轴的方向也会确定下来。这样就确定了flex条目基本的排列方式。</p>
+<p>下面我们来看一下<code>flex-direction</code>的具体用法，如下表，</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">可选值</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>row</code></td>
+<td style="text-align:left">横向从左到右排列</td>
+<td style="text-align:left">即<strong>左对齐</strong>。此为默认值</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>row-reverse</code></td>
+<td style="text-align:left">反转横向排列（从右到左拍立）</td>
+<td style="text-align:left">即<strong>右对齐</strong></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>column</code></td>
+<td style="text-align:left">纵向排列（从上到下排列）</td>
+<td style="text-align:left">即设置主轴方向为垂直方向</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>column</code></td>
+<td style="text-align:left">反转纵向排列（从下到上排列）</td>
+<td style="text-align:left">主轴方向为垂直方向，但是越是后面的flex条目反而在上方</td>
+</tr>
+</tbody>
+</table>
+<p>在这个<a href="http://runjs.cn/detail/yzwrgtml" target="_blank" rel="external">demo</a>中，可以肆意改变<code>flex-direction</code>的值，并改变浏览器窗口大小，观察页面布局的变化。</p>
+<h2 id="flex-wrap"><a href="#flex-wrap" class="headerlink" title="flex-wrap"></a><code>flex-wrap</code></h2><p><code>flex-wrap</code>属性用于设置当所有的flex条目的尺寸之和超过flex容器的主轴尺寸时应该采取的行为。这是什么意思呢？</p>
+<p>在默认情况下，flex容器中的flex条目会尽量的在一行上占满flex容器的空间。当主轴尺寸大于所有flex条目尺寸之和时，这时并没有什么问题。但是，当主轴尺寸小于所有flex条目尺寸之和时，此时就会出现flex条目之间相互重叠或者换行的情况。所以<code>flex-wrap</code>属性就是专门用来处理这种情况的。</p>
+<p>下面让我们来看一下<code>flex-wrap</code>的具体用法，如下表，</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">可选值</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>nowrap</code></td>
+<td style="text-align:left">容器中的条目只占满容器在主轴方向上的一行，此时可能出现条目互相重叠或超出容器范围的现象</td>
+<td style="text-align:left">此为默认值</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>wrap</code></td>
+<td style="text-align:left">当容器中的条目超出主轴方向上的一行时，会把条目排列到下一行。而下一行的位置与交叉轴的方向一致</td>
+<td style="text-align:left">交叉轴的存在感就是在此</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>wrap-reverse</code></td>
+<td style="text-align:left">与<code>wrap</code>的含义类似，不同的是下一行的位置与交叉轴的方向相反。</td>
+<td style="text-align:left">-</td>
+</tr>
+</tbody>
+</table>
+<p>与之前类似，我们可以在这个<a href="http://runjs.cn/detail/yzwrgtml" target="_blank" rel="external">demo</a>中实验不同<code>flex-wrap</code>取值的差异。</p>
+<h2 id="flex-flow"><a href="#flex-flow" class="headerlink" title="flex-flow"></a><code>flex-flow</code></h2><p>之前说的两个属性<code>flex-direction</code>和<code>flex-wrap</code>，从某种意义上来说就是设置flex布局的主轴和交叉轴。一旦flex布局的主轴和交叉轴确定下来，基本上整个布局中flex条目的排列方式我们就可以自行脑补出来了。</p>
+<p>而<code>flex-flow</code>属性其实就是<code>flex-direction</code>和<code>flex-wrap</code>的复合属性。所以下面两段代码的效果是一致的。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-container1</span> &#123;</span><br><span class="line">    <span class="attribute">flex-direction</span>: row;</span><br><span class="line">    <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.flex-container2</span> &#123;</span><br><span class="line">    <span class="attribute">flex-flow</span>: row wrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="order"><a href="#order" class="headerlink" title="order"></a><code>order</code></h2><p>前面说的几个属性其实都是针对flex容器的设置。而<code>order</code>属性是针对flex条目的。它的作用是自定义flex容器中条目的顺序。其用法示例如下，</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-item</span><span class="selector-pseudo">:last-child</span> &#123;</span><br><span class="line">    <span class="attribute">order</span>: -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这段css代码中使用了css3新出的一个<strong>结构伪类选择器</strong><code>:last-child</code>，其作用是匹配<code>.flex-item</code>元素且该元素是其父元素的最后一个子元素。关于css3选择器的更多内容欢迎阅读博主的这篇文章<a href="http://blog.gejiawen.com/2015/04/09/first-to-css3-selectors/">初识CSS3选择器</a>。</p>
+<p>言归正传，上面的css代码，将导致最后一个<code>li</code>元素反而在第一个展示。效果如下，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-004.png" alt=""></p>
+<p><strong>注意</strong>，此时虽然最后一个子元素被置顶展示，但是并没有改变其html文档结构。</p>
+<p><code>order</code>的用法如下，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">order: &lt;integer&gt;</span><br></pre></td></tr></table></figure>
+<p>用整数值来定义排列顺序，数值小的排在前面。默认值为0，且可以设置为负值。</p>
+<h2 id="flex条目的弹性设置"><a href="#flex条目的弹性设置" class="headerlink" title="flex条目的弹性设置"></a>flex条目的弹性设置</h2><p>弹性盒模型的真正牛逼的地方在于flex容器中的<strong>flex条目的尺寸是弹性的</strong>。这是啥意思呢？个人觉得它包含下面的几层含义，</p>
+<ul>
+<li>主轴尺寸不够大时，使用<code>flex-wrap</code>可以让flex条目自动换行。</li>
+<li>主轴尺寸不够大时，还可以缩小条目的尺寸防止溢出容器范围。</li>
+<li>主轴尺寸足够大时，可以适当扩展条目的尺寸来占用容器的额外空白空间。</li>
+</ul>
+<p>这里我们把重心放在后两点上，即<strong>flex容器可以根据本身尺寸的大小来动态地调整flex条目的尺寸</strong>。</p>
+<p>flex条目尺寸的弹性由3个css属性来确定，分别是<code>flex-basis</code>、<code>flex-grow</code>和<code>flex-shrink</code>。他们的相关说明如下，</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th>可选值</th>
+<th style="text-align:left">默认值</th>
+<th style="text-align:left">作用对象</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>flex-basis</code></td>
+<td><code>&lt;length&gt;</code>, <code>&lt;percentage&gt;</code>, <code>auto</code></td>
+<td style="text-align:left"><code>auto</code></td>
+<td style="text-align:left">flex条目</td>
+<td style="text-align:left">设置弹性条目的初始主轴尺寸</td>
+<td style="text-align:left">这里的初始值表示flex容器调整之前flex条目尺寸的初始值。此属性跟<code>width</code>等属性的设置模式是一致的</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>flex-grow</code></td>
+<td><code>&lt;integer&gt;</code></td>
+<td style="text-align:left"><code>1</code></td>
+<td style="text-align:left">flex条目</td>
+<td style="text-align:left">当容器有多余的空间时，这些空间在不同条目之间的分配比例</td>
+<td style="text-align:left">用于设置flex条目的扩展因子，不能取负值</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>flex-shrink</code></td>
+<td><code>&lt;integer&gt;</code></td>
+<td style="text-align:left"><code>1</code></td>
+<td style="text-align:left">flex条目</td>
+<td style="text-align:left">当容器的空间不足时，各个条目尺寸缩小的比例</td>
+<td style="text-align:left">此属性的作用与<code>flex-grow</code>相反</td>
+</tr>
+</tbody>
+</table>
+<p>关于上述三个属性的一些额外说明，</p>
+<h3 id="flex-basis"><a href="#flex-basis" class="headerlink" title="flex-basis"></a><code>flex-basis</code></h3><p><code>flex-basis</code>用于设置flex条目的初始尺寸（未进行任何调整之前）。当设置为<code>auto</code>时，则实际使用的值是主轴尺寸属性的值。若主轴尺寸也是<code>auto</code>，那么使用的值由条目内容的尺寸来确定。</p>
+<h3 id="flex-grow"><a href="#flex-grow" class="headerlink" title="flex-grow"></a><code>flex-grow</code></h3><p>当主轴尺寸足够大时，flex条目在容器内一行就全部排列完了，此时容器的空间还有剩余，那么可用<code>flex-grow</code>扩展flex条目。举个例子，一个容器中有3个flex条目，其<code>flex-grow</code>属性分别如下，</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-item</span><span class="selector-pseudo">:nth-child(1)</span> &#123;</span><br><span class="line">    <span class="attribute">flex-grow</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.flex-item</span><span class="selector-pseudo">:nth-child(2)</span> &#123;</span><br><span class="line">    <span class="attribute">flex-grow</span>: <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.flex-item</span><span class="selector-pseudo">:nth-child(3)</span> &#123;</span><br><span class="line">    <span class="attribute">flex-grow</span>: <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>同时，flex容器的宽度是800px，每个条目的宽度为200px，所以容器还将剩余200px。由于条目都设置了<code>flex-grow</code>属性，那么此三个条目将按比例分配容器的剩余空间。第一个条目将得到200 <em> 1/6 = 33px左右，第二个条目将得到200 </em> 2/6 = 66px，第三个条目将得到200 * 3/6 = 99px左右。效果如下图，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-005.png" alt=""></p>
+<p>详情可参考这个<a href="http://runjs.cn/detail/ysrnndee" target="_blank" rel="external">demo</a>。</p>
+<h3 id="flex-shrink"><a href="#flex-shrink" class="headerlink" title="flex-shrink"></a><code>flex-shrink</code></h3><p><code>flex-shrink</code>在使用上类似<code>flex-grow</code>，不过它使用于设置当主轴尺寸不够大时缩小flex条目。同样的，我们来举个例子，一个容器中有3个flex条目，每个felx条目的尺寸为200px，容器的尺寸为500px。很明显此时容器尺寸已经放不下其中三个flex条目了。我们对每个flex条目设置<code>flex-shrink</code>属性，</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.flex-item</span><span class="selector-pseudo">:nth-child(1)</span> &#123;</span><br><span class="line">    <span class="attribute">flex-shrink</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.flex-item</span><span class="selector-pseudo">:nth-child(2)</span> &#123;</span><br><span class="line">    <span class="attribute">flex-shrink</span>: <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.flex-item</span><span class="selector-pseudo">:nth-child(3)</span> &#123;</span><br><span class="line">    <span class="attribute">flex-shrink</span>: <span class="number">3</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果我们希望flex容器能够刚刚好将三个flex条目放下，我们需要缩小的尺寸为600-500 = 100px。接下来三个条目将根据<code>flex-shrink</code>属性按比例的分摊需要缩小的尺寸，即分别为100 <em> 1/6 = 16.6px，100 </em> 2/6 = 33.3px，100 * 3/6 = 50px。所以三个flex条目最终的尺寸为200 - 16.6 = 183.4px，200 - 33.3 = 166.7px，200 - 50 = 150px。效果如下，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-006.png" alt=""></p>
+<p>详情可参考这个<a href="http://runjs.cn/detail/orbwqkkp" target="_blank" rel="external">demo</a>。</p>
+<h3 id="多行弹性布局的注意事项"><a href="#多行弹性布局的注意事项" class="headerlink" title="多行弹性布局的注意事项"></a>多行弹性布局的注意事项</h3><p><strong>⚠️注意</strong>，这里额外提一个非常重要的点，就是在我们使用<code>flex-grow</code>和<code>flex-shrink</code>属性对flex条目进行扩展或者缩小时，这些操作其实是以<strong>行</strong>为单位来操作的，容器先根据<code>flex-wrap</code>的属性值来确定是单行布局或多行布局，然后把条目分配到对应的行中，最后在每一行内进行空白空间的分配。</p>
+<p>这什么意思呢？我们来举个简单例子说明一下。假如我有一份代码如下，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span><br><span class="line"><span class="selector-class">.flex-container</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">999px</span>;</span><br><span class="line">    <span class="attribute">flex-direction</span>: row;</span><br><span class="line">    <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.flex-item</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">    <span class="attribute">flex-grow</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">flex-shrink</span>: <span class="number">1</span>;</span><br><span class="line">    <span class="attribute">flex-basis</span>: auto;</span><br><span class="line">&#125;</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"flex-container"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"flex-item"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"flex-item"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"flex-item"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"flex-item"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这里容器中有4个flex条目，每个条目的宽度为300px，但是容器的尺寸只有999px，明显是不足以放下所有的flex条目的。此时前三个条目将堆放在第一行，第4个条目将单独的被堆放在第二行。此时第一行将会多出99px的空余空间，这99px的空余空间将会平均应用到第一行的三个条目上；第二行因为只有一个条目，此时这个条目将会直接占用剩余的699px。整个效果如下图，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-007.png" alt=""></p>
+<p>详情可参考这个<a href="http://runjs.cn/detail/zabhpmlq" target="_blank" rel="external">demo</a>。</p>
+<h2 id="flex复合属性"><a href="#flex复合属性" class="headerlink" title="flex复合属性"></a><code>flex</code>复合属性</h2><p>如你所见，<code>flex</code>是一个复合属性，它的语法如下，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex: none | auto | [flex-grow] | [flex-shrink] | [flex-basis]</span><br></pre></td></tr></table></figure>
+<p>其中<code>none</code>的含义为：<code>0 0 auto</code>, 即<code>flex-grow: 0</code>，<code>flex-shrink: 0</code>， <code>flex-basis: auto</code>。<br>其中<code>auto</code>的含义为：<code>1 1 auto</code>, 即<code>flex-grow: 1</code>，<code>flex-shrink: 1</code>， <code>flex-basis: auto</code>。</p>
+<p>当<code>flex-basis</code>被省略时，其值为<code>0%</code>。</p>
+<h2 id="flex条目的对齐"><a href="#flex条目的对齐" class="headerlink" title="flex条目的对齐"></a>flex条目的对齐</h2><p>当flex容器中flex条目的尺寸和排列都确定下来之后，我们还可以设置这些flex条目在容器中的对齐方式。</p>
+<p>目前有三种对齐方式。</p>
+<h3 id="基于margin-auto对齐"><a href="#基于margin-auto对齐" class="headerlink" title="基于margin: auto对齐"></a>基于<code>margin: auto</code>对齐</h3><p>第一种对齐方式是<strong>使用空白边</strong>，即<code>margin: auto</code>。在使用自动空白边时，flex容器中额外的空白空间将会由被声明为<code>auto</code>的空白边占据。</p>
+<p>这种方式在W3C的官方文档被称之为<em>non-normative</em>，更加像是一种奇淫巧计。</p>
+<p>我们来看个具体的例子，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">nav</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">/about</span>&gt;</span>About<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">/projects</span>&gt;</span>Projects<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">/interact</span>&gt;</span>Interact<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">"login"</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">/login</span>&gt;</span>Login<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span> &#123;</span><br><span class="line">    <span class="attribute">list-style</span>: none;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">min-width</span>: min-content;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#login</span> &#123;</span><br><span class="line">   <span class="attribute">margin-left</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其效果如下，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-008.png" alt=""></p>
+<p>示例中的<code>#login</code>元素通过简单的<code>margin-left</code>设置，将其置于最右侧展示。详情可参考这个<a href="http://runjs.cn/detail/i5k0lsn0" target="_blank" rel="external">demo</a>。</p>
+<h3 id="基于主轴对齐"><a href="#基于主轴对齐" class="headerlink" title="基于主轴对齐"></a>基于主轴对齐</h3><p>第二种对齐方式是基于主轴方向上的对齐策略。可以通过<code>justify-content</code>属性来进行设置。借助此属性，我们可以调整flex条目在主轴方向上的对齐策略。</p>
+<p>这种对齐方式的调整<strong>发生在修改条目的弹性尺寸和处理自动空白边之后</strong>。当容器中的一行中的条目没有弹性尺寸或是已经达到了它们的最大尺寸时，如果此时在这一行上还有额外的空白空间，我们可以使用<code>justify-content</code>来分配这些空白空间。该属性还可以控制当条目超出行的范围时的对齐方式。</p>
+<p>我们来看下<code>justify-content</code>属性的基本用法，（<strong>注意</strong>，<code>justify-content</code>用于设置flex容器）</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">可选值</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>flex-start</code></td>
+<td style="text-align:left">条目集中于该行的起始位置。第一个条目与其所在行在主轴起始方向上的边界保持对齐，其余的条目按照顺序依次排列。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>flex-end</code></td>
+<td style="text-align:left">条目集中于该行的结束方向。最后一个条目与其所在行在主轴结束方向上的边界保持对齐，其余的条目按照顺序依次排列。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>center</code></td>
+<td style="text-align:left">条目集中于该行的中央。条目都往该行的中央排列，在主轴起始方向和结束方向上留有同样大小的空白空间。如果空白空间不足，则条目会在两个方向上超出同样的空间。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>space-between</code></td>
+<td style="text-align:left">第一个条目与其所在行在主轴起始方向上的边界保持对齐，最后一个条目与其所在行在主轴结束方向上的边界保持对齐。空白空间在条目之间平均分配，使得相邻条目之间的空白尺寸相同。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>space-around</code></td>
+<td style="text-align:left">类似于<code>space-between</code>，不同的是第一个条目和最后一个条目与该行的边界之间同样存在空白空间，该空白空间的尺寸是条目之间的空白空间的尺寸的一半。</td>
+</tr>
+</tbody>
+</table>
+<p>各属性值的效果如下图，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-009.png" alt=""></p>
+<h3 id="基于交叉轴对齐"><a href="#基于交叉轴对齐" class="headerlink" title="基于交叉轴对齐"></a>基于交叉轴对齐</h3><p> 第三种对齐方式是基于交叉轴方向上的对齐策略。此种方式中，我们有两个属性可以做相关设置，它们分别是<code>align-items</code>和<code>align-self</code>。其中前者是用来设置flex容器的，后者是用来设置flex条目的，这两个属性的作用对象是不同的。在某些场景下，我们可以对flex条目设置<code>align-self</code>来复写flex容器指定的对齐方式。</p>
+<p> 我们来看看<code>align-items</code>的基本用法，</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">可选值</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>flex-start</code></td>
+<td style="text-align:left">条目与其所在行在交叉轴起始方向上的边界保持对齐。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>flex-end</code></td>
+<td style="text-align:left">条目与其所在行在交叉轴结束方向上的边界保持对齐。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>center</code></td>
+<td style="text-align:left">条目的空白边盒子（margin box）在交叉轴上居中。如果交叉轴尺寸小于条目的尺寸，则条目会在两个方向上超出相同大小的空间。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>baseline</code></td>
+<td style="text-align:left">条目在基准线上保持对齐。在所有条目中，基准线与交叉轴起始方向上的边界距离最大的条目，它与所在行在交叉轴方向上的边界保持对齐。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>stretch</code></td>
+<td style="text-align:left">如果条目的交叉轴尺寸的计算值是<code>auto</code>，则其实际使用的值会使得条目在交叉轴方向上尽可能地占满。</td>
+</tr>
+</tbody>
+</table>
+<p> 各属性值的效果如下图，</p>
+<p> <img src="http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-010.png" alt=""></p>
+<p> <code>align-self</code>的属性基本与<code>align-items</code>一致（用法和含义基本都一样）。不过<code>align-self</code>除了<code>align-items</code>属性可选值之外，还可以设置为<code>auto</code>。当设置为<code>auto</code>时，其值是父节点的属性<code>align-items</code>的值,如果该节点没有父节点，则为<code>stretch</code>。</p>
+<h2 id="flex行的对齐"><a href="#flex行的对齐" class="headerlink" title="flex行的对齐"></a>flex行的对齐</h2><p>前面说完了flex容器中flex条目的对齐方式。这里我们再来说一下<strong>flex行</strong>的对齐。什么叫flex行？W3C官方文档中提到了一个名词，叫做<a href="http://www.w3.org/TR/css-flexbox/#flex-lines" target="_blank" rel="external"><strong>Flex Lines</strong></a>。</p>
+<p>那么什么叫Flex Lines呢？说的直白点就是多行flex布局时，主轴方向上的每一行就是Flex Lines。</p>
+<p>举个例子，</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"flex"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"item"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#flex</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">flex-flow</span>: row wrap;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">300px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.item</span> &#123;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">80px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>很明显，上述代码生成的flex容器一行肯定堆放不下所有flex条目的。又因为设置了<code>flex-wrap: wrap</code>，所以其在主轴方向上会发生换行。如下图，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-011.png" alt=""></p>
+<p>如图所示，此flex布局将分为两行，每一行就是所谓的<strong>Flex Lines</strong>。</p>
+<p>如果一个flex布局容器中不止一行，我们同样可以对行与行之间的对齐方式进行设置。为这一设置提供支持的属性就是<code>align-content</code>。其实此属性的作用和<code>justify-content</code>属性很相似，只不过<code>justify-content</code>是用于在主轴方向上对齐行内的flex条目，而<code>align-content</code>是用于设置行与行之间的对齐策略。</p>
+<p><code>align-content</code>详细的用法如下表，</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">可选值</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>flex-start</code></td>
+<td style="text-align:left">行集中于容器的交叉轴起始位置。第一行与容器在交叉轴起始方向上的边界保持对齐，其余行按照顺序依次排列。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>flex-end</code></td>
+<td style="text-align:left">行集中于容器的交叉轴结束位置。第一行与容器在交叉轴结束方向上的边界保持对齐，其余行按照顺序依次排列。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>center</code></td>
+<td style="text-align:left">行集中于容器的中央。行都往容器的中央排列，在交叉轴起始方向和结束方向上留有同样大小的空白空间。如果空白空间不足，则行会在两个方向上超出同样的空间。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>space-between</code></td>
+<td style="text-align:left">行在容器中均匀分布。第一行与容器在交叉轴起始方向上的边界保持对齐，最后一行与容器在交叉轴结束方向上的边界保持对齐。空白空间在行之间平均分配，使得相邻行之间的空白尺寸相同。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>space-around</code></td>
+<td style="text-align:left">类似于<code>space-between</code>，不同的是第一行条目和最后一个行目与容器行的边界之间同样存在空白空间，而该空白空间的尺寸是行目之间的空白空间的尺寸的一半。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>stretch</code></td>
+<td style="text-align:left">伸展行来占满剩余的空间。多余的空间在行之间平均分配，使得每一行的交叉轴尺寸变大。</td>
+</tr>
+</tbody>
+</table>
+<p>各属性值的效果如下，</p>
+<p><img src="http://7xkwt1.com1.z0.glb.clouddn.com/CSS3-Flexbox属性与弹性盒模型-012.png" alt=""></p>
+<h1 id="浏览器兼容性"><a href="#浏览器兼容性" class="headerlink" title="浏览器兼容性"></a>浏览器兼容性</h1><p>本文的<strong>新旧语法</strong>中曾经提到，弹性盒模型官方有好几个版本的语法，这是因为其规范本身有过多个不同版本，因为浏览器对于该规范的支持也存在一些不一致。大致来说总共有三个不同版本的语法，</p>
+<ul>
+<li>最新规范：最新版本规范的语法，即<code>display: flex</code>。</li>
+<li>中间版本：2011年的非官方规范语法，即<code>display: flexbox</code>。</li>
+<li>老规范：2009年的规范的语法，即<code>display: box</code>。</li>
+</ul>
+<p>浏览器的支持情况如下，</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Chrome</th>
+<th style="text-align:left">Safari</th>
+<th style="text-align:left">Firefox</th>
+<th style="text-align:left">Opera</th>
+<th style="text-align:left">IE</th>
+<th style="text-align:left">Android</th>
+<th style="text-align:left">iOS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">21+（新规范）</td>
+<td style="text-align:left">6.1+（新规范）</td>
+<td style="text-align:left">22+（新规范）</td>
+<td style="text-align:left">12.1+（新规范）</td>
+<td style="text-align:left">11+（新规范）</td>
+<td style="text-align:left">4.4+（新规范）</td>
+<td style="text-align:left">7.1+（新规范）</td>
+</tr>
+<tr>
+<td style="text-align:left">20-（老规范）</td>
+<td style="text-align:left">3.1+（老规范）</td>
+<td style="text-align:left">2-21（老规范）</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">10（中间版本）</td>
+<td style="text-align:left">2.1+（老规范）</td>
+<td style="text-align:left">3.2+（老规范）</td>
+</tr>
+</tbody>
+</table>
+<p>从上面看来，弹性盒布局模型基本已经被主流的现代浏览器所支持。除了IE系的浏览器拖了后腿之外，基本可以无障碍的使用。不过虽然如此，我们为了兼容性，在实际使用的时候除了规范中定义的属性之外，最好添加不同浏览器内核的私有前缀。</p>
+<h1 id="参考列表"><a href="#参考列表" class="headerlink" title="参考列表"></a>参考列表</h1><ul>
+<li><a href="http://www.w3.org/TR/css-flexbox/" target="_blank" rel="external">w3c</a></li>
+<li><a href="http://www.w3.org/html/ig/zh/wiki/Css3-flexbox" target="_blank" rel="external">css3-flexbox</a></li>
+<li><a href="http://www.ibm.com/developerworks/cn/web/1409_chengfu_css3flexbox" target="_blank" rel="external">深入理解 CSS3 弹性盒布局模型</a></li>
+<li><a href="http://www.html-js.com/article/CSS-learning-CSS3-Flexbox" target="_blank" rel="external">CSS3 Flexbox</a></li>
+<li><a href="http://segmentfault.com/a/1190000000707526" target="_blank" rel="external">详解css3弹性盒模型（Flexbox）</a></li>
+<li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank" rel="external">A Complete Guide to Flexbox</a></li>
+</ul>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://gejiawen.github.io/about">@gejiawen</a>.</p>
+    <p class="link">本文链接：<a href="http://blog.gejiawen.com/2015/05/20/css3-flexbox-guide/">http://blog.gejiawen.com/2015/05/20/css3-flexbox-guide/</a></p>
+
+    <div class="share">
+    分享本页：
+    
+        <div class="bdsharebuttonbox"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_more" data-cmd="more"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    
+    
+</div>
+
+</div>
+
+
+            
+    <section class="comment">
+    <div class="ds-thread" data-thread-key="css3-flexbox-guide" data-title="CSS3 Flexbox属性与弹性盒模型" data-url="http://blog.gejiawen.com/2015/05/20/css3-flexbox-guide/" data-author-key="gejiawen"></div>
+</section>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gejiawen-blog"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

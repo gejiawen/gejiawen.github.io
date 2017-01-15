@@ -1,0 +1,255 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="Git版本控制系统因为其快速、分布式、轻量的多分支模型等优点，现在正在逐步取代SVN等集中式版本控制系统。
+讲道理的话，git的命令其实挺多的，而且底层的文件模型其实挺复杂的，但是一旦熟练使用的话，灵活、快速这些特点就不必说了，很多时候更有化腐朽为神奇的能力。可以这么说，如果你熟悉git的话，那么你">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Git Flow精简模型 | 蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "2016/12/12/git-flow-compact-model/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>Git Flow精简模型</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/git/">git</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/技术思考/">技术思考</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2016-12-12T01:52:23.000Z"
+                       itemprop="datePublished">2016-12-12 09:52:23</time>
+            
+            更新: <time datetime="2017-01-15T17:18:36.000Z"
+                       itemprop="dateModified">2017-01-16 01:18:36</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+
+            <p>Git版本控制系统因为其快速、分布式、轻量的多分支模型等优点，现在正在逐步取代SVN等集中式版本控制系统。</p>
+<p>讲道理的话，git的命令其实挺多的，而且底层的文件模型其实挺复杂的，但是一旦熟练使用的话，灵活、快速这些特点就不必说了，很多时候更有化腐朽为神奇的能力。可以这么说，如果你熟悉git的话，那么你玩起来得心应手，如果你不熟悉的话，那么就是它玩你了。不过话说回来，团队协作中，往往不会用到很多高级的特性（比如cherry-pick、rebase、压缩历史、拆分提交等等），而是制定一套简单高效的规范，然后大家都去follow这个规范即可。</p>
+<p>git自带一套多分支工作流机制，名为gitflow，在命令行中可以<code>git help workflow</code>查看更加详细的机制。那么问题来了，什么gitflow？</p>
+<p>gitflow是构建在Git之上的一个组织软件开发活动的模型，是在Git之上构建的一项软件开发最佳实践。gitflow是一套使用Git进行源代码管理时的一套行为规范和简化部分Git操作的工具。</p>
+<p>说的直白点，其实gitflow就是基于git规定了一些规范，要求在开发过程中，按照它定义的玩法来玩即可。一般而言，软件开发模型有常见的瀑布模型、迭代开发模型、以及敏捷开发模型等不同的模型。每种模型有各自应用场景。Git Flow重点解决的是由于源代码在开发过程中的各种冲突导致开发活动混乱的问题。因此，Git flow可以很好的于各种现有开发模型相结合使用。</p>
+<p>社区中，有一个比较成功的<a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="external">gitflow模型</a>，如下图所示，</p>
+<p><img src="/res/git-flow-compact-model/001.png" alt=""></p>
+<p>利用Git创建和管理分支的能力，为每个分支设定具有特定的含义名称，并将软件生命周期中的各类活动归并到不同的分支上。实现了软件开发过程不同操作的相互隔离。</p>
+<p>关于这个模型网上有很多的解释，这里也给出了原作者的<a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="external">文章链接</a>，有兴趣的可以自己去研读一下。我这里就不做过多解释了，但是不可否认这个思路无疑是非常棒的。</p>
+<p>言归正传，其实这个gitflow模型还是挺复杂的，在实际中的开发团队中，完全照搬这套机制的还是比较少的，大部分都是以之为指导，在其基础之上做了一些增减。</p>
+<p>组里面在上周的周会中，大家集中头脑风暴了gitflow这块的内容。大家虽然在细节上的观点不一致，但是基本上都认为应该以其为指导，从最精简的模型上手。</p>
+<p>下面是这张图是最终的讨论后的结果，</p>
+<p><img src="/res/git-flow-compact-model/002.png" alt=""></p>
+<p>1，有特殊含义的分支只有三种：master、release、feature。master分支为主干，其含义是master分支代码就是线上跑的代码；release分支为发布分支，它会承载功能发布、QA回归等流程；feature分支为功能分支，它承载了具体的功能开发，所有的开发者都将基于feature分支签出自己的个人开发分支。<br>2，从master签出的分支只能是release和feature分支，master上的改动必然都是来自release分支。换句话说，除了release分支，其他的所有类型的分支都不允许直接合并到master分支。这一点是强硬要求，否则无法保证master分支的代码质量。言下之意，master上的代码都是来自release分支，而release分支都是经过QA回归过，有质量把关的。<br>3，master、release、feature这三个分支的签出与合并都由一个人来操作，其他人没有操作权限。我们把这个人称之为pudge，屠夫的意思，因为都是通过pudge切割出来一个个核心分支。一般pudge还有一个backup。<br>4，当有开发任务过来时，pudge按照具体的业务从当前的master分支签出带有业务标识的feature分支，比如<code>feature-finds-20161212</code>，同时分支会带有时间戳来表达此分支大致的生命周期。<br>5，具体的开发人员按照自己的工种和定位，从<code>feature-finds-20161212</code>上签出自己的开发分支，我们称之为RD分支。即图中的RD1，RD2，RD3分支。RD分支一般而已都是相互独立的，分支名不作要求。因为除了开发者自己，其他人理论上是不会关注某一个具体的RD分支的。当然，同一个feature分支上可以签出多个RD分支，环境相互隔离。<br>6，经过一段时间的开发后，RD分支完成自己的开发任务了，开发者要主动将自己的RD分支合并至feature分支。这个合并过程中，在不同的场景下，可能会有一些额外的操作。比如RD分支游离的时间过长，开发者可以先同步feature分支到自己的RD分支，然后再合并。开发者也可以在合并的时候走Merge Request流程，将Code Reviewer指定为他人或自己。理论上MR在此环节的合并不作强硬要求。<br>7，RD分支合并进feature分支之后，通过测试人员针对feature分支进行QA。也就说，测试人员只关注feature分支，其他的RD分支不需要care。<br>8，若测试在feature上QA时发现有问题，通过相关的开发去修复。开发在自己的RD分支进行bugfix，完毕后再次合并到feature。通知测试人员进行回归。<br>9，若feature分支的测试无问题，确定可以上线。此时通知pudge从master签出带有日期版本号的release分支，然后通过Merge Request将feature分支合并进release分支。这一步有两个关键点，一个是由pudge从master签出release分支，另一个是由pudge来操作feature分支通过MR的方式合并进release分支。此外，当某一个release节点需要同时发布多个feature分支，那我们就针对多个feature分支重复7，8，9。<br>10，测试人员在release分支上进行回归。若无问题，即对release分支走上线流程（注意：这里是对release而不是master）。上线完毕，由pudge将release分支合并进master。若release的回归出现问题，则重复8，9。<br>11，若需要紧急处理线上问题或者一些小问题，比如文案修复之类的。由pudge从master签出release分支，通知相关开发人员评估工作量，能否直接在release上修改，还是需要走更多的分支流程，灵活处理。</p>
+<p>主要的流程和场景如上所述，应该条理还是比较清晰的。所有的流程中，有一个关键角色，就是pudge。基本上核心分支的签出、合并、MR操作都是由这个人来完成。其他的开发和测试，只需要关注自己需要关心的分支即可，其他的不用关注。在具体的开发工作中，若遇到一些不太好处理的分支操作，也都交由pudge来处理。</p>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://gejiawen.github.io/about">@gejiawen</a>.</p>
+    <p class="link">本文链接：<a href="http://blog.gejiawen.com/2016/12/12/git-flow-compact-model/">http://blog.gejiawen.com/2016/12/12/git-flow-compact-model/</a></p>
+
+    <div class="share">
+    分享本页：
+    
+        <div class="bdsharebuttonbox"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_more" data-cmd="more"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    
+    
+</div>
+
+</div>
+
+
+            
+    <section class="comment">
+    <div class="ds-thread" data-thread-key="git-flow-compact-model" data-title="Git Flow精简模型" data-url="http://blog.gejiawen.com/2016/12/12/git-flow-compact-model/" data-author-key="gejiawen"></div>
+</section>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gejiawen-blog"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

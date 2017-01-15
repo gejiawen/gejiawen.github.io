@@ -1,0 +1,258 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="前两天在看图解HTTP，其中有关于url和uri的相关叙述。想起之前我也是对这两个概念理解的很模糊，看了网上的各种资源后，更加感觉摸不着头脑了。所以索性写一篇文章来沉淀一下。
+那么，uri和url到底是什么东西呢。其实uri、url、urn是一组概念，用于描述（互联网）资源。这组概念的官方文档是RF">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>读文笔记：认识URI和URL | 蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "2015/09/14/different-between-url-and-uri/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>读文笔记：认识URI和URL</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/http/">http</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/读文笔记/">读文笔记</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2015-09-14T07:27:02.000Z"
+                       itemprop="datePublished">2015-09-14 15:27:02</time>
+            
+            更新: <time datetime="2016-04-26T01:58:59.000Z"
+                       itemprop="dateModified">2016-04-26 09:58:59</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+
+            <p>前两天在看<a href="http://item.jd.com/11449491.html" target="_blank" rel="external">图解HTTP</a>，其中有关于url和uri的相关叙述。想起之前我也是对这两个概念理解的很模糊，看了网上的各种资源后，更加感觉摸不着头脑了。所以索性写一篇文章来沉淀一下。</p>
+<p>那么，uri和url到底是什么东西呢。其实uri、url、urn是一组概念，用于描述（互联网）资源。这组概念的官方文档是<a href="http://tools.ietf.org/html/rfc3986" target="_blank" rel="external">RFC3986</a>，有兴趣的可以自行阅读此文档。</p>
+<p>下面主要来说说我自己的理解。</p>
+<ul>
+<li>uri，全称<em>uniform resource identifier</em>，中文意为<strong>统一资源标识符</strong>，用一个唯一的标识符来标志一个资源。</li>
+<li>url，全称<em>uniform resource location</em>，中文意为<strong>统一资源定位符（器）</strong>，是一种具体的uri，它不但标志了一个资源，还给出了资源的定位信息，即指明了如何找到这个资源。</li>
+<li>urn，全称<em>uniform resource name</em>，中文意为<strong>统一资源命名</strong>，也是一种具体的uri，通过名字来标志资源。</li>
+</ul>
+<p>可以简单的理解这三者都是用来描述（互联网）资源相关信息的。</p>
+<p>其中uri和url是经常用到的，下面说说我对他们之间区别的理解。</p>
+<ul>
+<li>uri相对来说是一种更加广泛的抽象概念。它从更高的层面定义了如何标志一个资源。</li>
+<li>url是uri的一种，也可以说<strong>url是一种具体的uri</strong>。url不但可以唯一标志一个资源，还给出了资源的定位信息。</li>
+</ul>
+<p>举个例子来说明一下，在一个web服务器上，我们放了一些文件，有图片、视频、文档等等静态文件。此时web服务器上的这些资源都是由uri标志的。什么意思呢？比如有一个图片文件的地址是<code>/wwwroot/public/img/logo.png</code>（路径中的<code>wwwroot</code>为web服务器的根目录），这个路径就是这个图片的uri，它标志了这个图片资源。注意，这里说的uri是相对于这个主机服务器来说的，可以理解为文件资源的存放地址。</p>
+<p>现在试想一下，我们在客户端上使用浏览器请求这个图片，假设我们请求的路径是<code>http://test.com/public/img/logo.png</code>，那么这个地址就是这个图片资源的url。这个url不但标志了web服务器上的一个图片资源，而且浏览器可以通过这个url找到这个图片资源（假设这个文件是真实存在的）。</p>
+<p>在前面的例子中提到的路径地址<code>http://test.com/public/img/logo.png</code>，它使一个url，<strong>同时它也是一个uri</strong>。因为我们说url是uri的一种具体实现，也就是说url是uri的子集。所以一个url肯定是一个uri，但是一个uri不一定是一个url。就好像猪可以在地上跑，但是在地上跑的不一定都是猪，一样的道理嘛。</p>
+<p>所以，下次万一有面试官问你<code>www.baidu.com</code>是url还是uri？你知道怎么回答了吗？😎</p>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://gejiawen.github.io/about">@gejiawen</a>.</p>
+    <p class="link">本文链接：<a href="http://blog.gejiawen.com/2015/09/14/different-between-url-and-uri/">http://blog.gejiawen.com/2015/09/14/different-between-url-and-uri/</a></p>
+
+    <div class="share">
+    分享本页：
+    
+        <div class="bdsharebuttonbox"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_more" data-cmd="more"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    
+    
+</div>
+
+</div>
+
+
+            
+    <section class="comment">
+    <div class="ds-thread" data-thread-key="different-between-url-and-uri" data-title="读文笔记：认识URI和URL" data-url="http://blog.gejiawen.com/2015/09/14/different-between-url-and-uri/" data-author-key="gejiawen"></div>
+</section>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gejiawen-blog"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

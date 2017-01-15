@@ -1,0 +1,135 @@
+# 葛加文
+
+- 📞 18321814241、15955327484
+- ✉️ 806717031@qq.com、mamamiya.gee@gmail.com
+- 📖 [blog.gejiawen.com](http://blog.gejiawen.com)
+- 🍞 [github.com/gejiawen](http://github.com/gejiawen)
+
+------
+
+# 个人资料
+
+- 基本信息：葛加文/男/1989
+- 教育经历：计算机科学与技术专业/合肥学院/本科/2007-2011/
+- 工作年限：4年
+- 职业方向：Web前端工程师/Web全栈工程师
+
+
+# 工作经历
+
+
+### 百度上海研发中心
+
+**Web前端高级开发工程师**、**2014.2-至今**、**上海**  
+
+- [百度云观测](http://ce.baidu.com)
+    - 项目简介：为中小站点提供可用性、访问速度、安全等方面的监测服务
+    - 工作内容
+        1. 项目前端开发主程，负责大部分的前端实现。比如页面转化、样式实现（切图）、交互设计等。
+        2. 参与部分需求及原型设计，从前端角度给出相关可行性建议。
+        3. 基于git分支模型引导奠定项目的开发模型，以及基于gitlab平台确定一套需求管理规范。
+        4. 积极推动前端后协作模式，基于契约->数据接口->文档以达到前后端独立开发测试。
+        5. 在项目中恰当的引入SPA思想，改造产品的整个前端实现思路并正式上线。
+        6. 积极筹划前端的构建系统，试水前端工程化相关实践。
+        7. 获得百度云安全部2014年度“最给力工程师”称号。
+    - 相关技术：javascript、html/html5、css/css3、php、smarty、nodejs、git、gitlab
+
+
+### 上海群硕软件
+
+**Web前端工程师**、**2013.3-2014.1**、**上海**
+
+> 群硕是一家外包IT企业，在职期间大部分时间被外派至SAP Labs做相关的前端开发工作。
+
+- LinkX
+    - 项目简介：LinkX是一个专注物联网方向的Web项目，为用户提供传感器云服务，并通过实时数据处理,提供安全可靠的状态监控。
+    - 工作内容
+        1. 项目前端开发主程，负责前端开发工作的方方面面。包括技术选型、基本设施建设、页面实现等。
+        2. 参与部分原型设计。
+        3. 数据可视化相关调研与实践。
+    - 相关技术：angularjs、bootstrap、javascript、html、css
+
+
+- TAM
+    - 项目简介：TAM是SAP Labs的一款商业Web产品，基于google map提供内陆板块/跨洋板块的各个港口仓库之间的集装箱供需平衡优化方案。
+    - 工作内容
+        1. 项目前端开发。包括页面实现、交互实现等。
+        2. 如何提供页面交互性能的相关研究。
+    - 相关技术：angularjs、google maps、mercurial、bootstrap、javascript、html、css3
+
+
+- FAOD
+    - 项目简介：FAOD是SAP Labs的一款商业Web产品，基于SAP HANA面向中小型企业提供在线财务风险预测及优化方案。
+    - 工作内容：Web前端开发
+    - 相关技术：jquery、html、css
+
+
+### 合肥启云软件
+
+**Javascript工程师**、**2011.5-2012.12**、**合肥**
+
+- QYApp
+    - 项目简介：公司内部的可视化编程平台，通过拖拽控件，快速编码。同时提供项目云部署服务。
+    - 工作内容：JS开发、UI插件的开发
+    - 相关技术：javascript、css、jquery、ubuntu
+
+
+# 技能清单
+
+下面是一些能够熟练使用或者涉足过的东西，
+
+- 语言级别：html、html5、css、css3、javascript、nodejs、php
+- Web开发：nodejs、php、express、angularjs
+- 前端框架：bootstrap、foundation、angularjs、backbone、jquery、echart、FIS
+- 前端工具：gulp、grunt、styl、sass
+- 版本管理：git、svn、gitlab
+- 单元测试：should、chai、mocha
+
+# 自我评价
+
+喜欢学习新东西，对一切觉得好玩的东西都很有学习热情。
+
+一直想学设计方面的东西。
+
+喜欢写作，做事喜欢更加规范。
+
+
+# 工作之余
+
+### 技术研究与写作
+
+对自己关注的技术方向有很大的研究热情。下面是目前已有的一些列表，
+
+- [深入理解JavaScript系列](http://blog.gejiawen.com/2014/11/13/deep-into-javascript-series/)
+- [JavaScript轻量级框架系列](http://blog.gejiawen.com/2014/11/26/javascript-light-framework-series/)
+- [CSS拾遗系列](http://blog.gejiawen.com/2014/12/16/css-series/)
+- [漫游NodeJS系列](http://blog.gejiawen.com/2015/03/17/nodejs-series/)
+- [ECMAScript6学习笔记系列](http://blog.gejiawen.com/2015/07/27/es6-series/)
+
+
+除了程序员这项工作，另一份工作是一名半职业写手，喜欢以写文章的方法来记录和总结自己的学习经历，而且并不会太在意所专注的点是否比较low，只要是我觉得能够让自己学到新的东西，我都会去写。详见[博客归档](http://blog.gejiawen.com/categories/)。更多的内容可浏览我的[博客](http://blog.gejiawen.com/)。
+
+
+### 开源项目
+
+我是一名重度的github用户，在比较清闲或者业余的时间，会闲逛github，关注各种流行的开源项目，当然也会写一些小项目，个人项目列表见[my repositories](https://github.com/gejiawen?tab=repositories)。大部分都是些写着玩的小东西，也有一些fork的别人的项目，但是按照我自己的想法改了一通。
+
+
+### 阅读与分享
+
+相对于实体书，看的更多的是电子书籍。关于阅读，我觉得可以不限于技术书籍的层面，各种各样的书其实都可以去读。[这里](http://blog.gejiawen.com/reading/)是本博客建立之后我记录在案的阅读记录。
+
+参加朋友组织的[众成技术聚乐部](http://happytechgroup.github.io/)，有过一些分享记录，
+
+- [这些年前端的那些事儿](http://blog.gejiawen.com/slides/things-for-fe-in-these-years)
+- [我的开发流模型](http://blog.gejiawen.com/slides/my-dev-workflows)
+- [Javascript Async Ninja](http://blog.gejiawen.com/slides/javascript-async-ninja)
+
+一直认为，分享其实是自我学习的一种有力途径。可能别人并不会太在意你的分享，但是往往你在准备分享的期间会沉淀出更多的内容。
+
+
+------
+
+*最后更新：2015年12月11日*
+
+

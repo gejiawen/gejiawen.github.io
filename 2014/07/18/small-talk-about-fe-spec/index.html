@@ -1,0 +1,299 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="AMD与CMD
+AMD规范：异步模块定义
+CMD规范：通用模块定义
+
+这些规范的目的都是为了JavaScript的模块化开发，特别是在浏览器端的。目前这些规范的实现都能达成浏览器端模块化开发的目的。
+区别，这里有更详细的说明，
+
+对于依赖的模块，AMD 是提前执行，CMD 是延迟执行。
+CMD 推崇">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AMD/CMD与前端规范 | 蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "2014/07/18/small-talk-about-fe-spec/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>AMD/CMD与前端规范</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/前端规范/">前端规范</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/大前端/">大前端</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2014-07-18T09:10:07.000Z"
+                       itemprop="datePublished">2014-07-18 17:10:07</time>
+            
+            更新: <time datetime="2016-04-26T01:58:59.000Z"
+                       itemprop="dateModified">2016-04-26 09:58:59</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+                <div id="toc" class="toc-article well">
+                    <strong class="toc-title">大纲</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#AMD与CMD"><span class="toc-number">1.</span> <span class="toc-text">AMD与CMD</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#个人理解"><span class="toc-number">2.</span> <span class="toc-text">个人理解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CMD"><span class="toc-number">2.1.</span> <span class="toc-text">CMD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AMD"><span class="toc-number">2.2.</span> <span class="toc-text">AMD</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#硬依赖与软依赖"><span class="toc-number">2.3.</span> <span class="toc-text">硬依赖与软依赖</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#软依赖"><span class="toc-number">2.3.1.</span> <span class="toc-text">软依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#硬依赖"><span class="toc-number">2.3.2.</span> <span class="toc-text">硬依赖</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CommonJS规范"><span class="toc-number">3.</span> <span class="toc-text">CommonJS规范</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CommonJS介绍"><span class="toc-number">3.1.</span> <span class="toc-text">CommonJS介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最简单的例子"><span class="toc-number">3.2.</span> <span class="toc-text">最简单的例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#稍微复杂的例子"><span class="toc-number">3.3.</span> <span class="toc-text">稍微复杂的例子</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#AMD规范与CommonJS规范的兼容性"><span class="toc-number">4.</span> <span class="toc-text">AMD规范与CommonJS规范的兼容性</span></a></li></ol>
+                </div>
+            
+
+            <h1 id="AMD与CMD"><a href="#AMD与CMD" class="headerlink" title="AMD与CMD"></a>AMD与CMD</h1><ul>
+<li>AMD规范：<a href="https://github.com/amdjs/amdjs-api/wiki/AMD" target="_blank" rel="external">异步模块定义</a></li>
+<li>CMD规范：<a href="https://github.com/seajs/seajs/issues/242" target="_blank" rel="external">通用模块定义</a></li>
+</ul>
+<p>这些规范的目的都是为了<strong>JavaScript的模块化开发</strong>，特别是在浏览器端的。目前这些规范的实现都能达成浏览器端模块化开发的目的。</p>
+<p><strong>区别</strong>，<a href="https://github.com/seajs/seajs/issues/277" target="_blank" rel="external">这里</a>有更详细的说明，</p>
+<ul>
+<li>对于依赖的模块，AMD 是提前执行，CMD 是延迟执行。</li>
+<li>CMD 推崇依赖就近，AMD 推崇依赖前置。</li>
+</ul>
+<h1 id="个人理解"><a href="#个人理解" class="headerlink" title="个人理解"></a>个人理解</h1><h2 id="CMD"><a href="#CMD" class="headerlink" title="CMD"></a>CMD</h2><p>CMD推崇依赖就近，可以把依赖写进你的代码中的任意一行， 如</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params">require, exports, module</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="built_in">require</span>(<span class="string">'./a'</span>);</span><br><span class="line">    a.doSomething();</span><br><span class="line">    <span class="keyword">var</span> b = <span class="built_in">require</span>(<span class="string">'./b'</span>);</span><br><span class="line">    b.doSomething();</span><br><span class="line">&#125;)；</span><br></pre></td></tr></table></figure>
+<h2 id="AMD"><a href="#AMD" class="headerlink" title="AMD"></a>AMD</h2><p>AMD是依赖前置的，换句话说，在解析和执行当前模块之前，模块作者必须指明当前模块所依赖的模块。如</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">define([<span class="string">'./a'</span>,<span class="string">'./b'</span>],<span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">     a.doSomething()</span><br><span class="line">     b.doSomething()</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>代码一旦运行到此处，能立即知晓依赖。而无需遍历整个函数体找到它的依赖，因此性能有所提升，缺点就是开发者必须显式得指明依赖——这会使得开发工作量变大。比如，当你写到函数体内部几百上千行的时候，忽然发现需要增加一个依赖，你不得不回到函数顶端来将这个依赖添加进数组。</p>
+<h2 id="硬依赖与软依赖"><a href="#硬依赖与软依赖" class="headerlink" title="硬依赖与软依赖"></a>硬依赖与软依赖</h2><p>依赖分为<strong>硬依赖</strong>和<strong>软依赖</strong>， 如，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (status) &#123;</span><br><span class="line">    a.doSomething();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>此时，在<code>if</code>体中，可能依赖<code>a</code>，也可能不依赖<code>a</code>，这种可以称之为<strong>软依赖</strong>。</p>
+<h3 id="软依赖"><a href="#软依赖" class="headerlink" title="软依赖"></a>软依赖</h3><p>对于软依赖的处理，我推荐依赖前置+回调函数的实现形式。如，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(status)&#123;</span><br><span class="line">    <span class="keyword">async</span>([<span class="string">'a'</span>],<span class="function"><span class="keyword">function</span>(<span class="params">a</span>)</span>&#123;</span><br><span class="line">        a.doSomething()</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="硬依赖"><a href="#硬依赖" class="headerlink" title="硬依赖"></a>硬依赖</h3><p>对于硬依赖（强依赖），如果要性能优先，则考虑参照依赖前置的思想设计你的模块加载器，我个人也更推崇这个方案一些；如果考虑开发成本优先，则考虑按照依赖就近的思想设计你的模块加载器。对于弱依赖，只需要将弱依赖的部分改写到回调函数内即可。</p>
+<h1 id="CommonJS规范"><a href="#CommonJS规范" class="headerlink" title="CommonJS规范"></a>CommonJS规范</h1><h2 id="CommonJS介绍"><a href="#CommonJS介绍" class="headerlink" title="CommonJS介绍"></a>CommonJS介绍</h2><p>CommonJS是服务端模块的规范，Node.js采用了这个规范。</p>
+<p>根据CommonJS规范，一个单独的文件就是一个模块。加载模块使用<code>require</code>方法，该方法读取一个文件并执行，最后返回文件内部的<code>exports</code>对象。如下代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">"evaluating example.js"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> invisible = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"invisible"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">exports.message = <span class="string">"hi"</span>;</span><br><span class="line"></span><br><span class="line">exports.say = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(message);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>使用require方法，加载example.js。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> example = <span class="built_in">require</span>(<span class="string">'./example.js'</span>);</span><br></pre></td></tr></table></figure>
+<p>这时，变量<code>example</code>就对应模块中的<code>exports</code>对象，于是就可以通过这个变量，使用模块提供的各个方法。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    message: <span class="string">"hi"</span>,</span><br><span class="line">    say: [<span class="built_in">Function</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>require方法默认读取js文件，所以可以省略js后缀名。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> example = <span class="built_in">require</span>(<span class="string">'./example'</span>);</span><br></pre></td></tr></table></figure>
+<p>js文件名前面需要加上路径，可以是相对路径（<strong>相对于使用require方法的文件</strong>），也可以是绝对路径。如果省略路径，node.js会认为，你要加载一个核心模块，或者已经安装在本地 node_modules 目录中的模块。如果加载的是一个目录，node.js会首先寻找该目录中的<code>package.json</code>文件，加载该文件<code>main</code>属性提到的模块，否则就寻找该目录下的<code>index.js</code>文件。</p>
+<h2 id="最简单的例子"><a href="#最简单的例子" class="headerlink" title="最简单的例子"></a>最简单的例子</h2><p>下面的例子是使用一行语句，定义一个最简单的模块。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// addition.js</span></span><br><span class="line">exports.do = <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a + b</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>上面的语句定义了一个加法模块，做法就是在<code>exports</code>对象上定义一个<code>do</code>方法，那就是供外部调用的方法。使用的时候，只要用<code>require</code>函数调用即可。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> add = <span class="built_in">require</span>(<span class="string">'./addition'</span>);</span><br><span class="line">add.do(<span class="number">1</span>,<span class="number">2</span>) <span class="comment">// 3</span></span><br></pre></td></tr></table></figure>
+<h2 id="稍微复杂的例子"><a href="#稍微复杂的例子" class="headerlink" title="稍微复杂的例子"></a>稍微复杂的例子</h2><p>再看一个复杂一点的例子。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// foobar.js</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foobar</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.foo = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Hello foo'</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">this</span>.bar = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'Hello bar'</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;</span><br><span class="line">exports.foobar = foobar;</span><br></pre></td></tr></table></figure>
+<p>调用该模块的方法如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> foobar = <span class="built_in">require</span>(<span class="string">'./foobar'</span>).foobar,</span><br><span class="line">    test = <span class="keyword">new</span> foobar();</span><br><span class="line">test.bar(); <span class="comment">// 'Hello bar'</span></span><br></pre></td></tr></table></figure>
+<p>有时，不需要<code>exports</code>返回一个对象，只需要它返回一个函数。这时，就要写成<code>module.exports</code>。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"hello world"</span>)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h1 id="AMD规范与CommonJS规范的兼容性"><a href="#AMD规范与CommonJS规范的兼容性" class="headerlink" title="AMD规范与CommonJS规范的兼容性"></a>AMD规范与CommonJS规范的兼容性</h1><p><strong>CommonJS规范加载模块是同步的</strong>，也就是说，只有加载完成，才能执行后面的操作。<strong>AMD规范则是非同步加载模块，允许指定回调函数</strong>。</p>
+<p>由于Node.js主要用于服务器编程，模块文件一般都已经存在于本地硬盘，所以加载起来比较快，不用考虑非同步加载的方式，所以CommonJS规范比较适用。但是，如果是浏览器环境，要从服务器端加载模块，这时就必须采用非同步模式，因此浏览器端一般采用AMD规范。</p>
+<p>AMD规范使用define方法定义模块，下面就是一个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">define([<span class="string">'package/lib'</span>], <span class="function"><span class="keyword">function</span>(<span class="params">lib</span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        lib.log(<span class="string">'hello world!'</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        foo: foo</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>AMD规范允许输出的模块兼容CommonJS规范，这时define方法需要写成下面这样：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">define(<span class="function"><span class="keyword">function</span>(<span class="params"> require, exports, module </span>)</span><br><span class="line">    <span class="title">var</span> <span class="title">someModule</span> = <span class="title">require</span>(<span class="params"> "someModule" </span>);</span><br><span class="line">    <span class="title">var</span> <span class="title">anotherModule</span> = <span class="title">require</span>(<span class="params"> "anotherModule" </span>);</span><br><span class="line"></span><br><span class="line">    <span class="title">someModule</span>.<span class="title">doTehAwesome</span>(<span class="params"></span>);</span><br><span class="line">    <span class="title">anotherModule</span>.<span class="title">doMoarAwesome</span>(<span class="params"></span>);</span><br><span class="line"></span><br><span class="line">    <span class="title">exports</span>.<span class="title">asplode</span> = <span class="title">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        someModule.doTehAwesome();</span><br><span class="line">        anotherModule.doMoarAwesome();</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://gejiawen.github.io/about">@gejiawen</a>.</p>
+    <p class="link">本文链接：<a href="http://blog.gejiawen.com/2014/07/18/small-talk-about-fe-spec/">http://blog.gejiawen.com/2014/07/18/small-talk-about-fe-spec/</a></p>
+
+    <div class="share">
+    分享本页：
+    
+        <div class="bdsharebuttonbox"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_more" data-cmd="more"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    
+    
+</div>
+
+</div>
+
+
+            
+    <section class="comment">
+    <div class="ds-thread" data-thread-key="small-talk-about-fe-spec" data-title="AMD/CMD与前端规范" data-url="http://blog.gejiawen.com/2014/07/18/small-talk-about-fe-spec/" data-author-key="gejiawen"></div>
+</section>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gejiawen-blog"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+

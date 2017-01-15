@@ -1,0 +1,296 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    
+    <meta name="author" content="gejiawen">
+    
+    <meta name="description" content="Gitbook是一款利用git及markdown快速构建在线书籍的工具。官网是www.gitbook.com。其实Gitbook自身也是一个提供书籍在线发布的平台。不过由于一些网络的因素，gitbook平台在国内的访问速度和稳定性堪忧。
+本文将简要的叙述如何使用Gitbook，基于github来快速">
+    
+    
+
+    
+    <link rel="alternative" href="atom.xml" title="蛋糕仙人" type="application/atom+xml">
+    
+    
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gitbook快速指南 | 蛋糕仙人 · 技术人需要危机感</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Javascript -->
+    <script src="/js/jquery-2.1.0.min.js"></script>
+    <script src="/js/jquery.backstretch.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/headroom.min.js"></script>
+    <script src="/js/jquery.headroom.min.js"></script>
+    <script src="/js/common.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
+    <meta name="baidu-site-verification" content="SzJ3MGdmeo" />
+
+
+    <meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />
+
+
+    <!--<meta name="baidu-site-verification" content="SzJ3MGdmeo" />-->
+    <!--<meta name="360-site-verification" content="afe5dc96bbb8d111b618f78493b95bb8" />-->
+
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="banner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://blog.gejiawen.com" title="蛋糕仙人">蛋糕仙人</a>
+            </div>
+
+            <div role="navigation" class="collapse navbar-collapse bs-navbar-collapse">
+                
+                <ul class="nav navbar-nav pull-right">
+                    <li>
+                        <a class="max-width max-w300" title="技术人需要危机感" href="/feelings">技术人需要危机感</a>
+                    </li>
+                </ul>
+                
+
+                <ul class="nav navbar-nav">
+                    
+                    <li id="nav-index">
+                        <a href="/" target="">首页</a>
+                    </li>
+                    
+                    <li id="nav-archives">
+                        <a href="/archives" target="">归档</a>
+                    </li>
+                    
+                    <li id="nav-categories">
+                        <a href="/categories" target="">分类</a>
+                    </li>
+                    
+                    <li id="nav-tags">
+                        <a href="/tags" target="">标签</a>
+                    </li>
+                    
+                    <li id="nav-pick">
+                        <a href="http://book.gejiawen.com/fucking-days-to-be-a-coder" target="_blank">拾遗</a>
+                    </li>
+                    
+                    <li id="nav-about">
+                        <a href="/about" target="">关于</a>
+                    </li>
+                    
+
+                    <li id="nav-github"><a href="https://github.com/gejiawen" target="_blank">GitHub</a></li>
+                    <!--<li id="nav-rss"><a href="/atom.xml" target="_blank">Rss</a></li>-->
+                    <li id="nav-search"><input type="text" id="search" placeholder="search" /></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+    var bgRoot = "http://7xkwt1.com1.z0.glb.clouddn.com/background-";
+    var bgLength = "74";
+    var bgRandom = false;
+    var bgImage = "http://7xkwt1.com1.z0.glb.clouddn.com/background-64.jpg";
+
+    $(function() {
+        // page-id...
+        var pageId = "2015/10/28/gitbook-fast-started/";
+        pageId = pageId.substr(0, pageId.indexOf("/"));
+        if(pageId === "") pageId = "index";
+
+        $("#nav-" + pageId).addClass("active");
+    });
+    </script>
+
+    <article class="post container">
+    <div class="well post-body first-post last-post">
+        <h1>Gitbook快速指南</h1>
+
+        <div class="time-info">
+            
+<span class="article-tags">
+    
+    Tags: <a href="/tags/gitbook/">gitbook</a>&nbsp;
+</span>
+
+
+
+<span class="article-categories">
+    Category:
+    <a class="article-category-link" href="/categories/教程/">教程</a>
+</span>
+
+
+        </div>
+        <div class="time-info">
+            发表: <time datetime="2015-10-28T15:11:12.000Z"
+                       itemprop="datePublished">2015-10-28 23:11:12</time>
+            
+            更新: <time datetime="2016-06-13T05:15:26.000Z"
+                       itemprop="dateModified">2016-06-13 13:15:26</time>
+            
+        </div>
+
+        <div class="post-body-inner">
+            
+                <div id="toc" class="toc-article well">
+                    <strong class="toc-title">大纲</strong>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#安装"><span class="toc-number">1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#构建"><span class="toc-number">2.</span> <span class="toc-text">构建</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#部署"><span class="toc-number">3.</span> <span class="toc-text">部署</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#参考列表"><span class="toc-number">5.</span> <span class="toc-text">参考列表</span></a></li></ol>
+                </div>
+            
+
+            <p><a href="https://github.com/GitbookIO/gitbook" target="_blank" rel="external">Gitbook</a>是一款利用git及markdown快速构建在线书籍的工具。官网是<a href="http://www.gitbook.com" target="_blank" rel="external">www.gitbook.com</a>。其实Gitbook自身也是一个提供书籍在线发布的平台。不过由于一些网络的因素，gitbook平台在国内的访问速度和稳定性堪忧。</p>
+<p>本文将简要的叙述如何使用Gitbook，基于github来快速构建一个在线书籍。我的博客上就有一个gitbook应用的<a href="http://blog.gejiawen.com/coding-book/">示例</a>，可以先看看效果。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>依托Node.js平台，安装gitbook是非常简单的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g gitbook-cli</span><br></pre></td></tr></table></figure>
+<p><code>gitbook-cli</code>是gitbook的命令行操作工具，它封装了一系列的命令，包括书籍初始化、预览、构建等等操作。</p>
+<p>第一次安装<code>gitbook-cli</code>之后，还会自动安装最新版的gitbook应用程序。我们之前说<code>gitbook-cli</code>只是一个命令行工具，仅有<code>gitbook-cli</code>还不够，我们还需要安装gitbook程序。</p>
+<p>由于网络因素，可能第一次安装gitbook会较慢，因为它的安装过程是先下载gitbook的源码，然后在本地编译。这个编译过程是依赖node-gyp的。</p>
+<p>在安装gitbook完成之后，我们可以使用<code>gitbook versions</code>来查看当前已经安装的gitbook版本，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitbook versions</span><br></pre></td></tr></table></figure>
+<p>结果如下，</p>
+<p><img src="/res/gitbook-fast-started/001.png" alt=""></p>
+<p>我的机器上目前安装了两个版本的gitbook，当前正在使用的是<code>2.5.1</code>版本。</p>
+<p>除此之外，我们还有通过<code>gitbook versions:available</code>来查看当前gitbook的所有版本，还可以通过<code>gitbook versions:update</code>升级到最新版本的gitbook。</p>
+<h1 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h1><p>因为我们要基于github来构建在线书籍，所以首先我们得创建一个github repo。创建好repo之后，我们再<code>git clone</code>到本地。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> YOUR_REPO_URL</span><br><span class="line"><span class="built_in">cd</span> YOUR_REPO_FOLDER</span><br></pre></td></tr></table></figure>
+<p>然后通过<code>gitbook init</code>来初始化一个书籍。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">➜  <span class="built_in">test</span>-gitbook  gitbook init</span><br><span class="line">info: init book at /Users/gejiawen/code/<span class="built_in">test</span>-gitbook</span><br><span class="line">info: detect structure from SUMMARY (<span class="keyword">if</span> it exists)</span><br><span class="line">info: create SUMMARY.md</span><br><span class="line">info: create README.md</span><br><span class="line">info: initialization is finished</span><br><span class="line"></span><br><span class="line">Done, without error</span><br></pre></td></tr></table></figure>
+<p>成功初始化之后，会在工作目录中生成两个markdown文件，<code>SUMMARY.md</code>和<code>README.md</code>文件。这两个文件的作用如下，</p>
+<ul>
+<li><code>SUMMARY.md</code>文件是书籍的目录结构</li>
+<li><code>README.md</code>文件是书籍的扉页（介绍）</li>
+</ul>
+<p>这两个文件缺一不可。</p>
+<p>其中我们可以编辑<code>SUMMARY.md</code>文件来自定义自己书籍的目录结构，比如</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">- </span>[<span class="string">Chapter 1</span>](<span class="link">ch1/index.md</span>)</span><br><span class="line"><span class="code">    - [1-1](ch1/1-1.md)</span></span><br><span class="line"><span class="code">    - [1-2](ch1/1-2.md)</span></span><br><span class="line"><span class="bullet">- </span>[<span class="string">Chapter 2</span>](<span class="link">ch2/index.md</span>)</span><br><span class="line"><span class="code">    - [2-1](ch2/2-1.md)</span></span><br><span class="line"><span class="code">    - [2-2](ch2/2-2.md)</span></span><br></pre></td></tr></table></figure>
+<p>书籍的每一页内容都可以使用markdown来编辑。怎么样，是不是很简单。</p>
+<p>在gitbook 2.0以后，我们还可以在书籍目录中引入<code>book.json</code>来配置书籍。</p>
+<p>一个<code>book.json</code>文件的内容大概如下，</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"gitbook"</span>: <span class="string">"2.x.x"</span>,</span><br><span class="line">    <span class="attr">"title"</span>: <span class="string">"蛋糕仙人的编码生活"</span>,</span><br><span class="line">    <span class="attr">"description"</span>: <span class="string">"蛋糕仙人的编码生活"</span>,</span><br><span class="line">    <span class="attr">"structure"</span>: &#123;</span><br><span class="line">        <span class="attr">"readme"</span>: <span class="string">"intro.md"</span>,</span><br><span class="line">        <span class="attr">"summary"</span>: <span class="string">"summary.md"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中<code>gitbook</code>字段表示的是构建书籍时所采用gitbook程序版本。这里官方推荐使用<code>&quot;2.x.x&quot;</code>，这种模糊的版本号可以适配gitbook 2的所有子版本，这无疑是一种更优的做法。</p>
+<p>而<code>structure</code>表示自定义关键页面的源地址。比如，可能你是那种一个项目必带<code>README.md</code>文件的强迫症患者，但是gitbook应用中默认采用<code>README.md</code>文件作为书籍的扉页。你可能会觉得这不太合理，此时我们就可以使用<code>structure</code>来自定义readme的地址啦。</p>
+<p>对<code>book.json</code>欲了解更多内容，请移步官方的<a href="http://help.gitbook.com/format/configuration.html" target="_blank" rel="external">帮助文档</a>。</p>
+<p>到此为止，一个在线书籍基本上已经ready了。接下来我们在本地预览一下效果，</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitbook serve</span><br></pre></td></tr></table></figure>
+<p>待服务启动后，可以使用浏览器打开<code>localhost:4000</code>在本地查看效果了。嗯，简约的风格，我很喜欢。</p>
+<h1 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h1><p>在完成书籍的写作之后，我们可以通过<code>gitbook build</code>来构建书籍源文件，嗯，其实都是一些html文件啦。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">➜  <span class="built_in">test</span>-gitbook  gitbook build</span><br><span class="line">info: loading book configuration....OK</span><br><span class="line">info: load plugin gitbook-plugin-highlight ....OK</span><br><span class="line">info: load plugin gitbook-plugin-search ....OK</span><br><span class="line">info: load plugin gitbook-plugin-sharing ....OK</span><br><span class="line">info: load plugin gitbook-plugin-fontsettings ....OK</span><br><span class="line">info: &gt;&gt; 4 plugins loaded</span><br><span class="line">info: start generation with website generator</span><br><span class="line">info: clean website generatorOK</span><br><span class="line">info: generation is finished</span><br><span class="line"></span><br><span class="line">Done, without error</span><br></pre></td></tr></table></figure>
+<p><code>gitbook build</code>命令默认会在书籍目录下生成一个<code>_book</code>文件夹。书籍的源文件就在里面啦。</p>
+<p>如果你有自己的服务器，你就将<code>_book</code>下的所有文件拷贝到你自己的服务器上就行了。</p>
+<p>如果你没有自己的服务器（比如我这种穷人），没关系，我们可以依托github来发布。</p>
+<p>过程如下，</p>
+<p>新建一个新的分支，叫做<code>gh-pages</code>，然后在<code>gh-pages</code>分支中仅提交<code>_book</code>下的文件即可，然后将此分支提交github。这样github就会自动以<a href="https://github.com/jekyll/jekyll" target="_blank" rel="external">Jekyll</a>的形式部署你的在线书籍了。</p>
+<p>题外话，我是一个轻度强迫症患者。我博客上的gitbook<a href="http://blog.gejiawen.com/coding-book/">示例</a>中，其markdown源代码我是在master分支上，而<code>gitbook build</code>的html源代码在gh-pages分支上。</p>
+<p>在markdown源代码中，我将所有的md文件都放在了<code>_source</code>文件夹中，在构建的时候使用如下命令，</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gitbook build _<span class="built_in">source</span> _book</span><br></pre></td></tr></table></figure>
+<p>然后将生成的html源代码（即<code>_book</code>的内容）再提交到<code>gh-pages</code>分支，这样就达到了在一个repo中使用两个分支来独立的管理md源文件和html源代码了。具体的可以参考示例的<a href="https://github.com/gejiawen/coding-book" target="_blank" rel="external">repo</a>。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>gitbook总得来说还是一个非常给力的工具，特别是使用markdown这种简约的语言来写作，真是深得我心啊。有了gitbook和github，老是再也不担心我的写作了。所以，有创作热情的同学们，赶紧使用起来吧。</p>
+<h1 id="参考列表"><a href="#参考列表" class="headerlink" title="参考列表"></a>参考列表</h1><ul>
+<li><a href="http://zhaoda.net/2015/11/09/gitbook-plugins/" target="_blank" rel="external">Gitbook 的使用和常用插件
+</a></li>
+</ul>
+
+
+            <div class="post-info">
+    <p class="eof">- EOF -</p>
+    <p class="copyright">All rights reserved <a href="http://gejiawen.github.io/about">@gejiawen</a>.</p>
+    <p class="link">本文链接：<a href="http://blog.gejiawen.com/2015/10/28/gitbook-fast-started/">http://blog.gejiawen.com/2015/10/28/gitbook-fast-started/</a></p>
+
+    <div class="share">
+    分享本页：
+    
+        <div class="bdsharebuttonbox"><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信">微信</a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间">QQ空间</a><a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博">新浪微博</a><a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博">腾讯微博</a><a href="#" class="bds_more" data-cmd="more"></a></div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{"bdSize":16}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+    
+    
+</div>
+
+</div>
+
+
+            
+    <section class="comment">
+    <div class="ds-thread" data-thread-key="gitbook-fast-started" data-title="Gitbook快速指南" data-url="http://blog.gejiawen.com/2015/10/28/gitbook-fast-started/" data-author-key="gejiawen"></div>
+</section>
+
+
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"gejiawen-blog"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';
+        ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+
+
+
+
+
+        </div>
+    </div>
+</article>
+
+    <footer id="footer">
+        <div id="bottom-tip">
+            蛋糕仙人 —— <small>技术人需要危机感</small>
+        </div>
+        <small>该博客由 <a href="https://hexo.io/" target="_blank">Hexo</a> 强力驱动，搭载 <a href="https://github.com/gejiawen/hexadillax2" target="_blank">Hexadillax2</a> 主题</small><br />
+        <!--<small>如果你访问github速度过慢，可移步本站的备份站点<a href="http://gejiawen.gitcafe.io">gejiawen.gitcafe.io</a></small><br />-->
+        <small>&copy; 2017 <a href="http://blog.gejiawen.com" target="_blank">gejiawen</a>&nbsp;<a href="http://www.miitbeian.gov.cn/" target="_blank">皖ICP备16008778号</a></small>
+    </footer>
+    
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?e4dd778a6204eb51e4f25460e37481ad";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+    <script type="text/javascript" src="http://tajs.qq.com/stats?sId=58628762" charset="UTF-8"></script>
+
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-51347904-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+</body>
+</html>
+
