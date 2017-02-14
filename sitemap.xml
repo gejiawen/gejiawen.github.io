@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.gejiawen.com/2017/02/06/bye-2016-and-hello-2017/</loc>
+    
+    <lastmod>2017-02-14T16:42:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.gejiawen.com/2015/03/02/bye-2014-and-hello-2015/</loc>
+    
+    <lastmod>2017-02-14T15:33:12.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.gejiawen.com/2016/12/12/git-flow-compact-model/</loc>
     
     <lastmod>2017-01-15T17:18:36.000Z</lastmod>
@@ -10,20 +24,6 @@
   
   <url>
     <loc>http://blog.gejiawen.com/2014/07/14/desp-for-angularjs-filters/</loc>
-    
-    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.gejiawen.com/2014/07/14/different-from-angularjs-provider-factory-service/</loc>
-    
-    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.gejiawen.com/2014/07/14/usage-for-angularjs-ng-class/</loc>
     
     <lastmod>2017-01-15T17:16:24.000Z</lastmod>
     
@@ -275,7 +275,7 @@
   </url>
   
   <url>
-    <loc>http://blog.gejiawen.com/2015/03/17/nodejs-module-guide/</loc>
+    <loc>http://blog.gejiawen.com/2014/07/16/usage-for-angularjs-directive/</loc>
     
     <lastmod>2017-01-15T17:16:24.000Z</lastmod>
     
@@ -289,28 +289,7 @@
   </url>
   
   <url>
-    <loc>http://blog.gejiawen.com/2014/10/16/how-to-export-nodejs-module/</loc>
-    
-    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.gejiawen.com/2014/07/16/usage-for-angularjs-directive/</loc>
-    
-    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.gejiawen.com/2014/10/14/fe-interview-book/</loc>
-    
-    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.gejiawen.com/2015/12/05/gulp-reminder-1-api/</loc>
+    <loc>http://blog.gejiawen.com/2015/03/17/nodejs-module-guide/</loc>
     
     <lastmod>2017-01-15T17:16:24.000Z</lastmod>
     
@@ -324,7 +303,28 @@
   </url>
   
   <url>
+    <loc>http://blog.gejiawen.com/2014/10/14/fe-interview-book/</loc>
+    
+    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.gejiawen.com/2015/11/26/think-about-javascript-sort/</loc>
+    
+    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.gejiawen.com/2014/07/14/different-from-angularjs-provider-factory-service/</loc>
+    
+    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.gejiawen.com/2014/12/30/deep-into-javascript-about-json-object/</loc>
     
     <lastmod>2017-01-15T17:16:24.000Z</lastmod>
     
@@ -359,28 +359,7 @@
   </url>
   
   <url>
-    <loc>http://blog.gejiawen.com/2014/12/30/deep-into-javascript-about-json-object/</loc>
-    
-    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.gejiawen.com/2015/11/04/perf-about-array-prototype-slice-arguments/</loc>
-    
-    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.gejiawen.com/2015/01/09/gulp-vs-grunt/</loc>
-    
-    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.gejiawen.com/2015/08/17/read-cheerio-doc/</loc>
     
     <lastmod>2017-01-15T17:16:24.000Z</lastmod>
     
@@ -401,21 +380,49 @@
   </url>
   
   <url>
-    <loc>http://blog.gejiawen.com/2016/09/21/make-a-node-cli-program-by-commander-js/</loc>
-    
-    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.gejiawen.com/2015/03/02/bye-2014-and-hello-2015/</loc>
-    
-    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.gejiawen.com/2014/12/29/deep-into-javascript-prototype-and-prototype-chain/</loc>
+    
+    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.gejiawen.com/2014/12/01/deep-into-javascript-module-model/</loc>
+    
+    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.gejiawen.com/2014/12/15/deep-into-javascript-exec-function-expression/</loc>
+    
+    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.gejiawen.com/2014/11/25/deep-into-javascript-function-expression/</loc>
+    
+    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.gejiawen.com/2014/07/14/usage-for-angularjs-ng-class/</loc>
+    
+    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.gejiawen.com/2014/11/13/deep-into-javascript-points-about-good-javascript-code/</loc>
+    
+    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.gejiawen.com/2014/11/30/javascript-light-framework-revealjs/</loc>
     
     <lastmod>2017-01-15T17:16:24.000Z</lastmod>
     
@@ -429,14 +436,7 @@
   </url>
   
   <url>
-    <loc>http://blog.gejiawen.com/2015/08/14/read-superagent-doc/</loc>
-    
-    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.gejiawen.com/2015/07/28/es2015-new-feature/</loc>
+    <loc>http://blog.gejiawen.com/2014/09/23/javascript-light-framework-impressjs/</loc>
     
     <lastmod>2017-01-15T17:16:24.000Z</lastmod>
     
@@ -471,48 +471,6 @@
   </url>
   
   <url>
-    <loc>http://blog.gejiawen.com/2014/12/01/deep-into-javascript-module-model/</loc>
-    
-    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.gejiawen.com/2014/12/15/deep-into-javascript-exec-function-expression/</loc>
-    
-    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.gejiawen.com/2014/11/25/deep-into-javascript-function-expression/</loc>
-    
-    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.gejiawen.com/2014/11/13/deep-into-javascript-points-about-good-javascript-code/</loc>
-    
-    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.gejiawen.com/2014/11/30/javascript-light-framework-revealjs/</loc>
-    
-    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.gejiawen.com/2014/09/23/javascript-light-framework-impressjs/</loc>
-    
-    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://blog.gejiawen.com/2015/10/12/think-about-async-in-javascript/</loc>
     
     <lastmod>2017-01-15T17:16:24.000Z</lastmod>
@@ -521,6 +479,55 @@
   
   <url>
     <loc>http://blog.gejiawen.com/2015/10/12/some-javascript-async-pattern/</loc>
+    
+    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.gejiawen.com/2015/07/28/es2015-new-feature/</loc>
+    
+    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.gejiawen.com/2015/08/14/read-superagent-doc/</loc>
+    
+    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.gejiawen.com/2016/09/21/make-a-node-cli-program-by-commander-js/</loc>
+    
+    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.gejiawen.com/2015/08/17/read-cheerio-doc/</loc>
+    
+    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.gejiawen.com/2015/01/09/gulp-vs-grunt/</loc>
+    
+    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.gejiawen.com/2015/12/05/gulp-reminder-1-api/</loc>
+    
+    <lastmod>2017-01-15T17:16:24.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.gejiawen.com/2014/10/16/how-to-export-nodejs-module/</loc>
     
     <lastmod>2017-01-15T17:16:24.000Z</lastmod>
     
@@ -604,14 +611,7 @@
   </url>
   
   <url>
-    <loc>http://blog.gejiawen.com/2015/04/13/css3-new-feature/</loc>
-    
-    <lastmod>2016-04-26T01:58:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.gejiawen.com/2015/03/04/css-layout-model/</loc>
+    <loc>http://blog.gejiawen.com/2015/03/09/usage-for-word-wrap-and-word-break/</loc>
     
     <lastmod>2016-04-26T01:58:59.000Z</lastmod>
     
@@ -633,48 +633,6 @@
   
   <url>
     <loc>http://blog.gejiawen.com/2015/03/16/css-weight-guide/</loc>
-    
-    <lastmod>2016-04-26T01:58:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.gejiawen.com/2014/11/20/pseudo-element-and-pseudo-class/</loc>
-    
-    <lastmod>2016-04-26T01:58:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.gejiawen.com/2015/04/13/suggestion-for-css-selectors/</loc>
-    
-    <lastmod>2016-04-26T01:58:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.gejiawen.com/2015/05/05/css-animation-guide/</loc>
-    
-    <lastmod>2016-04-26T01:58:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.gejiawen.com/2015/03/04/webfont-and-icon-guide/</loc>
-    
-    <lastmod>2016-04-26T01:58:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.gejiawen.com/2015/03/13/css-layout-horizontal-and-vertical-for-elements/</loc>
-    
-    <lastmod>2016-04-26T01:58:59.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.gejiawen.com/2015/03/12/css-layout-width-height-responsive/</loc>
     
     <lastmod>2016-04-26T01:58:59.000Z</lastmod>
     
@@ -730,7 +688,7 @@
   </url>
   
   <url>
-    <loc>http://blog.gejiawen.com/2015/03/09/usage-for-word-wrap-and-word-break/</loc>
+    <loc>http://blog.gejiawen.com/2015/04/13/css3-new-feature/</loc>
     
     <lastmod>2016-04-26T01:58:59.000Z</lastmod>
     
@@ -758,7 +716,21 @@
   </url>
   
   <url>
-    <loc>http://blog.gejiawen.com/2015/05/20/css3-flexbox-guide/</loc>
+    <loc>http://blog.gejiawen.com/2015/03/13/css-layout-horizontal-and-vertical-for-elements/</loc>
+    
+    <lastmod>2016-04-26T01:58:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.gejiawen.com/2015/03/12/css-layout-width-height-responsive/</loc>
+    
+    <lastmod>2016-04-26T01:58:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.gejiawen.com/2015/09/14/different-between-url-and-uri/</loc>
     
     <lastmod>2016-04-26T01:58:59.000Z</lastmod>
     
@@ -766,6 +738,13 @@
   
   <url>
     <loc>http://blog.gejiawen.com/2014/11/25/read-just-for-fun/</loc>
+    
+    <lastmod>2016-04-26T01:58:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.gejiawen.com/2015/03/04/webfont-and-icon-guide/</loc>
     
     <lastmod>2016-04-26T01:58:59.000Z</lastmod>
     
@@ -786,6 +765,20 @@
   </url>
   
   <url>
+    <loc>http://blog.gejiawen.com/2015/05/05/css-animation-guide/</loc>
+    
+    <lastmod>2016-04-26T01:58:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.gejiawen.com/2015/04/13/suggestion-for-css-selectors/</loc>
+    
+    <lastmod>2016-04-26T01:58:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.gejiawen.com/2014/09/23/points-about-fe-performance-optimization/</loc>
     
     <lastmod>2016-04-26T01:58:59.000Z</lastmod>
@@ -800,14 +793,14 @@
   </url>
   
   <url>
-    <loc>http://blog.gejiawen.com/2015/08/05/npm-adduser-refuse/</loc>
+    <loc>http://blog.gejiawen.com/2015/12/07/web-front-testing-and-technique/</loc>
     
     <lastmod>2016-04-26T01:58:59.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.gejiawen.com/2015/12/07/web-front-testing-and-technique/</loc>
+    <loc>http://blog.gejiawen.com/2015/08/05/npm-adduser-refuse/</loc>
     
     <lastmod>2016-04-26T01:58:59.000Z</lastmod>
     
@@ -828,6 +821,20 @@
   </url>
   
   <url>
+    <loc>http://blog.gejiawen.com/2014/08/12/require-in-seajs/</loc>
+    
+    <lastmod>2016-04-26T01:58:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.gejiawen.com/2014/11/20/pseudo-element-and-pseudo-class/</loc>
+    
+    <lastmod>2016-04-26T01:58:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.gejiawen.com/categories/index.html</loc>
     
     <lastmod>2016-04-26T01:58:59.000Z</lastmod>
@@ -835,7 +842,7 @@
   </url>
   
   <url>
-    <loc>http://blog.gejiawen.com/2014/08/12/require-in-seajs/</loc>
+    <loc>http://blog.gejiawen.com/2015/03/04/css-layout-model/</loc>
     
     <lastmod>2016-04-26T01:58:59.000Z</lastmod>
     
@@ -856,7 +863,7 @@
   </url>
   
   <url>
-    <loc>http://blog.gejiawen.com/2015/09/14/different-between-url-and-uri/</loc>
+    <loc>http://blog.gejiawen.com/2015/05/20/css3-flexbox-guide/</loc>
     
     <lastmod>2016-04-26T01:58:59.000Z</lastmod>
     
